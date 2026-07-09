@@ -1,0 +1,1 @@
+"""Frontend service layer for AI, execution, and logging mocks."""
