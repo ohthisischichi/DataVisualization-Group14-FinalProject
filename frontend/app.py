@@ -12,16 +12,16 @@ from components.code_editor import render_code_editor_panel
 from components.log_view import render_log_panel
 from components.result_view import render_result_panel
 from services.ai_api import generate_ai_response
-from services.mock_execute_api import execute_approved_code
-from services.mock_logs_api import append_log_entry, get_recent_logs
+from services.execute_api import execute_approved_code
+from services.logs_api import fetch_logs
 
 
 APP_TITLE = "AI Frontend Dashboard"
 APP_SUBTITLE = "Dashboard 4 tab với AI popup để chat, duyệt code, và xem kết quả"
 
 DEFAULT_PROMPT = (
-	"Phân tích doanh thu theo tỉnh và tạo một biểu đồ so sánh 5 tỉnh có giá nhà trung vị cao nhất. "
-	"Giải thích ngắn gọn ý nghĩa của biểu đồ."
+	"Dựa trên schema của bảng house_price_clean, hãy viết SQL phân tích doanh thu theo tỉnh "
+	"và tạo một truy vấn so sánh 5 tỉnh có giá nhà trung vị cao nhất. Giải thích ngắn gọn ý nghĩa của kết quả."
 )
 
 DEFAULT_CODE = '''# Giải thích: Chuẩn bị dữ liệu đã được duyệt để hiển thị bảng và biểu đồ.
@@ -80,8 +80,8 @@ def initialize_state() -> None:
 		st.session_state.generated_code = DEFAULT_CODE
 	if "code_editor_text" not in st.session_state:
 		st.session_state.code_editor_text = DEFAULT_CODE
-	if "code_editor_widget" not in st.session_state:
-		st.session_state.code_editor_widget = DEFAULT_CODE
+	if "code_editor_revision" not in st.session_state:
+		st.session_state.code_editor_revision = 0
 	if "generated_explanation" not in st.session_state:
 		st.session_state.generated_explanation = (
 			"Đây là code mẫu để minh họa luồng AI -> duyệt -> thực thi. "
@@ -89,12 +89,14 @@ def initialize_state() -> None:
 		)
 	if "approval_status" not in st.session_state:
 		st.session_state.approval_status = "Chờ duyệt"
+	if "current_request_id" not in st.session_state:
+		st.session_state.current_request_id = None
+	if "ai_status" not in st.session_state:
+		st.session_state.ai_status = None
 	if "execution_result" not in st.session_state:
 		st.session_state.execution_result = None
 	if "execution_error" not in st.session_state:
 		st.session_state.execution_error = None
-	if "execution_logs" not in st.session_state:
-		st.session_state.execution_logs = []
 	if "show_ai_popup" not in st.session_state:
 		st.session_state.show_ai_popup = False
 
@@ -161,10 +163,12 @@ def build_header() -> None:
 def request_ai_generation(prompt_text: str) -> None:
 	with st.spinner("Đang gọi AI API để sinh code..."):
 		response = generate_ai_response(prompt_text=prompt_text)
+	st.session_state.current_request_id = response.get("request_id")
 	st.session_state.generated_code = response["code"]
 	st.session_state.code_editor_text = response["code"]
-	st.session_state.code_editor_widget = response["code"]
+	st.session_state.code_editor_revision += 1
 	st.session_state.generated_explanation = response["explanation"]
+	st.session_state.ai_status = response.get("status")
 	st.session_state.approval_status = "Chờ duyệt"
 	st.session_state.execution_result = None
 	st.session_state.execution_error = None
@@ -174,46 +178,24 @@ def request_ai_generation(prompt_text: str) -> None:
 	st.session_state.chat_history.append(
 		{"role": "assistant", "content": response["chat_reply"]}
 	)
-	append_log_entry(
-		{
-			"timestamp": datetime.now().isoformat(timespec="seconds"),
-			"event": "ai_generate",
-			"prompt": prompt_text,
-			"status": "success",
-		}
-	)
 
 
 def approve_and_execute(code_text: str) -> None:
 	st.session_state.approval_status = "Đã duyệt"
 	with st.spinner("Đang thực thi code local..."):
-		execution = execute_approved_code(code_text)
+		request_id = st.session_state.current_request_id
+		if not request_id:
+			raise RuntimeError("Thiếu request_id từ AI generate. Hãy generate code trước.")
+		execution = execute_approved_code(request_id=request_id, code_text=code_text, approved=True)
 	st.session_state.code_editor_text = code_text
-	st.session_state.code_editor_widget = code_text
-	st.session_state.execution_result = execution.get("result")
+	st.session_state.execution_result = execution
 	st.session_state.execution_error = execution.get("error")
-	st.session_state.execution_logs = execution.get("logs", [])
-	append_log_entry(
-		{
-			"timestamp": datetime.now().isoformat(timespec="seconds"),
-			"event": "execute",
-			"status": "success" if execution.get("error") is None else "error",
-			"summary": execution.get("summary"),
-		}
-	)
 
 
 def reject_current_code() -> None:
 	st.session_state.approval_status = "Bị từ chối"
 	st.session_state.execution_result = None
 	st.session_state.execution_error = None
-	append_log_entry(
-		{
-			"timestamp": datetime.now().isoformat(timespec="seconds"),
-			"event": "reject",
-			"status": "rejected",
-		}
-	)
 
 def render_dashboard_tabs() -> None:
 	tab_titles = [
@@ -249,9 +231,9 @@ def render_ai_popup() -> None:
 		code_text=st.session_state.code_editor_text,
 		explanation_text=st.session_state.generated_explanation,
 		approval_status=st.session_state.approval_status,
+		widget_key=f"code_editor_widget_{st.session_state.code_editor_revision}",
 	)
 	st.session_state.code_editor_text = code_text
-	st.session_state.code_editor_widget = code_text
 
 	action_col_1, action_col_2, action_col_3 = st.columns(3)
 	with action_col_1:
@@ -266,11 +248,12 @@ def render_ai_popup() -> None:
 		if st.button("Reset to Mock", use_container_width=True, key="popup_reset"):
 			st.session_state.generated_code = DEFAULT_CODE
 			st.session_state.code_editor_text = DEFAULT_CODE
-			st.session_state.code_editor_widget = DEFAULT_CODE
+			st.session_state.code_editor_revision += 1
 			st.session_state.generated_explanation = (
 				"Đã khôi phục code mock mặc định để tiếp tục demo."
 			)
 			st.session_state.approval_status = "Chờ duyệt"
+			st.session_state.current_request_id = None
 			st.session_state.execution_result = None
 			st.session_state.execution_error = None
 			st.info("Đã khôi phục nội dung mẫu.")
@@ -278,10 +261,10 @@ def render_ai_popup() -> None:
 	render_result_panel(
 		result=st.session_state.execution_result,
 		error_message=st.session_state.execution_error,
-		logs=st.session_state.execution_logs,
+		logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [],
 	)
 
-	render_log_panel(logs=get_recent_logs())
+	render_log_panel(logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [])
 
 
 def build_popup_trigger() -> None:

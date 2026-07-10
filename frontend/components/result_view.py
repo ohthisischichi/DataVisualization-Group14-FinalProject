@@ -11,6 +11,28 @@ def _render_result_value(result: Any) -> None:
 		st.info("Chưa có kết quả thực thi. Hãy duyệt code để xem đầu ra.")
 		return
 
+	if isinstance(result, dict):
+		if "success" in result or "result_type" in result or "result_data" in result:
+			st.markdown(f"**Success:** {result.get('success')}")
+			if result.get("result_type") is not None:
+				st.markdown(f"**Result type:** {result.get('result_type')}")
+			result_data = result.get("result_data")
+			if isinstance(result_data, pd.DataFrame):
+				st.dataframe(result_data, use_container_width=True)
+			elif isinstance(result_data, dict):
+				st.json(result_data)
+			elif isinstance(result_data, Sequence) and not isinstance(result_data, (str, bytes)):
+				st.write(result_data)
+			elif result_data is not None:
+				st.write(result_data)
+			logs = result.get("logs")
+			if logs:
+				with st.expander("Execution logs", expanded=False):
+					st.write(logs)
+			if result.get("error"):
+				st.error(result.get("error"))
+			return
+
 	if isinstance(result, pd.DataFrame):
 		st.dataframe(result, use_container_width=True)
 		chart_source = result.copy()

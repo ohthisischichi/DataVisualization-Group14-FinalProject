@@ -7,6 +7,7 @@ def render_code_editor_panel(
 	code_text: str,
 	explanation_text: str,
 	approval_status: str,
+	widget_key: str,
 ) -> str:
 	st.subheader("Code Editor")
 	st.caption(f"Trạng thái hiện tại: {approval_status}")
@@ -19,7 +20,7 @@ def render_code_editor_panel(
 		value=code_text,
 		height=340,
 		label_visibility="visible",
-		key="code_editor_widget",
+		key=widget_key,
 	)
 
 	preview_col_1, preview_col_2 = st.columns(2)
