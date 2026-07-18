@@ -1,3 +1,4 @@
+import re
 import uuid
 import httpx
 from datetime import datetime
@@ -85,28 +86,52 @@ def build_prompt(request: AIRequest) -> str:
     return f"{system_prompt}\n\nYêu cầu người dùng: {request.prompt}"
 
 
+# Bắt một khối fence ```<lang> ... ```; group("lang") là nhãn (có thể rỗng),
+# group("body") là nội dung bên trong.
+_FENCE_RE = re.compile(
+    r"```[ \t]*(?P<lang>[a-zA-Z0-9_+-]*)[ \t]*\r?\n(?P<body>.*?)```",
+    re.DOTALL,
+)
+
+_CODE_LANGS = {"code", "python", "py", "python3"}
+_EXPLANATION_LANGS = {"explanation", "explain", "giaithich", "text"}
+
+
 def parse_model_output(raw_text: str) -> tuple[str, str]:
     """
     Tách code và explanation ra khỏi output thô của model.
-    Kỳ vọng model trả về theo format có ```code ... ``` và ```explanation ... ```.
-    Nếu model không tuân thủ đúng format, fallback: coi toàn bộ là explanation, code rỗng.
+
+    Kỳ vọng format có ```code ... ``` và ```explanation ... ```, nhưng model local
+    (Qwen) thường không tuân thủ chặt: có thể dùng ```python, ```py hoặc ``` trơn.
+    Vì vậy ta duyệt TẤT CẢ các khối fence:
+      - Khối có nhãn code/python/py -> gán vào code.
+      - Khối có nhãn explanation/... -> gán vào explanation.
+      - Khối không nhãn -> nếu chưa có code thì coi là code (fallback phổ biến).
+    Phần văn bản ngoài mọi fence được dùng làm explanation nếu không có khối
+    explanation tường minh.
     """
     code = ""
-    explanation = raw_text.strip()
+    explanation = ""
 
-    if "```code" in raw_text:
-        try:
-            code_block = raw_text.split("```code", 1)[1]
-            code = code_block.split("```", 1)[0].strip()
-        except IndexError:
-            code = ""
+    blocks = list(_FENCE_RE.finditer(raw_text))
 
-    if "```explanation" in raw_text:
-        try:
-            exp_block = raw_text.split("```explanation", 1)[1]
-            explanation = exp_block.split("```", 1)[0].strip()
-        except IndexError:
-            pass
+    for m in blocks:
+        lang = m.group("lang").lower()
+        body = m.group("body").strip()
+        if lang in _CODE_LANGS:
+            if not code:
+                code = body
+        elif lang in _EXPLANATION_LANGS:
+            if not explanation:
+                explanation = body
+        elif not lang and not code:
+            # Khối fence trơn không nhãn: nhiều khả năng là code.
+            code = body
+
+    if not explanation:
+        # Không có khối explanation tường minh -> lấy phần text nằm ngoài mọi fence.
+        text_outside = _FENCE_RE.sub("", raw_text).strip()
+        explanation = text_outside if text_outside else raw_text.strip()
 
     return code, explanation
 
@@ -137,6 +162,20 @@ async def generate_code(request: AIRequest):
         raise HTTPException(status_code=502, detail=f"Không gọi được model Qwen local: {exc}")
 
     raw_text = data.get("response") or data.get("thinking") or ""
+
+    # DEBUG: in raw response ra console + ghi ra file để soi khi code bị rỗng.
+    print("=" * 60)
+    print(f"[AI raw response] request_id={request_id}")
+    print(raw_text)
+    print("=" * 60, flush=True)
+    try:
+        with open("storage/last_raw_response.txt", "w", encoding="utf-8") as f:
+            f.write(f"request_id: {request_id}\nprompt: {request.prompt}\n")
+            f.write("=" * 60 + "\n")
+            f.write(raw_text)
+    except OSError:
+        pass
+
     code, explanation = parse_model_output(raw_text)
 
     # Ghi log ngay khi generate code, trước khi được duyệt
