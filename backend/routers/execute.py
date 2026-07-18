@@ -19,6 +19,10 @@ FORBIDDEN_NAMES = {
     "input", "globals", "locals", "vars", "getattr", "setattr", "delattr",
 }
 
+# Keep __import__ for standard 'import' statements to work, 
+# but block explicit __import__() calls using AST validator.
+_RUNTIME_REQUIRED_BUILTINS = {"__import__"}
+
 
 class CodeValidationError(Exception):
     pass
@@ -85,9 +89,10 @@ def _run_in_subprocess(code: str, dataset_path: str, queue: multiprocessing.Queu
         "__builtins__": {
             name: getattr(__builtins__, name)
             for name in dir(__builtins__)
-            if name not in FORBIDDEN_NAMES
+            if name not in FORBIDDEN_NAMES or name in _RUNTIME_REQUIRED_BUILTINS
         } if not isinstance(__builtins__, dict) else {
-            k: v for k, v in __builtins__.items() if k not in FORBIDDEN_NAMES
+            k: v for k, v in __builtins__.items()
+            if k not in FORBIDDEN_NAMES or k in _RUNTIME_REQUIRED_BUILTINS
         },
         "pd": pd,
         "np": np,
