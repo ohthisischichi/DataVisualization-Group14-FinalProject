@@ -138,16 +138,9 @@ def generate_ai_response(prompt_text: str) -> dict[str, Any]:
             "mode": "mock_fallback_enabled",
             "table_schema": table_schema,
             "column_aliases": column_aliases,
-            "sql_instruction": (
-                "Người dùng có thể viết prompt bằng tiếng Việt, nhưng code sinh ra phải map mọi khái niệm sang "
-                "tên cột thật trong table_schema. Khi gặp từ tiếng Việt, hãy tra column_aliases để quy đổi sang "
-                "tên cột gốc. Không tự thêm cột không tồn tại, chỉ dùng đúng tên cột trong schema và chỉ lọc theo "
-                "các cột có thật trong dữ liệu."
-            ),
-            "mapping_rule": (
-                "Prompt được phép viết tiếng Việt, nhưng mọi truy vấn SQL/code phải dùng canonical column names. "
-                "Ví dụ: 'tỉnh' -> Province, 'giá' -> Price, 'diện tích' -> Area, 'quận/huyện' -> District, "
-                "'phường/xã' -> Ward."
+            "frontend_instruction": (
+                "Frontend chỉ cung cấp prompt người dùng và ngữ cảnh dashboard. Ưu tiên code bám sát tab, "
+                "bộ lọc, và chỉ dùng các cột thật trong schema."
             ),
         },
     }

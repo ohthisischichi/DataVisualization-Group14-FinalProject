@@ -20,8 +20,9 @@ APP_TITLE = "AI Frontend Dashboard"
 APP_SUBTITLE = "Dashboard 4 tab với AI popup để chat, duyệt code, và xem kết quả"
 
 DEFAULT_PROMPT = (
-	"Dựa trên schema của bảng house_price_clean, hãy viết SQL phân tích doanh thu theo tỉnh "
-	"và tạo một truy vấn so sánh 5 tỉnh có giá nhà trung vị cao nhất. Giải thích ngắn gọn ý nghĩa của kết quả."
+	"Dựa trên tab và bộ lọc hiện tại, hãy đề xuất một phân tích ngắn gọn cho dữ liệu house_price_clean. "
+	"Chỉ dùng các cột có thật trong schema, viết code Python rõ ràng để xử lý hoặc trực quan hóa df, "
+	"và giải thích ngắn gọn bằng tiếng Việt."
 )
 
 DEFAULT_CODE = '''# Giải thích: Chuẩn bị dữ liệu đã được duyệt để hiển thị bảng và biểu đồ.
