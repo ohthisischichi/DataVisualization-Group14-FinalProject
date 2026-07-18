@@ -92,6 +92,7 @@ async def generate_code(request: AIRequest):
                     "prompt": full_prompt,
                     "stream": False,
                     "think": False,
+                    "options": {"num_ctx": 16384},
                 },
             )
             resp.raise_for_status()
