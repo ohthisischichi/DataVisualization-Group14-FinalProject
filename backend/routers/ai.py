@@ -91,6 +91,7 @@ async def generate_code(request: AIRequest):
                     "model": OLLAMA_MODEL,
                     "prompt": full_prompt,
                     "stream": False,
+                    "think": False,
                 },
             )
             resp.raise_for_status()
@@ -98,7 +99,7 @@ async def generate_code(request: AIRequest):
     except httpx.HTTPError as exc:
         raise HTTPException(status_code=502, detail=f"Không gọi được model Qwen local: {exc}")
 
-    raw_text = data.get("response", "")
+    raw_text = data.get("response") or data.get("thinking") or ""
     code, explanation = parse_model_output(raw_text)
 
     # Ghi log ngay khi generate code, trước khi được duyệt
