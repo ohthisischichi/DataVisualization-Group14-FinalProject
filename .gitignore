@@ -3,3 +3,4 @@ __pycache__/
 .vscode/
 tempCodeRunnerFile.py
 ollama.log
+**/__pycache__/
