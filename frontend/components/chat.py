@@ -26,13 +26,13 @@ def render_chat_panel(
 
 	action_col_1, action_col_2 = st.columns([1, 1])
 	with action_col_1:
-		if st.button("Generate Code", use_container_width=True):
+		if st.button("Generate Code", width="stretch"):
 			if prompt_value.strip():
 				on_generate(prompt_value.strip())
 			else:
 				st.warning("Vui lòng nhập yêu cầu trước khi sinh code.")
 	with action_col_2:
-		if st.button("Use Default Prompt", use_container_width=True):
+		if st.button("Use Default Prompt", width="stretch"):
 			st.session_state.prompt_widget = default_prompt
 			st.rerun()
 

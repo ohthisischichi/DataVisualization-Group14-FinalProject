@@ -15,4 +15,4 @@ def render_log_panel(logs: list[dict[str, Any]]) -> None:
 	log_frame = pd.DataFrame(logs)
 	if "timestamp" not in log_frame.columns:
 		log_frame["timestamp"] = None
-	st.dataframe(log_frame, use_container_width=True, hide_index=True)
+	st.dataframe(log_frame, width="stretch", hide_index=True)

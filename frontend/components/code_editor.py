@@ -30,7 +30,7 @@ def render_code_editor_panel(
 			data=edited_code,
 			file_name="generated_code.py",
 			mime="text/x-python",
-			use_container_width=True,
+			width="stretch",
 		)
 	with preview_col_2:
 		st.code(edited_code, language="python")
