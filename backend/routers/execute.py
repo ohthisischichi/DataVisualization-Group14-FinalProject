@@ -34,11 +34,9 @@ class CodeValidationError(Exception):
 
 
 def validate_code(code: str) -> None:
-    """
-    Duyệt AST của code để:
-    - Chặn import ngoài whitelist
-    - Chặn gọi các hàm nguy hiểm (open, exec, eval, __import__, ...)
-    Trả về CodeValidationError nếu vi phạm
+    """Duyệt AST để chặn import ngoài whitelist và các hàm nguy hiểm (open, exec, eval...).
+
+    Raise CodeValidationError nếu vi phạm.
     """
     try:
         tree = ast.parse(code)
@@ -65,10 +63,8 @@ def validate_code(code: str) -> None:
 
 
 def _safe_result_dir(request_id: str) -> str:
-    """
-    Trả về đường dẫn thư mục kết quả cho request_id, sau khi kiểm tra hợp lệ để
-    tránh path traversal (vd request_id = '../../etc'). Chỉ cho phép chữ, số, '-', '_'.
-    """
+    """Đường dẫn thư mục kết quả của request_id; chỉ cho phép chữ, số, '-', '_'
+    để tránh path traversal."""
     if not re.fullmatch(r"[A-Za-z0-9_-]+", request_id or ""):
         raise ValueError(f"request_id không hợp lệ: {request_id!r}")
     return os.path.join(RESULTS_DIR, request_id)
@@ -141,9 +137,7 @@ def _run_in_subprocess(code: str, dataset_path: str, request_id: str, queue: mul
     import pandas as pd  # noqa: F401  (nạp lại trong subprocess)
     import numpy as np   # noqa: F401
 
-    # Model hay gọi fig.show()/plt.show() thay vì gán biến `result`. Mặc định
-    # Plotly sẽ mở một tab trình duyệt mới (http://127.0.0.1:<port>) và matplotlib
-    # mở cửa sổ GUI. Ta ghi đè show() để BẮT figure lại thay vì mở ra ngoài.
+    # Ghi đè show để lưu fingure thay vì mở tab trình duyệt / cửa sổ GUI.
     _captured = {"fig": None}
     try:
         import plotly.express as px  # noqa: F401
@@ -195,8 +189,7 @@ def _run_in_subprocess(code: str, dataset_path: str, request_id: str, queue: mul
             exec(code, safe_globals)
         result = safe_globals.get("result")
 
-        # Model thường không gán `result` mà chỉ gọi fig.show()/plt.show().
-        # Thử các fallback để vẫn bắt được biểu đồ:
+        # Fallback khi model chỉ gọi fig.show()/plt.show() mà không gán `result`.
         if result is None:
             result = _captured["fig"]        # figure bắt được từ fig.show()
         if result is None:
@@ -211,8 +204,7 @@ def _run_in_subprocess(code: str, dataset_path: str, request_id: str, queue: mul
         if result is None and "plt" in dir() and plt.get_fignums():
             result = plt.gcf()
 
-        # Ghi payload xuống đĩa (storage/results/<request_id>/...) thay vì nhét vào
-        # queue/HTTP. Queue chỉ mang meta nhỏ -> không deadlock, không phồng RAM.
+        # Ghi kết qủa vào ổ cứng
         result_type = _persist_result(request_id, result)
 
         queue.put({
@@ -255,15 +247,12 @@ async def execute_code(request: ExecuteRequest):
     )
     process.start()
 
-    # Phải ĐỌC queue TRƯỚC khi join. multiprocessing.Queue ghi qua pipe có buffer
-    # giới hạn: khi payload lớn (chart JSON / ảnh base64), child bị chặn ở feeder
-    # thread cho tới khi parent đọc bớt. Nếu join() trước rồi mới get() sẽ deadlock,
-    # request treo tới khi client timeout. get(timeout=...) vừa rút dữ liệu vừa canh giờ.
+    # Phải ĐỌC queue TRƯỚC khi join: pipe có buffer giới hạn nên payload lớn sẽ
+    # chặn child, join() trước rồi mới get() là deadlock.
     try:
         output = queue.get(timeout=EXECUTE_TIMEOUT_SECONDS)
     except Empty:
-        # Còn sống mà chưa trả kết quả => timeout. Đã chết mà queue rỗng => thoát
-        # bất thường (segfault / lỗi hệ thống, không kịp put gì lên queue).
+        # Còn sống mà chưa trả kết quả => timeout. Đã chết mà queue rỗng => thoát bất thường (segfault / lỗi hệ thống, không kịp put gì lên queue).
         timed_out = process.is_alive()
         if timed_out:
             process.terminate()
