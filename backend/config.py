@@ -25,3 +25,6 @@ LOG_DB_PATH = os.getenv("LOG_DB_PATH", "storage/logs.db")
 
 # Dataset config
 DATASET_PATH = os.getenv("DATASET_PATH", "storage/house_price_clean.csv")
+
+# Results config: lưu kết quả thực thi theo request_id
+RESULTS_DIR = os.getenv("RESULTS_DIR", "storage/results")

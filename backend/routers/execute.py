@@ -1,13 +1,18 @@
 import ast
 import io
+import os
+import re
+import json
+import base64
 import contextlib
 import multiprocessing
+from queue import Empty
 from datetime import datetime
 
 import pandas as pd
 from fastapi import APIRouter, HTTPException
 
-from config import ALLOWED_IMPORTS, EXECUTE_TIMEOUT_SECONDS, DATASET_PATH
+from config import ALLOWED_IMPORTS, EXECUTE_TIMEOUT_SECONDS, DATASET_PATH, RESULTS_DIR
 from schemas import ExecuteRequest, ExecuteResult
 from routers.logs import save_log_entry, get_log_entry, LogEntry
 
@@ -59,7 +64,75 @@ def validate_code(code: str) -> None:
                 raise CodeValidationError(f"Truy cập module nguy hiểm: {node.value.id}.{node.attr}")
 
 
-def _run_in_subprocess(code: str, dataset_path: str, queue: multiprocessing.Queue) -> None:
+def _safe_result_dir(request_id: str) -> str:
+    """
+    Trả về đường dẫn thư mục kết quả cho request_id, sau khi kiểm tra hợp lệ để
+    tránh path traversal (vd request_id = '../../etc'). Chỉ cho phép chữ, số, '-', '_'.
+    """
+    if not re.fullmatch(r"[A-Za-z0-9_-]+", request_id or ""):
+        raise ValueError(f"request_id không hợp lệ: {request_id!r}")
+    return os.path.join(RESULTS_DIR, request_id)
+
+
+def _persist_result(request_id: str, result) -> str | None:
+    """
+    Ghi kết quả xuống đĩa theo từng loại và trả về result_type.
+    - DataFrame -> data.json (records)
+    - plotly Figure -> chart.json (to_json)
+    - matplotlib Figure -> image.png (savefig trực tiếp, không qua base64 trong RAM)
+    - còn lại -> text.txt
+    """
+    if result is None:
+        return None
+
+    module = type(result).__module__ or ""
+    type_name = type(result).__name__
+    result_dir = _safe_result_dir(request_id)
+    os.makedirs(result_dir, exist_ok=True)
+
+    if type_name == "DataFrame":
+        with open(os.path.join(result_dir, "data.json"), "w", encoding="utf-8") as f:
+            json.dump(result.to_dict(orient="records"), f, ensure_ascii=False)
+        return "dataframe"
+    if module.startswith("plotly"):
+        with open(os.path.join(result_dir, "chart.json"), "w", encoding="utf-8") as f:
+            f.write(result.to_json())
+        return "chart"
+    if module.startswith("matplotlib"):
+        result.savefig(
+            os.path.join(result_dir, "image.png"),
+            format="png", bbox_inches="tight", dpi=120,
+        )
+        return "image"
+
+    with open(os.path.join(result_dir, "text.txt"), "w", encoding="utf-8") as f:
+        f.write(str(result))
+    return "text"
+
+
+def _load_result_data(result_dir: str) -> tuple[str | None, object]:
+    """Đọc lại payload từ đĩa, trả về (result_type, result_data) đúng shape frontend cần."""
+    chart_path = os.path.join(result_dir, "chart.json")
+    image_path = os.path.join(result_dir, "image.png")
+    data_path = os.path.join(result_dir, "data.json")
+    text_path = os.path.join(result_dir, "text.txt")
+
+    if os.path.exists(chart_path):
+        with open(chart_path, "r", encoding="utf-8") as f:
+            return "chart", f.read()
+    if os.path.exists(image_path):
+        with open(image_path, "rb") as f:
+            return "image", base64.b64encode(f.read()).decode("ascii")
+    if os.path.exists(data_path):
+        with open(data_path, "r", encoding="utf-8") as f:
+            return "dataframe", json.load(f)
+    if os.path.exists(text_path):
+        with open(text_path, "r", encoding="utf-8") as f:
+            return "text", f.read()
+    return None, None
+
+
+def _run_in_subprocess(code: str, dataset_path: str, request_id: str, queue: multiprocessing.Queue) -> None:
     """
     Hàm chạy trong process con: load dataset vào biến df, exec code,
     bắt output/print và kết quả (biến 'result' nếu code có định nghĩa),
@@ -67,15 +140,26 @@ def _run_in_subprocess(code: str, dataset_path: str, queue: multiprocessing.Queu
     """
     import pandas as pd  # noqa: F401  (nạp lại trong subprocess)
     import numpy as np   # noqa: F401
+
+    # Model hay gọi fig.show()/plt.show() thay vì gán biến `result`. Mặc định
+    # Plotly sẽ mở một tab trình duyệt mới (http://127.0.0.1:<port>) và matplotlib
+    # mở cửa sổ GUI. Ta ghi đè show() để BẮT figure lại thay vì mở ra ngoài.
+    _captured = {"fig": None}
     try:
         import plotly.express as px  # noqa: F401
         import plotly.graph_objects as go  # noqa: F401
+
+        def _plotly_show(self, *args, **kwargs):
+            _captured["fig"] = self
+        go.Figure.show = _plotly_show
     except ImportError:
         pass
     try:
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt  # noqa: F401
+
+        plt.show = lambda *args, **kwargs: None
     except ImportError:
         pass
 
@@ -111,26 +195,29 @@ def _run_in_subprocess(code: str, dataset_path: str, queue: multiprocessing.Queu
             exec(code, safe_globals)
         result = safe_globals.get("result")
 
-        result_type = None
-        result_data = None
+        # Model thường không gán `result` mà chỉ gọi fig.show()/plt.show().
+        # Thử các fallback để vẫn bắt được biểu đồ:
+        if result is None:
+            result = _captured["fig"]        # figure bắt được từ fig.show()
+        if result is None:
+            # Quét globals tìm một Figure plotly/matplotlib bất kỳ đã tạo.
+            for value in safe_globals.values():
+                module = type(value).__module__ or ""
+                if type(value).__name__ == "Figure" and (
+                    module.startswith("plotly") or module.startswith("matplotlib")
+                ):
+                    result = value
+                    break
+        if result is None and "plt" in dir() and plt.get_fignums():
+            result = plt.gcf()
 
-        if result is not None:
-            # Cố gắng nhận diện loại kết quả để trả về đúng format cho Frontend
-            type_name = type(result).__name__
-            if type_name == "DataFrame":
-                result_type = "dataframe"
-                result_data = result.to_dict(orient="records")
-            elif type_name in ("Figure",):  # plotly.graph_objects.Figure
-                result_type = "chart"
-                result_data = result.to_json()
-            else:
-                result_type = "text"
-                result_data = str(result)
+        # Ghi payload xuống đĩa (storage/results/<request_id>/...) thay vì nhét vào
+        # queue/HTTP. Queue chỉ mang meta nhỏ -> không deadlock, không phồng RAM.
+        result_type = _persist_result(request_id, result)
 
         queue.put({
             "success": True,
             "result_type": result_type,
-            "result_data": result_data,
             "logs": stdout_buffer.getvalue(),
             "error": None,
         })
@@ -138,7 +225,6 @@ def _run_in_subprocess(code: str, dataset_path: str, queue: multiprocessing.Queu
         queue.put({
             "success": False,
             "result_type": None,
-            "result_data": None,
             "logs": stdout_buffer.getvalue(),
             "error": f"{type(exc).__name__}: {exc}",
         })
@@ -165,36 +251,74 @@ async def execute_code(request: ExecuteRequest):
     queue: multiprocessing.Queue = multiprocessing.Queue()
     process = multiprocessing.Process(
         target=_run_in_subprocess,
-        args=(request.code, DATASET_PATH, queue),
+        args=(request.code, DATASET_PATH, request.request_id, queue),
     )
     process.start()
-    process.join(timeout=EXECUTE_TIMEOUT_SECONDS)
 
+    # Phải ĐỌC queue TRƯỚC khi join. multiprocessing.Queue ghi qua pipe có buffer
+    # giới hạn: khi payload lớn (chart JSON / ảnh base64), child bị chặn ở feeder
+    # thread cho tới khi parent đọc bớt. Nếu join() trước rồi mới get() sẽ deadlock,
+    # request treo tới khi client timeout. get(timeout=...) vừa rút dữ liệu vừa canh giờ.
+    try:
+        output = queue.get(timeout=EXECUTE_TIMEOUT_SECONDS)
+    except Empty:
+        # Còn sống mà chưa trả kết quả => timeout. Đã chết mà queue rỗng => thoát
+        # bất thường (segfault / lỗi hệ thống, không kịp put gì lên queue).
+        timed_out = process.is_alive()
+        if timed_out:
+            process.terminate()
+        process.join()
+        if timed_out:
+            error_msg = f"Code chạy quá {EXECUTE_TIMEOUT_SECONDS}s và đã bị hủy (timeout)."
+        else:
+            error_msg = "Process con thoát bất thường (có thể do lỗi hệ thống / segfault)."
+        _update_log_status(request.request_id, status="error", result_summary=error_msg)
+        return ExecuteResult(request_id=request.request_id, success=False, error=error_msg)
+
+    # Đã rút được kết quả, chờ child kết thúc gọn (đừng để join treo vô hạn).
+    process.join(timeout=5)
     if process.is_alive():
         process.terminate()
         process.join()
-        error_msg = f"Code chạy quá {EXECUTE_TIMEOUT_SECONDS}s và đã bị hủy (timeout)."
-        _update_log_status(request.request_id, status="error", result_summary=error_msg)
-        return ExecuteResult(request_id=request.request_id, success=False, error=error_msg)
-
-    if queue.empty():
-        error_msg = "Process con thoát bất thường (có thể do lỗi hệ thống / segfault)."
-        _update_log_status(request.request_id, status="error", result_summary=error_msg)
-        return ExecuteResult(request_id=request.request_id, success=False, error=error_msg)
-
-    output = queue.get()
 
     status = "executed" if output["success"] else "error"
     summary = output.get("error") or f"Kết quả dạng: {output.get('result_type')}"
     _update_log_status(request.request_id, status=status, result_summary=summary)
 
+    # Không trả result_data ở đây: payload nằm trên đĩa, frontend load qua
+    # GET /execute/result/{request_id}. Response này chỉ mang meta gọn nhẹ.
     return ExecuteResult(
         request_id=request.request_id,
         success=output["success"],
         result_type=output.get("result_type"),
-        result_data=output.get("result_data"),
+        result_data=None,
         logs=output.get("logs", ""),
         error=output.get("error"),
+    )
+
+
+@router.get("/result/{request_id}", response_model=ExecuteResult)
+async def get_result(request_id: str):
+    """
+    Load lại kết quả đã lưu trên đĩa theo request_id (chart/ảnh/bảng/text).
+    """
+    try:
+        result_dir = _safe_result_dir(request_id)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+
+    if not os.path.isdir(result_dir):
+        raise HTTPException(status_code=404, detail="Không tìm thấy kết quả cho request_id này.")
+
+    result_type, result_data = _load_result_data(result_dir)
+    if result_type is None:
+        raise HTTPException(status_code=404, detail="Không có payload kết quả trên đĩa.")
+
+    return ExecuteResult(
+        request_id=request_id,
+        success=True,
+        result_type=result_type,
+        result_data=result_data,
     )
 
 

@@ -103,7 +103,7 @@ def parse_model_output(raw_text: str) -> tuple[str, str]:
 
     Kỳ vọng format có ```code ... ``` và ```explanation ... ```, nhưng model local
     (Qwen) thường không tuân thủ chặt: có thể dùng ```python, ```py hoặc ``` trơn.
-    Vì vậy ta duyệt TẤT CẢ các khối fence:
+    Vì vậy, duyệt TẤT CẢ các khối fence:
       - Khối có nhãn code/python/py -> gán vào code.
       - Khối có nhãn explanation/... -> gán vào explanation.
       - Khối không nhãn -> nếu chưa có code thì coi là code (fallback phổ biến).

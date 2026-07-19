@@ -4,6 +4,7 @@ from typing import Any, Sequence
 
 import pandas as pd
 import streamlit as st
+import plotly.io as pio
 
 
 def _render_result_value(result: Any) -> None:
@@ -17,7 +18,12 @@ def _render_result_value(result: Any) -> None:
 			if result.get("result_type") is not None:
 				st.markdown(f"**Result type:** {result.get('result_type')}")
 			result_data = result.get("result_data")
-			if isinstance(result_data, pd.DataFrame):
+			if result.get("result_type") == "image" and isinstance(result_data, str):
+				import base64
+				st.image(base64.b64decode(result_data), use_container_width=True)
+			elif result.get("result_type") == "chart" and isinstance(result_data, str):
+				st.plotly_chart(pio.from_json(result_data), use_container_width=True)
+			elif isinstance(result_data, pd.DataFrame):
 				st.dataframe(result_data, use_container_width=True)
 			elif isinstance(result_data, dict):
 				st.json(result_data)

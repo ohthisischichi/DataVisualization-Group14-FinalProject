@@ -4,3 +4,4 @@ __pycache__/
 tempCodeRunnerFile.py
 ollama.log
 **/__pycache__/
+backend/storage/results/
