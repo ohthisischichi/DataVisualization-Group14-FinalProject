@@ -16,7 +16,10 @@ from services.ai_api import generate_ai_response
 from services.execute_api import execute_approved_code
 from services.logs_api import fetch_logs
 from filters import render_sidebar_filters, apply_filters, _init_filters
+from data_loader import load_data
 
+
+DATASET_PATH = Path(__file__).resolve().parent.parent / "Data" / "processed" / "house_price_clean.csv"
 
 APP_TITLE = "AI Frontend Dashboard"
 APP_SUBTITLE = "Dashboard 4 tab với AI popup để chat, duyệt code, và xem kết quả"
@@ -345,7 +348,10 @@ def main() -> None:
     build_header()
 
     # Load dữ liệu
-    df = load_sample_data()
+    if DATASET_PATH.exists():
+        df = load_data(DATASET_PATH)
+    else:
+        df = load_sample_data()
 
     # Khởi tạo filters
     _init_filters(df)

@@ -71,13 +71,13 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
     f = st.session_state["filters"]  # Tham chiếu đến dict filter hiện tại
 
     with st.sidebar:
-        st.markdown("## 🏠 Bộ lọc dữ liệu")
+        st.markdown("## Bộ lọc dữ liệu")
         st.markdown("---")
 
         # ── 1. TỈNH/THÀNH (Province) ──────────────────────────────────────────
         all_provinces = sorted(df["Province"].dropna().unique().tolist())
         selected_provinces: list[str] = st.multiselect(
-            label="🗺️ Tỉnh / Thành phố",
+            label="Tỉnh / Thành phố",
             options=all_provinces,
             default=f["province"],
             placeholder="Chọn tỉnh/thành (để trống = tất cả)",
@@ -98,7 +98,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             valid_districts = [d for d in f["district"] if d in district_pool]
 
             selected_districts: list[str] = st.multiselect(
-                label="🏙️ Quận / Huyện",
+                label="Quận / Huyện",
                 options=district_pool,
                 default=valid_districts,
                 placeholder="Chọn quận/huyện (để trống = tất cả)",
@@ -109,11 +109,11 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
         else:
             # Chưa chọn tỉnh → disabled
             st.multiselect(
-                label="🏙️ Quận / Huyện",
+                label="Quận / Huyện",
                 options=[],
                 default=[],
                 disabled=True,
-                placeholder="⚠️ Vui lòng chọn Tỉnh/Thành phố trước",
+                placeholder="Vui lòng chọn Tỉnh/Thành phố trước",
                 key="filter_district_disabled",
             )
             f["district"] = []  # Reset district khi chưa chọn tỉnh
@@ -123,7 +123,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
         # ── 3. PHÂN KHÚC GIÁ ─────────────────────────────────────────────────
         price_seg_options = ["<4 tỷ", "4-6 tỷ", "6-8 tỷ", "8-10 tỷ", ">10 tỷ"]
         selected_price_seg: list[str] = st.multiselect(
-            label="💰 Phân khúc giá",
+            label="Phân khúc giá",
             options=price_seg_options,
             default=f["price_segment"],
             placeholder="Tất cả phân khúc",
@@ -134,7 +134,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
         # ── 4. NHÓM DIỆN TÍCH ────────────────────────────────────────────────
         area_group_options = ["<30 m²", "30-50 m²", "50-70 m²", "70-90 m²", ">90 m²"]
         selected_area_group: list[str] = st.multiselect(
-            label="📐 Nhóm diện tích",
+            label="Nhóm diện tích",
             options=area_group_options,
             default=f["area_group"],
             placeholder="Tất cả nhóm diện tích",
@@ -147,7 +147,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
         # ── 5. TÌNH TRẠNG PHÁP LÝ ────────────────────────────────────────────
         legal_options = sorted(df["Legal status"].dropna().unique().tolist())
         selected_legal: list[str] = st.multiselect(
-            label="📋 Tình trạng pháp lý",
+            label="Tình trạng pháp lý",
             options=legal_options,
             default=f["legal_status"],
             placeholder="Tất cả tình trạng pháp lý",
@@ -158,7 +158,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
         # ── 6. TÌNH TRẠNG NỘI THẤT ───────────────────────────────────────────
         furniture_options = sorted(df["Furniture state"].dropna().unique().tolist())
         selected_furniture: list[str] = st.multiselect(
-            label="🛋️ Tình trạng nội thất",
+            label="Tình trạng nội thất",
             options=furniture_options,
             default=f["furniture_state"],
             placeholder="Tất cả tình trạng nội thất",
@@ -178,7 +178,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             min(price_max_global, cur_price[1]),
         )
         selected_price_range: tuple[float, float] = st.slider(
-            label="💵 Khoảng giá (tỷ VNĐ)",
+            label="Khoảng giá (tỷ VNĐ)",
             min_value=price_min_global,
             max_value=price_max_global,
             value=cur_price,
@@ -197,7 +197,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             min(area_max_global, cur_area[1]),
         )
         selected_area_range: tuple[float, float] = st.slider(
-            label="📏 Khoảng diện tích (m²)",
+            label="Khoảng diện tích (m²)",
             min_value=area_min_global,
             max_value=area_max_global,
             value=cur_area,
@@ -210,7 +210,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
         st.markdown("---")
 
         # ── NÚT RESET ─────────────────────────────────────────────────────────
-        if st.button("🔄 Reset tất cả filter", use_container_width=True, type="secondary"):
+        if st.button("Reset tất cả filter", use_container_width=True, type="secondary"):
             _reset_filters(df)
 
 

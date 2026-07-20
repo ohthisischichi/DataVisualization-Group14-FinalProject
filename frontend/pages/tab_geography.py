@@ -35,19 +35,28 @@ def _empty_state() -> None:
     )
 
 
+import json
+from pathlib import Path
+
+
+@st.cache_data
+def _load_vietnam_geojson() -> dict:
+    """Đọc file GeoJSON ranh giới các tỉnh thành Việt Nam."""
+    geojson_path = Path(__file__).resolve().parent.parent / "assets" / "vietnam_provinces.geojson"
+    with open(geojson_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
 # ─────────────────────────────────────────────
-# 1. BAR CHART TOP 15 PROVINCE THEO GIÁ/M²
-#    (Có thể swap thành choropleth sau này bằng cách thay hàm này)
+# 1. CHOROPLETH MAP VIỆT NAM THEO GIÁ/M²
 # ─────────────────────────────────────────────
 
 def render_province_price_overview(df: pd.DataFrame) -> str | None:
     """
-    Vẽ Bar chart ngang Top 15 Province theo Price_per_m2 trung bình.
-    Dùng color_continuous_scale để giữ cảm giác "heat" dù không phải bản đồ thật.
+    Vẽ bản đồ Choropleth Map và biểu đồ Top 15 Tỉnh/Thành phố theo Price_per_m2 trung bình.
+    Hiển thị song song (side-by-side) trên 2 cột.
 
-    Trả về tên tỉnh được click (hoặc None nếu chưa click).
-    Hàm này được tách riêng để sau này chỉ cần swap thành bản choropleth
-    mà không phải sửa phần drill-down District bên dưới.
+    Trả về tên tỉnh được click (trên bản đồ hoặc trên biểu đồ cột) để hỗ trợ drill-down.
 
     Parameters
     ----------
@@ -58,9 +67,13 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
     str | None
         Tên tỉnh được click để drill-down, hoặc None.
     """
-    # Tổng hợp thống kê theo tỉnh
+    # Lọc bỏ các bản ghi không có thông tin tỉnh hoặc tỉnh không xác định
+    df_valid = df[
+        df["Province"].notna() & (df["Province"] != "Không xác định")
+    ]
+
     prov_stats = (
-        df.groupby("Province", observed=True)
+        df_valid.groupby("Province", observed=True)
         .agg(
             avg_price_m2=("Price_per_m2", "mean"),
             avg_price=("Price", "mean"),
@@ -68,84 +81,188 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
         )
         .reset_index()
     )
-    # Lấy top 15 theo giá/m² trung bình
-    top15 = prov_stats.nlargest(15, "avg_price_m2").sort_values("avg_price_m2")
 
-    # Tính trung bình toàn quốc (trên dữ liệu đã lọc) để vẽ đường tham chiếu
-    national_avg = df["Price_per_m2"].mean()
+    if prov_stats.empty:
+        st.info("Không có dữ liệu địa lý phù hợp để hiển thị bản đồ.")
+        return None
 
-    fig = px.bar(
-        top15,
-        x="avg_price_m2",
-        y="Province",
-        orientation="h",
-        color="avg_price_m2",
-        color_continuous_scale=CONTINUOUS_SCALE,
-        labels={
-            "avg_price_m2": "Giá/m² TB (tỷ)",
-            "Province": "Tỉnh / Thành phố",
-            "avg_price": "Giá TB (tỷ)",
-            "count": "Số tin",
-        },
-        hover_data={"count": ":,", "avg_price": ":.2f", "avg_price_m2": ":.4f"},
-    )
+    prov_stats["price_m2_million"] = prov_stats["avg_price_m2"] * 1000
+    national_avg = df_valid["Price_per_m2"].mean() if not df_valid.empty else 0.0
 
-    # Đường kẻ trung bình toàn quốc để so sánh trực quan
-    fig.add_vline(
-        x=national_avg,
-        line_dash="dash",
-        line_color=COLORS["accent"],
-        annotation_text=f"TB: {national_avg:.4f} tỷ/m²",
-        annotation_position="top right",
-        annotation_font_color=COLORS["accent"],
-        annotation_font_size=11,
-    )
+    col_map, col_bar = st.columns([7, 5])
+    clicked_province = None
 
-    fig.update_traces(
-        hovertemplate=(
-            "<b>%{y}</b><br>"
-            "Giá/m² TB: %{x:.4f} tỷ (%{x:.0f} triệu/m²)<br>"
-            "Giá TB: %{customdata[1]:.2f} tỷ<br>"
-            "Số tin: %{customdata[0]:,}<extra></extra>"
-        ),
-        marker_line_width=0,
-    )
-    fig.update_coloraxes(showscale=False)
-    apply_theme(fig, "Top 15 Tỉnh/Thành theo giá/m² trung bình")
-    fig.update_layout(height=500, yaxis_title="")
+    # ── 1. Choropleth Map (Bên trái) ──────────────────────────────────────────
+    with col_map:
+        geojson_data = _load_vietnam_geojson()
+        try:
+            fig_map = px.choropleth_map(
+                prov_stats,
+                geojson=geojson_data,
+                locations="Province",
+                featureidkey="properties.name",
+                color="avg_price_m2",
+                color_continuous_scale=CONTINUOUS_SCALE,
+                center={"lat": 16.0, "lon": 106.0},
+                zoom=4.5,
+                map_style="carto-positron",
+                labels={
+                    "avg_price_m2": "Giá/m² TB (tỷ)",
+                    "Province": "Tỉnh / Thành phố",
+                    "avg_price": "Giá TB (tỷ)",
+                    "count": "Số tin đăng",
+                },
+                hover_data={
+                    "count": ":,",
+                    "avg_price": ":.2f",
+                    "avg_price_m2": ":.4f",
+                    "price_m2_million": ":.1f",
+                },
+            )
+        except AttributeError:
+            # Fallback cho phiên bản Plotly cũ không có choropleth_map
+            fig_map = px.choropleth_mapbox(
+                prov_stats,
+                geojson=geojson_data,
+                locations="Province",
+                featureidkey="properties.name",
+                color="avg_price_m2",
+                color_continuous_scale=CONTINUOUS_SCALE,
+                center={"lat": 16.0, "lon": 106.0},
+                zoom=4.5,
+                mapbox_style="carto-positron",
+                labels={
+                    "avg_price_m2": "Giá/m² TB (tỷ)",
+                    "Province": "Tỉnh / Thành phố",
+                    "avg_price": "Giá TB (tỷ)",
+                    "count": "Số tin đăng",
+                },
+                hover_data={
+                    "count": ":,",
+                    "avg_price": ":.2f",
+                    "avg_price_m2": ":.4f",
+                    "price_m2_million": ":.1f",
+                },
+            )
 
-    # Bắt sự kiện click để drill-down xuống huyện
-    event = st.plotly_chart(
-        fig,
-        width='stretch',
-        on_select="rerun",
-        key="geo_province_bar",
-    )
+        fig_map.update_traces(
+            hovertemplate=(
+                "<b>%{location}</b><br>"
+                "Giá/m² TB: %{z:.4f} tỷ (%{customdata[3]:.1f} triệu/m²)<br>"
+                "Giá TB: %{customdata[1]:.2f} tỷ<br>"
+                "Số tin: %{customdata[0]:,}<extra></extra>"
+            ),
+            marker_line_width=0.8,
+            marker_line_color="#CBD5E1",
+        )
 
-    # Chú thích tạm thời (sẽ thay bản đồ sau)
+        fig_map.update_coloraxes(
+            colorbar_title_text="Giá/m² (tỷ)",
+            colorbar_tickformat=".3f",
+        )
+
+        apply_theme(fig_map, "Bản đồ Choropleth: Giá/m² theo Tỉnh/Thành phố")
+        fig_map.update_layout(
+            height=540,
+            margin=dict(l=10, r=10, t=45, b=10),
+        )
+
+        event_map = st.plotly_chart(
+            fig_map,
+            width="stretch",
+            on_select="rerun",
+            key="geo_province_map",
+        )
+
+        if event_map and event_map.get("selection") and event_map["selection"].get("points"):
+            points = event_map["selection"]["points"]
+            if points:
+                pt = points[0]
+                loc = pt.get("location")
+                if loc:
+                    clicked_province = loc
+                else:
+                    point_idx = pt.get("pointIndex")
+                    if point_idx is not None and point_idx < len(prov_stats):
+                        clicked_province = prov_stats.iloc[point_idx]["Province"]
+
+    # ── 2. Top 15 Province Bar Chart theo Số tin đăng (Bên phải) ──────────────
+    with col_bar:
+        top15_prov = prov_stats.nlargest(15, "count").sort_values("count")
+        fig_bar = px.bar(
+            top15_prov,
+            x="count",
+            y="Province",
+            orientation="h",
+            color="count",
+            color_continuous_scale=CONTINUOUS_SCALE,
+            labels={
+                "count": "Số tin đăng",
+                "Province": "Tỉnh / Thành phố",
+            },
+            hover_data={
+                "avg_price_m2": ":.4f",
+                "avg_price": ":.2f",
+                "price_m2_million": ":.1f",
+            },
+            text_auto=",",
+        )
+        fig_bar.update_traces(
+            hovertemplate=(
+                "<b>%{y}</b><br>"
+                "Số tin đăng: %{x:,}<br>"
+                "Giá/m² TB: %{customdata[0]:.4f} tỷ (%{customdata[2]:.1f} triệu/m²)<br>"
+                "Giá TB: %{customdata[1]:.2f} tỷ<extra></extra>"
+            ),
+            textposition="outside",
+            marker_line_width=0,
+        )
+        fig_bar.update_coloraxes(showscale=False)
+        apply_theme(fig_bar, "Top 15 Tỉnh/Thành phố theo Số tin đăng")
+        fig_bar.update_layout(
+            height=540,
+            margin=dict(l=10, r=30, t=45, b=10),
+            yaxis_title="",
+            xaxis_title="Số lượng tin đăng",
+        )
+
+        event_bar = st.plotly_chart(
+            fig_bar,
+            width="stretch",
+            on_select="rerun",
+            key="geo_province_bar",
+        )
+
+        if not clicked_province and event_bar and event_bar.get("selection") and event_bar["selection"].get("points"):
+            points = event_bar["selection"]["points"]
+            if points:
+                pt = points[0]
+                loc = pt.get("y")
+                if loc:
+                    clicked_province = loc
+                else:
+                    point_idx = pt.get("pointIndex")
+                    if point_idx is not None and point_idx < len(top15_prov):
+                        clicked_province = top15_prov.iloc[point_idx]["Province"]
+
     st.caption(
-        "🗺️ Sẽ thay bằng **bản đồ choropleth** khi có file GeoJSON ranh giới tỉnh "
-        "(`frontend/assets/vietnam_provinces.geojson`). "
-        "Click vào thanh để xem chi tiết theo quận/huyện."
+        "🗺️ **Bản đồ & Biểu đồ thứ hạng**: Click vào bất kỳ tỉnh/thành phố nào trên bản đồ hoặc biểu đồ cột để xem chi tiết quận/huyện bên dưới."
     )
 
     # Insight tự động
-    if not top15.empty:
-        top_prov = top15.iloc[-1]
-        pct_above = (top_prov["avg_price_m2"] / national_avg - 1) * 100
+    if not prov_stats.empty:
+        top_prov = prov_stats.nlargest(1, "avg_price_m2").iloc[0]
+        pct_above = ((top_prov["avg_price_m2"] / national_avg) - 1) * 100 if national_avg > 0 else 0
         st.markdown(
             render_insight(
-                f"<b>{top_prov['Province']}</b> có giá/m² trung bình cao nhất "
-                f"({top_prov['avg_price_m2']:.4f} tỷ/m²), "
-                f"cao hơn trung bình {pct_above:.1f}% so với toàn bộ dữ liệu đang lọc."
+                f"<b>{top_prov['Province']}</b> dẫn đầu toàn quốc về giá/m² trung bình "
+                f"({top_prov['avg_price_m2']:.4f} tỷ/m² ≈ {top_prov['price_m2_million']:.0f} triệu/m²), "
+                f"cao hơn trung bình toàn quốc {pct_above:.1f}%."
             ),
             unsafe_allow_html=True,
         )
 
-    # Trả về tên tỉnh được click (nếu có)
-    if event and event.get("selection") and event["selection"].get("points"):
-        return event["selection"]["points"][0].get("y")
-    return None
+    return clicked_province
 
 
 # ─────────────────────────────────────────────
@@ -334,12 +451,12 @@ def render(df_filtered: pd.DataFrame) -> None:
 
     st.markdown("### 🗺️ Phân tích địa lý — Giá và mật độ tin đăng theo tỉnh/thành")
     st.markdown(
-        "Click vào thanh bar để xem chi tiết quận/huyện (drill-down). "
+        "Click vào từng tỉnh/thành phố trên bản đồ để xem chi tiết quận/huyện (drill-down). "
         "Heatmap bên dưới cho thấy phân khúc diện tích nào ở tỉnh nào đắt nhất."
     )
     st.markdown("")
 
-    # ── Phần 1: Bar chart Top 15 Province (có thể swap thành choropleth sau) ──
+    # ── Phần 1: Choropleth Map Việt Nam theo Tỉnh/Thành ─────────────────────
     clicked_province = render_province_price_overview(df_filtered)
 
     # Cập nhật session_state nếu có click mới

@@ -30,6 +30,8 @@ COLUMN_DTYPES: dict = {
     "Price_per_m2": "float64",
     "Area_Group": "object",
     "Price_Segment": "object",
+    "Latitude": "float64",
+    "Longitude": "float64",
 }
 
 # Thứ tự hiển thị các nhóm diện tích (dùng để sắp xếp trục biểu đồ)
