@@ -449,7 +449,7 @@ def render(df_filtered: pd.DataFrame) -> None:
         _empty_state()
         return
 
-    st.markdown("### 🗺️ Phân tích địa lý — Giá và mật độ tin đăng theo tỉnh/thành")
+    st.markdown("### Phân tích thị trường theo địa lý")
     st.markdown(
         "Click vào từng tỉnh/thành phố trên bản đồ để xem chi tiết quận/huyện (drill-down). "
         "Heatmap bên dưới cho thấy phân khúc diện tích nào ở tỉnh nào đắt nhất."

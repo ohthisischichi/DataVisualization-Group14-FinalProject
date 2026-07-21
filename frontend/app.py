@@ -19,10 +19,14 @@ from filters import render_sidebar_filters, apply_filters, _init_filters
 from data_loader import load_data
 
 
+from theme import KPI_CARD_CSS
+
+
 DATASET_PATH = Path(__file__).resolve().parent.parent / "Data" / "processed" / "house_price_clean.csv"
 
-APP_TITLE = "AI Frontend Dashboard"
-APP_SUBTITLE = "Dashboard 4 tab với AI popup để chat, duyệt code, và xem kết quả"
+APP_TITLE = "Nhóm 11"
+HEADER_TITLE= "DASHBOARD PHÂN TÍCH THỊ TRƯỜNG BẤT ĐỘNG SẢN VIỆT NAM"
+APP_SUBTITLE = "VIETNAM REAL ESTATE INTELLIGENCE"
 
 DEFAULT_PROMPT = (
     "Dựa trên tab và bộ lọc hiện tại, hãy đề xuất một phân tích ngắn gọn cho dữ liệu house_price_clean. "
@@ -159,39 +163,29 @@ def load_sample_data() -> pd.DataFrame:
 
 
 def inject_styles() -> None:
+    st.markdown(KPI_CARD_CSS, unsafe_allow_html=True)
     st.markdown(
         """
         <style>
-        .stApp {
-            background:
-                radial-gradient(circle at top left, rgba(70, 130, 180, 0.20), transparent 28%),
-                radial-gradient(circle at bottom right, rgba(12, 74, 110, 0.16), transparent 30%),
-                linear-gradient(180deg, #f7fbff 0%, #eef4f9 100%);
-        }
-        .hero-card {
-            border: 1px solid rgba(15, 23, 42, 0.08);
-            border-radius: 20px;
-            padding: 22px 24px;
-            background: rgba(255, 255, 255, 0.78);
-            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
-            backdrop-filter: blur(10px);
-            margin-bottom: 1rem;
-        }
         .status-chip {
             display: inline-block;
-            padding: 0.3rem 0.7rem;
+            padding: 0.35rem 0.85rem;
             border-radius: 999px;
-            background: #0f766e;
-            color: white;
-            font-size: 0.85rem;
-            font-weight: 600;
+            background: rgba(245, 158, 11, 0.2);
+            color: #F59E0B;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
         .dashboard-note {
-            padding: 0.55rem 0.75rem;
-            border-radius: 12px;
-            background: rgba(15, 118, 110, 0.1);
-            color: #115e59;
-            font-size: 0.9rem;
+            padding: 0.65rem 0.85rem;
+            border-radius: 10px;
+            background: #EFF6FF;
+            border-left: 4px solid #1D4ED8;
+            color: #1E3A8A;
+            font-size: 0.88rem;
+            font-weight: 500;
             margin-bottom: 0.75rem;
         }
         </style>
@@ -203,13 +197,12 @@ def inject_styles() -> None:
 def build_header() -> None:
     st.markdown(
         f"""
-        <div class="hero-card">
-            <div style="display:flex; justify-content:space-between; gap:16px; align-items:flex-start; flex-wrap:wrap;">
+        <div class="vrei-header">
+            <div class="vrei-brand">
+                <div class="vrei-logo">🏢</div>
                 <div>
-                    <h1 style="margin-bottom:0.35rem; color:#0f172a;">{APP_TITLE}</h1>
-                    <p style="margin:0; color:#334155; font-size:1rem;">{APP_SUBTITLE}</p>
+                    <h1 class="vrei-title">{HEADER_TITLE}</h1>
                 </div>
-                <div class="status-chip">{st.session_state.approval_status}</div>
             </div>
         </div>
         """,
@@ -257,21 +250,21 @@ def reject_current_code() -> None:
 
 def render_dashboard_tabs(df_filtered: pd.DataFrame) -> None:
     tab_titles = [
-        "📊 Overview",
-        "🎯 Market Pulse",
-        "🗺️ Geo Insights",
-        "🔬 Trend Lab",
+        "Tổng quan",
+        "Phân tích địa lý",
+        "Yếu tố ảnh hưởng giá",
+        "Phân khúc thị trường",
     ]
-    tab_overview, tab_market, tab_geo, tab_trends = st.tabs(tab_titles)
+    tab_overview, tab_geo, tab_trends, tab_market = st.tabs(tab_titles)
 
     with tab_overview:
         render_overview_tab(df_filtered)
-    with tab_market:
-        render_market_tab(df_filtered)
     with tab_geo:
         render_geography_tab(df_filtered)
     with tab_trends:
         render_trends_tab(df_filtered)
+    with tab_market:
+        render_market_tab(df_filtered)
 
 
 @st.dialog("AI Workspace", width="large")

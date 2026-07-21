@@ -80,7 +80,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             label="Tỉnh / Thành phố",
             options=all_provinces,
             default=f["province"],
-            placeholder="Chọn tỉnh/thành (để trống = tất cả)",
+            placeholder="Chọn tỉnh/thành",
             key="filter_province",
             help="Chọn một hoặc nhiều tỉnh. Quận/huyện bên dưới sẽ tự cập nhật.",
         )
@@ -101,7 +101,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
                 label="Quận / Huyện",
                 options=district_pool,
                 default=valid_districts,
-                placeholder="Chọn quận/huyện (để trống = tất cả)",
+                placeholder="Chọn quận/huyện",
                 key="filter_district",
                 help="Danh sách quận/huyện tự lọc theo tỉnh đã chọn phía trên.",
             )
@@ -113,7 +113,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
                 options=[],
                 default=[],
                 disabled=True,
-                placeholder="Vui lòng chọn Tỉnh/Thành phố trước",
+                placeholder="Hãy chọn tỉnh/thành trước",
                 key="filter_district_disabled",
             )
             f["district"] = []  # Reset district khi chưa chọn tỉnh
@@ -210,7 +210,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
         st.markdown("---")
 
         # ── NÚT RESET ─────────────────────────────────────────────────────────
-        if st.button("Reset tất cả filter", use_container_width=True, type="secondary"):
+        if st.button("Đặt lại bộ lọc", use_container_width=True, type="secondary"):
             _reset_filters(df)
 
 

@@ -404,7 +404,7 @@ def render(df_filtered: pd.DataFrame) -> None:
         _empty_state()
         return
 
-    st.markdown("### 🔍 Yếu tố ảnh hưởng đến giá bất động sản")
+    st.markdown("### Yếu tố ảnh hưởng đến giá bất động sản")
     st.markdown(
         "Phân tích tương quan giữa các đặc trưng vật lý và pháp lý với giá/m². "
         "Dữ liệu đã cắt bỏ outlier ở percentile 99 để dễ đọc hơn."

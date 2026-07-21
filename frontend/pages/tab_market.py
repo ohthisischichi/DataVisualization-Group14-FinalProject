@@ -177,7 +177,7 @@ def render(df_filtered: pd.DataFrame) -> None:
         _empty_state("Thiếu cột dữ liệu để phân tích phân khúc: " + ", ".join(sorted(missing)))
         return
 
-    st.markdown("### 🎯 Market Segmentation")
+    st.markdown("### Phân khúc thị trường")
     st.caption("Khám phá cơ cấu nguồn cung, mức giá và ranh giới giữa các phân khúc thị trường.")
 
     left, right = st.columns(2)

@@ -1,71 +1,72 @@
 """
 theme.py
-Bảng màu và cấu hình Plotly theme dùng chung cho toàn bộ dashboard.
-Bảng màu mới: Indigo/Sky làm chủ đạo, Amber làm điểm nhấn — tương phản cao, dễ đọc trên nền tối lẫn nền sáng.
+Bảng màu và cấu hình Plotly theme dùng chung cho toàn bộ dashboard VREI (Vietnam Real Estate Intelligence).
+Thiết kế theo chuẩn Executive Dashboard: Navy (#0B192C) chủ đạo, Royal Blue (#1D4ED8) cho charts, Amber (#F59E0B) điểm nhấn.
 """
 
 import plotly.graph_objects as go
 
 # ─────────────────────────────────────────────
-# BẢNG MÀU CHÍNH — Indigo/Sky + Amber (tương phản cao, không chói)
+# BẢNG MÀU CHÍNH — VREI Executive Palette
 # ─────────────────────────────────────────────
 
 COLORS = {
-    # Màu chủ đạo — Indigo đậm, tương phản tốt trên cả nền sáng/tối
-    "primary":         "#4F46E5",   # indigo-600
-    "primary_light":   "#818CF8",   # indigo-400
-    "primary_lighter": "#E0E7FF",   # indigo-100
+    # Dark Navy Header & Brand
+    "header_bg":       "#0B192C",
+    "header_text":     "#FFFFFF",
 
-    # Màu điểm nhấn — Amber nổi bật, không chói mắt
-    "accent":          "#F59E0B",   # amber-500
-    "accent_light":    "#FBBF24",   # amber-400
+    # Primary Blue & Accent
+    "primary":         "#1D4ED8",   # Royal Deep Blue
+    "primary_light":   "#3B82F6",   # Bright Blue
+    "primary_lighter": "#EFF6FF",   # Ice Blue
 
-    # Màu thành công
-    "success":         "#10B981",   # emerald-500
-    "success_light":   "#6EE7B7",   # emerald-300
+    # Accent Gold / Amber
+    "accent":          "#F59E0B",   # Amber / Gold
+    "accent_light":    "#FBBF24",   # Soft Gold
 
-    # Màu cảnh báo
-    "warning":         "#EF4444",   # red-500
+    # Status Indicators
+    "success":         "#16A34A",   # Emerald Green
+    "warning":         "#EF4444",   # Red
 
-    # Nền và text — trung tính, tương phản rõ ràng
+    # Neutral Surface & Text
     "bg_card":         "#FFFFFF",
-    "bg_surface":      "#F9FAFB",
-    "text_primary":    "#111827",   # gray-900, đen trung tính dễ đọc
-    "text_secondary":  "#4B5563",   # gray-600
-    "text_muted":      "#9CA3AF",   # gray-400
+    "bg_surface":      "#F8FAFC",   # Slate 50
+    "bg_sidebar":      "#F1F5F9",   # Slate 100
+    "text_primary":    "#0F172A",   # Slate 900
+    "text_secondary":  "#334155",   # Slate 700
+    "text_muted":      "#64748B",   # Slate 500
 
-    # Đường lưới — xám nhạt, không lấn át data
-    "grid":            "#E5E7EB",
+    # Gridlines & Borders
+    "grid":            "#E2E8F0",   # Slate 200
 }
 
-# Dãy màu rời rạc — tương phản tốt, không bị lẫn vào nhau
+# Dãy màu rời rạc cho charts
 COLOR_SEQUENCE = [
-    "#4F46E5",   # indigo
-    "#F59E0B",   # amber
-    "#10B981",   # emerald
-    "#EC4899",   # pink
-    "#0EA5E9",   # sky
-    "#8B5CF6",   # violet
-    "#EF4444",   # red
-    "#14B8A6",   # teal
-    "#84CC16",   # lime
-    "#64748B",   # slate
+    "#1D4ED8",   # Royal Blue
+    "#2563EB",   # Medium Blue
+    "#3B82F6",   # Bright Blue
+    "#F59E0B",   # Amber / Gold
+    "#10B981",   # Emerald Green
+    "#8B5CF6",   # Purple
+    "#0EA5E9",   # Sky Blue
+    "#EC4899",   # Pink
+    "#64748B",   # Slate Gray
 ]
 
-# Color scale liên tục — trắng nhạt → indigo đậm (sáng, dễ phân biệt giá trị)
+# Color scale liên tục cho Choropleth Map và Heatmap (Blue Gradient)
 CONTINUOUS_SCALE = [
-    [0.0,  "#E0E7FF"],   # indigo-100
-    [0.25, "#A5B4FC"],   # indigo-300
-    [0.5,  "#6366F1"],   # indigo-500
-    [0.75, "#4F46E5"],   # indigo-600
-    [1.0,  "#312E81"],   # indigo-900
+    [0.0,  "#EFF6FF"],
+    [0.25, "#BFDBFE"],
+    [0.5,  "#3B82F6"],
+    [0.75, "#1D4ED8"],
+    [1.0,  "#1E3A8A"],
 ]
 
-# Diverging scale — indigo ↔ trắng ↔ amber (dễ đọc, không xanh-đỏ khó phân biệt)
+# Diverging scale
 DIVERGING_SCALE = [
-    [0.0,  "#4F46E5"],   # indigo
+    [0.0,  "#1D4ED8"],
     [0.5,  "#FFFFFF"],
-    [1.0,  "#F59E0B"],   # amber
+    [1.0,  "#F59E0B"],
 ]
 
 
@@ -73,41 +74,40 @@ DIVERGING_SCALE = [
 # FONT & LAYOUT
 # ─────────────────────────────────────────────
 
-FONT_FAMILY = "'Inter', 'Roboto', 'Segoe UI', sans-serif"
-FONT_SIZE_BASE = 13
-FONT_SIZE_TITLE = 15
+FONT_FAMILY = "'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif"
+FONT_SIZE_BASE = 12.5
+FONT_SIZE_TITLE = 14.5
 
 
 def get_layout_template() -> dict:
     """
     Trả về dict cấu hình layout dùng chung cho mọi biểu đồ Plotly.
-    Áp dụng bằng cách: fig.update_layout(**get_layout_template())
     """
     return dict(
         font=dict(family=FONT_FAMILY, size=FONT_SIZE_BASE, color=COLORS["text_primary"]),
-        paper_bgcolor="rgba(0,0,0,0)",   # Nền trong suốt để hoà vào Streamlit
+        paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=10, r=10, t=40, b=10),
+        margin=dict(l=10, r=15, t=40, b=10),
         legend=dict(
-            bgcolor="rgba(255,255,255,0.85)",
+            bgcolor="rgba(255,255,255,0.9)",
             bordercolor=COLORS["grid"],
             borderwidth=1,
-            font=dict(size=12, color=COLORS["text_primary"]),
+            font=dict(size=11.5, color=COLORS["text_primary"]),
         ),
         xaxis=dict(
             gridcolor=COLORS["grid"],
             zerolinecolor=COLORS["grid"],
-            tickfont=dict(size=12, color=COLORS["text_secondary"]),
+            tickfont=dict(size=11.5, color=COLORS["text_secondary"]),
         ),
         yaxis=dict(
             gridcolor=COLORS["grid"],
             zerolinecolor=COLORS["grid"],
-            tickfont=dict(size=12, color=COLORS["text_secondary"]),
+            tickfont=dict(size=11.5, color=COLORS["text_secondary"]),
         ),
         hoverlabel=dict(
-            bgcolor="white",
-            bordercolor=COLORS["primary"],
-            font=dict(size=12, family=FONT_FAMILY, color=COLORS["text_primary"]),
+            bgcolor="#0F172A",
+            bordercolor="#0F172A",
+            font=dict(size=12, family=FONT_FAMILY, color="#FFFFFF"),
         ),
     )
 
@@ -115,19 +115,12 @@ def get_layout_template() -> dict:
 def apply_theme(fig: go.Figure, title: str = "") -> go.Figure:
     """
     Áp dụng theme chuẩn vào một Figure Plotly.
-    Trả về fig đã được cập nhật để tiện chain method.
-
-    Parameters
-    ----------
-    fig : go.Figure
-    title : str
-        Tiêu đề biểu đồ (để trống nếu không cần).
     """
     layout_kwargs = get_layout_template()
     if title:
         layout_kwargs["title"] = dict(
-            text=title,
-            font=dict(size=FONT_SIZE_TITLE, color=COLORS["primary"], family=FONT_FAMILY),
+            text=f"<b>{title}</b>",
+            font=dict(size=FONT_SIZE_TITLE, color=COLORS["text_primary"], family=FONT_FAMILY),
             x=0,
             xanchor="left",
             pad=dict(l=5),
@@ -137,92 +130,299 @@ def apply_theme(fig: go.Figure, title: str = "") -> go.Figure:
 
 
 # ─────────────────────────────────────────────
-# CSS MÀU SẮC KPI CARD (inject vào Streamlit qua st.markdown)
+# CSS EXECUTIVE DASHBOARD (GLOBAL & SIDEBAR)
 # ─────────────────────────────────────────────
 
 KPI_CARD_CSS = """
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
-/* Nền chính: trắng | Sidebar: tối */
-[data-testid="stAppViewContainer"] {
-    background-color: #FFFFFF;
+/* Nền chính toàn bộ app & tab content panels (Luôn là màu sáng F8FAFC) */
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+div[data-testid="stTabs"],
+div[data-baseweb="tab-panel"] {
+    background-color: #F8FAFC !important;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
 }
+
 [data-testid="stHeader"] {
-    background-color: rgba(255,255,255,0);
+    background-color: transparent !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
 }
+[data-testid="stHeader"] * {
+    pointer-events: auto !important;
+}
+
+/* Sidebar phong cách VREI clean light slate */
 [data-testid="stSidebar"] {
-    background-color: #111827;
+    background-color: #F1F5F9 !important;
+    border-right: 1px solid #E2E8F0 !important;
 }
-[data-testid="stSidebar"] * {
-    color: #E5E7EB !important;
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] div,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #1E293B;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+[data-testid="stSidebar"] h2 {
+    color: #0F172A !important;
+    font-weight: 700 !important;
+    font-size: 1.15rem !important;
 }
 [data-testid="stSidebar"] label {
-    color: #E5E7EB !important;
+    color: #475569 !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
 }
 [data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div,
 [data-testid="stSidebar"] .stMultiSelect div[data-baseweb="select"] > div {
-    background-color: #1F2937;
-    border-color: #374151;
-    color: #E5E7EB;
+    background-color: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 8px !important;
+    color: #0F172A !important;
 }
 [data-testid="stSidebar"] hr {
-    border-color: #374151;
+    border-color: #E2E8F0 !important;
 }
 
-/* KPI card — nền trắng, viền indigo, bóng nhẹ */
+/* Style cho tag trong multiselect input */
+span[data-baseweb="tag"] {
+    background-color: #1D4ED8 !important;
+    border-radius: 6px !important;
+}
+span[data-baseweb="tag"] * {
+    color: #FFFFFF !important;
+}
+
+/* VREI Dark Navy Header Banner */
+.vrei-header {
+    background: linear-gradient(135deg, #0B192C 0%, #1E293B 100%);
+    border-radius: 14px;
+    padding: 16px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 25px -5px rgba(11, 25, 44, 0.25);
+}
+.vrei-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.vrei-logo {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.4);
+}
+.vrei-title {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    font-size: 1.25rem !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+}
+.vrei-subtitle {
+    color: #CBD5E1 !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    margin: 3px 0 0 0 !important;
+}
+
+/* Style cho riêng Thanh Tab Bar cố định ở đầu trang khi scroll */
+.block-container {
+    padding-top: 1rem !important;
+}
+div[data-baseweb="tab-list"] {
+    position: sticky !important;
+    top: 0px !important;
+    z-index: 99999 !important;
+    background-color: #0B192C !important;
+    padding: 8px 16px !important;
+    border-radius: 0 0 12px 12px !important;
+    gap: 8px !important;
+    box-shadow: 0 6px 20px rgba(11, 25, 44, 0.25) !important;
+}
+button[data-baseweb="tab"] {
+    background-color: transparent !important;
+    border: none !important;
+    color: #94A3B8 !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    padding: 10px 18px !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+}
+button[data-baseweb="tab"]:hover {
+    color: #FFFFFF !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+button[aria-selected="true"] {
+    color: #FFFFFF !important;
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    border-bottom: 3px solid #F59E0B !important;
+    font-weight: 700 !important;
+}
+
+/* Floating AI Assistant Button at bottom-right corner */
+div.stButton:has(button[aria-label*="AI Assistant"]),
+div[data-testid="stButton"]:has(button[aria-label*="AI Assistant"]),
+div[data-testid="stElementContainer"]:has(button[aria-label*="AI Assistant"]),
+div[data-testid="element-container"]:has(button[aria-label*="AI Assistant"]),
+div.element-container:has(button[aria-label*="AI Assistant"]) {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    z-index: 999999 !important;
+    width: auto !important;
+}
+
+div.stButton:has(button[aria-label*="AI Assistant"]) button,
+div[data-testid="stButton"]:has(button[aria-label*="AI Assistant"]) button,
+div[data-testid="stElementContainer"]:has(button[aria-label*="AI Assistant"]) button,
+div[data-testid="element-container"]:has(button[aria-label*="AI Assistant"]) button,
+div.element-container:has(button[aria-label*="AI Assistant"]) button,
+button[aria-label*="AI Assistant"] {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    z-index: 999999 !important;
+    border-radius: 50px !important;
+    background: linear-gradient(135deg, #0B192C 0%, #1D4ED8 100%) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px 24px rgba(11, 25, 44, 0.45) !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    padding: 12px 22px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+div.stButton:has(button[aria-label*="AI Assistant"]) button:hover,
+div[data-testid="stButton"]:has(button[aria-label*="AI Assistant"]) button:hover,
+div[data-testid="stElementContainer"]:has(button[aria-label*="AI Assistant"]) button:hover,
+div[data-testid="element-container"]:has(button[aria-label*="AI Assistant"]) button:hover,
+div.element-container:has(button[aria-label*="AI Assistant"]) button:hover,
+button[aria-label*="AI Assistant"]:hover {
+    transform: translateY(-3px) scale(1.03) !important;
+    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.6) !important;
+    background: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%) !important;
+}
+
+/* Thẻ KPI chuẩn Executive VREI */
 .kpi-card {
     background: #FFFFFF;
-    border-left: 4px solid #4F46E5;
-    border-radius: 10px;
-    padding: 16px 20px;
-    box-shadow: 0 2px 12px rgba(79,70,229,0.15);
-    margin-bottom: 8px;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.kpi-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.kpi-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
 }
 .kpi-label {
-    font-size: 11px;
-    font-weight: 700;
-    color: #4B5563;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 6px;
-}
-.kpi-value {
-    font-size: 26px;
-    font-weight: 700;
-    color: #4F46E5;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748B;
     line-height: 1.2;
 }
+.kpi-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.2;
+    margin-top: 4px;
+}
+.kpi-trend {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #16A34A;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 .kpi-sub {
-    font-size: 12px;
-    color: #9CA3AF;
-    margin-top: 3px;
+    font-size: 0.76rem;
+    color: #94A3B8;
+    margin-top: 2px;
 }
 
-/* Insight bar — nền amber nhạt, viền amber đậm */
+/* Insight text bar */
 .insight-text {
     font-size: 12.5px;
-    color: #111827;
-    font-style: italic;
-    background: #FEF3C7;
-    border-left: 3px solid #F59E0B;
-    border-radius: 0 6px 6px 0;
-    padding: 7px 12px;
-    margin: 6px 0 14px 0;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #0F172A;
+    font-weight: 500;
+    background: #EFF6FF;
+    border-left: 4px solid #1D4ED8;
+    border-radius: 0 8px 8px 0;
+    padding: 8px 14px;
+    margin: 8px 0 16px 0;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
 }
 </style>
 """
 
 
-def render_kpi_card(label: str, value: str, sub: str = "") -> str:
-    """Tạo HTML cho 1 KPI card."""
+def render_kpi_card(
+    label: str,
+    value: str,
+    sub: str = "",
+    icon: str = "🏢",
+    icon_bg: str = "#EFF6FF",
+    icon_color: str = "#1D4ED8",
+    trend: str = "▲ 12.6% so với kỳ trước",
+) -> str:
+    """Tạo HTML cho 1 VREI KPI card với icon và trend chỉ số."""
+    trend_html = f'<div class="kpi-trend">{trend}</div>' if trend else ""
     sub_html = f'<div class="kpi-sub">{sub}</div>' if sub else ""
     return f"""
     <div class="kpi-card">
-        <div class="kpi-label">{label}</div>
-        <div class="kpi-value">{value}</div>
+        <div class="kpi-header">
+            <div class="kpi-icon-box" style="background: {icon_bg}; color: {icon_color};">
+                {icon}
+            </div>
+            <div>
+                <div class="kpi-label">{label}</div>
+                <div class="kpi-value">{value}</div>
+            </div>
+        </div>
+        {trend_html}
         {sub_html}
     </div>
     """
@@ -230,4 +430,4 @@ def render_kpi_card(label: str, value: str, sub: str = "") -> str:
 
 def render_insight(text: str) -> str:
     """Tạo HTML cho 1 dòng insight text dưới biểu đồ."""
-    return f'<div class="insight-text">💡 {text}</div>'
+    return f'<div class="insight-text">💡 {text}</div>'

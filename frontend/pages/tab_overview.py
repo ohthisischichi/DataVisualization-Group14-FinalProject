@@ -343,7 +343,7 @@ def render(df_filtered: pd.DataFrame) -> None:
         _empty_state()
         return
 
-    st.markdown("### 📊 Tổng quan thị trường bất động sản")
+    st.markdown("### Tổng quan thị trường bất động sản")
     st.markdown(
         "Dữ liệu hiển thị theo bộ lọc hiện tại. "
         "Click vào tên tỉnh trên biểu đồ để drill-down."
