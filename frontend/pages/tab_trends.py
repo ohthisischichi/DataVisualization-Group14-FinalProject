@@ -37,101 +37,80 @@ def _empty_state() -> None:
 
 
 # ─────────────────────────────────────────────
-# 1. SCATTER AREA vs PRICE + OLS TRENDLINE
+# 1. RADAR CHART SO SÁNH ĐA CHIỀU THEO PHÂN KHÚC GIÁ
 # ─────────────────────────────────────────────
 
-def _render_scatter_area_price(df: pd.DataFrame) -> None:
-    """
-    Scatter plot Area (x) vs Price (y):
-    - Màu theo Province (Top 5 nhiều tin nhất, còn lại gom vào "Khác")
-    - Kích thước điểm tỉ lệ với Bedrooms (xử lý NaN trước)
-    - Trendline OLS tổng thể (statsmodels)
-    - Giới hạn ở percentile 99 để tránh outlier kéo scale
-    """
-    # Lấy top 5 tỉnh theo số tin để tô màu, còn lại nhóm "Khác"
-    top5_prov = df["Province"].value_counts().nlargest(5).index.tolist()
-    df_plot = df.copy()
-    df_plot["Province_Group"] = df_plot["Province"].apply(
-        lambda p: p if p in top5_prov else "Khác"
+from plotly.subplots import make_subplots
+
+def _render_radar_chart(df: pd.DataFrame) -> None:
+    dimensions = ["Area", "Frontage", "Access Road", "Floors", "Bedrooms", "Bathrooms"]
+    valid_dims = [d for d in dimensions if d in df.columns]
+    if not valid_dims or "Price_Segment" not in df.columns:
+        st.info("Không đủ dữ liệu để vẽ Radar Chart.")
+        return
+
+    grouped = df.groupby("Price_Segment", observed=True)[valid_dims].mean().reset_index()
+    if grouped.empty:
+        st.info("Không có dữ liệu phân khúc giá phù hợp.")
+        return
+
+    normalized_df = grouped.copy()
+    for col in valid_dims:
+        min_val, max_val = grouped[col].min(), grouped[col].max()
+        normalized_df[col] = (grouped[col] - min_val) / (max_val - min_val) if max_val > min_val else 1.0
+
+    segments = grouped["Price_Segment"].tolist()
+    n = len(segments)
+    cols = min(n, 3)
+    rows = -(-n // cols)  # ceil
+
+    fig = make_subplots(
+        rows=rows, cols=cols,
+        specs=[[{"type": "polar"}] * cols for _ in range(rows)],
+        subplot_titles=[str(s) for s in segments],
     )
 
-    # Xử lý Bedrooms NaN → 0 để dùng làm size (size phải >= 0)
-    df_plot["Bedrooms_plot"] = df_plot["Bedrooms"].fillna(0).clip(lower=0)
+    colors = px.colors.qualitative.Set2  # hoặc bảng màu theme sẵn có của bạn
 
-    # Giới hạn outlier ở p99 cho cả Price và Area để tránh scale quá rộng
-    p99_price = df_plot["Price"].quantile(0.99)
-    p99_area = df_plot["Area"].quantile(0.99)
-    df_plot = df_plot[
-        (df_plot["Price"] <= p99_price) & (df_plot["Area"] <= p99_area)
-    ]
+    for i, seg in enumerate(segments):
+        row_n, col_n = i // cols + 1, i % cols + 1
+        row = normalized_df.iloc[i]
+        r_values = [row[c] for c in valid_dims] + [row[valid_dims[0]]]
+        theta_labels = valid_dims + [valid_dims[0]]
+        original_vals = [grouped.iloc[i][c] for c in valid_dims] + [grouped.iloc[i][valid_dims[0]]]
 
-    # Đặt thứ tự màu: "Khác" cuối cùng (màu xám)
-    prov_order = top5_prov + ["Khác"]
-    color_map = {p: c for p, c in zip(top5_prov, COLOR_SEQUENCE)}
-    color_map["Khác"] = "#BDC3C7"  # Màu xám nhạt cho nhóm "Khác"
-
-    fig = px.scatter(
-        df_plot,
-        x="Area",
-        y="Price",
-        color="Province_Group",
-        size="Bedrooms_plot",
-        size_max=18,
-        # Không dùng trendline của plotly (cần statsmodels) — tự vẽ bằng numpy bên dưới
-        color_discrete_map=color_map,
-        category_orders={"Province_Group": prov_order},
-        opacity=0.55,
-        labels={
-            "Area": "Diện tích (m²)",
-            "Price": "Giá (tỷ VNĐ)",
-            "Province_Group": "Tỉnh/Thành",
-            "Bedrooms_plot": "Phòng ngủ",
-        },
-        hover_data={
-            "Province": True,
-            "Bedrooms": True,
-            "Bathrooms": True,
-            "Price_per_m2": ":.4f",
-            "Bedrooms_plot": False,
-        },
-    )
-
-    # Vẽ đường trendline bằng numpy.polyfit (hồi quy tuyến bậc 1, không cần statsmodels)
-    x_vals = df_plot["Area"].to_numpy()
-    y_vals = df_plot["Price"].to_numpy()
-    # Loại NaN trước khi fit
-    valid = ~(np.isnan(x_vals) | np.isnan(y_vals))
-    if valid.sum() >= 2:
-        coeffs = np.polyfit(x_vals[valid], y_vals[valid], deg=1)
-        x_line = np.linspace(x_vals[valid].min(), x_vals[valid].max(), 200)
-        y_line = np.polyval(coeffs, x_line)
         fig.add_trace(
-            go.Scatter(
-                x=x_line,
-                y=y_line,
-                mode="lines",
-                name="Xu hướng (hồi quy tuyến)",
-                line=dict(color=COLORS["accent"], width=2.5, dash="dash"),
-                hovertemplate="Diện tích: %{x:.0f} m²<br>Giá dự báo: %{y:.2f} tỷ<extra>Trendline</extra>",
-                showlegend=True,
-            )
+            go.Scatterpolar(
+                r=r_values,
+                theta=theta_labels,
+                fill="toself",
+                fillcolor=colors[i % len(colors)],
+                opacity=0.6,
+                line=dict(width=2, color=colors[i % len(colors)]),
+                name=str(seg),
+                showlegend=False,
+                hovertemplate=(
+                    f"<b>{seg}</b><br>"
+                    + "".join([f"{valid_dims[j]}: {original_vals[j]:.1f}<br>" for j in range(len(valid_dims))])
+                    + "<extra></extra>"
+                ),
+            ),
+            row=row_n, col=col_n,
         )
 
-    apply_theme(fig, "Diện tích vs Giá — màu theo Tỉnh, cỡ điểm theo số Phòng ngủ")
-    fig.update_layout(height=480, legend=dict(orientation="h", yanchor="bottom", y=1.02))
-    st.plotly_chart(fig, width='stretch', key="pd_scatter")
+    apply_theme(fig, "So sánh đa chiều đặc trưng BĐS theo Phân khúc giá (Chuẩn hóa tỷ lệ)")
+    fig.update_polars(radialaxis=dict(visible=True, range=[0, 1], showticklabels=False))
+    fig.update_layout(height=280 * rows)
 
-    # Tính hệ số tương quan để viết insight
-    corr = df_plot[["Area", "Price"]].corr().iloc[0, 1]
+    st.plotly_chart(fig, width="stretch", key="pd_radar_chart")
+
     st.markdown(
         render_insight(
-            f"Hệ số tương quan Pearson giữa Diện tích và Giá = <b>{corr:.3f}</b>. "
-            f"{'Tương quan tích cực mạnh' if corr > 0.7 else 'Tương quan tích cực vừa' if corr > 0.4 else 'Tương quan yếu'} "
-            f"— diện tích lớn hơn có xu hướng giá cao hơn nhưng có nhiều yếu tố khác."
+            "Mỗi phân khúc giá được tách thành một biểu đồ Radar riêng để dễ so sánh cấu trúc: "
+            "Các phân khúc giá cao hơn thể hiện rõ ưu thế vượt trội về <b>Diện tích</b>, <b>Mặt tiền</b> và <b>Số tầng</b>."
         ),
         unsafe_allow_html=True,
     )
-
 
 # ─────────────────────────────────────────────
 # 2. CORRELATION HEATMAP
@@ -412,7 +391,7 @@ def render(df_filtered: pd.DataFrame) -> None:
     st.markdown("")
 
     # ── 1. Scatter Area vs Price ──────────────────────────────────────────────
-    _render_scatter_area_price(df_filtered)
+    _render_radar_chart(df_filtered) 
     st.markdown("---")
 
     # ── 2. Correlation heatmap ────────────────────────────────────────────────

@@ -252,29 +252,34 @@ def _render_price_hist_and_donut(df: pd.DataFrame) -> None:
 
 
 # ─────────────────────────────────────────────
-# 4. BAR CHART TOP 10 DISTRICT THEO GIÁ/M²
+# 4. TOP 10 QUẬN/HUYỆN TOÀN QUỐC THEO GIÁ/M² TRUNG BÌNH
 # ─────────────────────────────────────────────
 
-def _render_top_district_bar(df: pd.DataFrame) -> None:
+def _render_top_districts_nationwide(df: pd.DataFrame) -> None:
     """
-    Bar chart Top 10 Quận/Huyện theo giá/m² trung bình.
-    Tạm thay thế "Top Project" (chưa có cột Project trong dữ liệu).
+    Biểu đồ cột ngang Top 10 Quận/Huyện có giá/m² trung bình cao nhất toàn quốc 
+    (thay thế cho cấp Phường/Xã ở tab tổng quan).
     """
-    # Lọc các quận/huyện có ít nhất 5 tin để tránh quận/huyện quá ít tin gây sai lệch
-    district_stats = (
+    # Lọc các quận/huyện có ít nhất 5 tin để đảm bảo độ tin cậy thống kê
+    dist_stats = (
         df.groupby(["District", "Province"], observed=True)
         .agg(
             avg_price_m2=("Price_per_m2", "mean"),
-            count=("Price", "count"),
             avg_price=("Price", "mean"),
+            count=("Price", "count"),
         )
         .reset_index()
     )
-    district_stats = district_stats[district_stats["count"] >= 5]
-    top10_district = district_stats.nlargest(10, "avg_price_m2").sort_values("avg_price_m2")
+
+    
+    dist_stats = dist_stats[dist_stats["count"] >= 5]
+    top10_dist = dist_stats.nlargest(10, "avg_price_m2").sort_values("avg_price_m2")
+
+    if top10_dist.empty:
+        return
 
     fig = px.bar(
-        top10_district,
+        top10_dist,
         x="avg_price_m2",
         y="District",
         orientation="h",
@@ -297,34 +302,29 @@ def _render_top_district_bar(df: pd.DataFrame) -> None:
     fig.update_traces(
         hovertemplate=(
             "<b>%{y}</b> (%{customdata[0]})<br>"
-            "Giá/m² TB: %{x:.4f} tỷ<br>"
+            "Giá/m² TB: %{x:.4f} tỷ (%{customdata[3]:.1f} triệu/m²)<br>"
             "Giá TB: %{customdata[2]:.2f} tỷ<br>"
             "Số tin: %{customdata[1]:,}<extra></extra>"
         ),
         marker_line_width=0,
     )
-    apply_theme(fig, "Top 10 Quận/Huyện theo giá/m² trung bình")
-    fig.update_layout(height=380, yaxis_title="", coloraxis_showscale=False)
 
-    st.plotly_chart(fig, width='stretch', key="overview_district_bar")
+ 
+    apply_theme(fig, "Top 10 Quận / Huyện có giá/m² trung bình cao nhất toàn quốc")
+    fig.update_layout(height=420, yaxis_title="", coloraxis_showscale=False)
 
-    # Ghi chú về trạng thái tạm thời
-    st.caption(
-        "📌 Sẽ thay bằng **Top Project** khi có cột `Project` trong dữ liệu. "
-        "Hiện dùng Top Quận/Huyện (≥5 tin) làm proxy."
+    st.plotly_chart(fig, width="stretch", key="geo_top_districts_nationwide")
+
+    top_d = top10_dist.iloc[-1]
+    st.markdown(
+        render_insight(
+            f"<b>{top_d['District']}</b> ({top_d['Province']}) dẫn đầu toàn quốc về đơn giá "
+            f"với mức trung bình <b>{top_d['avg_price_m2']:.4f} tỷ/m²</b>."
+        ),
+        unsafe_allow_html=True,
     )
 
-    if not top10_district.empty:
-        top_district = top10_district.iloc[-1]
-        st.markdown(
-            render_insight(
-                f"<b>{top_district['District']}</b> ({top_district['Province']}) có giá/m² "
-                f"trung bình cao nhất: {top_district['avg_price_m2']:.4f} tỷ/m² "
-                f"≈ {top_district['avg_price_m2'] * 1000:.0f} triệu/m²."
-            ),
-            unsafe_allow_html=True,
-        )
-
+ 
 
 # ─────────────────────────────────────────────
 # ENTRY POINT
@@ -357,7 +357,8 @@ def render(df_filtered: pd.DataFrame) -> None:
     st.markdown("---")
     _render_price_hist_and_donut(df_filtered)
     st.markdown("---")
-    _render_top_district_bar(df_filtered)
+    _render_top_districts_nationwide(df_filtered)
+
 
 
 # ─────────────────────────────────────────────

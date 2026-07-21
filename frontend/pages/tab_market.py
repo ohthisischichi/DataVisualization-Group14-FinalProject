@@ -63,7 +63,7 @@ def _render_area_segment_distribution(df: pd.DataFrame) -> None:
     st.markdown(render_insight(f"Phân khúc chiếm ưu thế theo diện tích — {dominant_text}."), unsafe_allow_html=True)
 
 
-def _render_price_segment_treemap(df: pd.DataFrame) -> None:
+def _render_price_segment_pie(df: pd.DataFrame) -> None:
     summary = (
         _clean_categories(df, ["Price_Segment"])
         .groupby("Price_Segment", observed=False)
@@ -72,17 +72,22 @@ def _render_price_segment_treemap(df: pd.DataFrame) -> None:
     )
     summary = summary[summary["Số tin"] > 0]
 
-    fig = px.treemap(
+    fig = px.pie(
         summary,
-        path=[px.Constant("Thị trường"), "Price_Segment"],
+        names="Price_Segment",
         values="Số tin",
-        color="Số tin",
-        color_continuous_scale="Blues",
+        hole=0.55,
+        color_discrete_sequence=COLOR_SEQUENCE,
+        category_orders={"Price_Segment": PRICE_SEGMENT_ORDER},
     )
-    fig.update_traces(texttemplate="%{label}<br>%{value:,} tin", hovertemplate="<b>%{label}</b><br>%{value:,} tin<extra></extra>")
+    fig.update_traces(
+        hovertemplate="<b>%{label}</b><br>%{value:,} tin (%{percent})<extra></extra>",
+        textposition="outside",
+        textinfo="percent+label",
+    )
     apply_theme(fig, "Tỷ trọng thị trường theo phân khúc giá")
-    fig.update_layout(height=390, coloraxis_showscale=False)
-    st.plotly_chart(fig, width="stretch", key="seg_price_treemap")
+    fig.update_layout(height=390, showlegend=False, margin=dict(l=10, r=10, t=40, b=10))
+    st.plotly_chart(fig, width="stretch", key="seg_price_donut")
 
 
 def _render_legal_segment_bar(df: pd.DataFrame) -> None:
@@ -184,7 +189,7 @@ def render(df_filtered: pd.DataFrame) -> None:
     with left:
         _render_area_segment_distribution(df_filtered)
     with right:
-        _render_price_segment_treemap(df_filtered)
+        _render_price_segment_pie(df_filtered)
 
     st.markdown("---")
     left, right = st.columns(2)

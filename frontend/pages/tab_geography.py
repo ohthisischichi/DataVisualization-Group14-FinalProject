@@ -431,7 +431,47 @@ def _render_province_area_heatmap(df: pd.DataFrame) -> None:
         unsafe_allow_html=True,
     )
 
+def _render_province_summary_table(df: pd.DataFrame) -> None:
+    """
+    Bảng tổng hợp chi tiết các chỉ số bất động sản theo từng Tỉnh/Thành phố.
+    """
+    st.markdown("#### 📋 Bảng tổng hợp chỉ số thị trường theo Tỉnh / Thành phố")
+    
+    summary = (
+        df.groupby("Province", observed=True)
+        .agg(
+            total_listings=("Price", "count"),
+            avg_price=("Price", "mean"),
+            median_price=("Price", "median"),
+            avg_price_m2=("Price_per_m2", "mean"),
+            avg_area=("Area", "mean"),
+        )
+        .reset_index()
+        .sort_values(by="total_listings", ascending=False)
+    )
 
+    # Đổi tên cột hiển thị tiếng Việt thân thiện
+    summary.columns = [
+        "Tỉnh / Thành phố", 
+        "Số tin đăng", 
+        "Giá TB (tỷ)", 
+        "Giá trung vị (tỷ)", 
+        "Đơn giá TB (tỷ/m²)", 
+        "Diện tích TB (m²)"
+    ]
+
+    st.dataframe(
+        summary.style.format({
+            "Số tin đăng": "{:,}",
+            "Giá TB (tỷ)": "{:.2f}",
+            "Giá trung vị (tỷ)": "{:.2f}",
+            "Đơn giá TB (tỷ/m²)": "{:.4f}",
+            "Diện tích TB (m²)": "{:.1f}",
+        }),
+        width="stretch",
+        hide_index=True,
+    )
+    
 # ─────────────────────────────────────────────
 # ENTRY POINT
 # ─────────────────────────────────────────────
@@ -473,6 +513,8 @@ def render(df_filtered: pd.DataFrame) -> None:
 
     # ── Phần 3: Heatmap Province × Area_Group ────────────────────────────────
     _render_province_area_heatmap(df_filtered)
+    _render_province_summary_table(df_filtered)
+    
 
 
 # ─────────────────────────────────────────────

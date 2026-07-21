@@ -9,11 +9,20 @@ import streamlit as st
 from typing import Any
 
 
+def _k(base: str) -> str:
+    """Sinh key widget có gắn nonce reset — đảm bảo widget được Streamlit
+    coi là widget MỚI hoàn toàn sau khi bấm reset (không tái dùng key cũ)."""
+    return f"{base}_{st.session_state.get('filters_reset_nonce', 0)}"
+
+
 def _init_filters(df: pd.DataFrame) -> None:
     """
     Khởi tạo giá trị mặc định cho filters trong session_state nếu chưa tồn tại.
     Gọi 1 lần khi app khởi động.
     """
+    if "filters_reset_nonce" not in st.session_state:
+        st.session_state["filters_reset_nonce"] = 0
+
     if "filters" not in st.session_state:
         st.session_state["filters"] = {
             "province": [],
@@ -29,15 +38,17 @@ def _init_filters(df: pd.DataFrame) -> None:
 
 def _reset_filters(df: pd.DataFrame) -> None:
     """
-    Xóa toàn bộ filter, đặt lại về giá trị mặc định (hiển thị toàn bộ dữ liệu).
-    KHÔNG set trực tiếp session_state của widget - chỉ set filters dict và dùng st.rerun()
+    Xóa toàn bộ filter, đặt lại về giá trị mặc định.
+    Thay vì cố xóa key widget cũ (không đảm bảo Streamlit clear UI),
+    tăng nonce để đổi toàn bộ key widget -> widget cũ bị bỏ, widget mới
+    được tạo lại từ đầu với giá trị mặc định.
     """
     price_min = float(df["Price"].min())
     price_max = float(df["Price"].max())
     area_min = float(df["Area"].min())
     area_max = float(df["Area"].max())
 
-    # CHỈ set filters dict, không set widget keys
+    # 1. Đặt lại giá trị mặc định trong dict filters
     st.session_state["filters"] = {
         "province": [],
         "district": [],
@@ -48,11 +59,15 @@ def _reset_filters(df: pd.DataFrame) -> None:
         "price_range": (price_min, price_max),
         "area_range": (area_min, area_max),
     }
-    
-    # Xóa drill-down tỉnh đang chọn (tab Geographic)
+
+    # 2. Tăng nonce -> tất cả key widget sidebar đổi sang set mới,
+    #    khiến Streamlit tạo widget hoàn toàn mới (không còn dính state cũ)
+    st.session_state["filters_reset_nonce"] = st.session_state.get("filters_reset_nonce", 0) + 1
+
+    # 3. Xóa trạng thái drill-down tỉnh đang chọn (tab Geographic) nếu có
     st.session_state.pop("geo_selected_province", None)
-    
-    # Rerun để widget lấy giá trị mới từ filters dict
+
+    # 4. Trigger rerun để Streamlit cập nhật lại toàn bộ giao diện sidebar
     st.rerun()
 
 
@@ -81,7 +96,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             options=all_provinces,
             default=f["province"],
             placeholder="Chọn tỉnh/thành",
-            key="filter_province",
+            key=_k("filter_province"),
             help="Chọn một hoặc nhiều tỉnh. Quận/huyện bên dưới sẽ tự cập nhật.",
         )
         f["province"] = selected_provinces
@@ -102,7 +117,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
                 options=district_pool,
                 default=valid_districts,
                 placeholder="Chọn quận/huyện",
-                key="filter_district",
+                key=_k("filter_district"),
                 help="Danh sách quận/huyện tự lọc theo tỉnh đã chọn phía trên.",
             )
             f["district"] = selected_districts
@@ -114,7 +129,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
                 default=[],
                 disabled=True,
                 placeholder="Hãy chọn tỉnh/thành trước",
-                key="filter_district_disabled",
+                key=_k("filter_district_disabled"),
             )
             f["district"] = []  # Reset district khi chưa chọn tỉnh
 
@@ -127,7 +142,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             options=price_seg_options,
             default=f["price_segment"],
             placeholder="Tất cả phân khúc",
-            key="filter_price_segment",
+            key=_k("filter_price_segment"),
         )
         f["price_segment"] = selected_price_seg
 
@@ -138,7 +153,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             options=area_group_options,
             default=f["area_group"],
             placeholder="Tất cả nhóm diện tích",
-            key="filter_area_group",
+            key=_k("filter_area_group"),
         )
         f["area_group"] = selected_area_group
 
@@ -151,7 +166,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             options=legal_options,
             default=f["legal_status"],
             placeholder="Tất cả tình trạng pháp lý",
-            key="filter_legal_status",
+            key=_k("filter_legal_status"),
         )
         f["legal_status"] = selected_legal
 
@@ -162,7 +177,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             options=furniture_options,
             default=f["furniture_state"],
             placeholder="Tất cả tình trạng nội thất",
-            key="filter_furniture_state",
+            key=_k("filter_furniture_state"),
         )
         f["furniture_state"] = selected_furniture
 
@@ -184,7 +199,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             value=cur_price,
             step=0.5,
             format="%.1f tỷ",
-            key="filter_price_range",
+            key=_k("filter_price_range"),
         )
         f["price_range"] = selected_price_range
 
@@ -203,7 +218,7 @@ def render_sidebar_filters(df: pd.DataFrame) -> None:
             value=cur_area,
             step=5.0,
             format="%.0f m²",
-            key="filter_area_range",
+            key=_k("filter_area_range"),
         )
         f["area_range"] = selected_area_range
 
