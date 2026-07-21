@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 from functools import lru_cache
 from dataclasses import dataclass
 from pathlib import Path
@@ -7,6 +8,12 @@ from typing import Any
 
 import pandas as pd
 import requests
+
+_BACKEND_DIR = Path(__file__).resolve().parents[2] / "backend"
+if str(_BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(_BACKEND_DIR))
+
+from model_parsing import parse_model_output
 
 
 AI_GENERATE_URL = "https://decidable-lumping-delighted.ngrok-free.dev/ai/generate"
@@ -149,8 +156,17 @@ def generate_ai_response(prompt_text: str) -> dict[str, Any]:
         response.raise_for_status()
         data = response.json()
         fallback = _build_fallback_response(prompt_text)
-        code = data.get("code") or data.get("generated_code") or fallback.code
-        explanation = data.get("explanation") or data.get("message") or fallback.explanation
+
+        raw_text = data.get("response") or data.get("thinking")
+        if raw_text:
+            code, explanation = parse_model_output(raw_text)
+        else:
+            code = data.get("code") or data.get("generated_code")
+            explanation = data.get("explanation") or data.get("message")
+
+        code = code or fallback.code
+        explanation = explanation or fallback.explanation
+
         chat_reply = data.get("chat_reply") or data.get("assistant_reply") or explanation
         return {
             "request_id": data.get("request_id"),
