@@ -55,6 +55,23 @@ Bạn TUYỆT ĐỐI KHÔNG được:
 - Import bất kỳ thư viện nào ngoài: pandas, numpy, matplotlib, plotly, math, statistics
 - Gọi các hàm nguy hiểm: open(), exec(), eval(), os, sys, subprocess, socket, __import__
 
+QUY TẮC BẮT BUỘC VỀ KẾT QUẢ:
+Code PHẢI gán kết quả cuối cùng vào một biến tên đúng là `result`.
+Hệ thống CHỈ đọc biến `result`, gán vào tên khác sẽ không hiển thị được gì.
+Tùy yêu cầu người dùng, `result` có thể là:
+- một con số hoặc chuỗi — khi chỉ cần trả về giá trị thống kê
+- một pandas DataFrame — khi cần bảng số liệu hoặc bảng so sánh
+- một plotly Figure hoặc matplotlib Figure — khi người dùng cần biểu đồ
+Chỉ vẽ biểu đồ khi yêu cầu thực sự cần trực quan hóa; nếu chỉ hỏi số liệu thì trả
+thẳng số hoặc DataFrame, không cần vẽ.
+
+QUY TẮC KHI DÙNG CỘT PHÂN LOẠI:
+- Area_Group và Price_Segment đã được chia nhóm sẵn — dùng trực tiếp, KHÔNG tự nhóm lại.
+- Chỉ dùng đúng các giá trị nhãn đã liệt kê bên dưới. KHÔNG tự đổi tên nhãn
+  (ví dụ KHÔNG map "<30 m²" thành "Under 30"), vì làm vậy sẽ lệch khỏi dữ liệu thật.
+- `area_groups` hay bất kỳ list Python nào chỉ được cắt bằng chỉ số nguyên,
+  KHÔNG cắt bằng chuỗi. Muốn lọc theo nhãn thì dùng pandas (.reindex(), .isin()).
+
 Mô tả bộ dữ liệu:
 {data_description}
 

@@ -270,19 +270,33 @@ async def execute_code(request: ExecuteRequest):
         process.terminate()
         process.join()
 
-    status = "executed" if output["success"] else "error"
-    summary = output.get("error") or f"Kết quả dạng: {output.get('result_type')}"
+    success = output["success"]
+    error = output.get("error")
+    logs = output.get("logs", "")
+
+    # Code chạy trót lọt nhưng không gán `result` và cũng không print gì => màn hình
+    # trống. Báo lỗi rõ ràng thay vì "thành công" im lặng, để phân biệt được
+    # "model viết sai contract" với "model viết code lỗi".
+    if success and output.get("result_type") is None and not logs.strip():
+        success = False
+        error = (
+            "Code chạy xong nhưng không gán biến `result` và cũng không in ra gì "
+            "- không có kết quả để hiển thị."
+        )
+
+    status = "executed" if success else "error"
+    summary = error or f"Kết quả dạng: {output.get('result_type')}"
     _update_log_status(request.request_id, status=status, result_summary=summary)
 
     # Không trả result_data ở đây: payload nằm trên đĩa, frontend load qua
     # GET /execute/result/{request_id}. Response này chỉ mang meta gọn nhẹ.
     return ExecuteResult(
         request_id=request.request_id,
-        success=output["success"],
+        success=success,
         result_type=output.get("result_type"),
         result_data=None,
-        logs=output.get("logs", ""),
-        error=output.get("error"),
+        logs=logs,
+        error=error,
     )
 
 

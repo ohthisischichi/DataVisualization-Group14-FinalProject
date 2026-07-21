@@ -152,7 +152,7 @@ def generate_ai_response(prompt_text: str) -> dict[str, Any]:
         },
     }
     try:
-        response = requests.post(AI_GENERATE_URL, json=payload, timeout=25)
+        response = requests.post(AI_GENERATE_URL, json=payload, timeout=60)
         response.raise_for_status()
         data = response.json()
         fallback = _build_fallback_response(prompt_text)
