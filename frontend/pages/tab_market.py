@@ -80,13 +80,23 @@ def _render_price_segment_pie(df: pd.DataFrame) -> None:
         color_discrete_sequence=COLOR_SEQUENCE,
         category_orders={"Price_Segment": PRICE_SEGMENT_ORDER},
     )
+    
+    # Cấu hình vị trí nhãn để tránh bị tràn lề
     fig.update_traces(
         hovertemplate="<b>%{label}</b><br>%{value:,} tin (%{percent})<extra></extra>",
-        textposition="outside",
-        textinfo="percent+label",
+        textposition="outside",          # Đẩy nhãn ra bên ngoài
+        textinfo="percent+label",        # Hiển thị cả tên phân khúc và phần trăm
     )
+    
     apply_theme(fig, "Tỷ trọng thị trường theo phân khúc giá")
-    fig.update_layout(height=390, showlegend=False, margin=dict(l=10, r=10, t=40, b=10))
+    
+    # Tăng chiều cao và nới rộng lề (đặc biệt lề dưới b=40 và lề trái/phải) để không bị cắt chữ
+    fig.update_layout(
+        height=420,                      
+        showlegend=False,                # Tắt legend ngoài vì đã hiện trực tiếp trên biểu đồ
+        margin=dict(l=40, r=40, t=50, b=40), # Nới rộng các lề xung quanh
+    )
+    
     st.plotly_chart(fig, width="stretch", key="seg_price_donut")
 
 
@@ -163,11 +173,17 @@ def _render_area_price_scatter(df: pd.DataFrame) -> None:
         color_discrete_sequence=COLOR_SEQUENCE,
         opacity=0.58,
         labels={"Area": "Diện tích (m²)", "Price": "Giá (tỷ VNĐ)", "Price_Segment": "Phân khúc giá"},
-        hover_data={"Price_per_m2": ":.4f", "Area_Group": True},
+        hover_data=["Price_per_m2", "Area_Group"],
     )
     fig.update_traces(marker=dict(size=8, line=dict(width=0)))
     apply_theme(fig, "Diện tích và giá theo phân khúc")
-    fig.update_layout(height=480, legend_title_text="Phân khúc giá")
+    
+    fig.update_layout(
+        height=480, 
+        legend_title_text="Phân khúc giá",
+        xaxis=dict(tickformat=",.0f")
+    )
+    
     st.plotly_chart(fig, width="stretch", key="seg_area_price_scatter")
 
 

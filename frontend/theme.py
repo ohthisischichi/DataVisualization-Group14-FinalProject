@@ -69,7 +69,14 @@ DIVERGING_SCALE = [
     [1.0,  "#F59E0B"],
 ]
 
-
+# Bảng màu ánh xạ đồng bộ cho phân khúc giá (Giá từ thấp đến cao hoặc cao đến đậm)
+CUSTOM_COLOR_MAP = {
+    "<4 tỷ": "#10B981",       # Xanh ngọc (Phân khúc thấp nhất)
+    "4-6 tỷ": "#3B82F6",      # Xanh dương sáng
+    "6-8 tỷ": "#2563EB",      # Xanh dương trung bình
+    "8-10 tỷ": "#8B5CF6",     # Tím / Điểm nhấn trung cao
+    ">10 tỷ": "#1D4ED8",      # Xanh hoàng gia đậm (Phân khúc cao cấp nhất)
+}
 # ─────────────────────────────────────────────
 # FONT & LAYOUT
 # ─────────────────────────────────────────────
@@ -402,15 +409,11 @@ button[aria-label*="AI Assistant"]:hover {
 def render_kpi_card(
     label: str,
     value: str,
-    sub: str = "",
     icon: str = "🏢",
     icon_bg: str = "#EFF6FF",
     icon_color: str = "#1D4ED8",
-    trend: str = "▲ 12.6% so với kỳ trước",
 ) -> str:
-    """Tạo HTML cho 1 VREI KPI card với icon và trend chỉ số."""
-    trend_html = f'<div class="kpi-trend">{trend}</div>' if trend else ""
-    sub_html = f'<div class="kpi-sub">{sub}</div>' if sub else ""
+    """Tạo HTML cho 1 VREI KPI card chỉ hiển thị tiêu đề và giá trị cốt lõi."""
     return f"""
     <div class="kpi-card">
         <div class="kpi-header">
@@ -422,12 +425,10 @@ def render_kpi_card(
                 <div class="kpi-value">{value}</div>
             </div>
         </div>
-        {trend_html}
-        {sub_html}
     </div>
     """
 
 
 def render_insight(text: str) -> str:
     """Tạo HTML cho 1 dòng insight text dưới biểu đồ."""
-    return f'<div class="insight-text">💡 {text}</div>'
+    return f'<div class="insight-text">💡 {text}</div>'

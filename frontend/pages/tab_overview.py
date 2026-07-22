@@ -39,7 +39,7 @@ def _empty_state() -> None:
 # ─────────────────────────────────────────────
 
 def _render_kpi_row(df: pd.DataFrame) -> None:
-    """Tính và hiển thị 4 KPI card theo dữ liệu đã lọc."""
+    """Tính và hiển thị 4 KPI card gọn gàng (chỉ có tiêu đề và số liệu)."""
     total_listings = len(df)
     avg_price = df["Price"].mean()
     median_price = df["Price"].median()
@@ -54,8 +54,7 @@ def _render_kpi_row(df: pd.DataFrame) -> None:
         st.markdown(
             render_kpi_card(
                 "Tổng số tin đăng",
-                f"{total_listings:,}",
-                sub="bất động sản"
+                f"{total_listings:,}"
             ),
             unsafe_allow_html=True,
         )
@@ -63,8 +62,7 @@ def _render_kpi_row(df: pd.DataFrame) -> None:
         st.markdown(
             render_kpi_card(
                 "Giá trung bình",
-                f"{avg_price:.2f} tỷ",
-                sub=f"Trung vị: {median_price:.2f} tỷ",
+                f"{avg_price:.2f} tỷ"
             ),
             unsafe_allow_html=True,
         )
@@ -72,8 +70,7 @@ def _render_kpi_row(df: pd.DataFrame) -> None:
         st.markdown(
             render_kpi_card(
                 "Giá / m² trung bình",
-                f"{avg_price_m2:.3f} tỷ/m²",
-                sub=f"≈ {avg_price_m2 * 1000:.0f} triệu/m²",
+                f"{avg_price_m2:.3f} tỷ/m²"
             ),
             unsafe_allow_html=True,
         )
@@ -81,8 +78,7 @@ def _render_kpi_row(df: pd.DataFrame) -> None:
         st.markdown(
             render_kpi_card(
                 "Số tỉnh / thành",
-                f"{num_provinces}",
-                sub="tỉnh có dữ liệu"
+                f"{num_provinces}"
             ),
             unsafe_allow_html=True,
         )
@@ -198,7 +194,11 @@ def _render_price_hist_and_donut(df: pd.DataFrame) -> None:
             annotation_font_color=COLORS["success"],
         )
         apply_theme(fig_hist, "Phân phối giá bất động sản")
-        fig_hist.update_layout(height=340, showlegend=False)
+        fig_hist.update_layout(
+            height=340, 
+            showlegend=False,
+            yaxis=dict(range=[0, 1800]) # Kéo dài trục y tối đa lên 1700
+        )
         st.plotly_chart(fig_hist, width='stretch', key="overview_price_hist")
 
         # Insight: so sánh trung bình vs trung vị để phát hiện lệch phân phối
@@ -225,19 +225,30 @@ def _render_price_hist_and_donut(df: pd.DataFrame) -> None:
             hole=0.55,
             color_discrete_sequence=COLOR_SEQUENCE,
         )
+        
+        # Cấu hình để hiển thị phần trăm (%) ở bên trong và đẩy tên nhãn ra ngoài/legend
         fig_donut.update_traces(
             hovertemplate="<b>%{label}</b><br>%{value:,} tin (%{percent})<extra></extra>",
-            textposition="outside",
-            textinfo="percent+label",
+            textposition="inside",          # Đặt chữ phần trăm nằm bên trong các lát cắt
+            textinfo="percent",             # Chỉ hiển thị phần trăm (%) bên trong
+            textfont=dict(size=12, color="white"), # Màu chữ trắng cho dễ nhìn trên nền màu
         )
+        
         apply_theme(fig_donut, "Tỷ trọng theo nhóm diện tích")
         fig_donut.update_layout(
             height=340,
-            showlegend=False,
+            showlegend=True,                # Bật chú thích (legend) màu sắc ở phía ngoài
+            legend=dict(
+                orientation="v",            # Sắp xếp chú thích theo chiều dọc bên phải
+                yanchor="middle",
+                y=0.5,
+                xanchor="left",
+                x=1.02
+            ),
             margin=dict(l=10, r=10, t=40, b=10),
         )
         st.plotly_chart(fig_donut, width='stretch', key="overview_area_donut")
-
+        
         # Insight: nhóm diện tích chiếm tỷ trọng cao nhất
         if not area_counts.empty:
             top_group = area_counts.loc[area_counts["count"].idxmax()]
@@ -252,78 +263,97 @@ def _render_price_hist_and_donut(df: pd.DataFrame) -> None:
 
 
 # ─────────────────────────────────────────────
-# 4. TOP 10 QUẬN/HUYỆN TOÀN QUỐC THEO GIÁ/M² TRUNG BÌNH
+# 4. AREA/BAR CHART XU HƯỚNG SỐ TIN & GIÁ THEO THỜI GIAN (DAY)
 # ─────────────────────────────────────────────
-
-def _render_top_districts_nationwide(df: pd.DataFrame) -> None:
+def _render_area_chart_time_trends(df: pd.DataFrame) -> None:
     """
-    Biểu đồ cột ngang Top 10 Quận/Huyện có giá/m² trung bình cao nhất toàn quốc 
-    (thay thế cho cấp Phường/Xã ở tab tổng quan).
+    Biểu đồ kết hợp Bar (Số lượng tin đăng) + Line (Giá trung bình)
+    thể hiện xu hướng theo từng ngày trong tháng (Day).
     """
-    # Lọc các quận/huyện có ít nhất 5 tin để đảm bảo độ tin cậy thống kê
-    dist_stats = (
-        df.groupby(["District", "Province"], observed=True)
-        .agg(
-            avg_price_m2=("Price_per_m2", "mean"),
-            avg_price=("Price", "mean"),
-            count=("Price", "count"),
-        )
-        .reset_index()
-    )
-
-    
-    dist_stats = dist_stats[dist_stats["count"] >= 5]
-    top10_dist = dist_stats.nlargest(10, "avg_price_m2").sort_values("avg_price_m2")
-
-    if top10_dist.empty:
+    if "Day" not in df.columns:
+        st.info("Không có dữ liệu thời gian (`Day`) trong bộ dữ liệu.")
         return
 
-    fig = px.bar(
-        top10_dist,
-        x="avg_price_m2",
-        y="District",
-        orientation="h",
-        color="avg_price_m2",
-        color_continuous_scale=CONTINUOUS_SCALE,
-        hover_data={
-            "Province": True,
-            "count": ":,",
-            "avg_price": ":.2f",
-            "avg_price_m2": ":.4f",
-        },
-        labels={
-            "avg_price_m2": "Giá/m² TB (tỷ)",
-            "District": "Quận / Huyện",
-            "count": "Số tin",
-            "avg_price": "Giá TB (tỷ)",
-        },
+    # Thống kê theo ngày
+    time_stats = (
+        df.groupby("Day", observed=True)
+        .agg(
+            count=("Price", "count"),
+            avg_price=("Price", "mean"),
+        )
+        .reset_index()
+        .sort_values("Day")
     )
-    fig.update_coloraxes(showscale=False)
-    fig.update_traces(
-        hovertemplate=(
-            "<b>%{y}</b> (%{customdata[0]})<br>"
-            "Giá/m² TB: %{x:.4f} tỷ (%{customdata[3]:.1f} triệu/m²)<br>"
-            "Giá TB: %{customdata[2]:.2f} tỷ<br>"
-            "Số tin: %{customdata[1]:,}<extra></extra>"
+
+    if time_stats.empty:
+        st.warning("Không đủ dữ liệu thời gian để hiển thị biểu đồ.")
+        return
+
+    # Tạo biểu đồ kết hợp: Bar (số tin) + Line (giá trung bình)
+    fig = go.Figure()
+
+    # Cột: Số lượng tin đăng (trục trái)
+    fig.add_trace(
+        go.Bar(
+            x=time_stats["Day"],
+            y=time_stats["count"],
+            name="Số lượng tin đăng",
+            marker=dict(color=COLORS["primary"], opacity=0.65),
+            yaxis="y1",
+            hovertemplate="Ngày %{x}<br>Số tin: %{y:,}<extra></extra>",
+        )
+    )
+
+    # Đường: Giá trung bình (trục phải) — không fill để tránh chồng màu
+    fig.add_trace(
+        go.Scatter(
+            x=time_stats["Day"],
+            y=time_stats["avg_price"],
+            name="Giá trung bình (tỷ)",
+            mode="lines+markers",
+            line=dict(color=COLORS["accent"], width=3, shape="spline"),
+            marker=dict(size=6),
+            yaxis="y2",
+            hovertemplate="Ngày %{x}<br>Giá TB: %{y:.2f} tỷ<extra></extra>",
+        )
+    )
+
+    # Cấu hình 2 trục tung (dual axes) để hiển thị song song Số lượng và Giá
+    apply_theme(fig, "Xu hướng Số lượng Tin đăng & Giá trung bình theo Ngày")
+    fig.update_layout(
+        height=400,
+        xaxis=dict(title="Ngày trong tháng"),
+        yaxis=dict(
+            title=dict(text="Số lượng tin đăng", font=dict(color=COLORS["primary"])),
+            tickfont=dict(color=COLORS["primary"]),
+            side="left",
         ),
-        marker_line_width=0,
-    )
-
- 
-    apply_theme(fig, "Top 10 Quận / Huyện có giá/m² trung bình cao nhất toàn quốc")
-    fig.update_layout(height=420, yaxis_title="", coloraxis_showscale=False)
-
-    st.plotly_chart(fig, width="stretch", key="geo_top_districts_nationwide")
-
-    top_d = top10_dist.iloc[-1]
-    st.markdown(
-        render_insight(
-            f"<b>{top_d['District']}</b> ({top_d['Province']}) dẫn đầu toàn quốc về đơn giá "
-            f"với mức trung bình <b>{top_d['avg_price_m2']:.4f} tỷ/m²</b>."
+        yaxis2=dict(
+            title=dict(text="Giá trung bình (tỷ VNĐ)", font=dict(color=COLORS["accent"])),
+            tickfont=dict(color=COLORS["accent"]),
+            overlaying="y",
+            side="right",
+            showgrid=False,
         ),
-        unsafe_allow_html=True,
+        legend=dict(orientation="h", yanchor="bottom", y=1.05, xanchor="center", x=0.5),
+        hovermode="x unified",
+        bargap=0.2,
     )
 
+    st.plotly_chart(fig, width="stretch", key="overview_area_chart_time")
+
+    # Insight tự động
+    if not time_stats.empty:
+        peak_count = time_stats.loc[time_stats["count"].idxmax()]
+        peak_price = time_stats.loc[time_stats["avg_price"].idxmax()]
+        st.markdown(
+            render_insight(
+                f"Thị trường đạt đỉnh nguồn cung vào <b>Ngày {int(peak_count['Day'])}</b> ({int(peak_count['count']):,} tin), "
+                f"trong khi mức giá trung bình cao nhất ghi nhận vào <b>Ngày {int(peak_price['Day'])}</b> ({peak_price['avg_price']:.2f} tỷ)."
+            ),
+            unsafe_allow_html=True,
+        )
+        
  
 
 # ─────────────────────────────────────────────
@@ -353,11 +383,12 @@ def render(df_filtered: pd.DataFrame) -> None:
     # Hiển thị các thành phần theo thứ tự
     _render_kpi_row(df_filtered)
     st.markdown("---")
+    _render_area_chart_time_trends(df_filtered)
+    st.markdown("---")
     _render_top_province_bar(df_filtered)
     st.markdown("---")
     _render_price_hist_and_donut(df_filtered)
-    st.markdown("---")
-    _render_top_districts_nationwide(df_filtered)
+    
 
 
 

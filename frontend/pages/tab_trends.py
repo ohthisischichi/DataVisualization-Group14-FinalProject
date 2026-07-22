@@ -39,9 +39,7 @@ def _empty_state() -> None:
 # ─────────────────────────────────────────────
 # 1. RADAR CHART SO SÁNH ĐA CHIỀU THEO PHÂN KHÚC GIÁ
 # ─────────────────────────────────────────────
-
 from plotly.subplots import make_subplots
-
 def _render_radar_chart(df: pd.DataFrame) -> None:
     dimensions = ["Area", "Frontage", "Access Road", "Floors", "Bedrooms", "Bathrooms"]
     valid_dims = [d for d in dimensions if d in df.columns]
@@ -54,10 +52,18 @@ def _render_radar_chart(df: pd.DataFrame) -> None:
         st.info("Không có dữ liệu phân khúc giá phù hợp.")
         return
 
+    # Trung bình toàn thị trường — dùng làm đường tham chiếu trong mỗi ô
+    overall_mean = grouped[valid_dims].mean()
+
+    # Chuẩn hóa min-max TOÀN CỤC theo từng cột (để cả segment lẫn đường tham chiếu
+    # dùng chung 1 thang đo trong mỗi ô — vẫn giữ được so sánh magnitude)
     normalized_df = grouped.copy()
+    overall_mean_norm = {}
     for col in valid_dims:
         min_val, max_val = grouped[col].min(), grouped[col].max()
-        normalized_df[col] = (grouped[col] - min_val) / (max_val - min_val) if max_val > min_val else 1.0
+        span = max_val - min_val
+        normalized_df[col] = (grouped[col] - min_val) / span if span > 0 else 1.0
+        overall_mean_norm[col] = (overall_mean[col] - min_val) / span if span > 0 else 1.0
 
     segments = grouped["Price_Segment"].tolist()
     n = len(segments)
@@ -68,17 +74,41 @@ def _render_radar_chart(df: pd.DataFrame) -> None:
         rows=rows, cols=cols,
         specs=[[{"type": "polar"}] * cols for _ in range(rows)],
         subplot_titles=[str(s) for s in segments],
+        vertical_spacing=0.18,   # tăng khoảng cách giữa các hàng ô
+        horizontal_spacing=0.08, # tăng khoảng cách giữa các cột
     )
 
-    colors = px.colors.qualitative.Set2  # hoặc bảng màu theme sẵn có của bạn
+    # Đẩy vị trí title của từng ô lên cao hơn để không đè lên nhãn "Frontage"
+    for annotation in fig.layout.annotations:
+        annotation.update(y=annotation.y + 0.04, font=dict(size=14))
+
+    colors = px.colors.qualitative.Set2
+
+    ref_r = [overall_mean_norm[c] for c in valid_dims] + [overall_mean_norm[valid_dims[0]]]
+    theta_labels = valid_dims + [valid_dims[0]]
 
     for i, seg in enumerate(segments):
         row_n, col_n = i // cols + 1, i % cols + 1
         row = normalized_df.iloc[i]
         r_values = [row[c] for c in valid_dims] + [row[valid_dims[0]]]
-        theta_labels = valid_dims + [valid_dims[0]]
         original_vals = [grouped.iloc[i][c] for c in valid_dims] + [grouped.iloc[i][valid_dims[0]]]
 
+        # Lớp 1: đường tham chiếu trung bình toàn thị trường (mờ, nét đứt)
+        fig.add_trace(
+            go.Scatterpolar(
+                r=ref_r,
+                theta=theta_labels,
+                mode="lines",
+                line=dict(width=1.5, color="rgba(120,120,120,0.6)", dash="dot"),
+                fill="none",
+                showlegend=(i == 0),
+                name="Trung bình thị trường",
+                hoverinfo="skip",
+            ),
+            row=row_n, col=col_n,
+        )
+
+        # Lớp 2: phân khúc hiện tại (giữ nguyên style gốc của bạn)
         fig.add_trace(
             go.Scatterpolar(
                 r=r_values,
@@ -99,29 +129,40 @@ def _render_radar_chart(df: pd.DataFrame) -> None:
         )
 
     apply_theme(fig, "So sánh đa chiều đặc trưng BĐS theo Phân khúc giá (Chuẩn hóa tỷ lệ)")
+    fig.update_layout(
+        polar=dict(radialaxis=dict(visible=True, range=[0, 1], showticklabels=False)),
+        height=560,
+        margin=dict(l=40, r=40, t=100, b=50),
+        legend=dict(orientation="h", yanchor="bottom", y=1.09, xanchor="center", x=0.5),  # giảm từ 1.16 -> 1.09
+    )
     fig.update_polars(radialaxis=dict(visible=True, range=[0, 1], showticklabels=False))
-    fig.update_layout(height=280 * rows)
 
     st.plotly_chart(fig, width="stretch", key="pd_radar_chart")
 
     st.markdown(
         render_insight(
-            "Mỗi phân khúc giá được tách thành một biểu đồ Radar riêng để dễ so sánh cấu trúc: "
-            "Các phân khúc giá cao hơn thể hiện rõ ưu thế vượt trội về <b>Diện tích</b>, <b>Mặt tiền</b> và <b>Số tầng</b>."
+            "Mỗi phân khúc giá được tách thành một biểu đồ Radar riêng, với đường nét đứt thể hiện "
+            "<b>mức trung bình toàn thị trường</b> làm mốc so sánh. Các phân khúc giá cao hơn thể hiện rõ "
+            "ưu thế vượt trội về <b>Diện tích</b>, <b>Mặt tiền</b> và <b>Số tầng</b> so với đường tham chiếu này."
         ),
         unsafe_allow_html=True,
     )
-
 # ─────────────────────────────────────────────
 # 2. CORRELATION HEATMAP
 # ─────────────────────────────────────────────
 
 def _render_correlation_heatmap(df: pd.DataFrame) -> None:
     """
-    Heatmap tương quan (Pearson) giữa các biến số:
+    Heatmap tương quan (Pearson) giữa các biến số chính:
     Area, Frontage, Access Road, Floors, Bedrooms, Bathrooms, Price, Price_per_m2.
+    (Đã loại bỏ biến Day để ma trận tập trung chuyên sâu vào các yếu tố giá trị BĐS).
     """
     num_cols = get_numeric_columns(df)
+    
+    # Loại bỏ cột 'Day' ra khỏi ma trận tương quan nếu tồn tại
+    if "Day" in num_cols:
+        num_cols.remove("Day")
+
     df_num = df[num_cols].dropna()
 
     if len(df_num) < 10:
@@ -148,8 +189,16 @@ def _render_correlation_heatmap(df: pd.DataFrame) -> None:
                 )
         hover_text.append(row_texts)
 
+    # Đổi tên nhãn cột tiếng Việt thân thiện
     col_labels = [
-        c.replace("Access Road", "Đường").replace("Price_per_m2", "Giá/m²")
+        c.replace("Access Road", "Đường")
+         .replace("Price_per_m2", "Giá/m²")
+         .replace("Frontage", "Mặt tiền")
+         .replace("Area", "Diện tích")
+         .replace("Floors", "Số tầng")
+         .replace("Bedrooms", "Phòng ngủ")
+         .replace("Bathrooms", "Phòng tắm")
+         .replace("Price", "Giá")
         for c in corr_matrix.columns
     ]
 
@@ -192,7 +241,7 @@ def _render_correlation_heatmap(df: pd.DataFrame) -> None:
                     )
                 )
 
-    apply_theme(fig, "Ma trận tương quan giữa các biến số")
+    apply_theme(fig, "Ma trận tương quan giữa các biến số bất động sản")
     fig.update_layout(height=480, annotations=annotations)
     st.plotly_chart(fig, width='stretch', key="pd_corr_heatmap")
 
@@ -200,10 +249,17 @@ def _render_correlation_heatmap(df: pd.DataFrame) -> None:
     corr_upper = corr_matrix.where(~np.eye(len(corr_matrix), dtype=bool))
     max_corr_val = corr_upper.abs().stack().max()
     max_corr_pair = corr_upper.abs().stack().idxmax()
+    
+    # Việt hóa tên cặp tương quan cho insight mượt mà
+    pair_names = [
+        str(p).replace("Access Road", "Đường").replace("Price_per_m2", "Giá/m²").replace("Frontage", "Mặt tiền").replace("Area", "Diện tích").replace("Floors", "Số tầng").replace("Bedrooms", "Phòng ngủ").replace("Bathrooms", "Phòng tắm").replace("Price", "Giá")
+        for p in max_corr_pair
+    ]
+
     st.markdown(
         render_insight(
-            f"Cặp tương quan mạnh nhất: <b>{max_corr_pair[0]}</b> và "
-            f"<b>{max_corr_pair[1]}</b> (r = {max_corr_val:.3f})."
+            f"Cặp tương quan mạnh nhất: <b>{pair_names[0]}</b> và "
+            f"<b>{pair_names[1]}</b> (r = {max_corr_val:.3f})."
         ),
         unsafe_allow_html=True,
     )
@@ -386,7 +442,6 @@ def render(df_filtered: pd.DataFrame) -> None:
     st.markdown("### Yếu tố ảnh hưởng đến giá bất động sản")
     st.markdown(
         "Phân tích tương quan giữa các đặc trưng vật lý và pháp lý với giá/m². "
-        "Dữ liệu đã cắt bỏ outlier ở percentile 99 để dễ đọc hơn."
     )
     st.markdown("")
 
