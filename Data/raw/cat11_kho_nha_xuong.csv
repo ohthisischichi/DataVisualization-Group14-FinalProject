@@ -1,0 +1,74 @@
+Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bathrooms,Legal status,Furniture state,Price,Day
+"Bắc Ninh, Thuận Thành, Kho, nhà xưởng tại xã Gia Đông",10000.0,,,,,,,,,,12
+"Bắc Giang, Bắc Giang, Kho, nhà xưởng tại phường Thọ Xương",10000.0,,,,,,,,,0.0,12
+"Hải Dương, Cẩm Giàng, Kho, nhà xưởng tại xã Ngọc Liên",8000.0,,,,,,,,,,12
+"Long An, Thủ Thừa, Kho, nhà xưởng tại thị trấn Thủ Thừa",5000.0,50.0,12.0,,,,,,,,4
+"Hồ Chí Minh, Quận 12, Kho, nhà xưởng tại đường Võ Thị Phải",178.7,,8.0,,,,,Have certificate,,9.7,5
+"Long An, Đức Hòa, Kho, nhà xưởng tại Khu Công Nghiệp Tân Đô",19795.0,,,,,,,Have certificate,Basic,147.5,9
+"Tây Ninh, Trảng Bàng, Kho, nhà xưởng tại thị trấn Trảng Bàng",15000.5,,,,,,,Have certificate,Basic,126.43,9
+"Thanh Hóa, Đông Sơn, Kho, nhà xưởng tại xã Đông Tiến",20000.0,,,,,,,Have certificate,,40.0,9
+"Long An, Bến Lức, Kho, nhà xưởng tại đường 830",5300.0,,16.0,,,,,,,48.0,6
+"Long An, Thủ Thừa, Kho, nhà xưởng tại đường Quốc Lộ 62",12550.0,,,,,,,,,,8
+"Long An, Cần Đước, Kho, nhà xưởng tại Thuận Đạo Residence",30000.0,,,,,,,,,,6
+"Bình Phước, Chơn Thành, Kho, nhà xưởng tại Khu công nghiệp Becamex",70110.0,246.0,12.0,Nam,,,,Have certificate,,0.0,6
+"Long An, Đức Hòa, Kho, nhà xưởng tại xã Mỹ Hạnh Nam",5000.0,50.0,,,,,,,,48.5,4
+"Long An, Thủ Thừa, Kho, nhà xưởng tại đường ĐT 818",12763.0,70.5,9.0,Bắc,,,,Have certificate,,52.0,5
+"Bà Rịa Vũng Tàu, Phú Mỹ, Kho, nhà xưởng tại đường Quốc Lộ 51",1027.0,10.0,50.0,,,,,,,12.0,3
+"Long An, Thủ Thừa, Kho, nhà xưởng tại xã Nhị Thành",5000.0,79.0,,,,,,Have certificate,,,3
+"Long An, Đức Hòa, Kho, nhà xưởng tại Khu công nghiệp Hải Sơn",14000.0,62.0,36.0,,,,,,,0.01,3
+"Bình Dương, Bàu Bàng, Kho, nhà xưởng tại xã Long Nguyên",13800.0,10.0,6.0,,,,,Have certificate,,75.0,23
+"Hà Nội, Phúc Thọ, Kho, nhà xưởng tại đường Quốc lộ 32",1000.0,36.0,,,,,,,,0.01,23
+"Bình Dương, Bắc Tân Uyên, Kho, nhà xưởng tại đường ĐT 746",9700.0,20.0,62.0,,,,,Have certificate,Full,52.0,23
+"Hồ Chí Minh, Bình Tân, Kho, nhà xưởng tại phường Bình Trị Đông A",500.0,12.0,10.0,Tây,,,,Have certificate,,36.0,22
+"Hồ Chí Minh, Bình Tân, Kho, nhà xưởng tại đường Bến Lội",1000.0,17.0,12.0,Tây - Bắc,,,,Have certificate,,67.0,22
+"Đồng Nai, Nhơn Trạch, Kho, nhà xưởng tại thị trấn Hiệp Phước",30000.0,,,,,,,Have certificate,,,22
+"Bình Dương, Tân Uyên, Kho, nhà xưởng tại xã Vĩnh Tân",20000.0,,,,,,,,,120.0,22
+"Nghệ An, Vinh, Kho, nhà xưởng tại phường Bến Thuỷ",2500.0,50.0,,,,,,Have certificate,Full,160.0,22
+"Bình Dương, Phú Giáo, Kho, nhà xưởng tại xã Tam Lập",10000.0,,,,,,,,,0.0,22
+"Yên Bái, Nghĩa Lộ, Kho, nhà xưởng tại xã Phù Nham",4500.0,50.0,13.0,Nam,,,,Have certificate,Full,6.5,19
+"Long An, Bến Lức, Kho, nhà xưởng tại xã Thanh Phú",4710.0,30.0,8.0,,,,,Have certificate,,38.0,18
+"Hồ Chí Minh, Quận 7, Kho, nhà xưởng tại đường Bùi Văn Ba",2475.0,70.0,8.0,Đông - Nam,,,5,Have certificate,Basic,0.05,17
+"Quảng Nam, Điện Bàn, Kho, nhà xưởng tại Khu đô thị số 7 Điện Nam Điện Ngọc",23000.0,,,,,,,Have certificate,,96.0,17
+"Long An, Thủ Thừa, Kho, nhà xưởng tại xã Nhị Thành",12670.0,58.0,,,,,,Sale contract,,,16
+"Thanh Hóa, Thanh Hóa, Kho, nhà xưởng tại đường CSEDP",9783.0,,,,,,,Have certificate,,21.0,12
+"Thái Bình, Quỳnh Phụ, Kho, nhà xưởng tại đường 10",22000.0,,,,,,,Have certificate,,65.0,12
+"Hà Nội, Ứng Hòa, Kho, nhà xưởng tại Cụm công nghiệp Xà Cầu (GĐ2)",1200.0,,,,,,,Have certificate,,0.01,12
+"Hà Nội, Thanh Oai, Kho, nhà xưởng tại Cụm công nghiệp Thanh Văn -Tân Ước",2000.0,,,,,,,Sale contract,,0.01,12
+"Tiền Giang, Tân Phước, Kho, nhà xưởng tại đường Tỉnh lộ 865",120.0,10.0,25.0,Đông - Nam,,,,Have certificate,,5.25,26
+"Vĩnh Phúc, Tam Dương, Kho, nhà xưởng tại xã Đạo Tú",1000.0,,,,,,,,,0.0,26
+"Hồ Chí Minh, Quận 12, Kho, nhà xưởng tại phường Trung Mỹ Tây",469.0,7.0,5.0,Đông - Bắc,,,,Have certificate,,12.25,26
+"Hồ Chí Minh, Bình Chánh, Kho, nhà xưởng tại đường Lê Đình Chi",823.0,,4.0,Tây - Bắc,,,,Have certificate,,18.5,26
+"Vĩnh Long, Vĩnh Long, Kho, nhà xưởng tại đường Quốc lộ 1A",42000.0,35.0,34.0,,,,,,,100.0,26
+"Vĩnh Long, Vĩnh Long, Kho, nhà xưởng tại đường Quốc lộ 1A",29000.0,34.0,34.0,,,,,,,74.0,26
+"Long An, Bến Lức, Kho, nhà xưởng tại đường Quốc lộ 1A",25000.0,,,,,,,,,136.0,26
+"Long An, Bến Lức, Kho, nhà xưởng tại đường Tỉnh lộ 833",15901.3,34.0,34.0,,,,,,,64.0,26
+"Bình Dương, Phú Giáo, Kho, nhà xưởng tại xã Tam Lập",500000.0,280.0,18.0,,,,,,,,26
+"Tây Ninh, Trảng Bàng, Kho, nhà xưởng tại đường D5",40000.0,,,,,,,,,93.0,25
+"Tây Ninh, Trảng Bàng, Kho, nhà xưởng tại đường Quốc Lộ 22",10000.0,34.0,34.0,,,,,,,72.0,25
+"Bình Dương, Bến Cát, Kho, nhà xưởng tại đường ĐT 748",9300.0,57.0,60.0,,,,,Have certificate,,0.0,25
+"Tây Ninh, Bến Cầu, Kho, nhà xưởng tại đường Quốc lộ 22B",33000.0,,,,,,,Have certificate,,200.0,25
+"Hồ Chí Minh, Bình Tân, Kho, nhà xưởng tại đường Số 18",175.5,8.2,9.0,Đông - Nam,,,,Have certificate,,14.5,25
+"Yên Bái, Yên Bái, Kho, nhà xưởng tại đường Tuệ Tĩnh",5627.0,,,,,,,Have certificate,,,25
+"Long An, Đức Huệ, Kho, nhà xưởng tại thị trấn Đông Thành",45000.0,200.0,20.0,Tây - Nam,,,,Have certificate,,150.0,25
+"Bình Dương, Dĩ An, Kho, nhà xưởng tại đường ĐT 743C",270.3,4.81,16.0,Đông - Bắc,,,,Have certificate,Basic,6.83,24
+"Bình Dương, Tân Uyên, Kho, nhà xưởng tại đường N4",100000.0,,,,,,,,,990.0,24
+"Bình Dương, Dĩ An, Kho, nhà xưởng tại đường Quốc lộ 1K",930.0,4.0,50.0,Đông - Nam,,,,Have certificate,,91.0,24
+"Hà Nội, Đông Anh, Kho, nhà xưởng tại xã Liên Hà",1000.0,22.5,18.5,Đông - Nam,,,,Have certificate,,,24
+"Cần Thơ, Ô Môn, Kho, nhà xưởng tại đường Số 10",12949.0,20.0,20.0,Tây - Nam,,,,Sale contract,,0.0,30
+"Long An, Tân An, Kho, nhà xưởng tại xã Lợi Bình Nhơn",10000.0,,,,,,,Have certificate,,0.0,30
+"Bến Tre, Ba Tri, Kho, nhà xưởng tại xã An Bình Tây",4150.0,26.0,,,,,,Have certificate,,19.0,30
+"Đà Nẵng, Liên Chiểu, Kho, nhà xưởng tại đường Hoàng Văn Thái",2400.0,50.0,30.0,,,,3,Have certificate,Basic,80.0,30
+"Hải Phòng, Vĩnh Bảo, Kho, nhà xưởng tại xã Giang Biên",5000.0,,,,,,,,,0.0,29
+"Hải Phòng, Hải An, Kho, nhà xưởng tại Khu công nghiệp Nam Đình Vũ",10000.0,,,,,,,,,0.0,29
+"Thái Bình, Đông Hưng, Kho, nhà xưởng tại xã Đông Các",5000.0,,,,,,,,,0.0,29
+"Bình Định, An Nhơn, Kho, nhà xưởng tại đường Ngô Gia Tự",20000.0,50.0,20.0,,,,1,Have certificate,,25.0,29
+"Bình Định, Quy Nhơn, Kho, nhà xưởng tại đường D10",3700.0,40.0,20.0,,,,2,Have certificate,,12.5,29
+"Đồng Nai, Nhơn Trạch, Kho, nhà xưởng tại đường 25C",2794.0,49.0,35.0,,,,,Have certificate,,30.0,29
+"Bình Dương, Bến Cát, Kho, nhà xưởng tại phường Hòa Lợi",166000.0,800.0,15.0,,,,,Have certificate,,1.4,27
+"Hải Dương, Bình Giang, Kho, nhà xưởng tại xã Bình Xuyên",10000.0,,,,,,,,,0.0,27
+"Hải Dương, Cẩm Giàng, Kho, nhà xưởng tại xã Ngọc Liên",8000.0,,,,,,,,,0.0,27
+"Bình Dương, Tân Uyên, Kho, nhà xưởng tại xã Tân Vĩnh Hiệp",17600.0,150.0,8.0,,,,,,Full,135.0,24
+"Vĩnh Phúc, Phúc Yên, Kho, nhà xưởng tại phường Phúc Thắng",2000.0,,,,,,,,,,27
+"Hà Nam, Duy Tiên, Kho, nhà xưởng tại xã Tiên Ngoại",10000.0,,,,,,,,,,26
+"Đồng Nai, Long Khánh, Kho, nhà xưởng tại xã Bình Lộc",10000.0,,,,,,,Have certificate,,32.5,26
+"Bắc Giang, Hiệp Hòa, Kho, nhà xưởng tại xã Hương Lâm",5000.0,,,,,,,,,0.0,26

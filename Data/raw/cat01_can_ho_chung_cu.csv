@@ -1,0 +1,522 @@
+Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bathrooms,Legal status,Furniture state,Price,Day
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Xuân Mai Complex",62.0,,,,,2,2,Have certificate,Full,,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu nhà ở Bộ tư lệnh Thủ đô Hà Nội",61.0,,,Nam,Bắc,2,2,Have certificate,Full,,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Park View Residence Dương Nội",52.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại The Sparks",54.0,,,,,2,2,Have certificate,Full,,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu nhà ở Bộ tư lệnh Thủ đô Hà Nội",80.0,,,,,2,2,Have certificate,Full,,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu đô thị mới Dương Nội",84.0,,,Đông,Đông - Bắc,2,2,Have certificate,Full,,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại The Pride",73.0,,,,,2,2,Have certificate,Full,,1
+"Quảng Ninh, Vân Đồn, Căn hộ chung cư tại Vân Bay Tower",70.0,,,,,,,,,,1
+"Hồ Chí Minh, Bình Tân, Căn hộ chung cư tại Lê Thành Tân Tạo",34.0,,,,,1,1,Sale contract,,0.75,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại SDU - 143 Trần Phú",52.0,,,Tây - Nam,Đông - Bắc,2,2,Have certificate,Full,3.95,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Xuân Mai Sparks Tower",69.0,,,Đông - Bắc,Tây - Nam,2,2,Have certificate,Full,4.66,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại CT1 Yên Nghĩa",60.0,,,Bắc,Nam,2,1,Have certificate,Full,4.13,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại The Sparks",56.0,,,Đông - Nam,Tây - Bắc,2,2,Have certificate,Full,3.8,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu nhà ở Hưng Thịnh",56.0,,,Tây - Bắc,Đông - Nam,2,1,Have certificate,,3.25,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Chung cư Sails Tower",48.0,,,Tây - Bắc,Đông - Nam,2,1,Have certificate,Full,3.17,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Park View Residence Dương Nội",56.0,,,Tây - Bắc,Đông - Nam,2,1,Have certificate,Full,3.75,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu đô thị mới Xa La",62.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,3.95,1
+"Hà Nội, Thanh Trì, Căn hộ chung cư tại Greenera Southmark",124.0,,,,,,,,,12.0,1
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Udic Westlake",86.0,,,Tây,Tây,2,2,Have certificate,Full,9.09,2
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",34.46,,,Nam,Bắc,1,1,Sale contract,Basic,2.54,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Khu đô thị Ecopark",152.0,,,,Tây - Bắc,3,3,Have certificate,Full,14.0,3
+"Hồ Chí Minh, Quận 5, Căn hộ chung cư tại Legacy 66",48.0,,,,,1,1,Sale contract,Full,5.23,3
+"Hồ Chí Minh, Tân Phú, Căn hộ chung cư tại Chung cư Khuông Việt",70.0,,,,,2,2,,,3.9,3
+"Khánh Hòa, Nha Trang, Căn hộ chung cư tại The Onsen",58.5,,,Đông - Nam,Tây - Bắc,1,1,Sale contract,Basic,4.65,3
+"Hà Nội, Long Biên, Căn hộ chung cư tại Ruby Park",45.3,,,,,1,1,Sale contract,,2.96,1
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Aqua Bay Sky Residences",158.0,,,Đông - Nam,Tây - Bắc,3,3,Have certificate,,12.0,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Swan Lake Onsen Residences",420.0,,,Đông - Bắc,Đông - Nam,5,6,Have certificate,,41.0,3
+"Bình Dương, Thủ Dầu Một, Căn hộ chung cư tại Orchard Hill - Sycamore",94.0,,,Đông - Nam,Tây - Bắc,2,2,Sale contract,Basic,5.8,3
+"Bắc Giang, Bắc Giang, Căn hộ chung cư tại đường Đào Sư Tích",61.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,2.45,3
+"Hà Nội, Đan Phượng, Căn hộ chung cư tại Masteri Sky Quarter",47.0,,,Tây - Nam,Đông - Bắc,3,2,Sale contract,Full,3.67,3
+"Hồ Chí Minh, Thủ Đức, Căn hộ chung cư tại Diamond Sky",70.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,0.13,3
+"Hồ Chí Minh, Quận 10, Căn hộ chung cư tại Thiên Nam Apartment",126.2,,,Bắc,Nam,3,3,Have certificate,Full,10.9,2
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Imperia Sky Park",154.0,,,Đông - Bắc,Đông,3,2,Sale contract,,0.09,1
+"Hồ Chí Minh, Thủ Đức, Căn hộ chung cư tại Urban Green",65.0,,,,,,,,,5.15,2
+"Hải Phòng, Thủy Nguyên, Căn hộ chung cư tại Hoàng Huy New City",62.0,,,,,,,,,,2
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Hanoi Seasons Garden",84.7,,,,Tây - Nam,1,,,,13.1,2
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại The Sakura - Vinhomes Smart City",77.6,,,Đông - Bắc,Tây - Nam,3,2,Have certificate,Full,6.65,2
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Udic Westlake",168.0,,,Tây - Bắc,Tây - Bắc,3,2,Have certificate,Full,15.99,2
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại The Garden",110.0,,,,,2,2,Have certificate,Full,,5
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại The Garden",42.0,,,,Đông - Nam,1,1,Have certificate,Basic,4.8,5
+"Hồ Chí Minh, Quận 11, Căn hộ chung cư tại phố Lý Thường Kiệt",36.0,,,Đông - Nam,Đông - Nam,1,,Have certificate,,1.95,5
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Khu đô thị Nam Thăng Long - Ciputra",123.0,,,,,3,2,Have certificate,Full,11.2,5
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Imperia Smart City",55.0,,,,Đông - Nam,2,1,Have certificate,Basic,4.52,5
+"Hà Nội, Hà Đông, Căn hộ chung cư tại The Pride",102.8,,,,,3,2,Have certificate,Full,,1
+"Hà Nội, Đông Anh, Căn hộ chung cư tại Masteri Grand Avenue",28.0,,,Đông - Nam,Tây - Bắc,1,1,Sale contract,Full,3.75,5
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại The OpusK Residence",117.0,,,,,2,,,,46.0,7
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại The OpusK Residence",215.0,,,,,4,,,,89.9,7
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại The OpusK Residence",215.0,,,,,4,4,,,89.92,7
+"Hải Phòng, Kiến An, Căn hộ chung cư tại Golden Point Đồng Hòa",63.0,,,Bắc,Nam,2,2,Have certificate,Basic,0.02,7
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Sunwah Pearl",98.92,,,,,2,2,Sale contract,Basic,18.46,7
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Thăng Long Capital",69.9,,,Đông,Tây,2,2,Have certificate,Full,4.5,6
+"Hồ Chí Minh, Thủ Đức, Căn hộ chung cư tại đường Đỗ Xuân Hợp",97.1,,,Tây - Bắc,,3,,Sale contract,,14.0,6
+"Bình Dương, Thuận An, Căn hộ chung cư tại Monrei Saigon",55.0,,,Nam,Nam,2,1,Sale contract,Full,,6
+"Hồ Chí Minh, Thủ Đức, Căn hộ chung cư tại Flora Novia",58.0,,,,,2,2,Have certificate,,3.66,6
+"Hồ Chí Minh, Quận 8, Căn hộ chung cư tại Dream Home Palace",66.0,,,,,2,2,Sale contract,,2.65,6
+"Phú Thọ, Việt Trì, Căn hộ chung cư tại Nexus Tower",81.61,,,Tây - Nam,Đông - Bắc,3,2,Have certificate,Basic,,6
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Masteri West Heights",55.0,,,,,,,,,5.9,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",48.0,,,,,,,,,4.7,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Masteri West Heights",63.0,,,,,,,,,6.8,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",32.0,,,,,,,,,3.3,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",64.0,,,,,,,,,5.9,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",47.0,,,,,,,,,4.8,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",32.0,,,,,1,1,Have certificate,Full,3.1,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",32.0,,,,,1,1,Have certificate,Full,3.1,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",31.0,,,,,1,,Have certificate,Full,2.75,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",55.0,,,,,2,1,Have certificate,Full,5.25,7
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Sunwah Pearl",104.72,,,,,2,2,Sale contract,Basic,24.92,7
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Sunwah Pearl",104.72,,,,,2,2,Sale contract,Basic,24.92,7
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Chung cư cao cấp CT5 Văn Khê",81.8,,,Nam,Bắc,2,2,Have certificate,,5.4,7
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",114.93,,,Bắc,Bắc,3,3,Sale contract,Basic,8.81,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Khu đô thị Ecopark",152.0,,,,Tây - Bắc,3,3,Have certificate,Full,14.0,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Aqua Bay Sky Residences",152.0,,,,Tây - Bắc,3,2,Have certificate,Full,13.2,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",114.93,,,Bắc,Bắc,3,3,Sale contract,Basic,8.81,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",34.46,,,Nam,Bắc,1,1,Sale contract,Basic,2.54,3
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Vinhomes Times City - Park Hill",95.0,,,Tây,Tây - Nam,3,2,,Full,12.0,8
+"Hà Nội, Cầu Giấy, Căn hộ chung cư tại Khu đô thị Trung Hòa - Nhân Chính",152.5,,,,,3,3,Have certificate,,14.5,8
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",114.93,,,Tây - Bắc,Bắc,3,2,Sale contract,,7.65,2
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại The Legend City",500.0,,,,,8,6,Have certificate,Full,58.0,8
+"Hà Nội, Thanh Trì, Căn hộ chung cư tại BlueGem Tower",99.0,,,,,3,2,Have certificate,Full,,8
+"Bà Rịa Vũng Tàu, Phú Mỹ, Căn hộ chung cư tại Maison Grand Phú Mỹ",49.0,,,,,1,1,Sale contract,Full,1.95,8
+"Long An, Bến Lức, Căn hộ chung cư tại Sky Retreat",111.78,,,Tây - Bắc,Đông - Nam,3,2,Sale contract,Basic,6.4,11
+"Bình Dương, Thuận An, Căn hộ chung cư tại Setia Edenia",50.9,,,,,1,1,Sale contract,Basic,,11
+"Bình Dương, Dĩ An, Căn hộ chung cư tại The Gió Riverside",65.0,,,,,2,2,Sale contract,Basic,4.2,11
+"Hà Nội, Long Biên, Căn hộ chung cư tại The Magnolia Private Residences",72.0,,,,,,,,,11.0,5
+"Hà Nội, Hai Bà Trưng, Căn hộ chung cư tại Green Pearl 378 Minh Khai",98.0,,,,Nam,3,2,Have certificate,,9.7,6
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Tây Hồ Riverview",92.0,,,Tây - Nam,Đông - Bắc,3,2,,,7.5,7
+"Hồ Chí Minh, Tân Phú, Căn hộ chung cư tại Diamond Centery",290.0,,,,,5,4,Sale contract,Full,18.0,11
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Imperia Sky Park",60.0,,,,Đông - Nam,2,2,Sale contract,Basic,,10
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Masterise Thanh Đa Peninsula",65.0,,,,,2,2,,,9.9,12
+"Hồ Chí Minh, Bình Tân, Căn hộ chung cư tại Lê Thành Tân Tạo",33.9,,,Đông - Bắc,Tây - Nam,1,1,Sale contract,,0.69,12
+"Quảng Ninh, Hạ Long, Căn hộ chung cư tại Best Western Premier Sapphire Hạ Long",50.0,,,,Đông - Nam,,,Have certificate,Full,2.7,15
+"Bình Dương, Thuận An, Căn hộ chung cư tại Lusso Saigon",82.85,,,Bắc,Nam,3,2,Sale contract,Basic,5.4,15
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại The Legend City",40.1,,,Bắc,Bắc,1,1,Sale contract,Full,5.01,15
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Masteri Thảo Điền",133.0,,,,,3,3,Have certificate,Full,16.5,15
+"Quảng Ninh, Hạ Long, Căn hộ chung cư tại A La Carte Hạ Long Bay",45.4,,,Tây - Nam,Tây - Nam,,,Have certificate,Full,2.9,9
+"Hồ Chí Minh, Tân Phú, Căn hộ chung cư tại Diamond Centery",290.0,,,,,5,4,Sale contract,Full,25.0,7
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Chung cư The Wisteria",83.0,,,Tây,Nam,2,2,Have certificate,Basic,6.0,15
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Chung cư The Wisteria",110.0,,,Tây,Nam,3,3,Have certificate,Basic,7.8,15
+"Bình Thuận, Phan Thiết, Căn hộ chung cư tại Phú Thịnh Plaza Phan Thiết",64.0,,,Tây - Nam,Đông - Bắc,2,2,Sale contract,Basic,2.4,15
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Gateway Thảo Điền",50.0,,,Nam,Nam,1,1,Have certificate,Full,6.5,15
+"Hồ Chí Minh, Bình Tân, Căn hộ chung cư tại Chung cư Lý Chiêu Hoàng",60.0,,,Đông,Tây,2,1,Have certificate,,1.85,17
+"Hải Phòng, Ngô Quyền, Căn hộ chung cư tại Chung cư Lakeside Garden",66.8,,,Đông - Bắc,Tây - Nam,2,2,Have certificate,Basic,2.97,16
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Xuân Mai Complex",70.1,,,Tây - Nam,Đông - Bắc,,,Have certificate,,4.3,16
+"Hà Nội, Cầu Giấy, Căn hộ chung cư tại Hanoi Signature",178.0,,,,,,,Have certificate,,33.0,13
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Hanoi Seasons Garden",81.4,,,Đông - Bắc,,2,2,Sale contract,Basic,13.6,2
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Hanoi Seasons Garden",84.9,,,,Đông - Bắc,2,2,Sale contract,Basic,14.32,2
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Gardenia",80.0,,,Đông - Bắc,Tây - Nam,2,2,Have certificate,Full,7.2,10
+"Bình Dương, Thuận An, Căn hộ chung cư tại Monrei Saigon",88.0,,,Tây - Bắc,Đông - Bắc,3,2,Sale contract,Basic,3.95,15
+"Khánh Hòa, Nha Trang, Căn hộ chung cư tại Khu đô thị VCN Phước Long 2",67.0,,,,,2,1,Have certificate,Full,2.8,16
+"Thừa Thiên Huế, Huế, Căn hộ chung cư tại Hue Heritage",82.0,,,Tây,Đông,3,2,Have certificate,Full,,13
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Moonlight 2 - An Lạc Green Symphony",75.0,,,,,2,,,Full,0.07,16
+"Long An, Đức Hòa, Căn hộ chung cư tại The Win City",61.1,,,Đông,Tây,2,2,Sale contract,Basic,2.05,12
+"Quảng Ninh, Hạ Long, Căn hộ chung cư tại Sun Festo Town",30.0,,,Tây - Bắc,Đông - Nam,1,1,Sale contract,Full,2.1,16
+"Thái Nguyên, Phổ Yên, Căn hộ chung cư tại Khu đô thị Yên Bình Thái Nguyên",62.0,,,Bắc,Nam,2,2,Sale contract,Basic,1.57,13
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Rose Town 79 Ngọc Hồi",104.0,,,,,,,Sale contract,,0.08,17
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Sunshine Riverside",76.0,,,,,3,2,Have certificate,Full,6.5,18
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Tây Hồ Riverview",76.0,,,,,2,2,Have certificate,Full,6.2,18
+"Hà Nội, Long Biên, Căn hộ chung cư tại đường Ngọc Thụy",74.0,,,Bắc,Nam,2,2,,,4.85,15
+"Quảng Ninh, Hạ Long, Căn hộ chung cư tại Sun Centro Town",31.0,,,Tây - Bắc,Tây - Bắc,1,1,Sale contract,Full,1.8,18
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Rivea Residences",61.26,,,,Nam,2,2,Have certificate,Full,7.3,12
+"Hồ Chí Minh, Quận 9, Căn hộ chung cư tại Ehome 2",64.0,,,Đông,Tây,2,2,Have certificate,Basic,3.3,18
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại D'Edge Thảo Điền",420.0,,,,,5,3,Have certificate,Full,80.0,18
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Paris Hoàng Kim",65.0,,,Đông - Bắc,Nam,2,2,,Full,8.0,18
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Skylake",44.0,,,,,1,1,Have certificate,Full,6.5,1
+"Đà Nẵng, Ngũ Hành Sơn, Căn hộ chung cư tại FourS Tower",98.0,,,Đông - Bắc,Tây - Nam,2,1,Have certificate,Full,2.7,18
+"Bình Dương, Thuận An, Căn hộ chung cư tại Iris Tower",45.0,,,Nam,Bắc,1,1,Have certificate,Full,1.25,9
+"Bình Dương, Thuận An, Căn hộ chung cư tại Iris Tower",59.0,,,,,2,2,Have certificate,Full,1.55,9
+"Hà Nội, Thanh Trì, Căn hộ chung cư tại Greenera Southmark",46.87,,,Tây,Đông,1,1,Sale contract,Basic,5.52,12
+"Hà Nội, Thanh Trì, Căn hộ chung cư tại Greenera Southmark",46.87,,,Tây,Đông,1,1,Sale contract,Basic,5.55,12
+"Bắc Giang, Bắc Giang, Căn hộ chung cư tại Gold Park",69.7,,,Tây - Nam,Đông - Bắc,2,2,Sale contract,Basic,3.82,2
+"Đồng Nai, Nhơn Trạch, Căn hộ chung cư tại Căn hộ Terra Flora",89.0,,,Bắc,Nam,3,2,Have certificate,Full,2.5,2
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Rivea Residences",102.0,,,Tây - Bắc,Đông - Nam,3,2,Have certificate,Full,10.15,18
+"Hồ Chí Minh, Nhà Bè, Căn hộ chung cư tại Essensia Sky",115.0,,,,,3,2,Sale contract,Basic,9.2,18
+"Hồ Chí Minh, Nhà Bè, Căn hộ chung cư tại Essensia Sky",81.0,,,Đông - Nam,Tây - Bắc,2,2,Sale contract,Basic,6.2,18
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Tháp đôi Kepler Land",98.0,,,Tây - Nam,,3,2,Sale contract,Full,10.0,18
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Imperia Smart City",28.3,,,,Đông - Nam,1,1,Have certificate,,3.0,20
+"Hà Nội, Hai Bà Trưng, Căn hộ chung cư tại Times City",83.0,,,Bắc,Nam,2,2,Have certificate,Full,8.0,20
+"Bình Dương, Thuận An, Căn hộ chung cư tại La Pura",69.0,,,Nam,Bắc,2,2,Sale contract,Basic,4.5,20
+"Hà Nội, Đống Đa, Căn hộ chung cư tại Tòa nhà 101 Láng Hạ",162.0,,,Nam,Bắc,3,2,Have certificate,Basic,0.09,20
+"Bình Dương, Thủ Dầu Một, Căn hộ chung cư tại The Harmonie Phú Mỹ Hưng",72.0,,,,,2,2,Sale contract,Basic,3.2,14
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Chung cư An Sinh",122.0,,,,,3,2,Have certificate,,7.6,20
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại The Legend City",61.0,,,,,1,1,Have certificate,Full,7.25,22
+"Bình Dương, Thủ Dầu Một, Căn hộ chung cư tại Midori Park The Nest",50.0,,,,,,,,,2.3,22
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu nhà ở Bộ tư lệnh Thủ đô Hà Nội",122.0,,,,Đông - Nam,4,,Have certificate,,6.38,22
+"Bắc Ninh, Bắc Ninh, Căn hộ chung cư tại Cát Tường Thống Nhất",70.0,,,Nam,Đông - Bắc,3,2,Have certificate,Full,2.8,1
+"Bình Dương, Thủ Dầu Một, Căn hộ chung cư tại Happy One Central",50.0,,,,,1,,,Full,1.9,22
+"Cần Thơ, Cái Răng, Căn hộ chung cư tại Cara River Park",36.0,,,,Đông,1,,,,1.55,22
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Lumi Hanoi",42.0,,,Đông - Nam,Đông - Nam,1,1,Have certificate,Basic,3.5,22
+"Thừa Thiên Huế, Huế, Căn hộ chung cư tại Hue Heritage",86.1,,,Tây - Bắc,Đông - Nam,3,2,Sale contract,Basic,5.74,22
+"Hồ Chí Minh, Nhà Bè, Căn hộ chung cư tại Dragon Hill Residence and Suites",104.0,,,Tây - Nam,Đông - Bắc,3,2,,Full,6.5,22
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Tòa nhà Intracom1 - Trung Văn",120.0,,,Nam,Bắc,3,2,Have certificate,Full,7.8,22
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại The Legend Tower 109 Nguyễn Tuân",186.5,,,Đông - Nam,,4,3,Have certificate,,0.12,22
+"Hồ Chí Minh, Quận 8, Căn hộ chung cư tại Central Premium",73.0,,,,,2,2,,Full,4.5,22
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại D’. Le Roi Soleil",111.0,,,,,3,3,Have certificate,Full,,22
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Hinode Royal Park",50.0,,,,,,,Have certificate,Basic,3.0,22
+"Hải Phòng, Kiến An, Căn hộ chung cư tại The Zenith Hải Phòng",66.0,,,Bắc,Nam,2,2,Sale contract,Full,0.04,22
+"Đà Nẵng, Liên Chiểu, Căn hộ chung cư tại đường Trung Lập 6",58.0,,,,,2,2,Have certificate,Full,2.0,22
+"Bình Dương, Dĩ An, Căn hộ chung cư tại Charm City",96.0,,,,,2,2,Have certificate,Basic,,22
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại NHS Phương Canh Residence",80.0,,,Đông - Bắc,Tây - Nam,3,2,Have certificate,Full,6.0,22
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Golden Field Mỹ Đình",66.7,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,6.5,22
+"Hà Nội, Hà Đông, Căn hộ chung cư tại The Pride",73.0,,,,,2,2,Have certificate,Full,,1
+"Bình Dương, Thuận An, Căn hộ chung cư tại The Habitat Binh Duong",61.7,,,Tây - Bắc,,2,2,Sale contract,Basic,0.04,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu nhà ở Bộ tư lệnh Thủ đô Hà Nội",61.0,,,Nam,Bắc,2,2,Have certificate,Full,,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại The Sparks",54.0,,,,,2,2,Have certificate,Full,,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu nhà ở Bộ tư lệnh Thủ đô Hà Nội",80.0,,,,,2,2,Have certificate,Full,,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu đô thị mới Dương Nội",84.0,,,Đông,Đông - Bắc,2,2,Have certificate,Full,,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại The Pride",73.0,,,,,2,2,Have certificate,Full,,1
+"Quảng Ninh, Vân Đồn, Căn hộ chung cư tại Vân Bay Tower",70.0,,,,,,,,,,1
+"Hồ Chí Minh, Bình Tân, Căn hộ chung cư tại Lê Thành Tân Tạo",34.0,,,,,1,1,Sale contract,,0.75,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại SDU - 143 Trần Phú",52.0,,,Tây - Nam,Đông - Bắc,2,2,Have certificate,Full,3.95,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Xuân Mai Sparks Tower",69.0,,,Đông - Bắc,Tây - Nam,2,2,Have certificate,Full,4.66,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại CT1 Yên Nghĩa",60.0,,,Bắc,Nam,2,1,Have certificate,Full,4.13,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại The Sparks",56.0,,,Đông - Nam,Tây - Bắc,2,2,Have certificate,Full,3.8,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu nhà ở Hưng Thịnh",56.0,,,Tây - Bắc,Đông - Nam,2,1,Have certificate,,3.25,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Chung cư Sails Tower",48.0,,,Tây - Bắc,Đông - Nam,2,1,Have certificate,Full,3.17,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Park View Residence Dương Nội",56.0,,,Tây - Bắc,Đông - Nam,2,1,Have certificate,Full,3.75,1
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu đô thị mới Xa La",62.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,3.95,1
+"Hà Nội, Thanh Trì, Căn hộ chung cư tại Greenera Southmark",124.0,,,,,,,,,12.0,1
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Udic Westlake",168.0,,,Tây - Bắc,Tây - Bắc,3,2,Have certificate,Full,15.99,2
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Udic Westlake",86.0,,,Tây,Tây,2,2,Have certificate,Full,9.09,2
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Aqua Bay Sky Residences",152.0,,,,Tây - Bắc,3,2,Have certificate,Full,13.2,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",34.46,,,Nam,Bắc,1,1,Sale contract,Basic,2.54,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Khu đô thị Ecopark",152.0,,,,Tây - Bắc,3,3,Have certificate,Full,14.0,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Khu đô thị Ecopark",152.0,,,,Tây - Bắc,3,3,Have certificate,Full,14.0,3
+"Hồ Chí Minh, Quận 5, Căn hộ chung cư tại Legacy 66",48.0,,,,,1,1,Sale contract,Full,5.23,3
+"Hồ Chí Minh, Tân Phú, Căn hộ chung cư tại Chung cư Khuông Việt",70.0,,,,,2,2,,,3.9,3
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Khu đô thị Nam Thăng Long - Ciputra",123.0,,,,,3,2,Have certificate,Full,11.2,5
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Imperia Smart City",55.0,,,,Đông - Nam,2,1,Have certificate,Basic,4.52,5
+"Hà Nội, Hà Đông, Căn hộ chung cư tại The Pride",102.8,,,,,3,2,Have certificate,Full,,1
+"Hà Nội, Đông Anh, Căn hộ chung cư tại Masteri Grand Avenue",28.0,,,Đông - Nam,Tây - Bắc,1,1,Sale contract,Full,3.75,5
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại The OpusK Residence",215.0,,,,,4,,,,89.9,7
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại The OpusK Residence",215.0,,,,,4,4,,,89.92,7
+"Hải Phòng, Kiến An, Căn hộ chung cư tại Golden Point Đồng Hòa",63.0,,,Bắc,Nam,2,2,Have certificate,Basic,0.02,7
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Sunwah Pearl",98.92,,,,,2,2,Sale contract,Basic,18.46,7
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Thăng Long Capital",69.9,,,Đông,Tây,2,2,Have certificate,Full,4.5,6
+"Hồ Chí Minh, Thủ Đức, Căn hộ chung cư tại đường Đỗ Xuân Hợp",97.1,,,Tây - Bắc,,3,,Sale contract,,14.0,6
+"Bình Dương, Thuận An, Căn hộ chung cư tại Monrei Saigon",55.0,,,Nam,Nam,2,1,Sale contract,Full,,6
+"Hồ Chí Minh, Thủ Đức, Căn hộ chung cư tại Flora Novia",58.0,,,,,2,2,Have certificate,,3.66,6
+"Hồ Chí Minh, Quận 8, Căn hộ chung cư tại Dream Home Palace",66.0,,,,,2,2,Sale contract,,2.65,6
+"Phú Thọ, Việt Trì, Căn hộ chung cư tại Nexus Tower",81.61,,,Tây - Nam,Đông - Bắc,3,2,Have certificate,Basic,,6
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",48.0,,,,,,,,,4.7,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Masteri West Heights",63.0,,,,,,,,,6.8,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",32.0,,,,,,,,,3.3,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",64.0,,,,,,,,,5.9,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",47.0,,,,,,,,,4.8,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",32.0,,,,,1,1,Have certificate,Full,3.1,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",32.0,,,,,1,1,Have certificate,Full,3.1,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",31.0,,,,,1,,Have certificate,Full,2.75,7
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",55.0,,,,,2,1,Have certificate,Full,5.25,7
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Sunwah Pearl",104.72,,,,,2,2,Sale contract,Basic,24.92,7
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Sunwah Pearl",104.72,,,,,2,2,Sale contract,Basic,24.92,7
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Chung cư cao cấp CT5 Văn Khê",81.8,,,Nam,Bắc,2,2,Have certificate,,5.4,7
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Khu đô thị Ecopark",152.0,,,,Tây - Bắc,3,3,Have certificate,Full,14.0,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Aqua Bay Sky Residences",152.0,,,,Tây - Bắc,3,2,Have certificate,Full,13.2,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",114.93,,,Bắc,Bắc,3,3,Sale contract,Basic,8.81,3
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",34.46,,,Nam,Bắc,1,1,Sale contract,Basic,2.54,3
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Vinhomes Times City - Park Hill",95.0,,,Tây,Tây - Nam,3,2,,Full,12.0,8
+"Hà Nội, Cầu Giấy, Căn hộ chung cư tại Khu đô thị Trung Hòa - Nhân Chính",152.5,,,,,3,3,Have certificate,,14.5,8
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",114.93,,,Tây - Bắc,Bắc,3,2,Sale contract,,7.65,2
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại The Legend City",500.0,,,,,8,6,Have certificate,Full,58.0,8
+"Hà Nội, Thanh Trì, Căn hộ chung cư tại BlueGem Tower",99.0,,,,,3,2,Have certificate,Full,,8
+"Bà Rịa Vũng Tàu, Phú Mỹ, Căn hộ chung cư tại Maison Grand Phú Mỹ",49.0,,,,,1,1,Sale contract,Full,1.95,8
+"Long An, Bến Lức, Căn hộ chung cư tại Sky Retreat",111.78,,,Tây - Bắc,Đông - Nam,3,2,Sale contract,Basic,6.4,11
+"Bình Dương, Thuận An, Căn hộ chung cư tại Setia Edenia",50.9,,,,,1,1,Sale contract,Basic,,11
+"Bình Dương, Dĩ An, Căn hộ chung cư tại The Gió Riverside",65.0,,,,,2,2,Sale contract,Basic,4.2,11
+"Hà Nội, Long Biên, Căn hộ chung cư tại The Magnolia Private Residences",72.0,,,,,,,,,11.0,5
+"Hà Nội, Hai Bà Trưng, Căn hộ chung cư tại Green Pearl 378 Minh Khai",98.0,,,,Nam,3,2,Have certificate,,9.7,6
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Tây Hồ Riverview",92.0,,,Tây - Nam,Đông - Bắc,3,2,,,7.5,7
+"Hồ Chí Minh, Tân Phú, Căn hộ chung cư tại Diamond Centery",290.0,,,,,5,4,Sale contract,Full,18.0,11
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Imperia Sky Park",60.0,,,,Đông - Nam,2,2,Sale contract,Basic,,10
+"Hồ Chí Minh, Bình Tân, Căn hộ chung cư tại Lê Thành Tân Tạo",36.5,,,,,1,1,Sale contract,,0.78,12
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Masterise Thanh Đa Peninsula",65.0,,,,,2,2,,,9.9,12
+"Hồ Chí Minh, Bình Tân, Căn hộ chung cư tại Lê Thành Tân Tạo",33.9,,,Đông - Bắc,Tây - Nam,1,1,Sale contract,,0.69,12
+"Hà Nội, Bắc Từ Liêm, Căn hộ chung cư tại Sunshine City",104.1,,,Đông - Nam,Đông - Nam,3,2,Have certificate,Full,12.99,8
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Imperia Sky Park",68.66,,,Nam,Bắc,3,2,Sale contract,Basic,6.1,12
+"Quảng Ninh, Hạ Long, Căn hộ chung cư tại Best Western Premier Sapphire Hạ Long",50.0,,,,Đông - Nam,,,Have certificate,Full,2.7,15
+"Bình Dương, Thuận An, Căn hộ chung cư tại Lusso Saigon",82.85,,,Bắc,Nam,3,2,Sale contract,Basic,5.4,15
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại The Legend City",40.1,,,Bắc,Bắc,1,1,Sale contract,Full,5.01,15
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Masteri Thảo Điền",133.0,,,,,3,3,Have certificate,Full,16.5,15
+"Quảng Ninh, Hạ Long, Căn hộ chung cư tại A La Carte Hạ Long Bay",45.4,,,Tây - Nam,Tây - Nam,,,Have certificate,Full,2.9,9
+"Hồ Chí Minh, Tân Phú, Căn hộ chung cư tại Diamond Centery",290.0,,,,,5,4,Sale contract,Full,25.0,7
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Chung cư The Wisteria",83.0,,,Tây,Nam,2,2,Have certificate,Basic,6.0,15
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Chung cư The Wisteria",110.0,,,Tây,Nam,3,3,Have certificate,Basic,7.8,15
+"Bình Thuận, Phan Thiết, Căn hộ chung cư tại Phú Thịnh Plaza Phan Thiết",64.0,,,Tây - Nam,Đông - Bắc,2,2,Sale contract,Basic,2.4,15
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Gateway Thảo Điền",50.0,,,Nam,Nam,1,1,Have certificate,Full,6.5,15
+"Quảng Ninh, Vân Đồn, Căn hộ chung cư tại Vân Bay Tower",29.0,,,Tây - Nam,Đông - Bắc,1,1,Sale contract,Full,1.6,10
+"Hồ Chí Minh, Bình Tân, Căn hộ chung cư tại Chung cư Lý Chiêu Hoàng",60.0,,,Đông,Tây,2,1,Have certificate,,1.85,17
+"Hải Phòng, Ngô Quyền, Căn hộ chung cư tại Chung cư Lakeside Garden",66.8,,,Đông - Bắc,Tây - Nam,2,2,Have certificate,Basic,2.97,16
+"Hà Nội, Cầu Giấy, Căn hộ chung cư tại Hanoi Signature",178.0,,,,,,,Have certificate,,33.0,13
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Hanoi Seasons Garden",81.4,,,Đông - Bắc,,2,2,Sale contract,Basic,13.6,2
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Hanoi Seasons Garden",84.9,,,,Đông - Bắc,2,2,Sale contract,Basic,14.32,2
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Gardenia",80.0,,,Đông - Bắc,Tây - Nam,2,2,Have certificate,Full,7.2,10
+"Bình Dương, Thuận An, Căn hộ chung cư tại Monrei Saigon",88.0,,,Tây - Bắc,Đông - Bắc,3,2,Sale contract,Basic,3.95,15
+"Khánh Hòa, Nha Trang, Căn hộ chung cư tại Khu đô thị VCN Phước Long 2",67.0,,,,,2,1,Have certificate,Full,2.8,16
+"Thừa Thiên Huế, Huế, Căn hộ chung cư tại Hue Heritage",82.0,,,Tây,Đông,3,2,Have certificate,Full,,13
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Moonlight 2 - An Lạc Green Symphony",75.0,,,,,2,,,Full,0.07,16
+"Long An, Đức Hòa, Căn hộ chung cư tại The Win City",61.1,,,Đông,Tây,2,2,Sale contract,Basic,2.05,12
+"Quảng Ninh, Hạ Long, Căn hộ chung cư tại Sun Festo Town",30.0,,,Tây - Bắc,Đông - Nam,1,1,Sale contract,Full,2.1,16
+"Thái Nguyên, Phổ Yên, Căn hộ chung cư tại Khu đô thị Yên Bình Thái Nguyên",62.0,,,Bắc,Nam,2,2,Sale contract,Basic,1.57,13
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Tháp đôi Kepler Land",98.0,,,Tây - Nam,,3,2,Sale contract,Full,10.0,18
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Rose Town 79 Ngọc Hồi",104.0,,,,,,,Sale contract,,0.08,17
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Khu đô thị Nam Thăng Long - Ciputra",150.5,,,,,,,Have certificate,,16.5,18
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Sunshine Riverside",76.0,,,,,3,2,Have certificate,Full,6.5,18
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Tây Hồ Riverview",76.0,,,,,2,2,Have certificate,Full,6.2,18
+"Hà Nội, Long Biên, Căn hộ chung cư tại đường Ngọc Thụy",74.0,,,Bắc,Nam,2,2,,,4.85,15
+"Quảng Ninh, Hạ Long, Căn hộ chung cư tại Sun Centro Town",31.0,,,Tây - Bắc,Tây - Bắc,1,1,Sale contract,Full,1.8,18
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Rivea Residences",61.26,,,,Nam,2,2,Have certificate,Full,7.3,12
+"Hồ Chí Minh, Quận 9, Căn hộ chung cư tại Ehome 2",64.0,,,Đông,Tây,2,2,Have certificate,Basic,3.3,18
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại D'Edge Thảo Điền",420.0,,,,,5,3,Have certificate,Full,80.0,18
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Paris Hoàng Kim",65.0,,,Đông - Bắc,Nam,2,2,,Full,8.0,18
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Skylake",44.0,,,,,1,1,Have certificate,Full,6.5,1
+"Đà Nẵng, Ngũ Hành Sơn, Căn hộ chung cư tại FourS Tower",98.0,,,Đông - Bắc,Tây - Nam,2,1,Have certificate,Full,2.7,18
+"Bình Dương, Thuận An, Căn hộ chung cư tại Iris Tower",45.0,,,Nam,Bắc,1,1,Have certificate,Full,1.25,9
+"Bình Dương, Thuận An, Căn hộ chung cư tại Iris Tower",59.0,,,,,2,2,Have certificate,Full,1.55,9
+"Hà Nội, Thanh Trì, Căn hộ chung cư tại Greenera Southmark",46.87,,,Tây,Đông,1,1,Sale contract,Basic,5.52,12
+"Hà Nội, Thanh Trì, Căn hộ chung cư tại Greenera Southmark",46.87,,,Tây,Đông,1,1,Sale contract,Basic,5.55,12
+"Bắc Giang, Bắc Giang, Căn hộ chung cư tại Gold Park",69.7,,,Tây - Nam,Đông - Bắc,2,2,Sale contract,Basic,3.82,2
+"Đồng Nai, Nhơn Trạch, Căn hộ chung cư tại Căn hộ Terra Flora",89.0,,,Bắc,Nam,3,2,Have certificate,Full,2.5,2
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Rivea Residences",102.0,,,Tây - Bắc,Đông - Nam,3,2,Have certificate,Full,10.15,18
+"Hồ Chí Minh, Nhà Bè, Căn hộ chung cư tại Essensia Sky",115.0,,,,,3,2,Sale contract,Basic,9.2,18
+"Hồ Chí Minh, Nhà Bè, Căn hộ chung cư tại Essensia Sky",81.0,,,Đông - Nam,Tây - Bắc,2,2,Sale contract,Basic,6.2,18
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Imperia Smart City",28.3,,,,Đông - Nam,1,1,Have certificate,,3.0,20
+"Hà Nội, Hai Bà Trưng, Căn hộ chung cư tại Times City",83.0,,,Bắc,Nam,2,2,Have certificate,Full,8.0,20
+"Bình Dương, Thuận An, Căn hộ chung cư tại La Pura",69.0,,,Nam,Bắc,2,2,Sale contract,Basic,4.5,20
+"Hà Nội, Đống Đa, Căn hộ chung cư tại Tòa nhà 101 Láng Hạ",162.0,,,Nam,Bắc,3,2,Have certificate,Basic,0.09,20
+"Bình Dương, Thủ Dầu Một, Căn hộ chung cư tại The Harmonie Phú Mỹ Hưng",72.0,,,,,2,2,Sale contract,Basic,3.2,14
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Chung cư An Sinh",122.0,,,,,3,2,Have certificate,,7.6,20
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại The Legend City",74.0,,,,,2,2,Have certificate,Full,,22
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại The Legend City",61.0,,,,,1,1,Have certificate,Full,7.25,22
+"Bình Dương, Thủ Dầu Một, Căn hộ chung cư tại Midori Park The Nest",50.0,,,,,,,,,2.3,22
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Khu nhà ở Bộ tư lệnh Thủ đô Hà Nội",122.0,,,,Đông - Nam,4,,Have certificate,,6.38,22
+"Bắc Ninh, Bắc Ninh, Căn hộ chung cư tại Cát Tường Thống Nhất",70.0,,,Nam,Đông - Bắc,3,2,Have certificate,Full,2.8,1
+"Bình Dương, Thủ Dầu Một, Căn hộ chung cư tại Happy One Central",50.0,,,,,1,,,Full,1.9,22
+"Cần Thơ, Cái Răng, Căn hộ chung cư tại Cara River Park",36.0,,,,Đông,1,,,,1.55,22
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Feliz En Vista",181.0,,,,,4,3,Have certificate,,25.0,22
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Lumi Hanoi",42.0,,,Đông - Nam,Đông - Nam,1,1,Have certificate,Basic,3.5,22
+"Thừa Thiên Huế, Huế, Căn hộ chung cư tại Hue Heritage",86.1,,,Tây - Bắc,Đông - Nam,3,2,Sale contract,Basic,5.74,22
+"Hồ Chí Minh, Nhà Bè, Căn hộ chung cư tại Dragon Hill Residence and Suites",104.0,,,Tây - Nam,Đông - Bắc,3,2,,Full,6.5,22
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Tòa nhà Intracom1 - Trung Văn",120.0,,,Nam,Bắc,3,2,Have certificate,Full,7.8,22
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại The Legend Tower 109 Nguyễn Tuân",186.5,,,Đông - Nam,,4,3,Have certificate,,0.12,22
+"Hồ Chí Minh, Quận 8, Căn hộ chung cư tại Central Premium",73.0,,,,,2,2,,Full,4.5,22
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại D’. Le Roi Soleil",111.0,,,,,3,3,Have certificate,Full,,22
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Hinode Royal Park",50.0,,,,,,,Have certificate,Basic,3.0,22
+"Hải Phòng, Kiến An, Căn hộ chung cư tại The Zenith Hải Phòng",66.0,,,Bắc,Nam,2,2,Sale contract,Full,0.04,22
+"Đà Nẵng, Liên Chiểu, Căn hộ chung cư tại đường Trung Lập 6",58.0,,,,,2,2,Have certificate,Full,2.0,22
+"Bình Dương, Dĩ An, Căn hộ chung cư tại Charm City",96.0,,,,,2,2,Have certificate,Basic,,22
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại NHS Phương Canh Residence",80.0,,,Đông - Bắc,Tây - Nam,3,2,Have certificate,Full,6.0,22
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Golden Field Mỹ Đình",66.7,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,6.5,22
+"Khánh Hòa, Nha Trang, Căn hộ chung cư tại The Onsen",53.9,,,Tây - Bắc,Tây - Bắc,1,1,Have certificate,Basic,4.0,22
+"Hà Nội, Gia Lâm, Căn hộ chung cư tại Chung cư The Senique Hanoi",84.9,,,Đông - Nam,Tây - Bắc,3,2,Sale contract,Basic,6.16,22
+"Quảng Ninh, Vân Đồn, Căn hộ chung cư tại Vân Bay Tower",55.0,,,Đông - Nam,Đông - Nam,1,1,Have certificate,,2.7,22
+"Đà Nẵng, Liên Chiểu, Căn hộ chung cư tại Ecolife Signature",63.3,,,,,1,1,Have certificate,Basic,2.5,22
+"Hà Nội, Bắc Từ Liêm, Căn hộ chung cư tại Chung cư Han Jardin",252.0,,,,,,,Have certificate,Full,56.0,22
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Hyundai Hillstate",168.0,,,Tây - Bắc,Đông - Nam,,,Have certificate,Full,,22
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại The Legend City",56.0,,,,,1,1,,,,22
+"Đà Nẵng, Cẩm Lệ, Căn hộ chung cư tại Dream Home (KĐT Hòa Xuân)",45.0,,,,,,,Sale contract,Basic,,22
+"Hồ Chí Minh, Bình Tân, Căn hộ chung cư tại Green Town Bình Tân",49.0,,,,,2,,,,,22
+"Hà Nội, Long Biên, Căn hộ chung cư tại Khai Sơn City",191.0,,,Tây - Bắc,Đông - Nam,4,4,Sale contract,,18.6,9
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại The Landmark 81 - Vinhomes Central Park",94.0,,,,,2,2,Have certificate,Full,15.0,22
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại The Vista An Phú",314.0,,,,Đông - Nam,5,4,Have certificate,Full,33.0,22
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Masteri Park Place",95.6,,,Đông,Bắc,3,2,Sale contract,Basic,12.3,22
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Vista Verde",160.0,,,,,4,3,Have certificate,,16.5,22
+"Hồ Chí Minh, Gò Vấp, Căn hộ chung cư tại Dream Home",64.0,,,,,2,2,Sale contract,Full,2.15,22
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Sarina Condominium",127.0,,,,,3,2,Have certificate,,22.0,22
+"Long An, Bến Lức, Căn hộ chung cư tại Forest Onsen",86.0,,,,,2,2,Sale contract,Basic,,22
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Khu đô thị mới Thịnh Liệt",60.0,,,,,2,2,Have certificate,Full,4.0,22
+"Quảng Ninh, Hạ Long, Căn hộ chung cư tại New Life Tower",76.0,,,,,2,2,Have certificate,Full,,22
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại đường Bùi Xương Trạch",67.0,,,,,2,2,Have certificate,Full,4.9,22
+"Hồ Chí Minh, Tân Phú, Căn hộ chung cư tại Diamond Centery",161.0,,,Đông - Nam,,4,4,Have certificate,Full,12.9,7
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Gateway Thảo Điền",58.0,,,,,1,,Sale contract,Full,7.0,22
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Bohemia Residence",130.0,,,Tây - Bắc,Nam,,,Have certificate,,12.9,22
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại The CBD Premium Home",65.0,,,,,2,2,Sale contract,Full,3.45,22
+"Hà Nội, Hai Bà Trưng, Căn hộ chung cư tại Toà nhà 93 Lò Đúc - Kinh Đô Tower",95.0,,,Đông,Đông - Nam,3,2,Have certificate,,10.3,22
+"Thái Nguyên, Phổ Yên, Căn hộ chung cư tại Khu đô thị Yên Bình Thái Nguyên",67.0,,,,,,,,,,22
+"Đà Nẵng, Cẩm Lệ, Căn hộ chung cư tại S-Light Tower",54.0,,,Đông - Bắc,Đông - Bắc,2,1,Sale contract,Basic,3.4,22
+"Cần Thơ, Cái Răng, Căn hộ chung cư tại Cara River Park",70.74,,,Đông - Bắc,Nam,2,2,Have certificate,Basic,3.64,22
+"Hà Nội, Gia Lâm, Căn hộ chung cư tại Chung cư The Senique Hanoi",101.5,,,Đông - Nam,Tây - Bắc,3,2,Sale contract,Basic,7.73,22
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Star Tower 283 Khương Trung",84.0,,,,,,,Have certificate,,,22
+"Bình Định, Quy Nhơn, Căn hộ chung cư tại Ecolife Riverside",64.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Basic,1.48,22
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Five Star West Lake",164.0,,,Bắc,Tây - Nam,3,3,Have certificate,Full,26.2,22
+"Bắc Ninh, Bắc Ninh, Căn hộ chung cư tại Phoenix Tower",68.0,,,Đông - Bắc,Nam,2,2,Have certificate,Full,5.1,22
+"Đà Nẵng, Cẩm Lệ, Căn hộ chung cư tại S-Light Tower",68.0,,,Đông,,,,,,,22
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại phường Yên Sở",93.0,,,Đông - Nam,,3,2,Have certificate,Basic,9.2,22
+"Cần Thơ, Cái Răng, Căn hộ chung cư tại Cara River Park",70.0,,,Đông - Nam,Đông - Nam,2,,Have certificate,Basic,3.7,22
+"Bình Dương, Dĩ An, Căn hộ chung cư tại Phúc Đạt Tower",78.0,,,Bắc,Nam,3,2,Have certificate,,3.0,22
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Gelexia Riverside",64.5,,,Đông - Bắc,Tây - Nam,2,2,Have certificate,Full,5.0,22
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại Sun Symphony Residence",311.0,,,Tây,Tây - Nam,3,3,Sale contract,,24.0,22
+"Long An, Đức Hòa, Căn hộ chung cư tại The Win City",50.0,,,,,2,1,,,1.4,22
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại Sun Symphony Residence",30.1,,,Đông - Bắc,Đông - Bắc,,1,Sale contract,,2.56,22
+"Hà Nội, Đan Phượng, Căn hộ chung cư tại Masteri Sky Quarter",67.4,,,Tây - Nam,Đông - Bắc,3,2,Sale contract,,4.91,22
+"Hồ Chí Minh, Quận 10, Căn hộ chung cư tại Chung cư Ngô Gia Tự",36.6,,,,,,,Have certificate,,1.9,22
+"Bình Dương, Dĩ An, Căn hộ chung cư tại Bcons Polaris",44.0,,,,,1,1,Have certificate,,2.07,22
+"Hồ Chí Minh, Bình Tân, Căn hộ chung cư tại Ansana By Kita",60.0,,,Đông - Bắc,Đông - Bắc,2,1,Have certificate,Basic,,11
+"Hồ Chí Minh, Bình Chánh, Căn hộ chung cư tại Conic Boulevard",73.4,,,Tây - Bắc,Tây - Nam,2,2,Have certificate,Basic,2.7,22
+"Hồ Chí Minh, Quận 7, Căn hộ chung cư tại Sky 89",72.0,,,,,2,2,Have certificate,Full,6.0,22
+"Hồ Chí Minh, Bình Chánh, Căn hộ chung cư tại Conic Boulevard",106.0,,,Đông - Nam,Tây - Nam,3,2,Have certificate,Basic,3.9,22
+"Hồ Chí Minh, Quận 9, Căn hộ chung cư tại The Origami - Vinhomes Grand Park",47.0,,,Đông - Bắc,Tây - Nam,1,1,Have certificate,,2.4,22
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Green Bay Mễ Trì",64.3,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,6.1,22
+"Bình Định, Quy Nhơn, Căn hộ chung cư tại Q1 Tower",45.0,,,,,1,1,Have certificate,Basic,,22
+"Bình Định, Phù Cát, Căn hộ chung cư tại The Ocean Suites Quy Nhơn",45.0,,,,,1,1,Sale contract,,1.89,22
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại Capital Square",47.4,,,,,1,1,,,3.95,22
+"Hà Nội, Cầu Giấy, Căn hộ chung cư tại Chung cư 30T Nam Trung Yên",55.0,,,,Đông - Nam,2,1,Have certificate,Full,5.6,22
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại HH2 - Bắc Hà",113.0,,,,,3,2,Have certificate,,7.05,23
+"Hồ Chí Minh, Tân Phú, Căn hộ chung cư tại Chung cư Khang Phú",77.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,3.8,23
+"Thanh Hóa, Thanh Hóa, Căn hộ chung cư tại Vinhomes Star City",71.7,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Basic,2.8,23
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại The Matrix One",115.0,,,Đông - Nam,Tây - Nam,3,2,Have certificate,Full,0.14,23
+"Hà Nội, Long Biên, Căn hộ chung cư tại Khu đô thị Việt Hưng",40.0,,,,,,,,Full,2.65,6
+"Hà Nội, Long Biên, Căn hộ chung cư tại Vinhomes Symphony Riverside",125.0,,,Tây - Bắc,Đông - Nam,3,2,Have certificate,,16.0,23
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Sky Forest Residences Ecopark",111.0,,,,,3,2,Sale contract,,9.4,22
+"Hồ Chí Minh, Quận 1, Căn hộ chung cư tại Vinhomes Golden River Ba Son",86.0,,,,,2,2,,,22.0,22
+"Bình Dương, Thủ Dầu Một, Căn hộ chung cư tại Midori Park The Glory",61.0,,,,,2,1,,,3.2,22
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Aqua Bay Sky Residences",212.0,,,,,3,3,Have certificate,Full,,22
+"Long An, Bến Lức, Căn hộ chung cư tại Forest Onsen",41.8,,,,,1,1,Sale contract,,2.8,22
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại Sun Symphony Residence",62.7,,,Tây - Nam,Tây - Nam,2,2,Sale contract,,5.51,22
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Hà Nội Melody Residences",75.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,,4.5,23
+"Bình Dương, Thuận An, Căn hộ chung cư tại Tecco Home An Phú",44.0,,,Nam,Nam,1,1,,Basic,1.5,23
+"Hồ Chí Minh, Quận 1, Căn hộ chung cư tại Vinhomes Golden River Ba Son",88.0,,,,,2,2,Have certificate,Full,22.0,23
+"Hồ Chí Minh, Quận 1, Căn hộ chung cư tại Vinhomes Golden River Ba Son",90.0,,,,,,,,,24.5,23
+"Hà Nội, Đống Đa, Căn hộ chung cư tại phố Chùa Láng",28.0,,,,,,,Have certificate,,3.58,13
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Gelexia Riverside",65.0,,,,,,,,,4.68,23
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại Peninsula Đà Nẵng",106.0,,,,,3,2,Sale contract,Basic,,22
+"Bình Dương, Thủ Dầu Một, Căn hộ chung cư tại The Harmonie Phú Mỹ Hưng",45.0,,,,,1,,Sale contract,,,23
+"Hà Nội, Bắc Từ Liêm, Căn hộ chung cư tại Ecohome 2",38.0,,,,Đông,1,1,Have certificate,,2.85,24
+"Hà Nội, Gia Lâm, Căn hộ chung cư tại Chung cư The Senique Hanoi",81.3,,,,Đông - Nam,2,2,Sale contract,Basic,8.0,24
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Iconia Lakeside",114.0,,,,,3,2,Sale contract,Basic,10.94,24
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Chung cư The Wisteria",138.0,,,,,,,,,,24
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại The Matrix One",89.6,,,Tây - Bắc,Đông - Nam,2,2,,Full,9.4,22
+"Long An, Đức Hòa, Căn hộ chung cư tại Victory Heights",68.0,,,Đông - Nam,Đông - Nam,2,2,Have certificate,Full,1.85,24
+"Thanh Hóa, Thanh Hóa, Căn hộ chung cư tại Vinhomes Star City",68.0,,,Tây - Nam,Đông - Bắc,2,2,Have certificate,,2.7,24
+"Bắc Giang, Việt Yên, Căn hộ chung cư tại Vega Homes",30.0,,,Đông,Tây,1,1,Sale contract,Basic,1.3,24
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại The Miami",25.5,,,Đông - Bắc,Tây - Nam,1,1,Have certificate,Full,2.5,24
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Sun Square",103.0,,,Nam,Tây - Nam,3,2,Have certificate,Full,9.3,24
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Chung cư CT4 Yên Nghĩa",90.0,,,,,3,2,Have certificate,Full,6.42,24
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại The Landmark Ecopark",86.0,,,,,3,2,Have certificate,Full,,24
+"Hải Phòng, Lê Chân, Căn hộ chung cư tại Hoàng Huy Commerce",44.0,,,,Đông - Nam,1,1,Have certificate,Full,2.3,24
+"Hà Nội, Bắc Từ Liêm, Căn hộ chung cư tại Goldmark City",100.0,,,Tây - Bắc,Đông - Nam,3,2,,Full,8.6,23
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Thu Thiem Zeit River",135.0,,,Đông - Nam,Tây - Bắc,3,2,Sale contract,Basic,34.5,23
+"Hồ Chí Minh, Quận 9, Căn hộ chung cư tại The Origami - Vinhomes Grand Park",59.0,,,,,2,2,Have certificate,,3.15,23
+"Hồ Chí Minh, Quận 8, Căn hộ chung cư tại City Gate Towers",92.0,,,Bắc,Tây,3,2,Sale contract,Full,3.7,23
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Masteri Cosmo Central",54.6,,,Bắc,Nam,1,1,Sale contract,,5.66,23
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Masteri Cosmo Central",106.7,,,Đông - Nam,Tây - Bắc,3,2,,,13.7,23
+"Hồ Chí Minh, Quận 8, Căn hộ chung cư tại đường Phú Định",40.0,,,,,1,1,Sale contract,Basic,2.0,23
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Hanoi Seasons Garden",107.2,,,Đông - Bắc,Tây - Nam,3,2,Sale contract,,16.03,12
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Hausman Premium Residences",115.5,,,,Đông - Nam,3,2,Have certificate,Basic,10.97,24
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại The Monarchy",74.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,5.0,24
+"Hồ Chí Minh, Quận 7, Căn hộ chung cư tại Cảnh Viên 3",118.0,,,,,3,2,Have certificate,Full,10.0,24
+"Hà Nội, Long Biên, Căn hộ chung cư tại Canal Park",100.0,,,,Tây - Bắc,2,2,Have certificate,,,24
+"Hà Nội, Gia Lâm, Căn hộ chung cư tại The Paris - Vinhomes Ocean Park",113.0,,,Tây - Nam,Tây - Nam,4,3,Sale contract,Basic,9.18,24
+"Hải Phòng, Thủy Nguyên, Căn hộ chung cư tại Vlasta Thủy Nguyên",45.0,,,,,2,1,Have certificate,Basic,0.85,24
+"Hưng Yên, Yên Mỹ, Căn hộ chung cư tại Atera Central",45.0,,,,,1,1,Sale contract,Full,0.06,24
+"Hồ Chí Minh, Quận 9, Căn hộ chung cư tại Flora Anh Đào",55.0,,,,Đông - Bắc,1,1,Have certificate,Full,3.09,24
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại 6th Element",60.0,,,Nam,Nam,2,1,Have certificate,Full,7.7,24
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại The Opera Residence",110.0,,,Tây - Nam,Đông - Bắc,3,2,Have certificate,,43.3,24
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Masteri Grand View",136.6,,,,Tây - Nam,4,3,Sale contract,,18.1,24
+"Hồ Chí Minh, Quận 9, Căn hộ chung cư tại Mường Thanh Phú Hữu",68.1,,,,Tây - Nam,,,Sale contract,,3.47,24
+"Hải Phòng, Ngô Quyền, Căn hộ chung cư tại Golden Land 5",62.0,,,Đông - Nam,Tây,2,2,,Full,0.9,24
+"Hồ Chí Minh, Quận 7, Căn hộ chung cư tại Scenic Valley 1",80.0,,,,,2,2,Have certificate,,7.7,24
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Sunshine Legend City",70.0,,,,,2,2,Sale contract,,4.0,24
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",50.0,,,Bắc,,1,2,Sale contract,Basic,0.07,24
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Alumi - Alluvia City",74.6,,,Tây,Tây,2,2,Sale contract,Basic,5.06,24
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Khu đô thị Vĩnh Hoàng",65.0,,,Đông - Nam,Đông - Nam,2,2,Have certificate,,4.25,24
+"Đà Nẵng, Cẩm Lệ, Căn hộ chung cư tại S-Light Tower",55.0,,,Đông - Nam,Tây - Bắc,2,2,,Basic,3.5,22
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Handi Resco Lê Văn Lương",99.0,,,,,3,2,Have certificate,Full,10.9,24
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Khu nhà ở 90 Nguyễn Tuân",72.0,,,,,2,2,Have certificate,Full,7.6,24
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Chung cư Bộ Công An",68.7,,,Tây - Nam,Đông - Bắc,2,2,Have certificate,Full,5.2,24
+"Đà Nẵng, Ngũ Hành Sơn, Căn hộ chung cư tại FPT Plaza 2",72.0,,,Đông,Tây - Nam,2,2,Have certificate,Full,3.4,24
+"Đà Nẵng, Ngũ Hành Sơn, Căn hộ chung cư tại FPT Plaza 2",72.0,,,Tây - Nam,Đông - Bắc,2,2,Have certificate,Full,3.0,24
+"Long An, Đức Hòa, Căn hộ chung cư tại The Ori Phương Mai",45.0,,,,,,,Sale contract,,,24
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Hausman Premium Residences",56.1,,,Đông - Bắc,Tây - Nam,2,1,Have certificate,Full,,24
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại NHS Phương Canh Residence",56.7,,,Đông - Nam,Tây - Bắc,2,2,Have certificate,,3.4,24
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Imperia Smart City",55.0,,,Tây - Nam,Đông - Bắc,2,1,Have certificate,Full,4.5,24
+"Hồ Chí Minh, Quận 8, Căn hộ chung cư tại Diamond Lotus Phúc Khang",79.0,,,Đông - Nam,Tây - Bắc,2,2,Have certificate,Basic,6.35,24
+"Hồ Chí Minh, Quận 8, Căn hộ chung cư tại Diamond Lotus Phúc Khang",50.0,,,Đông - Nam,Đông - Nam,1,1,Sale contract,Basic,3.98,24
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Vinhomes Central Park",50.0,,,,,1,1,Sale contract,Full,5.0,24
+"Hà Nội, Thanh Trì, Căn hộ chung cư tại Khu đô thị mới Đại Thanh",60.0,,,,Đông - Nam,2,2,Have certificate,,3.88,23
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Vinhomes Central Park",81.5,,,,,2,2,Have certificate,Full,10.0,24
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Vinhomes Central Park",53.0,,,,,1,1,Have certificate,Full,8.25,24
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Vinhomes Central Park",166.0,,,,,3,2,Have certificate,Full,25.5,24
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Vinhomes Central Park",108.0,,,,,3,2,Have certificate,Full,14.2,24
+"Hà Nội, Gia Lâm, Căn hộ chung cư tại Vinhomes Ocean Park Gia Lâm",63.8,,,Đông - Bắc,Tây - Nam,2,2,,,4.1,24
+"Bà Rịa Vũng Tàu, Vũng Tàu, Căn hộ chung cư tại Beacon Tower",100.0,,,,,3,2,Have certificate,Basic,9.0,24
+"Bình Dương, Thuận An, Căn hộ chung cư tại EHome 4",41.0,,,,,,,Have certificate,,1.27,24
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Mailand Hanoi City",128.0,,,Đông - Bắc,Tây - Nam,3,2,Have certificate,Full,8.8,24
+"Hồ Chí Minh, Quận 9, Căn hộ chung cư tại Lumiere Boulevard",54.0,,,Đông - Bắc,Đông - Bắc,,,Sale contract,Full,3.5,24
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Paris Hoàng Kim",66.8,,,,,2,2,,Full,7.1,24
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại The Matrix One",232.0,,,,,4,4,Sale contract,,35.0,24
+"Hồ Chí Minh, Quận 9, Căn hộ chung cư tại Lumiere Boulevard",74.0,,,Đông - Bắc,Đông - Bắc,2,2,Sale contract,,4.2,24
+"Hồ Chí Minh, Quận 9, Căn hộ chung cư tại Lumiere Boulevard",74.0,,,Đông - Nam,Đông - Nam,2,2,Have certificate,Full,5.2,24
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Sunshine Legend City",70.0,,,Đông - Bắc,Tây - Bắc,2,2,Sale contract,Basic,4.0,24
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Q2 Thảo Điền",122.0,,,,,3,,Sale contract,Full,24.5,24
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Lumière Midtown",71.9,,,,Đông - Nam,2,2,Sale contract,,10.6,24
+"Thái Nguyên, Thái Nguyên, Căn hộ chung cư tại BV Diamond Hill Thái Nguyên",70.0,,,Bắc,Nam,3,2,Have certificate,Full,4.1,25
+"Hà Nam, Phủ Lý, Căn hộ chung cư tại Sun Urban City",80.0,,,Đông - Nam,Đông - Nam,2,2,Have certificate,Full,,25
+"Hồ Chí Minh, Quận 8, Căn hộ chung cư tại Phú Định Riverside",40.0,,,,,1,1,Sale contract,Basic,1.6,25
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Sunwah Pearl",112.0,,,,,2,2,Sale contract,Full,,25
+"Đà Nẵng, Ngũ Hành Sơn, Căn hộ chung cư tại FourS Tower",53.8,,,Đông - Nam,Đông - Nam,1,1,,,2.6,25
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại The Landmark 81 - Vinhomes Central Park",94.0,,,,,2,2,Have certificate,Full,19.9,25
+"Bình Dương, Thuận An, Căn hộ chung cư tại A&T Sky Garden",74.0,,,Đông - Nam,Đông - Bắc,2,2,Sale contract,Basic,0.04,25
+"Hà Nội, Thanh Xuân, Căn hộ chung cư tại Star Tower 283 Khương Trung",84.0,,,,,3,2,Have certificate,Full,,25
+"Lào Cai, Sa Pa, Căn hộ chung cư tại Irista Hill Sapa",45.0,,,Nam,Tây - Bắc,1,1,Have certificate,Full,1.95,25
+"Thái Bình, Thái Bình, Căn hộ chung cư tại Diamond Light",68.0,,,Đông - Bắc,,2,2,Have certificate,Basic,,19
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Vinhomes Central Park",107.8,,,Tây,Đông,3,2,Sale contract,Full,15.0,24
+"Hà Nội, Tây Hồ, Căn hộ chung cư tại Chung cư Oriental Westlake",91.0,,,,,,,Have certificate,,9.5,25
+"Hồ Chí Minh, Quận 7, Căn hộ chung cư tại Midtown Phú Mỹ Hưng",80.0,,,Tây - Nam,Đông - Nam,2,2,,Full,12.5,25
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Nhóm nhà ở Tây Nam Mễ Trì",69.6,,,,,2,2,Sale contract,,7.0,25
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Swan Lake Onsen Residences",58.0,,,,Đông - Nam,2,2,Have certificate,Full,,25
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại The Landmark Ecopark",92.0,,,,Đông - Bắc,3,2,Have certificate,Full,,24
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Hoàng Thành Pearl",110.0,,,,Tây - Nam,3,2,Have certificate,Full,10.15,24
+"Hải Phòng, Lê Chân, Căn hộ chung cư tại Hoàng Huy Commerce",48.0,,,Đông - Nam,Đông - Nam,1,1,Have certificate,Full,,24
+"Hồ Chí Minh, Bình Tân, Căn hộ chung cư tại Lê Thành Tân Tạo",36.5,,,,Đông - Nam,1,1,Sale contract,,0.84,24
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Swan Lake Onsen Residences",97.0,,,,,3,2,Have certificate,Full,,24
+"Bình Dương, Thuận An, Căn hộ chung cư tại Ben Hill",57.0,,,Nam,Bắc,2,2,Have certificate,Basic,,25
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Swan Lake Onsen Residences",58.0,,,,Tây - Nam,2,2,Have certificate,Full,,25
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại The Landmark 81 - Vinhomes Central Park",109.0,,,,,3,2,Have certificate,Basic,22.9,25
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại The Landmark 81 - Vinhomes Central Park",127.4,,,,,3,2,,Full,31.0,25
+"Hà Nội, Cầu Giấy, Căn hộ chung cư tại Chung cư 30T Nam Trung Yên",75.52,,,Đông,Đông - Bắc,3,2,Have certificate,Full,6.8,25
+"Quảng Ninh, Hạ Long, Căn hộ chung cư tại phường Bãi Cháy",31.0,,,Đông - Nam,,,,,Full,2.4,25
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại Đà Nẵng Golden Bay",34.0,,,,,1,1,Sale contract,Basic,1.3,25
+"Hồ Chí Minh, Quận 9, Căn hộ chung cư tại Him Lam Phú An",70.0,,,Đông - Nam,Đông - Nam,2,2,Have certificate,Full,4.6,25
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại The Zen Residence - Gamuda Gardens",93.0,,,,,3,,Have certificate,,9.0,22
+"Hưng Yên, Văn Giang, Căn hộ chung cư tại Sunshine Legend City",116.0,,,,,3,2,Have certificate,,5.9,25
+"Hồ Chí Minh, Thủ Đức, Căn hộ chung cư tại Happy One Sora",69.3,,,Tây - Nam,Tây - Nam,2,2,Sale contract,Basic,3.02,25
+"Đà Nẵng, Sơn Trà, Căn hộ chung cư tại Capital Square",75.0,,,Tây - Nam,Tây - Nam,2,2,Sale contract,,0.09,22
+"Bà Rịa Vũng Tàu, Vũng Tàu, Căn hộ chung cư tại Beacon Tower",38.8,,,,,1,1,,,2.34,25
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại The Opera Residence",130.0,,,Đông - Bắc,Tây - Nam,3,2,,Basic,40.0,25
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Gardenia",80.0,,,,Nam,2,2,,Full,6.5,25
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại The Flame Vine",74.5,,,,,2,,Have certificate,,4.8,22
+"Bình Dương, Dĩ An, Căn hộ chung cư tại Green Skyline",65.0,,,,,2,2,Have certificate,,4.0,25
+"Hà Nội, Ba Đình, Căn hộ chung cư tại Liễu Giai Tower",72.3,,,,,2,2,Sale contract,Basic,0.14,25
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Iconia Lakeside",75.0,,,Đông - Bắc,Tây - Nam,2,2,Sale contract,Full,0.1,25
+"Bà Rịa Vũng Tàu, Phú Mỹ, Căn hộ chung cư tại Maison Grand Phú Mỹ",65.45,,,,,2,2,Sale contract,,2.4,25
+"Hải Phòng, Lê Chân, Căn hộ chung cư tại The Ambience Hải Phòng",45.0,,,Tây,Đông,,,Have certificate,Basic,0.07,25
+"Hà Nội, Hà Đông, Căn hộ chung cư tại Le Parc Place",110.0,,,Tây - Bắc,Đông - Nam,2,2,Sale contract,Basic,12.12,25
+"Đà Nẵng, Hải Châu, Căn hộ chung cư tại The Filmore Da Nang",152.0,,,,,3,2,Have certificate,,27.5,25
+"Bình Dương, Thủ Dầu Một, Căn hộ chung cư tại Orchard Hill - Sycamore",86.03,,,,Đông - Nam,2,2,Sale contract,Full,4.34,25
+"Hồ Chí Minh, Thủ Đức, Căn hộ chung cư tại ST Moritz Phạm Văn Đồng",78.9,,,,,2,2,,Full,4.85,25
+"Hồ Chí Minh, Thủ Đức, Căn hộ chung cư tại ST Moritz Phạm Văn Đồng",65.0,,,Đông,Nam,2,2,,Basic,4.0,25
+"Hà Nội, Gia Lâm, Căn hộ chung cư tại The Beverly - Vinhomes Ocean Park",62.5,,,Đông - Bắc,Tây - Nam,2,2,Sale contract,Basic,4.33,25
+"Hồ Chí Minh, Quận 2, Căn hộ chung cư tại Thủ Thiêm Sky",64.0,,,,,2,,Have certificate,,5.65,25
+"Bình Dương, Thuận An, Căn hộ chung cư tại Thanh Bình Residence",56.0,,,,,2,2,Have certificate,,1.6,25
+"Hà Nội, Hai Bà Trưng, Căn hộ chung cư tại Times City",83.0,,,Nam,Bắc,2,2,Have certificate,,8.0,25
+"Thái Nguyên, Thái Nguyên, Căn hộ chung cư tại BV Diamond Hill Thái Nguyên",83.0,,,,,,,,,,25
+"Hải Phòng, Hải An, Căn hộ chung cư tại Golden Crown Hai Phong",110.0,,,Đông - Nam,Đông - Nam,3,3,Have certificate,Full,6.6,25
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Vinhomes Central Park",303.0,,,,,3,2,,Full,60.0,25
+"Hồ Chí Minh, Bình Thạnh, Căn hộ chung cư tại Vinhomes Central Park",87.0,,,,,2,2,Have certificate,Full,11.45,25
+"Hồ Chí Minh, Quận 7, Căn hộ chung cư tại Riverpark Premier",140.0,,,Đông,Tây - Nam,,,Have certificate,,22.2,25
+"Hồ Chí Minh, Quận 1, Căn hộ chung cư tại Vinhomes Golden River Ba Son",78.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,,17.8,25
+"Bình Dương, Thuận An, Căn hộ chung cư tại Monrei Saigon",52.16,,,,,2,1,Sale contract,Full,1.98,4
+"Hải Phòng, Hồng Bàng, Căn hộ chung cư tại Gem Park Hải Phòng",86.0,,,,,3,2,,,,25
+"Hà Nội, Hoài Đức, Căn hộ chung cư tại Imperia Sky Park",54.94,,,Bắc,Nam,2,2,Sale contract,,4.5,25
+"Hà Nội, Long Biên, Căn hộ chung cư tại Vinhomes Symphony Riverside",75.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,,8.0,25
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Hà Nội Melody Residences",74.0,,,Nam,Đông - Bắc,2,2,Sale contract,Full,4.0,25
+"Bà Rịa Vũng Tàu, Vũng Tàu, Căn hộ chung cư tại Beacon Tower",44.6,,,Tây - Bắc,Tây - Bắc,1,1,Have certificate,Full,2.6,23
+"Thái Nguyên, Thái Nguyên, Căn hộ chung cư tại Tecco Elite City",72.0,,,Đông - Nam,Tây - Bắc,2,2,Have certificate,Basic,0.03,25
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại Vinhomes Smart City",55.0,,,Nam,Bắc,2,1,Have certificate,,3.99,25
+"Thái Nguyên, Thái Nguyên, Căn hộ chung cư tại BV Diamond Hill Thái Nguyên",51.0,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,Full,2.9,25
+"Hà Nội, Nam Từ Liêm, Căn hộ chung cư tại The Sapphire-Vinhomes Smart City",32.0,,,,,1,1,Have certificate,Full,2.98,25
+"Thái Nguyên, Thái Nguyên, Căn hộ chung cư tại BV Diamond Hill Thái Nguyên",83.0,,,,,2,2,,Basic,,25
+"Thái Nguyên, Phổ Yên, Căn hộ chung cư tại Khu đô thị Yên Bình Thái Nguyên",62.0,,,,,,,,,,25
+"Thái Nguyên, Thái Nguyên, Căn hộ chung cư tại BV Diamond Hill Thái Nguyên",76.0,,,,,2,2,Sale contract,Basic,,25
+"Hà Nội, Hoàng Mai, Căn hộ chung cư tại Khu đô thị mới Định Công",60.0,,,,,,,Have certificate,Full,3.99,25

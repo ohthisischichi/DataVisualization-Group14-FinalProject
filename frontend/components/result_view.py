@@ -20,11 +20,11 @@ def _render_result_value(result: Any) -> None:
 			result_data = result.get("result_data")
 			if result.get("result_type") == "image" and isinstance(result_data, str):
 				import base64
-				st.image(base64.b64decode(result_data), use_container_width=True)
+				st.image(base64.b64decode(result_data), width="stretch")
 			elif result.get("result_type") == "chart" and isinstance(result_data, str):
-				st.plotly_chart(pio.from_json(result_data), use_container_width=True)
+				st.plotly_chart(pio.from_json(result_data), width="stretch")
 			elif isinstance(result_data, pd.DataFrame):
-				st.dataframe(result_data, use_container_width=True)
+				st.dataframe(result_data, width="stretch")
 			elif isinstance(result_data, dict):
 				st.json(result_data)
 			elif isinstance(result_data, Sequence) and not isinstance(result_data, (str, bytes)):
@@ -40,7 +40,7 @@ def _render_result_value(result: Any) -> None:
 			return
 
 	if isinstance(result, pd.DataFrame):
-		st.dataframe(result, use_container_width=True)
+		st.dataframe(result, width="stretch")
 		chart_source = result.copy()
 		numeric_columns = chart_source.select_dtypes(include="number").columns.tolist()
 		if numeric_columns:

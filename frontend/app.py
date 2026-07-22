@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import importlib.util
-from datetime import datetime
 from pathlib import Path
 from typing import Callable
 
 import streamlit as st
+import pandas as pd
+import numpy as np
 
 from components.chat import render_chat_panel
 from components.code_editor import render_code_editor_panel
@@ -14,15 +15,23 @@ from components.result_view import render_result_panel
 from services.ai_api import generate_ai_response, interpret_result
 from services.execute_api import execute_approved_code
 from services.logs_api import fetch_logs
+from filters import render_sidebar_filters, apply_filters, _init_filters
+from data_loader import load_data
 
 
-APP_TITLE = "AI Frontend Dashboard"
-APP_SUBTITLE = "Dashboard 4 tab với AI popup để chat, duyệt code, và xem kết quả"
+from theme import KPI_CARD_CSS
+
+
+DATASET_PATH = Path(__file__).resolve().parent.parent / "Data" / "processed" / "house_price_clean.csv"
+
+APP_TITLE = "Nhóm 11"
+HEADER_TITLE= "DASHBOARD PHÂN TÍCH THỊ TRƯỜNG BẤT ĐỘNG SẢN VIỆT NAM"
+APP_SUBTITLE = "VIETNAM REAL ESTATE INTELLIGENCE"
 
 DEFAULT_PROMPT = (
-	"Dựa trên tab và bộ lọc hiện tại, hãy đề xuất một phân tích ngắn gọn cho dữ liệu house_price_clean. "
-	"Chỉ dùng các cột có thật trong schema, viết code Python rõ ràng để xử lý hoặc trực quan hóa df, "
-	"và giải thích ngắn gọn bằng tiếng Việt."
+    "Dựa trên tab và bộ lọc hiện tại, hãy đề xuất một phân tích ngắn gọn cho dữ liệu house_price_clean. "
+    "Chỉ dùng các cột có thật trong schema, viết code Python rõ ràng để xử lý hoặc trực quan hóa df, "
+    "và giải thích ngắn gọn bằng tiếng Việt."
 )
 
 DEFAULT_CODE = '''# Giải thích: Chuẩn bị dữ liệu đã được duyệt để hiển thị bảng và biểu đồ.
@@ -30,10 +39,10 @@ import pandas as pd
 
 # Giải thích: Tạo bảng tổng hợp giả lập từ dữ liệu địa phương.
 summary = pd.DataFrame(
-	{
-		"province": ["Hanoi", "Ho Chi Minh City", "Da Nang", "Hai Phong", "Can Tho"],
-		"median_price": [52.4, 61.8, 38.2, 34.7, 29.9],
-	}
+    {
+        "province": ["Hanoi", "Ho Chi Minh City", "Da Nang", "Hai Phong", "Can Tho"],
+        "median_price": [52.4, 61.8, 38.2, 34.7, 29.9],
+    }
 )
 
 # Giải thích: Sắp xếp để biểu đồ và bảng dễ đọc hơn.
@@ -42,24 +51,25 @@ result = summary
 '''
 
 
-def _load_renderer(module_filename: str, function_name: str) -> Callable[[], None]:
-	module_path = Path(__file__).resolve().parent / "pages" / module_filename
-	module_name = f"dashboard_{module_filename.replace('.py', '')}"
-	spec = importlib.util.spec_from_file_location(module_name, module_path)
-	if spec is None or spec.loader is None:
-		raise RuntimeError(f"Cannot load dashboard module: {module_filename}")
-	module = importlib.util.module_from_spec(spec)
-	spec.loader.exec_module(module)
-	renderer = getattr(module, function_name, None)
-	if renderer is None:
-		raise RuntimeError(f"Missing renderer {function_name} in {module_filename}")
-	return renderer
+def _load_renderer(module_filename: str, function_name: str) -> Callable:
+    module_path = Path(__file__).resolve().parent / "pages" / module_filename
+    module_name = f"dashboard_{module_filename.replace('.py', '')}"
+    spec = importlib.util.spec_from_file_location(module_name, module_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Cannot load dashboard module: {module_filename}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    renderer = getattr(module, function_name, None)
+    if renderer is None:
+        raise RuntimeError(f"Missing renderer {function_name} in {module_filename}")
+    return renderer
 
 
-render_overview_tab = _load_renderer("tab_overview.py", "render_overview_tab")
-render_market_tab = _load_renderer("tab_market.py", "render_market_tab")
-render_geography_tab = _load_renderer("tab_geography.py", "render_geography_tab")
-render_trends_tab = _load_renderer("tab_trends.py", "render_trends_tab")
+# Load các hàm render từ các file tab
+render_overview_tab = _load_renderer("tab_overview.py", "render")
+render_market_tab = _load_renderer("tab_market.py", "render")
+render_geography_tab = _load_renderer("tab_geography.py", "render")
+render_trends_tab = _load_renderer("tab_trends.py", "render")
 
 
 def initialize_state() -> None:
@@ -105,82 +115,71 @@ def initialize_state() -> None:
 
 
 def inject_styles() -> None:
-	st.markdown(
-		"""
-		<style>
-		.stApp {
-			background:
-				radial-gradient(circle at top left, rgba(70, 130, 180, 0.20), transparent 28%),
-				radial-gradient(circle at bottom right, rgba(12, 74, 110, 0.16), transparent 30%),
-				linear-gradient(180deg, #f7fbff 0%, #eef4f9 100%);
-		}
-		.hero-card {
-			border: 1px solid rgba(15, 23, 42, 0.08);
-			border-radius: 20px;
-			padding: 22px 24px;
-			background: rgba(255, 255, 255, 0.78);
-			box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
-			backdrop-filter: blur(10px);
-			margin-bottom: 1rem;
-		}
-		.status-chip {
-			display: inline-block;
-			padding: 0.3rem 0.7rem;
-			border-radius: 999px;
-			background: #0f766e;
-			color: white;
-			font-size: 0.85rem;
-			font-weight: 600;
-		}
-		.dashboard-note {
-			padding: 0.55rem 0.75rem;
-			border-radius: 12px;
-			background: rgba(15, 118, 110, 0.1);
-			color: #115e59;
-			font-size: 0.9rem;
-			margin-bottom: 0.75rem;
-		}
-		</style>
-		""",
-		unsafe_allow_html=True,
-	)
+    st.markdown(KPI_CARD_CSS, unsafe_allow_html=True)
+    st.markdown(
+        """
+        <style>
+        .status-chip {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(245, 158, 11, 0.2);
+            color: #F59E0B;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .dashboard-note {
+            padding: 0.65rem 0.85rem;
+            border-radius: 10px;
+            background: #EFF6FF;
+            border-left: 4px solid #1D4ED8;
+            color: #1E3A8A;
+            font-size: 0.88rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def build_header() -> None:
-	st.markdown(
-		f"""
-		<div class="hero-card">
-			<div style="display:flex; justify-content:space-between; gap:16px; align-items:flex-start; flex-wrap:wrap;">
-				<div>
-					<h1 style="margin-bottom:0.35rem; color:#0f172a;">{APP_TITLE}</h1>
-					<p style="margin:0; color:#334155; font-size:1rem;">{APP_SUBTITLE}</p>
-				</div>
-				<div class="status-chip">{st.session_state.approval_status}</div>
-			</div>
-		</div>
-		""",
-		unsafe_allow_html=True,
-	)
+    st.markdown(
+        f"""
+        <div class="vrei-header">
+            <div class="vrei-brand">
+                <div class="vrei-logo">🏢</div>
+                <div>
+                    <h1 class="vrei-title">{HEADER_TITLE}</h1>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def request_ai_generation(prompt_text: str) -> None:
-	with st.spinner("Đang gọi AI API để sinh code..."):
-		response = generate_ai_response(prompt_text=prompt_text)
-	st.session_state.current_request_id = response.get("request_id")
-	st.session_state.generated_code = response["code"]
-	st.session_state.code_editor_text = response["code"]
-	st.session_state.code_editor_revision += 1
-	st.session_state.generated_explanation = response["explanation"]
-	st.session_state.ai_status = response.get("status")
-	st.session_state.approval_status = "Chờ duyệt"
-	st.session_state.execution_result = None
-	st.session_state.execution_error = None
-	st.session_state.chat_history.append(
-		{"role": "user", "content": prompt_text}
-	)
-	st.session_state.chat_history.append(
-		{"role": "assistant", "content": response["chat_reply"]}
-	)
+    with st.spinner("Đang gọi AI API để sinh code..."):
+        response = generate_ai_response(prompt_text=prompt_text)
+    st.session_state.current_request_id = response.get("request_id")
+    st.session_state.generated_code = response["code"]
+    st.session_state.code_editor_text = response["code"]
+    st.session_state.code_editor_revision += 1
+    st.session_state.generated_explanation = response["explanation"]
+    st.session_state.ai_status = response.get("status")
+    st.session_state.approval_status = "Chờ duyệt"
+    st.session_state.execution_result = None
+    st.session_state.execution_error = None
+    st.session_state.chat_history.append(
+        {"role": "user", "content": prompt_text}
+    )
+    st.session_state.chat_history.append(
+        {"role": "assistant", "content": response["chat_reply"]}
+    )
 
 
 def approve_and_execute(code_text: str) -> None:
@@ -209,43 +208,44 @@ def reject_current_code() -> None:
 	st.session_state.execution_error = None
 	st.session_state.answer_text = None
 
-def render_dashboard_tabs() -> None:
-	tab_titles = [
-		"Overview",
-		"Market Pulse",
-		"Geo Insights",
-		"Trend Lab",
-	]
-	tab_overview, tab_market, tab_geo, tab_trends = st.tabs(tab_titles)
 
-	with tab_overview:
-		render_overview_tab()
-	with tab_market:
-		render_market_tab()
-	with tab_geo:
-		render_geography_tab()
-	with tab_trends:
-		render_trends_tab()
+def render_dashboard_tabs(df_filtered: pd.DataFrame) -> None:
+    tab_titles = [
+        "Tổng quan",
+        "Phân tích địa lý",
+        "Yếu tố ảnh hưởng giá",
+        "Phân khúc thị trường",
+    ]
+    tab_overview, tab_geo, tab_trends, tab_market = st.tabs(tab_titles)
+
+    with tab_overview:
+        render_overview_tab(df_filtered)
+    with tab_geo:
+        render_geography_tab(df_filtered)
+    with tab_trends:
+        render_trends_tab(df_filtered)
+    with tab_market:
+        render_market_tab(df_filtered)
 
 
 @st.dialog("AI Workspace", width="large")
 def render_ai_popup() -> None:
-	st.caption("Popup AI dùng chung cho mọi tab: chat, chỉnh sửa code, duyệt, và xem kết quả.")
+    st.caption("Popup AI dùng chung cho mọi tab: chat, chỉnh sửa code, duyệt, và xem kết quả.")
 
-	prompt_value = render_chat_panel(
-		chat_history=st.session_state.chat_history,
-		default_prompt=DEFAULT_PROMPT,
-		on_generate=request_ai_generation,
-	)
-	st.session_state.prompt_text = prompt_value
+    prompt_value = render_chat_panel(
+        chat_history=st.session_state.chat_history,
+        default_prompt=DEFAULT_PROMPT,
+        on_generate=request_ai_generation,
+    )
+    st.session_state.prompt_text = prompt_value
 
-	code_text = render_code_editor_panel(
-		code_text=st.session_state.code_editor_text,
-		explanation_text=st.session_state.generated_explanation,
-		approval_status=st.session_state.approval_status,
-		widget_key=f"code_editor_widget_{st.session_state.code_editor_revision}",
-	)
-	st.session_state.code_editor_text = code_text
+    code_text = render_code_editor_panel(
+        code_text=st.session_state.code_editor_text,
+        explanation_text=st.session_state.generated_explanation,
+        approval_status=st.session_state.approval_status,
+        widget_key=f"code_editor_widget_{st.session_state.code_editor_revision}",
+    )
+    st.session_state.code_editor_text = code_text
 
 	action_col_1, action_col_2, action_col_3 = st.columns(3)
 	with action_col_1:
@@ -281,33 +281,53 @@ def render_ai_popup() -> None:
 		logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [],
 	)
 
-	render_log_panel(logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [])
+    render_log_panel(logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [])
 
 
 def build_popup_trigger() -> None:
-	trigger_left, trigger_right = st.columns([8.0, 1.2])
-	with trigger_left:
-		st.markdown(
-			'<div class="dashboard-note">Dashboard có 4 tab. Bấm nút AI Assistant để mở popup chatbot ở bất kỳ tab nào.</div>',
-			unsafe_allow_html=True,
-		)
-	with trigger_right:
-		if st.button("💬 AI Assistant", use_container_width=True, key="open_ai_popup"):
-			st.session_state.show_ai_popup = True
+    trigger_left, trigger_right = st.columns([8.0, 1.2])
+    with trigger_left:
+        st.markdown(
+            '<div class="dashboard-note">Dashboard có 4 tab. Bấm nút AI Assistant để mở popup chatbot ở bất kỳ tab nào.</div>',
+            unsafe_allow_html=True,
+        )
+    with trigger_right:
+        if st.button("💬 AI Assistant", use_container_width=True, key="open_ai_popup"):
+            st.session_state.show_ai_popup = True
 
-	if st.session_state.show_ai_popup:
-		render_ai_popup()
-		st.session_state.show_ai_popup = False
+    if st.session_state.show_ai_popup:
+        render_ai_popup()
+        st.session_state.show_ai_popup = False
 
 
 def main() -> None:
-	st.set_page_config(page_title=APP_TITLE, page_icon="🧠", layout="wide")
-	initialize_state()
-	inject_styles()
-	build_header()
-	build_popup_trigger()
-	render_dashboard_tabs()
+    st.set_page_config(page_title=APP_TITLE, page_icon="🧠", layout="wide")
+    initialize_state()
+    inject_styles()
+    build_header()
+
+    # Load dữ liệu
+    if DATASET_PATH.exists():
+        df = load_data(DATASET_PATH)
+    else:
+        df = load_sample_data()
+
+    # Khởi tạo filters
+    _init_filters(df)
+
+    # Render sidebar filters - CHỈ CÓ BỘ LỌC, KHÔNG CÓ NAVI DỌC
+    render_sidebar_filters(df)
+
+    # Lấy filters từ session_state và áp dụng
+    filters = st.session_state.get("filters", {})
+    df_filtered = apply_filters(df, filters)
+
+    # AI popup trigger
+    build_popup_trigger()
+
+    # Render dashboard tabs
+    render_dashboard_tabs(df_filtered)
 
 
 if __name__ == "__main__":
-	main()
+    main()
