@@ -132,7 +132,12 @@ async def _call_ollama(prompt: str, images: list[str] | None = None, timeout: fl
         "prompt": prompt,
         "stream": False,
         "think": False,
-        "options": {"num_ctx": 16384},
+        "options": {
+            "num_ctx": 16384,
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "repeat_penalty": 1.1,
+        },
     }
     if images:
         payload["images"] = images
