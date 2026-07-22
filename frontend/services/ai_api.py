@@ -188,48 +188,28 @@ def generate_ai_response(prompt_text: str) -> dict[str, Any]:
         }
 
 
-def fix_code_with_ai(original_prompt: str, error_msg: str, broken_code: str) -> dict[str, Any]:
-    """
-    Gọi POST /ai/fix để sinh lại code khi execution thất bại.
-    Payload gửi lên: { prompt, error, broken_code }
-    Trả về cùng cấu trúc dict như generate_ai_response.
-    """
+def fix_ai_response(request_id: str, code_text: str, error: str) -> dict[str, Any]:
     payload = {
-        "prompt": original_prompt,
-        "error": error_msg,
-        "broken_code": broken_code,
+        "request_id": request_id,
+        "code": code_text,
+        "error": error,
     }
     try:
-        response = requests.post(f"{BACKEND_BASE_URL}/ai/fix", json=payload, timeout=120)
+        response = requests.post(f"{BACKEND_BASE_URL}/ai/fix", json=payload, timeout=60)
         response.raise_for_status()
         data = response.json()
-
-        raw_text = data.get("response") or data.get("thinking")
-        if raw_text:
-            code, explanation = parse_model_output(raw_text)
-        else:
-            code = data.get("code") or data.get("generated_code", "")
-            explanation = data.get("explanation") or data.get("message", "")
-
-        chat_reply = data.get("chat_reply") or explanation or "AI đã sinh lại code mới."
         return {
             "request_id": data.get("request_id"),
-            "code": code,
-            "explanation": explanation,
-            "status": data.get("status", "pending_approval"),
-            "chat_reply": chat_reply,
-            "raw": data,
+            "code": data.get("code") or "",
+            "explanation": data.get("explanation") or "",
+            "status": data.get("status"),
         }
-    except Exception:
-        # Fallback: dùng generate thường nếu /ai/fix chưa có
-        fallback = _build_fallback_response(original_prompt)
+    except Exception as exc:
         return {
-            "request_id": fallback.request_id,
-            "code": fallback.code,
-            "explanation": f"[Fallback] /ai/fix chưa khả dụng. Lỗi gốc: {error_msg}",
-            "status": fallback.status,
-            "chat_reply": fallback.chat_reply,
-            "raw": fallback.raw,
+            "request_id": None,
+            "code": "",
+            "explanation": f"Không gọi được API sửa lỗi: {exc}",
+            "status": "error",
         }
 
 def interpret_result(request_id: str) -> str:
