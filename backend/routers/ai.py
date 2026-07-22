@@ -4,9 +4,11 @@ from datetime import datetime
 from fastapi import APIRouter, HTTPException
 
 from config import OLLAMA_HOST, OLLAMA_MODEL
-from schemas import AIRequest, AIResponse
+from schemas import AIRequest, AIResponse, InterpretRequest, InterpretResponse
 from routers.logs import save_log_entry, LogEntry
 from model_parsing import parse_model_output
+from routers.execute import _result_for_llm
+from routers.logs import get_log_entry
 
 router = APIRouter(tags=["AI"])
 
@@ -90,6 +92,27 @@ Luôn trả lời theo đúng format:
 ```
 """
 
+INTERPRET_SYSTEM_PROMPT = """Bạn là trợ lý phân tích dữ liệu bất động sản Việt Nam.
+Người dùng đã hỏi một câu, hệ thống đã chạy code và thu được KẾT QUẢ bên dưới.
+Nhiệm vụ của bạn: trả lời TRỰC TIẾP câu hỏi bằng tiếng Việt, chi tiết, rõ ràng.
+
+QUY TẮC:
+- CHỈ dùng số liệu có trong kết quả / hình ảnh bên dưới. TUYỆT ĐỐI không bịa thêm số.
+- Nêu rõ con số và đơn vị (giá = tỷ đồng, diện tích = m²).
+- Nếu có hình biểu đồ kèm theo, hãy đọc số liệu từ biểu đồ để trả lời.
+- Không viết lại code, không giải thích code. Chỉ trả lời câu hỏi.
+
+Câu hỏi của người dùng:
+{prompt}
+
+Kết quả thực thi:
+{result_text}
+
+Log in ra trong quá trình chạy (nếu có):
+{logs}
+"""
+
+
 
 def build_prompt(request: AIRequest) -> str:
     ctx = request.context
@@ -102,6 +125,29 @@ def build_prompt(request: AIRequest) -> str:
     )
     return f"{system_prompt}\n\nYêu cầu người dùng: {request.prompt}"
 
+async def _call_ollama(prompt: str, images: list[str] | None = None, timeout: float = 60.0) -> str:
+    """Gọi model Ollama local, trả về text 'response'.
+    """
+    payload: dict = {
+        "model": OLLAMA_MODEL,
+        "prompt": prompt,
+        "stream": False,
+        "think": False,
+        "options": {"num_ctx": 16384},
+    }
+    if images:
+        payload["images"] = images
+
+    try:
+        async with httpx.AsyncClient(timeout=timeout) as client:
+            resp = await client.post(f"{OLLAMA_HOST}/api/generate", json=payload)
+            resp.raise_for_status()
+            data = resp.json()
+    except httpx.HTTPError as exc:
+        raise HTTPException(status_code=502, detail=f"Không gọi được model Qwen local: {exc}")
+
+    return data.get("response") or data.get("thinking") or ""
+
 
 @router.post("/generate", response_model=AIResponse)
 async def generate_code(request: AIRequest):
@@ -111,24 +157,7 @@ async def generate_code(request: AIRequest):
     full_prompt = build_prompt(request)
     request_id = str(uuid.uuid4())
 
-    try:
-        async with httpx.AsyncClient(timeout=60.0) as client:
-            resp = await client.post(
-                f"{OLLAMA_HOST}/api/generate",
-                json={
-                    "model": OLLAMA_MODEL,
-                    "prompt": full_prompt,
-                    "stream": False,
-                    "think": False,
-                    "options": {"num_ctx": 16384},
-                },
-            )
-            resp.raise_for_status()
-            data = resp.json()
-    except httpx.HTTPError as exc:
-        raise HTTPException(status_code=502, detail=f"Không gọi được model Qwen local: {exc}")
-
-    raw_text = data.get("response") or data.get("thinking") or ""
+    raw_text = await _call_ollama(full_prompt)
 
     # DEBUG: in raw response ra console + ghi ra file để soi khi code bị rỗng.
     print("=" * 60)
@@ -164,3 +193,28 @@ async def generate_code(request: AIRequest):
         explanation=explanation,
         status="pending_approval",
     )
+
+
+async def interpret_execution(request_id: str, logs: str = "") -> str:
+    entry = get_log_entry(request_id)
+    if entry is None:
+        raise HTTPException(status_code=404, detail="Không tìm thấy log cho request_id này.")
+
+    result_text, image_b64 = _result_for_llm(request_id)
+
+    prompt = INTERPRET_SYSTEM_PROMPT.format(
+        prompt=entry.prompt,
+        result_text=result_text,
+        logs=logs or "(không có)",
+    )
+    return await _call_ollama(
+        prompt,
+        images=[image_b64] if image_b64 else None,
+        timeout=120.0,
+    )
+
+@router.post("/interpret", response_model=InterpretResponse)
+async def interpret_result(request: InterpretRequest):
+    answer = await interpret_execution(request.request_id)
+    return InterpretResponse(request_id=request.request_id, answer=answer)
+

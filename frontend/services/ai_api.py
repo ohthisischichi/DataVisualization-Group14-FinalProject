@@ -16,7 +16,7 @@ if str(_BACKEND_DIR) not in sys.path:
 from model_parsing import parse_model_output
 
 
-AI_GENERATE_URL = "https://decidable-lumping-delighted.ngrok-free.dev/ai/generate"
+BACKEND_BASE_URL = "https://decidable-lumping-delighted.ngrok-free.dev"
 DATA_PATH = Path(__file__).resolve().parents[2] / "Data" / "processed" / "house_price_clean.csv"
 
 
@@ -152,7 +152,7 @@ def generate_ai_response(prompt_text: str) -> dict[str, Any]:
         },
     }
     try:
-        response = requests.post(AI_GENERATE_URL, json=payload, timeout=60)
+        response = requests.post(f"{BACKEND_BASE_URL}/ai/generate", json=payload, timeout=60)
         response.raise_for_status()
         data = response.json()
         fallback = _build_fallback_response(prompt_text)
@@ -186,3 +186,9 @@ def generate_ai_response(prompt_text: str) -> dict[str, Any]:
             "chat_reply": fallback.chat_reply,
             "raw": fallback.raw,
         }
+
+def interpret_result(request_id: str) -> str:
+    resp = requests.post(f"{BACKEND_BASE_URL}/ai/interpret",
+                         json={"request_id": request_id}, timeout=180)
+    resp.raise_for_status()
+    return resp.json().get("answer", "")

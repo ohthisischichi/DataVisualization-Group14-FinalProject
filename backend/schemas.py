@@ -22,6 +22,14 @@ class AIResponse(BaseModel):
     explanation: str
     status: str = "pending_approval"  # code luôn ở trạng thái chờ duyệt, KHÔNG tự chạy
 
+class InterpretRequest(BaseModel):
+    request_id: str
+
+class InterpretResponse(BaseModel):
+    request_id: str
+    answer: str
+
+
 
 #  Execute API 
 

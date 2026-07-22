@@ -127,6 +127,125 @@ def _load_result_data(result_dir: str) -> tuple[str | None, object]:
             return "text", f.read()
     return None, None
 
+def _decode_plotly_array(value) -> list:
+    """Plotly serialize mảng số thành {"dtype":"f8","bdata":"<base64>"} (little-endian),
+    có thể kèm "shape" cho mảng 2D (heatmap/surface). Trả về list (hoặc list lồng list
+    nếu 2D) số thật; nếu value đã là list/None thì trả nguyên."""
+    if value is None:
+        return []
+    if isinstance(value, dict) and "bdata" in value:
+        import numpy as np
+        dtype = value.get("dtype", "f8")
+        arr = np.frombuffer(base64.b64decode(value["bdata"]), dtype=f"<{dtype}")
+        shape = value.get("shape")
+        if shape:
+            dims = tuple(int(s) for s in str(shape).replace(" ", "").split(","))
+            arr = arr.reshape(dims)
+        return arr.tolist()
+    return list(value)
+
+
+def _plotly_axis_title(node) -> str:
+    """Rút text tiêu đề từ layout.xaxis / yaxis / layout (title có thể là str hoặc dict)."""
+    if not isinstance(node, dict):
+        return ""
+    title = node.get("title")
+    if isinstance(title, dict):
+        return title.get("text", "") or ""
+    if isinstance(title, str):
+        return title
+    return ""
+
+
+# Các key mang dữ liệu của mọi loại trace plotly, theo thứ tự ưu tiên hiển thị.
+# bar/scatter/line: x,y | pie: labels,values | heatmap/surface: x,y,z
+# polar: r,theta | geo/map: lat,lon | ternary: a,b,c | funnel/waterfall: x,y
+_PLOTLY_ARRAY_KEYS = (
+    "labels", "values", "x", "y", "z",
+    "r", "theta", "lat", "lon", "a", "b", "c", "text",
+)
+
+
+def _fmt_cell(v) -> str:
+    """Làm gọn số thực khi in ra cho LLM."""
+    if isinstance(v, float):
+        return str(round(v, 3))
+    return str(v)
+
+
+def _summarize_plotly_trace(tr: dict, x_title: str, y_title: str, max_rows: int) -> str:
+    """Tóm tắt MỘT trace bất kỳ thành text: tự dò các mảng dữ liệu đang có,
+    giải mã, rồi in dạng bảng cột. Xử lý riêng z 2D (heatmap/surface)."""
+    ttype = tr.get("type") or "scatter"
+    name = tr.get("name") or ttype
+
+    # Nhãn cột thân thiện: x/y dùng tiêu đề trục, còn lại dùng chính tên key.
+    label_map = {"x": x_title, "y": y_title}
+
+    cols: dict[str, list] = {}
+    for key in _PLOTLY_ARRAY_KEYS:
+        if tr.get(key) is not None:
+            cols[key] = _decode_plotly_array(tr[key])
+
+    if not cols:
+        return f"Chuỗi '{name}' (loại {ttype}): không có dữ liệu số để trích xuất."
+
+    # z 2D (heatmap/surface): dump cả ma trận sẽ quá dài -> tóm tắt kích thước + thống kê.
+    z = cols.get("z")
+    if z and isinstance(z[0], list):
+        import numpy as np
+        zarr = np.array(z, dtype=float)
+        xs = cols.get("x") or list(range(zarr.shape[1]))
+        ys = cols.get("y") or list(range(zarr.shape[0]))
+        return (
+            f"Chuỗi '{name}' (loại {ttype}, ma trận {zarr.shape[0]}x{zarr.shape[1]}):\n"
+            f"  Trục {x_title}: {', '.join(_fmt_cell(v) for v in xs[:max_rows])}\n"
+            f"  Trục {y_title}: {', '.join(_fmt_cell(v) for v in ys[:max_rows])}\n"
+            f"  Giá trị z: min={_fmt_cell(float(zarr.min()))}, "
+            f"max={_fmt_cell(float(zarr.max()))}, mean={_fmt_cell(float(zarr.mean()))}"
+        )
+
+    # Trường hợp 1D: zip các cột theo hàng.
+    keys = list(cols.keys())
+    header_cols = " | ".join(label_map.get(k, k) for k in keys)
+    n = min(max(len(cols[k]) for k in keys), max_rows)
+    rows = []
+    for i in range(n):
+        cells = [_fmt_cell(cols[k][i]) if i < len(cols[k]) else "" for k in keys]
+        rows.append("  - " + " | ".join(cells))
+    truncated = "\n  ... (đã cắt bớt)" if any(len(cols[k]) > max_rows for k in keys) else ""
+    return f"Chuỗi '{name}' (loại {ttype}) [{header_cols}]:\n" + "\n".join(rows) + truncated
+
+
+def _result_for_llm(request_id: str, max_rows: int = 30) -> tuple[str, str | None]:
+    """Returns (text_summary, base64_png_or_None)."""
+    result_dir = _safe_result_dir(request_id)
+    result_type, data = _load_result_data(result_dir)
+
+    if result_type == "image":
+        # _load_result_data return base64 PNG
+        return "Kết quả là một biểu đồ. Hãy phân tích hình ảnh kèm theo.", data
+    if result_type == "dataframe":
+        df = pd.DataFrame(data)
+        return f"Bảng kết quả ({len(df)} dòng):\n{df.head(max_rows).to_markdown(index=False)}", None
+    if result_type == "chart":
+        # Giải mã chart Plotly cho LLM đọc số
+        fig = json.loads(data)
+        layout = fig.get("layout", {})
+        x_title = _plotly_axis_title(layout.get("xaxis")) or "x"
+        y_title = _plotly_axis_title(layout.get("yaxis")) or "y"
+        chart_title = _plotly_axis_title(layout) or ""  # layout.title cùng shape
+
+        blocks = [
+            _summarize_plotly_trace(tr, x_title, y_title, max_rows)
+            for tr in fig.get("data", [])
+        ]
+
+        header = f"Dữ liệu biểu đồ '{chart_title}':" if chart_title else "Dữ liệu biểu đồ:"
+        return header + "\n" + "\n".join(blocks), None
+    if result_type == "text":
+        return f"Kết quả: {data}", None
+    return "Không có kết quả.", None
 
 def _run_in_subprocess(code: str, dataset_path: str, request_id: str, queue: multiprocessing.Queue) -> None:
     """
@@ -247,12 +366,9 @@ async def execute_code(request: ExecuteRequest):
     )
     process.start()
 
-    # Phải ĐỌC queue TRƯỚC khi join: pipe có buffer giới hạn nên payload lớn sẽ
-    # chặn child, join() trước rồi mới get() là deadlock.
     try:
         output = queue.get(timeout=EXECUTE_TIMEOUT_SECONDS)
     except Empty:
-        # Còn sống mà chưa trả kết quả => timeout. Đã chết mà queue rỗng => thoát bất thường (segfault / lỗi hệ thống, không kịp put gì lên queue).
         timed_out = process.is_alive()
         if timed_out:
             process.terminate()
@@ -274,9 +390,6 @@ async def execute_code(request: ExecuteRequest):
     error = output.get("error")
     logs = output.get("logs", "")
 
-    # Code chạy trót lọt nhưng không gán `result` và cũng không print gì => màn hình
-    # trống. Báo lỗi rõ ràng thay vì "thành công" im lặng, để phân biệt được
-    # "model viết sai contract" với "model viết code lỗi".
     if success and output.get("result_type") is None and not logs.strip():
         success = False
         error = (
@@ -288,8 +401,8 @@ async def execute_code(request: ExecuteRequest):
     summary = error or f"Kết quả dạng: {output.get('result_type')}"
     _update_log_status(request.request_id, status=status, result_summary=summary)
 
-    # Không trả result_data ở đây: payload nằm trên đĩa, frontend load qua
-    # GET /execute/result/{request_id}. Response này chỉ mang meta gọn nhẹ.
+    # Response chỉ mang meta data. 
+    # Load result_data qua GET /execute/result/{request_id}
     return ExecuteResult(
         request_id=request.request_id,
         success=success,

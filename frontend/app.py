@@ -11,7 +11,7 @@ from components.chat import render_chat_panel
 from components.code_editor import render_code_editor_panel
 from components.log_view import render_log_panel
 from components.result_view import render_result_panel
-from services.ai_api import generate_ai_response
+from services.ai_api import generate_ai_response, interpret_result
 from services.execute_api import execute_approved_code
 from services.logs_api import fetch_logs
 
@@ -98,6 +98,8 @@ def initialize_state() -> None:
 		st.session_state.execution_result = None
 	if "execution_error" not in st.session_state:
 		st.session_state.execution_error = None
+	if "answer_text" not in st.session_state:
+		st.session_state.answer_text = None
 	if "show_ai_popup" not in st.session_state:
 		st.session_state.show_ai_popup = False
 
@@ -191,12 +193,21 @@ def approve_and_execute(code_text: str) -> None:
 	st.session_state.code_editor_text = code_text
 	st.session_state.execution_result = execution
 	st.session_state.execution_error = execution.get("error")
+	# Sinh câu trả lời từ kết quả code
+	st.session_state.answer_text = None
+	if execution.get("success"):
+		try:
+			with st.spinner("Đang tạo câu trả lời từ kết quả..."):
+				st.session_state.answer_text = interpret_result(request_id)
+		except Exception as exc:
+			st.warning(f"Không tạo được câu trả lời: {exc}")
 
 
 def reject_current_code() -> None:
 	st.session_state.approval_status = "Bị từ chối"
 	st.session_state.execution_result = None
 	st.session_state.execution_error = None
+	st.session_state.answer_text = None
 
 def render_dashboard_tabs() -> None:
 	tab_titles = [
@@ -257,7 +268,12 @@ def render_ai_popup() -> None:
 			st.session_state.current_request_id = None
 			st.session_state.execution_result = None
 			st.session_state.execution_error = None
+			st.session_state.answer_text = None
 			st.info("Đã khôi phục nội dung mẫu.")
+
+	if st.session_state.answer_text:
+		st.subheader("Câu trả lời")
+		st.markdown(st.session_state.answer_text)
 
 	render_result_panel(
 		result=st.session_state.execution_result,
