@@ -4,7 +4,7 @@ from datetime import datetime
 from fastapi import APIRouter, HTTPException
 
 from config import OLLAMA_HOST, OLLAMA_MODEL
-from schemas import AIRequest, AIResponse, InterpretRequest, InterpretResponse
+from schemas import AIRequest, AIResponse, InterpretRequest, InterpretResponse, FixRequest
 from routers.logs import save_log_entry, LogEntry
 from model_parsing import parse_model_output
 from routers.execute import _result_for_llm
@@ -111,6 +111,42 @@ Log in ra trong quá trình chạy (nếu có):
 {logs}
 """
 
+FIX_SYSTEM_PROMPT_TEMPLATE = """Bạn là trợ lý sửa lỗi code Python phân tích dữ liệu bất động sản Việt Nam.
+Đoạn code trước đó ĐÃ CHẠY VÀ BỊ LỖI. Nhiệm vụ của bạn: sửa lại code cho chạy đúng.
+
+{edit_note}
+
+QUY TẮC BẮT BUỘC:
+- Giữ nguyên MỤC ĐÍCH của yêu cầu gốc, chỉ sửa phần gây lỗi.
+- Đọc kỹ thông báo lỗi để hiểu nguyên nhân (sai tên cột, sai tham số API, sai cú pháp, sai giá trị lọc...).
+- CHỈ dùng đúng tên cột và giá trị có thật trong mô tả dữ liệu bên dưới.
+- KHÔNG truyền tham số trùng lặp trong cùng một lời gọi hàm.
+- Với plotly, chỉ dùng tham số hợp lệ (vd tickmode chỉ nhận 'auto'/'linear'/'array'/'sync').
+- Với matplotlib, plt.xticks nhận mảng vị trí + mảng nhãn, KHÔNG gọi trong vòng lặp với 1 giá trị.
+- Chỉ import: pandas, numpy, matplotlib, plotly, math, statistics.
+- Code PHẢI gán kết quả cuối cùng vào biến tên đúng là `result`.
+
+Mô tả bộ dữ liệu:
+{data_description}
+
+Yêu cầu gốc của người dùng:
+{user_prompt}
+
+Code bị lỗi:
+```python
+{failed_code}
+```
+
+Thông báo lỗi khi chạy:
+{error}
+
+Hãy trả về code ĐÃ SỬA theo đúng format:
+```python
+<code python đã sửa>
+```
+<giải thích ngắn gọn bằng tiếng Việt: lỗi cũ là gì và bạn đã sửa thế nào>
+
+"""
 
 
 def build_prompt(request: AIRequest) -> str:
@@ -222,3 +258,55 @@ async def interpret_result(request: InterpretRequest):
     answer = await interpret_execution(request.request_id)
     return InterpretResponse(request_id=request.request_id, answer=answer)
 
+async def generate_fixed_code(request_id: str, executed_code: str, error: str) -> tuple[str, str, str]:
+    """Sinh code đã sửa từ code lỗi. Trả về (new_request_id, code, explanation)."""
+    entry = get_log_entry(request_id)
+    original_prompt = entry.prompt if entry else "(không rõ prompt gốc)"
+
+    # Issue 1: executed_code == code gốc -> lỗi do model; khác -> người dùng đã sửa.
+    human_edited = bool(entry and entry.code and executed_code.strip() != entry.code.strip())
+    if human_edited:
+        edit_note = (
+            "BỐI CẢNH: Người dùng đã CHỈNH SỬA code do model sinh ra trước khi chạy, "
+            "nên lỗi có thể đến từ phần chỉnh sửa của người dùng chứ chưa chắc do logic gốc. "
+            "Hãy tôn trọng ý định chỉnh sửa đó khi có thể, chỉ sửa đúng chỗ gây lỗi."
+        )
+    else:
+        edit_note = (
+            "BỐI CẢNH: Đây đúng là code do model sinh ra (người dùng KHÔNG chỉnh sửa). "
+            "Lỗi hoàn toàn nằm ở code bạn đã sinh - hãy tự rà soát kỹ và sửa lại cho đúng."
+        )
+
+    fix_prompt = FIX_SYSTEM_PROMPT_TEMPLATE.format(
+        data_description=DATA_DESCRIPTION,
+        user_prompt=original_prompt,
+        edit_note=edit_note,
+        failed_code=executed_code,
+        error=error,
+    )
+
+    raw_text = await _call_ollama(fix_prompt)
+    code, explanation = parse_model_output(raw_text)
+
+    new_request_id = str(uuid.uuid4())
+    save_log_entry(
+        LogEntry(
+            request_id=new_request_id,
+            prompt=original_prompt,
+            code=code,
+            executed_code=None,
+            explanation=explanation,
+            result_summary=f"[Sửa lỗi từ {request_id}] {error}",
+            status="pending_approval",
+            timestamp=datetime.now().isoformat(),
+        )
+    )
+    return new_request_id, code, explanation
+
+
+@router.post("/fix", response_model=AIResponse)
+async def fix_code(request: FixRequest):
+    new_request_id, code, explanation = await generate_fixed_code(
+        request_id=request.request_id, executed_code=request.code, error=request.error
+    )
+    return AIResponse(request_id=new_request_id, code=code, explanation=explanation, status="pending_approval")

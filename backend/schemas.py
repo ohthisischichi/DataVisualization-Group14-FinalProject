@@ -22,6 +22,11 @@ class AIResponse(BaseModel):
     explanation: str
     status: str = "pending_approval"  # code luôn ở trạng thái chờ duyệt, KHÔNG tự chạy
 
+class FixRequest(BaseModel):
+    request_id: str = Field(..., description="ID của request bị lỗi cần sửa")
+    code: str = Field(..., description="Code đã chạy và bị lỗi")
+    error: str = Field(..., description="Thông báo lỗi khi chạy code")
+
 class InterpretRequest(BaseModel):
     request_id: str
 
@@ -53,7 +58,8 @@ class ExecuteResult(BaseModel):
 class LogEntry(BaseModel):
     request_id: str
     prompt: str
-    code: str
+    code: str  # code gốc
+    executed_code: Optional[str] = None  # code thực tế đã chạy
     explanation: str
     result_summary: Optional[str] = None
     status: str  # "pending_approval" | "executed" | "rejected" | "error"
