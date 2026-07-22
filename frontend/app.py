@@ -19,12 +19,12 @@ from filters import render_sidebar_filters, apply_filters, _init_filters
 from data_loader import load_data
 
 
-from theme import KPI_CARD_CSS
+from theme import KPI_CARD_CSS, AI_POPUP_CSS
 
 
 DATASET_PATH = Path(__file__).resolve().parent.parent / "Data" / "processed" / "house_price_clean.csv"
 
-APP_TITLE = "Nhóm 11"
+APP_TITLE = "Nhóm 14"
 HEADER_TITLE= "DASHBOARD PHÂN TÍCH THỊ TRƯỜNG BẤT ĐỘNG SẢN VIỆT NAM"
 APP_SUBTITLE = "VIETNAM REAL ESTATE INTELLIGENCE"
 
@@ -116,6 +116,7 @@ def initialize_state() -> None:
 
 def inject_styles() -> None:
     st.markdown(KPI_CARD_CSS, unsafe_allow_html=True)
+    st.markdown(AI_POPUP_CSS, unsafe_allow_html=True)
     st.markdown(
         """
         <style>
@@ -246,42 +247,45 @@ def render_ai_popup() -> None:
         widget_key=f"code_editor_widget_{st.session_state.code_editor_revision}",
     )
     st.session_state.code_editor_text = code_text
+    
+    action_col_1, action_col_2, action_col_3 = st.columns(3)
+    with action_col_1:
+        st.markdown('<span id="btn-approve-marker"></span>', unsafe_allow_html=True)
+        if st.button("Approve & Execute", use_container_width=True, key="popup_approve"):
+            approve_and_execute(code_text)
+            st.success("Đã duyệt và thực thi code.")
+    with action_col_2:
+        st.markdown('<span id="btn-reject-marker"></span>', unsafe_allow_html=True)
+        if st.button("Reject", use_container_width=True, key="popup_reject"):
+            reject_current_code()
+            st.warning("Code đã bị từ chối.")
+    with action_col_3:
+        st.markdown('<span id="btn-reset-marker"></span>', unsafe_allow_html=True)
+        if st.button("Reset to Mock", use_container_width=True, key="popup_reset"):
+            st.session_state.generated_code = DEFAULT_CODE
+            st.session_state.code_editor_text = DEFAULT_CODE
+            st.session_state.code_editor_revision += 1
+            st.session_state.generated_explanation = (
+                "Đã khôi phục code mock mặc định để tiếp tục demo."
+            )
+            st.session_state.approval_status = "Chờ duyệt"
+            st.session_state.current_request_id = None
+            st.session_state.execution_result = None
+            st.session_state.execution_error = None
+            st.session_state.answer_text = None
+            st.info("Đã khôi phục nội dung mẫu.")
 
-	action_col_1, action_col_2, action_col_3 = st.columns(3)
-	with action_col_1:
-		if st.button("Approve & Execute", use_container_width=True, key="popup_approve"):
-			approve_and_execute(code_text)
-			st.success("Đã duyệt và thực thi code.")
-	with action_col_2:
-		if st.button("Reject", use_container_width=True, key="popup_reject"):
-			reject_current_code()
-			st.warning("Code đã bị từ chối.")
-	with action_col_3:
-		if st.button("Reset to Mock", use_container_width=True, key="popup_reset"):
-			st.session_state.generated_code = DEFAULT_CODE
-			st.session_state.code_editor_text = DEFAULT_CODE
-			st.session_state.code_editor_revision += 1
-			st.session_state.generated_explanation = (
-				"Đã khôi phục code mock mặc định để tiếp tục demo."
-			)
-			st.session_state.approval_status = "Chờ duyệt"
-			st.session_state.current_request_id = None
-			st.session_state.execution_result = None
-			st.session_state.execution_error = None
-			st.session_state.answer_text = None
-			st.info("Đã khôi phục nội dung mẫu.")
+    if st.session_state.answer_text:
+        st.subheader("Câu trả lời")
+        st.markdown(st.session_state.answer_text)
 
-	if st.session_state.answer_text:
-		st.subheader("Câu trả lời")
-		st.markdown(st.session_state.answer_text)
+    render_result_panel(
+        result=st.session_state.execution_result,
+        error_message=st.session_state.execution_error,
+        logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [],
+    )
 
-	render_result_panel(
-		result=st.session_state.execution_result,
-		error_message=st.session_state.execution_error,
-		logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [],
-	)
-
-    render_log_panel(logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [])
+    # render_log_panel(logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [])
 
 
 def build_popup_trigger() -> None:
@@ -292,7 +296,8 @@ def build_popup_trigger() -> None:
             unsafe_allow_html=True,
         )
     with trigger_right:
-        if st.button("💬 AI Assistant", use_container_width=True, key="open_ai_popup"):
+        st.markdown('<span id="btn-ai-popup-marker"></span>', unsafe_allow_html=True)
+        if st.button("💬", use_container_width=True, key="open_ai_popup"):
             st.session_state.show_ai_popup = True
 
     if st.session_state.show_ai_popup:
@@ -309,8 +314,8 @@ def main() -> None:
     # Load dữ liệu
     if DATASET_PATH.exists():
         df = load_data(DATASET_PATH)
-    else:
-        df = load_sample_data()
+    # else:
+    #     df = load_sample_data()
 
     # Khởi tạo filters
     _init_filters(df)

@@ -26,6 +26,7 @@ def render_chat_panel(
 
 	action_col_1, action_col_2 = st.columns([1, 1])
 	with action_col_1:
+		st.markdown('<span id="btn-generate-marker"></span>', unsafe_allow_html=True)
 		if st.button("Generate Code", width="stretch"):
 			if prompt_value.strip():
 				on_generate(prompt_value.strip())

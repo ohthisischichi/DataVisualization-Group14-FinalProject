@@ -290,11 +290,10 @@ button[aria-selected="true"] {
 }
 
 /* Floating AI Assistant Button at bottom-right corner */
-div.stButton:has(button[aria-label*="AI Assistant"]),
-div[data-testid="stButton"]:has(button[aria-label*="AI Assistant"]),
-div[data-testid="stElementContainer"]:has(button[aria-label*="AI Assistant"]),
-div[data-testid="element-container"]:has(button[aria-label*="AI Assistant"]),
-div.element-container:has(button[aria-label*="AI Assistant"]) {
+div[data-testid="stMarkdownContainer"]:has(span#btn-ai-popup-marker) { display: none !important; }
+div[data-testid="stElementContainer"]:has(span#btn-ai-popup-marker) { display: none !important; }
+
+div[data-testid="stElementContainer"]:has(span#btn-ai-popup-marker) + div[data-testid="stElementContainer"] {
     position: fixed !important;
     bottom: 24px !important;
     right: 24px !important;
@@ -302,36 +301,30 @@ div.element-container:has(button[aria-label*="AI Assistant"]) {
     width: auto !important;
 }
 
-div.stButton:has(button[aria-label*="AI Assistant"]) button,
-div[data-testid="stButton"]:has(button[aria-label*="AI Assistant"]) button,
-div[data-testid="stElementContainer"]:has(button[aria-label*="AI Assistant"]) button,
-div[data-testid="element-container"]:has(button[aria-label*="AI Assistant"]) button,
-div.element-container:has(button[aria-label*="AI Assistant"]) button,
-button[aria-label*="AI Assistant"] {
+div[data-testid="stElementContainer"]:has(span#btn-ai-popup-marker) + div[data-testid="stElementContainer"] button {
     position: fixed !important;
     bottom: 24px !important;
     right: 24px !important;
     z-index: 999999 !important;
-    border-radius: 50px !important;
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 50% !important;
     background: linear-gradient(135deg, #0B192C 0%, #1D4ED8 100%) !important;
     color: #FFFFFF !important;
     box-shadow: 0 8px 24px rgba(11, 25, 44, 0.45) !important;
-    font-weight: 700 !important;
-    font-size: 0.95rem !important;
-    padding: 12px 22px !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    font-size: 1.75rem !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
     transition: all 0.3s ease !important;
     cursor: pointer !important;
 }
 
-div.stButton:has(button[aria-label*="AI Assistant"]) button:hover,
-div[data-testid="stButton"]:has(button[aria-label*="AI Assistant"]) button:hover,
-div[data-testid="stElementContainer"]:has(button[aria-label*="AI Assistant"]) button:hover,
-div[data-testid="element-container"]:has(button[aria-label*="AI Assistant"]) button:hover,
-div.element-container:has(button[aria-label*="AI Assistant"]) button:hover,
-button[aria-label*="AI Assistant"]:hover {
-    transform: translateY(-3px) scale(1.03) !important;
-    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.6) !important;
+div[data-testid="stElementContainer"]:has(span#btn-ai-popup-marker) + div[data-testid="stElementContainer"] button:hover {
+    transform: translateY(-4px) scale(1.05) !important;
+    box-shadow: 0 14px 32px rgba(29, 78, 216, 0.6) !important;
     background: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%) !important;
 }
 
@@ -401,6 +394,128 @@ button[aria-label*="AI Assistant"]:hover {
     padding: 8px 14px;
     margin: 8px 0 16px 0;
     font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+</style>
+"""
+
+AI_POPUP_CSS = """
+<style>
+/* Style for the Dialog Popup */
+div[data-testid="stDialog"] > div[role="dialog"] {
+    background-color: #F8FAFC !important;
+    border-radius: 16px !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 0 25px 50px -12px rgba(11, 25, 44, 0.3) !important;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+}
+
+div[data-testid="stDialog"] header {
+    background: linear-gradient(135deg, #0B192C 0%, #1E293B 100%) !important;
+    border-radius: 16px 16px 0 0 !important;
+    padding: 20px 24px !important;
+    border-bottom: 3px solid #1D4ED8 !important;
+}
+
+div[data-testid="stDialog"] header h2 {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    font-size: 1.35rem !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Close button inside dialog header */
+div[data-testid="stDialog"] header button svg {
+    fill: #FFFFFF !important;
+}
+div[data-testid="stDialog"] header button:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Chat messages inside dialog */
+div[data-testid="stChatMessage"] {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+}
+
+/* Text area */
+div[data-testid="stTextArea"] textarea {
+    border-radius: 10px !important;
+    border: 1px solid #CBD5E1 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.95rem !important;
+}
+div[data-testid="stTextArea"] textarea:focus {
+    border-color: #1D4ED8 !important;
+    box-shadow: 0 0 0 2px rgba(29, 78, 216, 0.2) !important;
+}
+
+/* Hide markers */
+div[data-testid="stMarkdownContainer"]:has(span[id$="-marker"]) { display: none !important; }
+div[data-testid="stElementContainer"]:has(span[id$="-marker"]) { display: none !important; margin: 0 !important; padding: 0 !important; height: 0 !important; }
+
+/* Specific Action Buttons in Popup using adjacent sibling combinators */
+div[data-testid="stElementContainer"]:has(span#btn-approve-marker) + div[data-testid="stElementContainer"] button {
+    background-color: #16A34A !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    border: none !important;
+    transition: all 0.2s ease !important;
+}
+div[data-testid="stElementContainer"]:has(span#btn-approve-marker) + div[data-testid="stElementContainer"] button:hover {
+    background-color: #15803D !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3) !important;
+}
+
+div[data-testid="stElementContainer"]:has(span#btn-reject-marker) + div[data-testid="stElementContainer"] button {
+    background-color: #EF4444 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    border: none !important;
+    transition: all 0.2s ease !important;
+}
+div[data-testid="stElementContainer"]:has(span#btn-reject-marker) + div[data-testid="stElementContainer"] button:hover {
+    background-color: #DC2626 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+}
+
+div[data-testid="stElementContainer"]:has(span#btn-reset-marker) + div[data-testid="stElementContainer"] button {
+    background-color: #F8FAFC !important;
+    color: #475569 !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    border: 1px solid #CBD5E1 !important;
+    transition: all 0.2s ease !important;
+}
+div[data-testid="stElementContainer"]:has(span#btn-reset-marker) + div[data-testid="stElementContainer"] button:hover {
+    background-color: #F1F5F9 !important;
+    color: #0F172A !important;
+    border-color: #94A3B8 !important;
+}
+
+div[data-testid="stElementContainer"]:has(span#btn-generate-marker) + div[data-testid="stElementContainer"] button {
+    background: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%) !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    border: none !important;
+}
+div[data-testid="stElementContainer"]:has(span#btn-generate-marker) + div[data-testid="stElementContainer"] button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.4) !important;
+}
+
+/* Chat user/assistant messages text */
+div[data-testid="stChatMessageContent"] {
+    color: #0F172A !important;
+    font-size: 0.95rem !important;
 }
 </style>
 """
