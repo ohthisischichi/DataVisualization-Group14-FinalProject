@@ -268,22 +268,50 @@ def render_dashboard_tabs(df_filtered: pd.DataFrame) -> None:
         render_market_tab(df_filtered)
 
 
-@st.dialog("AI Workspace", width="large")
+@st.dialog("AI Assistant", width="large")
 def render_ai_popup() -> None:
     # ── Lịch sử hội thoại ──────────────────────────────────────────────
     for idx, message in enumerate(st.session_state.chat_history):
-        with st.chat_message(message.get("role", "assistant")):
-            # Nội dung text
-            if message.get("content"):
-                st.markdown(message["content"])
+        role = message.get("role", "assistant")
+        content = message.get("content", "")
+        
+        # Render bong bóng chat bằng HTML thuần để đảm bảo UI chính xác 100%
+        if content:
+            safe_content = content.replace('\n', '<br>')
+            if role == "user":
+                html = f"""
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 20px; align-items: flex-start; gap: 12px; width: 100%;">
+                    <div style="background: linear-gradient(135deg, #1D4ED8, #2563EB); color: white; padding: 12px 18px; border-radius: 20px 20px 0px 20px; max-width: 75%; box-shadow: 0 4px 6px rgba(29, 78, 216, 0.2); font-size: 0.95rem; line-height: 1.5;">
+                        {safe_content}
+                    </div>
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #F97316; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(249, 115, 22, 0.3);">
+                        U
+                    </div>
+                </div>
+                """
+                st.markdown(html, unsafe_allow_html=True)
+            else:
+                html = f"""
+                <div style="display: flex; justify-content: flex-start; margin-bottom: 20px; align-items: flex-start; gap: 12px; width: 100%;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #22C55E; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3);">
+                        AI
+                    </div>
+                    <div style="background: #F3F4F6; color: #1F2937; padding: 12px 18px; border-radius: 20px 20px 20px 0px; max-width: 75%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border: 1px solid #E5E7EB; font-size: 0.95rem; line-height: 1.5;">
+                        {safe_content}
+                    </div>
+                </div>
+                """
+                st.markdown(html, unsafe_allow_html=True)
 
-            # Với tin nhắn AI cuối cùng: hiện code editor + nút / trạng thái
-            is_last  = idx == len(st.session_state.chat_history) - 1
-            is_ai    = message.get("role") == "assistant"
-            has_code = bool(st.session_state.generated_code)
-            status   = st.session_state.approval_status
+        # Với tin nhắn AI cuối cùng: hiện code editor + nút / trạng thái (thụt lề một chút cho đẹp)
+        is_last  = idx == len(st.session_state.chat_history) - 1
+        is_ai    = role == "assistant"
+        has_code = bool(st.session_state.generated_code)
+        status   = st.session_state.approval_status
 
-            if is_last and is_ai:
+        if is_last and is_ai:
+            with st.container():
+                st.markdown('<div style="padding-left: 48px; margin-bottom: 20px;">', unsafe_allow_html=True)
                 # ── Trạng thái: AI đang sửa lỗi (đang chờ backend) ──
                 if status == "Lỗi - Đang sửa":
                     st.markdown(
@@ -316,14 +344,10 @@ def render_ai_popup() -> None:
                     btn_col1, btn_col2, _ = st.columns([1, 1, 2])
                     with btn_col1:
                         st.markdown('<span id="btn-approve-marker"></span>', unsafe_allow_html=True)
-                        if st.button("✅ Chấp nhận", use_container_width=True, key="popup_approve"):
-                            approve_and_execute(code_text)
-                            st.rerun()
+                        st.button("✅ Chấp nhận", use_container_width=True, key="popup_approve", on_click=approve_and_execute, args=(code_text,))
                     with btn_col2:
                         st.markdown('<span id="btn-reject-marker"></span>', unsafe_allow_html=True)
-                        if st.button("❌ Từ chối", use_container_width=True, key="popup_reject"):
-                            reject_current_code()
-                            st.rerun()
+                        st.button("❌ Từ chối", use_container_width=True, key="popup_reject", on_click=reject_current_code)
 
                 # ── Trạng thái: Đã duyệt thành công ──
                 elif status == "Đã duyệt":
@@ -351,6 +375,7 @@ def render_ai_popup() -> None:
                         """,
                         unsafe_allow_html=True,
                     )
+                st.markdown('</div>', unsafe_allow_html=True)
 
     # ── Khung nhập liệu ────────────────────────────────────────────────
     st.divider()
@@ -365,16 +390,18 @@ def render_ai_popup() -> None:
             key="prompt_widget",
             label_visibility="collapsed",
         )
-        col_gen, _ = st.columns([1, 3])
+        
+        def handle_generate():
+            val = st.session_state.prompt_widget
+            if val and val.strip():
+                st.session_state.prompt_text = val.strip()
+                request_ai_generation(val.strip())
+                st.session_state.prompt_widget = "" # Xoá input sau khi gửi
+
+        _, col_gen = st.columns([3, 1])
         with col_gen:
             st.markdown('<span id="btn-generate-marker"></span>', unsafe_allow_html=True)
-            if st.button("🚀 Generate Code", use_container_width=True, key="btn_generate"):
-                if prompt_value.strip():
-                    st.session_state.prompt_text = prompt_value.strip()
-                    request_ai_generation(prompt_value.strip())
-                    st.rerun()
-                else:
-                    st.warning("Vui lòng nhập yêu cầu.")
+            st.button("🚀 Generate Code", use_container_width=True, key="btn_generate", on_click=handle_generate)
 
 
 

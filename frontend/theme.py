@@ -440,48 +440,91 @@ div[data-testid="stChatMessage"] {
     box-shadow: none !important;
 }
 
-/* User Message Bubble (Right aligned, Blue) */
-div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) {
-    flex-direction: row-reverse !important;
-    text-align: right !important;
+/* Chat messages inside dialog */
+div[data-testid="stChatMessage"] {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 6px 0 !important;
+    margin-bottom: 4px !important;
+    box-shadow: none !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
 }
-div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) div[data-testid="stChatMessageContent"] {
-    background-color: #0084FF !important; /* Blue like messenger */
+
+/* ══ USER bubble — phải, xanh dương ══ */
+/* Streamlit có thể dùng nhiều data-testid khác nhau theo version */
+div[data-testid="stChatMessage"][data-role="user"],
+div[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]),
+div[data-testid="stChatMessage"]:has([data-testid="user-avatar"]) {
+    flex-direction: row-reverse !important;
+    justify-content: flex-start !important;
+}
+
+div[data-testid="stChatMessage"][data-role="user"] [data-testid="stChatMessageContent"],
+div[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) [data-testid="stChatMessageContent"],
+div[data-testid="stChatMessage"]:has([data-testid="user-avatar"]) [data-testid="stChatMessageContent"] {
+    background: linear-gradient(135deg, #1D4ED8, #2563EB) !important;
     color: #FFFFFF !important;
     border-radius: 18px 18px 0 18px !important;
-    padding: 12px 16px !important;
-    display: inline-block !important;
-    max-width: 85% !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    padding: 10px 14px !important;
+    max-width: 78% !important;
+    width: fit-content !important;
+    flex: 0 1 auto !important;
+    box-shadow: 0 2px 8px rgba(29,78,216,0.25) !important;
 }
-div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) div[data-testid="chatAvatarIcon-user"] {
-    background-color: #F97316 !important; /* Orange avatar */
-    border-radius: 4px !important;
-    margin-left: 12px !important;
+
+div[data-testid="stChatMessage"][data-role="user"] [data-testid="stChatMessageContent"] *,
+div[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) [data-testid="stChatMessageContent"] *,
+div[data-testid="stChatMessage"]:has([data-testid="user-avatar"]) [data-testid="stChatMessageContent"] * {
+    color: #FFFFFF !important;
+}
+
+/* Avatar user — cam, bên phải */
+div[data-testid="stChatMessage"][data-role="user"] [data-testid="chatAvatarIcon-user"],
+div[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) [data-testid="chatAvatarIcon-user"],
+div[data-testid="stChatMessage"]:has([data-testid="user-avatar"]) [data-testid="user-avatar"] {
+    background-color: #F97316 !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
-/* AI Message Bubble (Left aligned, Purple) */
-div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) {
+/* ══ ASSISTANT bubble — trái, tím ══ */
+div[data-testid="stChatMessage"][data-role="assistant"],
+div[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]),
+div[data-testid="stChatMessage"]:has([data-testid="assistant-avatar"]) {
     flex-direction: row !important;
-    text-align: left !important;
+    justify-content: flex-start !important;
 }
-div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) div[data-testid="stChatMessageContent"] {
-    background-color: #8B5CF6 !important; /* Purple */
+
+div[data-testid="stChatMessage"][data-role="assistant"] [data-testid="stChatMessageContent"],
+div[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) [data-testid="stChatMessageContent"],
+div[data-testid="stChatMessage"]:has([data-testid="assistant-avatar"]) [data-testid="stChatMessageContent"] {
+    background: linear-gradient(135deg, #7C3AED, #8B5CF6) !important;
     color: #FFFFFF !important;
     border-radius: 18px 18px 18px 0 !important;
-    padding: 12px 16px !important;
-    display: inline-block !important;
-    max-width: 90% !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    padding: 10px 14px !important;
+    max-width: 88% !important;
+    width: fit-content !important;
+    flex: 0 1 auto !important;
+    box-shadow: 0 2px 8px rgba(124,58,237,0.2) !important;
 }
-div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) div[data-testid="stChatMessageContent"] * {
+
+div[data-testid="stChatMessage"][data-role="assistant"] [data-testid="stChatMessageContent"] *,
+div[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) [data-testid="stChatMessageContent"] *,
+div[data-testid="stChatMessage"]:has([data-testid="assistant-avatar"]) [data-testid="stChatMessageContent"] * {
     color: #FFFFFF !important;
 }
-div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) div[data-testid="chatAvatarIcon-assistant"] {
-    background-color: #22C55E !important; /* Green avatar */
-    border-radius: 4px !important;
-    margin-right: 12px !important;
+
+/* Avatar assistant — xanh lá, bên trái */
+div[data-testid="stChatMessage"][data-role="assistant"] [data-testid="chatAvatarIcon-assistant"],
+div[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) [data-testid="chatAvatarIcon-assistant"],
+div[data-testid="stChatMessage"]:has([data-testid="assistant-avatar"]) [data-testid="assistant-avatar"] {
+    background-color: #22C55E !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
 }
 
 /* Text area */
