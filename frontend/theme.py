@@ -433,12 +433,55 @@ div[data-testid="stDialog"] header button:hover {
 
 /* Chat messages inside dialog */
 div[data-testid="stChatMessage"] {
-    background-color: #FFFFFF !important;
-    border: 1px solid #E2E8F0 !important;
-    border-radius: 12px !important;
-    padding: 16px !important;
-    margin-bottom: 12px !important;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 8px 0 !important;
+    margin-bottom: 8px !important;
+    box-shadow: none !important;
+}
+
+/* User Message Bubble (Right aligned, Blue) */
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) {
+    flex-direction: row-reverse !important;
+    text-align: right !important;
+}
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) div[data-testid="stChatMessageContent"] {
+    background-color: #0084FF !important; /* Blue like messenger */
+    color: #FFFFFF !important;
+    border-radius: 18px 18px 0 18px !important;
+    padding: 12px 16px !important;
+    display: inline-block !important;
+    max-width: 85% !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) div[data-testid="chatAvatarIcon-user"] {
+    background-color: #F97316 !important; /* Orange avatar */
+    border-radius: 4px !important;
+    margin-left: 12px !important;
+    margin-right: 0 !important;
+}
+
+/* AI Message Bubble (Left aligned, Purple) */
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) {
+    flex-direction: row !important;
+    text-align: left !important;
+}
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) div[data-testid="stChatMessageContent"] {
+    background-color: #8B5CF6 !important; /* Purple */
+    color: #FFFFFF !important;
+    border-radius: 18px 18px 18px 0 !important;
+    padding: 12px 16px !important;
+    display: inline-block !important;
+    max-width: 90% !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) div[data-testid="stChatMessageContent"] * {
+    color: #FFFFFF !important;
+}
+div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) div[data-testid="chatAvatarIcon-assistant"] {
+    background-color: #22C55E !important; /* Green avatar */
+    border-radius: 4px !important;
+    margin-right: 12px !important;
 }
 
 /* Text area */

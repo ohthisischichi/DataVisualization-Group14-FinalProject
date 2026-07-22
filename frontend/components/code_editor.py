@@ -9,30 +9,29 @@ def render_code_editor_panel(
 	approval_status: str,
 	widget_key: str,
 ) -> str:
-	st.subheader("Code Editor")
-	st.caption(f"Trạng thái hiện tại: {approval_status}")
-
-	st.markdown("#### Giải thích")
-	st.info(explanation_text)
+	if explanation_text:
+		st.markdown(
+			f"""
+			<div style="
+				background: rgba(139,92,246,0.1);
+				border-left: 3px solid #8B5CF6;
+				border-radius: 0 8px 8px 0;
+				padding: 8px 12px;
+				margin-bottom: 10px;
+				font-size: 0.88rem;
+				color: #4C1D95;
+				font-style: italic;
+			">💡 {explanation_text}</div>
+			""",
+			unsafe_allow_html=True,
+		)
 
 	edited_code = st.text_area(
-		"Mã nguồn do AI sinh ra",
+		"Code (có thể chỉnh sửa)",
 		value=code_text,
-		height=340,
-		label_visibility="visible",
+		height=260,
+		label_visibility="collapsed",
 		key=widget_key,
 	)
-
-	preview_col_1, preview_col_2 = st.columns(2)
-	with preview_col_1:
-		st.download_button(
-			"Download Code",
-			data=edited_code,
-			file_name="generated_code.py",
-			mime="text/x-python",
-			width="stretch",
-		)
-	with preview_col_2:
-		st.code(edited_code, language="python")
 
 	return edited_code

@@ -12,7 +12,7 @@ from components.chat import render_chat_panel
 from components.code_editor import render_code_editor_panel
 from components.log_view import render_log_panel
 from components.result_view import render_result_panel
-from services.ai_api import generate_ai_response, interpret_result
+from services.ai_api import generate_ai_response, fix_code_with_ai, interpret_result
 from services.execute_api import execute_approved_code
 from services.logs_api import fetch_logs
 from filters import render_sidebar_filters, apply_filters, _init_filters
@@ -74,30 +74,25 @@ render_trends_tab = _load_renderer("tab_trends.py", "render")
 
 def initialize_state() -> None:
 	if "chat_history" not in st.session_state:
+		# Bắt đầu với tin nhắn chào của Assistant (không có mock code)
 		st.session_state.chat_history = [
 			{
 				"role": "assistant",
-				"content": (
-					"Tôi có thể đề xuất code theo yêu cầu, đính kèm giải thích, "
-					"và chờ bạn duyệt trước khi chạy."
-				),
+				"content": "Xin chào! Hãy nhập yêu cầu phân tích bên dưới và tôi sẽ sinh code cho bạn.",
 			}
 		]
 	if "prompt_text" not in st.session_state:
-		st.session_state.prompt_text = DEFAULT_PROMPT
+		st.session_state.prompt_text = ""
 	if "prompt_widget" not in st.session_state:
-		st.session_state.prompt_widget = DEFAULT_PROMPT
+		st.session_state.prompt_widget = ""
 	if "generated_code" not in st.session_state:
-		st.session_state.generated_code = DEFAULT_CODE
+		st.session_state.generated_code = ""
 	if "code_editor_text" not in st.session_state:
-		st.session_state.code_editor_text = DEFAULT_CODE
+		st.session_state.code_editor_text = ""
 	if "code_editor_revision" not in st.session_state:
 		st.session_state.code_editor_revision = 0
 	if "generated_explanation" not in st.session_state:
-		st.session_state.generated_explanation = (
-			"Đây là code mẫu để minh họa luồng AI -> duyệt -> thực thi. "
-			"Bạn có thể chỉnh sửa trước khi bấm chạy."
-		)
+		st.session_state.generated_explanation = ""
 	if "approval_status" not in st.session_state:
 		st.session_state.approval_status = "Chờ duyệt"
 	if "current_request_id" not in st.session_state:
@@ -183,31 +178,75 @@ def request_ai_generation(prompt_text: str) -> None:
     )
 
 
+def request_ai_fix(original_prompt: str, error_msg: str, broken_code: str) -> None:
+    """Gọi /ai/fix để sinh lại code khi execution thất bại."""
+    with st.spinner("⏳ AI đang phân tích lỗi và sinh lại code..."):
+        response = fix_code_with_ai(
+            original_prompt=original_prompt,
+            error_msg=error_msg,
+            broken_code=broken_code,
+        )
+    st.session_state.current_request_id = response.get("request_id")
+    st.session_state.generated_code = response["code"]
+    st.session_state.code_editor_text = response["code"]
+    st.session_state.code_editor_revision += 1
+    st.session_state.generated_explanation = response["explanation"]
+    st.session_state.ai_status = response.get("status")
+    st.session_state.approval_status = "Chờ duyệt"
+    st.session_state.execution_result = None
+    st.session_state.execution_error = None
+    # Thêm tin nhắn thông báo vào chat
+    st.session_state.chat_history.append({
+        "role": "assistant",
+        "content": (
+            "Hệ thống đang gặp một số lỗi khi thực hiện lệnh vừa rồi, "
+            "bạn vui lòng hãy chạy lại đoạn code mới dưới đây!"
+        ),
+    })
+
+
 def approve_and_execute(code_text: str) -> None:
-	st.session_state.approval_status = "Đã duyệt"
-	with st.spinner("Đang thực thi code local..."):
-		request_id = st.session_state.current_request_id
-		if not request_id:
-			raise RuntimeError("Thiếu request_id từ AI generate. Hãy generate code trước.")
-		execution = execute_approved_code(request_id=request_id, code_text=code_text, approved=True)
-	st.session_state.code_editor_text = code_text
-	st.session_state.execution_result = execution
-	st.session_state.execution_error = execution.get("error")
-	# Sinh câu trả lời từ kết quả code
-	st.session_state.answer_text = None
-	if execution.get("success"):
-		try:
-			with st.spinner("Đang tạo câu trả lời từ kết quả..."):
-				st.session_state.answer_text = interpret_result(request_id)
-		except Exception as exc:
-			st.warning(f"Không tạo được câu trả lời: {exc}")
+    st.session_state.approval_status = "Đang thực thi"
+    with st.spinner("Đang thực thi code..."):
+        request_id = st.session_state.current_request_id
+        if not request_id:
+            raise RuntimeError("Thiếu request_id từ AI generate. Hãy generate code trước.")
+        execution = execute_approved_code(request_id=request_id, code_text=code_text, approved=True)
+    st.session_state.code_editor_text = code_text
+    st.session_state.execution_result = execution
+    error_msg = execution.get("error")
+    st.session_state.execution_error = error_msg
+    st.session_state.answer_text = None
+
+    if not execution.get("success") or error_msg:
+        # --- Execution lỗi: gọi AI sửa tự động ---
+        st.session_state.approval_status = "Lỗi - Đang sửa"
+        original_prompt = (
+            st.session_state.get("prompt_text")
+            or "(không rõ yêu cầu gốc)"
+        )
+        request_ai_fix(
+            original_prompt=original_prompt,
+            error_msg=error_msg or "Không có kết quả hợp lệ",
+            broken_code=code_text,
+        )
+        return
+
+    # --- Thành công: sinh câu trả lời ---
+    st.session_state.approval_status = "Đã duyệt"
+    try:
+        with st.spinner("Đang diễn giải kết quả..."):
+            st.session_state.answer_text = interpret_result(request_id)
+    except Exception as exc:
+        st.session_state.answer_text = None
+        st.warning(f"Không tạo được câu trả lời: {exc}")
 
 
 def reject_current_code() -> None:
-	st.session_state.approval_status = "Bị từ chối"
-	st.session_state.execution_result = None
-	st.session_state.execution_error = None
-	st.session_state.answer_text = None
+    st.session_state.approval_status = "Bị từ chối"
+    st.session_state.execution_result = None
+    st.session_state.execution_error = None
+    st.session_state.answer_text = None
 
 
 def render_dashboard_tabs(df_filtered: pd.DataFrame) -> None:
@@ -231,61 +270,112 @@ def render_dashboard_tabs(df_filtered: pd.DataFrame) -> None:
 
 @st.dialog("AI Workspace", width="large")
 def render_ai_popup() -> None:
-    st.caption("Popup AI dùng chung cho mọi tab: chat, chỉnh sửa code, duyệt, và xem kết quả.")
+    # ── Lịch sử hội thoại ──────────────────────────────────────────────
+    for idx, message in enumerate(st.session_state.chat_history):
+        with st.chat_message(message.get("role", "assistant")):
+            # Nội dung text
+            if message.get("content"):
+                st.markdown(message["content"])
 
-    prompt_value = render_chat_panel(
-        chat_history=st.session_state.chat_history,
-        default_prompt=DEFAULT_PROMPT,
-        on_generate=request_ai_generation,
-    )
-    st.session_state.prompt_text = prompt_value
+            # Với tin nhắn AI cuối cùng: hiện code editor + nút / trạng thái
+            is_last  = idx == len(st.session_state.chat_history) - 1
+            is_ai    = message.get("role") == "assistant"
+            has_code = bool(st.session_state.generated_code)
+            status   = st.session_state.approval_status
 
-    code_text = render_code_editor_panel(
-        code_text=st.session_state.code_editor_text,
-        explanation_text=st.session_state.generated_explanation,
-        approval_status=st.session_state.approval_status,
-        widget_key=f"code_editor_widget_{st.session_state.code_editor_revision}",
-    )
-    st.session_state.code_editor_text = code_text
-    
-    action_col_1, action_col_2, action_col_3 = st.columns(3)
-    with action_col_1:
-        st.markdown('<span id="btn-approve-marker"></span>', unsafe_allow_html=True)
-        if st.button("Approve & Execute", use_container_width=True, key="popup_approve"):
-            approve_and_execute(code_text)
-            st.success("Đã duyệt và thực thi code.")
-    with action_col_2:
-        st.markdown('<span id="btn-reject-marker"></span>', unsafe_allow_html=True)
-        if st.button("Reject", use_container_width=True, key="popup_reject"):
-            reject_current_code()
-            st.warning("Code đã bị từ chối.")
-    with action_col_3:
-        st.markdown('<span id="btn-reset-marker"></span>', unsafe_allow_html=True)
-        if st.button("Reset to Mock", use_container_width=True, key="popup_reset"):
-            st.session_state.generated_code = DEFAULT_CODE
-            st.session_state.code_editor_text = DEFAULT_CODE
-            st.session_state.code_editor_revision += 1
-            st.session_state.generated_explanation = (
-                "Đã khôi phục code mock mặc định để tiếp tục demo."
-            )
-            st.session_state.approval_status = "Chờ duyệt"
-            st.session_state.current_request_id = None
-            st.session_state.execution_result = None
-            st.session_state.execution_error = None
-            st.session_state.answer_text = None
-            st.info("Đã khôi phục nội dung mẫu.")
+            if is_last and is_ai:
+                # ── Trạng thái: AI đang sửa lỗi (đang chờ backend) ──
+                if status == "Lỗi - Đang sửa":
+                    st.markdown(
+                        """
+                        <div style="
+                            display:flex; align-items:center; gap:10px;
+                            background:#FEF3C7; border:1px solid #F59E0B;
+                            border-radius:10px; padding:12px 16px;
+                            margin-top:8px;
+                        ">
+                            <span style="font-size:1.5rem">⏳</span>
+                            <span style="color:#92400E; font-weight:600; font-size:0.95rem;">
+                                Đang chờ AI sinh lại code, vui lòng đợi...
+                            </span>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
 
-    if st.session_state.answer_text:
-        st.subheader("Câu trả lời")
-        st.markdown(st.session_state.answer_text)
+                # ── Trạng thái: Chờ duyệt (có code để review) ──
+                elif status == "Chờ duyệt" and has_code:
+                    code_text = render_code_editor_panel(
+                        code_text=st.session_state.code_editor_text,
+                        explanation_text=st.session_state.generated_explanation,
+                        approval_status=status,
+                        widget_key=f"code_editor_widget_{st.session_state.code_editor_revision}",
+                    )
+                    st.session_state.code_editor_text = code_text
 
-    render_result_panel(
-        result=st.session_state.execution_result,
-        error_message=st.session_state.execution_error,
-        logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [],
-    )
+                    btn_col1, btn_col2, _ = st.columns([1, 1, 2])
+                    with btn_col1:
+                        st.markdown('<span id="btn-approve-marker"></span>', unsafe_allow_html=True)
+                        if st.button("✅ Chấp nhận", use_container_width=True, key="popup_approve"):
+                            approve_and_execute(code_text)
+                            st.rerun()
+                    with btn_col2:
+                        st.markdown('<span id="btn-reject-marker"></span>', unsafe_allow_html=True)
+                        if st.button("❌ Từ chối", use_container_width=True, key="popup_reject"):
+                            reject_current_code()
+                            st.rerun()
 
-    # render_log_panel(logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [])
+                # ── Trạng thái: Đã duyệt thành công ──
+                elif status == "Đã duyệt":
+                    if st.session_state.answer_text:
+                        st.markdown(
+                            f"**📊 Kết quả phân tích:**\n\n{st.session_state.answer_text}"
+                        )
+                    render_result_panel(
+                        result=st.session_state.execution_result,
+                        error_message=st.session_state.execution_error,
+                        logs=fetch_logs(st.session_state.current_request_id) if st.session_state.current_request_id else [],
+                    )
+
+                # ── Trạng thái: Bị từ chối ──
+                elif status == "Bị từ chối":
+                    st.markdown(
+                        """
+                        <div style="
+                            background:#FEF2F2; border:1px solid #EF4444;
+                            border-radius:10px; padding:10px 14px;
+                            color:#991B1B; font-size:0.9rem;
+                        ">
+                            ❌ Code đã bị từ chối. Nhập yêu cầu mới bên dưới để bắt đầu lại.
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+
+    # ── Khung nhập liệu ────────────────────────────────────────────────
+    st.divider()
+    # Ẩn input khi đang chờ AI sửa
+    if st.session_state.approval_status == "Lỗi - Đang sửa":
+        st.info("⏳ AI đang tự động phân tích và sửa lỗi. Kết quả sẽ hiện ngay khi xong.")
+    else:
+        prompt_value = st.text_area(
+            label="prompt",
+            height=80,
+            placeholder="Nhập yêu cầu phân tích... (VD: Vẽ biểu đồ giá nhà trung bình theo quận)",
+            key="prompt_widget",
+            label_visibility="collapsed",
+        )
+        col_gen, _ = st.columns([1, 3])
+        with col_gen:
+            st.markdown('<span id="btn-generate-marker"></span>', unsafe_allow_html=True)
+            if st.button("🚀 Generate Code", use_container_width=True, key="btn_generate"):
+                if prompt_value.strip():
+                    st.session_state.prompt_text = prompt_value.strip()
+                    request_ai_generation(prompt_value.strip())
+                    st.rerun()
+                else:
+                    st.warning("Vui lòng nhập yêu cầu.")
+
 
 
 def build_popup_trigger() -> None:
