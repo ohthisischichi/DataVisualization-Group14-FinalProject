@@ -121,8 +121,6 @@ def load_sample_data() -> pd.DataFrame:
                  "Bình Dương", "Đồng Nai", "Bà Rịa - Vũng Tàu", "Khánh Hòa", "Quảng Ninh"]
     districts = ["Quận 1", "Quận 2", "Quận 3", "Quận 4", "Quận 5", "Quận 6", "Quận 7",
                  "Quận 8", "Quận 9", "Quận 10", "Quận 11", "Quận 12", "Bình Thạnh", "Gò Vấp"]
-    wards = ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường 6",
-             "Phường 7", "Phường 8", "Phường 9", "Phường 10"]
     legal_statuses = ["Sổ đỏ", "Sổ hồng", "Hợp đồng mua bán", "Chưa có giấy tờ", "Đang chờ cấp"]
     furniture_states = ["Đầy đủ", "Cơ bản", "Không có", "Cao cấp"]
     directions = ["Đông", "Tây", "Nam", "Bắc", "Đông Nam", "Tây Bắc", "Không xác định"]
@@ -130,7 +128,6 @@ def load_sample_data() -> pd.DataFrame:
     data = {
         "Province": np.random.choice(provinces, n),
         "District": np.random.choice(districts, n),
-        "Ward": np.random.choice(wards, n),
         "Area": np.random.uniform(20, 150, n),
         "Price": np.random.uniform(0.5, 25, n),
         "Legal status": np.random.choice(legal_statuses, n),

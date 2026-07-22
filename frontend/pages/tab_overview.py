@@ -6,7 +6,7 @@ Thứ tự layout:
   1. KPI row (4 thẻ số)
   2. Bar chart Top 10 Province theo số lượng tin
   3. Histogram phân phối giá + Donut chart Area_Group  (2 cột)
-  4. Bar chart Top 10 Ward theo Price_per_m2 trung bình
+  4. Bar chart Top 10 District theo Price_per_m2 trung bình
 """
 
 import pandas as pd
@@ -252,17 +252,17 @@ def _render_price_hist_and_donut(df: pd.DataFrame) -> None:
 
 
 # ─────────────────────────────────────────────
-# 4. BAR CHART TOP 10 WARD THEO GIÁ/M²
+# 4. BAR CHART TOP 10 DISTRICT THEO GIÁ/M²
 # ─────────────────────────────────────────────
 
-def _render_top_ward_bar(df: pd.DataFrame) -> None:
+def _render_top_district_bar(df: pd.DataFrame) -> None:
     """
-    Bar chart Top 10 Ward theo giá/m² trung bình.
+    Bar chart Top 10 Quận/Huyện theo giá/m² trung bình.
     Tạm thay thế "Top Project" (chưa có cột Project trong dữ liệu).
     """
-    # Lọc các ward có ít nhất 5 tin để tránh ward 1–2 tin cho kết quả sai lệch
-    ward_stats = (
-        df.groupby(["Ward", "Province"], observed=True)
+    # Lọc các quận/huyện có ít nhất 5 tin để tránh quận/huyện quá ít tin gây sai lệch
+    district_stats = (
+        df.groupby(["District", "Province"], observed=True)
         .agg(
             avg_price_m2=("Price_per_m2", "mean"),
             count=("Price", "count"),
@@ -270,13 +270,13 @@ def _render_top_ward_bar(df: pd.DataFrame) -> None:
         )
         .reset_index()
     )
-    ward_stats = ward_stats[ward_stats["count"] >= 5]
-    top10_ward = ward_stats.nlargest(10, "avg_price_m2").sort_values("avg_price_m2")
+    district_stats = district_stats[district_stats["count"] >= 5]
+    top10_district = district_stats.nlargest(10, "avg_price_m2").sort_values("avg_price_m2")
 
     fig = px.bar(
-        top10_ward,
+        top10_district,
         x="avg_price_m2",
-        y="Ward",
+        y="District",
         orientation="h",
         color="avg_price_m2",
         color_continuous_scale=CONTINUOUS_SCALE,
@@ -288,7 +288,7 @@ def _render_top_ward_bar(df: pd.DataFrame) -> None:
         },
         labels={
             "avg_price_m2": "Giá/m² TB (tỷ)",
-            "Ward": "Phường / Xã",
+            "District": "Quận / Huyện",
             "count": "Số tin",
             "avg_price": "Giá TB (tỷ)",
         },
@@ -303,24 +303,24 @@ def _render_top_ward_bar(df: pd.DataFrame) -> None:
         ),
         marker_line_width=0,
     )
-    apply_theme(fig, "Top 10 Phường/Xã theo giá/m² trung bình")
+    apply_theme(fig, "Top 10 Quận/Huyện theo giá/m² trung bình")
     fig.update_layout(height=380, yaxis_title="", coloraxis_showscale=False)
 
-    st.plotly_chart(fig, width='stretch', key="overview_ward_bar")
+    st.plotly_chart(fig, width='stretch', key="overview_district_bar")
 
     # Ghi chú về trạng thái tạm thời
     st.caption(
         "📌 Sẽ thay bằng **Top Project** khi có cột `Project` trong dữ liệu. "
-        "Hiện dùng Top Ward (≥5 tin) làm proxy."
+        "Hiện dùng Top Quận/Huyện (≥5 tin) làm proxy."
     )
 
-    if not top10_ward.empty:
-        top_ward = top10_ward.iloc[-1]
+    if not top10_district.empty:
+        top_district = top10_district.iloc[-1]
         st.markdown(
             render_insight(
-                f"<b>{top_ward['Ward']}</b> ({top_ward['Province']}) có giá/m² "
-                f"trung bình cao nhất: {top_ward['avg_price_m2']:.4f} tỷ/m² "
-                f"≈ {top_ward['avg_price_m2'] * 1000:.0f} triệu/m²."
+                f"<b>{top_district['District']}</b> ({top_district['Province']}) có giá/m² "
+                f"trung bình cao nhất: {top_district['avg_price_m2']:.4f} tỷ/m² "
+                f"≈ {top_district['avg_price_m2'] * 1000:.0f} triệu/m²."
             ),
             unsafe_allow_html=True,
         )
@@ -357,7 +357,7 @@ def render(df_filtered: pd.DataFrame) -> None:
     st.markdown("---")
     _render_price_hist_and_donut(df_filtered)
     st.markdown("---")
-    _render_top_ward_bar(df_filtered)
+    _render_top_district_bar(df_filtered)
 
 
 # ─────────────────────────────────────────────

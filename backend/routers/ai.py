@@ -13,7 +13,7 @@ router = APIRouter(tags=["AI"])
 
 DATA_DESCRIPTION = """Bộ dữ liệu (biến `df`, kiểu pandas.DataFrame) chứa ~30.229 tin rao bán \
 nhà/bất động sản tại Việt Nam, thu thập từ các trang rao vặt và đã được làm sạch. \
-Mỗi dòng là một tin đăng bán một căn nhà. KHÔNG có dữ liệu theo thời gian (không có cột ngày/tháng).
+Mỗi dòng là một tin đăng bán một căn nhà. Có cột Day biểu thị ngày trong tháng tin được đăng.
 
 Ý nghĩa các cột (df.columns):
 - Address (chuỗi): địa chỉ đầy đủ của bất động sản, ví dụ "Dự án The Empire - Vinhomes Ocean Park 2, Xã Long Hưng, Văn Giang, Hưng Yên".
@@ -22,15 +22,14 @@ Mỗi dòng là một tin đăng bán một căn nhà. KHÔNG có dữ liệu th
 - Access Road (số thực, đơn vị mét): độ rộng đường/ngõ trước nhà. Trung vị ~6 m.
 - House direction (phân loại): hướng nhà. Giá trị: Đông, Tây, Nam, Bắc, Đông - Nam, Đông - Bắc, Tây - Nam, Tây - Bắc, hoặc "Không xác định" (đa số bị thiếu).
 - Balcony direction (phân loại): hướng ban công, cùng tập giá trị như House direction, phần lớn là "Không xác định".
-- Floors (số thực): số tầng của căn nhà. Khoảng 1–10, trung vị 3.
 - Bedrooms (số thực): số phòng ngủ. Khoảng 1–9, trung vị 3.
 - Bathrooms (số thực): số phòng tắm/vệ sinh. Khoảng 1–9, trung vị 3.
 - Legal status (phân loại): tình trạng pháp lý. Giá trị: "Đã có sổ" (đa số), "Hợp đồng mua bán", "Không xác định".
 - Furniture state (phân loại): tình trạng nội thất. Giá trị: "Đầy đủ", "Cơ bản", "Không xác định".
 - Price (số thực, ĐƠN VỊ TỶ ĐỒNG): giá rao bán. Khoảng 1.0–11.5, trung vị ~5.9 (tức 5.9 tỷ đồng). Đây là cột mục tiêu chính khi phân tích giá.
+- Day (số thực/nguyên): ngày đăng tin trong tháng.
 - Province (phân loại): tỉnh/thành phố. Nhiều nhất: Hồ Chí Minh, Hà Nội, Bình Dương, Đà Nẵng, Đồng Nai...
 - District (phân loại): quận/huyện, tách ra từ Address.
-- Ward (phân loại): phường/xã, tách ra từ Address.
 - Detail (chuỗi): phần mô tả/tên dự án tách ra từ Address.
 - Price_per_m2 (số thực, đơn vị tỷ đồng/m²): giá trên mỗi mét vuông = Price / Area. Trung vị ~0.10 (tức ~100 triệu/m²).
 - Area_Group (phân loại): nhóm diện tích đã chia sẵn. Giá trị: "<30 m²", "30-50 m²", "50-70 m²", "70-90 m²", ">90 m²".

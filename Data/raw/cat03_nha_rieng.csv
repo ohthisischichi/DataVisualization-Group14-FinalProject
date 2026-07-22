@@ -1,0 +1,668 @@
+Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bathrooms,Legal status,Furniture state,Price,Day
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường 8",52.0,4.0,6.0,,,4,5,Have certificate,,6.5,3
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Xuân Đỉnh",42.0,,,,,,,Have certificate,,12.7,3
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Xô Viết Nghệ Tĩnh",74.0,3.7,4.0,Nam,Nam,4,4,Have certificate,Basic,10.3,3
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Nguyễn Đình Hoàn",40.0,4.3,3.5,,,3,5,Have certificate,Basic,18.0,3
+"Quảng Ninh, Vân Đồn, Nhà riêng tại xã Quan Lạn",130.0,6.0,,Đông - Bắc,,7,,Have certificate,Full,10.0,3
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Hiệp Bình",48.0,4.0,5.0,,,4,4,Have certificate,Full,3.99,3
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Số 2",56.0,4.0,5.0,,,,,Have certificate,Basic,3.99,3
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Võ Văn Ngân",48.0,4.0,5.0,,,3,2,Have certificate,Basic,3.89,3
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Lê Đức Thọ",75.6,4.6,8.0,,,4,4,Have certificate,Full,11.0,2
+"Bến Tre, Bến Tre, Nhà riêng tại đường Nguyễn Đình Chiểu",206.2,9.0,3.5,Đông,,,,Have certificate,,2.6,2
+"Hà Nội, Long Biên, Nhà riêng tại đường Ái Mộ",38.4,3.5,7.0,Tây - Nam,Tây - Nam,3,4,Have certificate,,,2
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Cổ Nhuế",31.0,3.3,,Đông - Bắc,Đông,3,3,Have certificate,Full,7.0,2
+"Quảng Nam, Tam Kỳ, Nhà riêng tại đường Tiểu La",76.4,5.58,3.0,,,3,1,Have certificate,,1.7,1
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Tô Hiến Thành",100.0,,,,,,,Have certificate,,14.8,1
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà riêng tại đường Phan Chu Trinh",100.0,9.0,4.0,Tây - Bắc,Tây - Bắc,2,3,Have certificate,Basic,8.2,1
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Chu Văn An",39.5,4.0,4.0,,,4,4,Have certificate,,8.7,1
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Đỗ Xuân Hợp",38.0,,6.0,,,1,1,,,1.15,1
+"Cần Thơ, Bình Thủy, Nhà riêng tại đường Nguyễn Thông",100.0,5.0,4.0,Tây,,2,2,Have certificate,Basic,0.02,4
+"Đồng Nai, Long Khánh, Nhà riêng tại phường Suối Tre",206.0,6.0,,,,,,Have certificate,,3.5,5
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Phạm Văn Bạch",60.0,6.0,,,,4,5,Have certificate,Full,10.8,5
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà riêng tại phường Thắng Tam",105.0,,,,,,,Have certificate,,16.0,5
+"Khánh Hòa, Cam Ranh, Nhà riêng tại đường Nguyễn Công Trứ",174.5,,5.0,Đông,Đông,2,2,Have certificate,Basic,5.0,5
+"Bà Rịa Vũng Tàu, Châu Đức, Nhà riêng tại xã Đá Bạc",415.0,25.0,6.0,,,,,Have certificate,,7.0,5
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Phạm Văn Bạch",50.0,3.5,8.0,,,3,3,Have certificate,,7.6,5
+"Hồ Chí Minh, Quận 5, Nhà riêng tại đường Trần Phú",18.0,,,,,2,1,Have certificate,,3.3,4
+"Khánh Hòa, Ninh Hòa, Nhà riêng tại xã Ninh Lộc",202.0,7.0,4.0,,,,,Have certificate,,1.3,4
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Hoàng Hoa Thám",63.3,,,Tây - Nam,,3,3,Have certificate,,0.28,4
+"Hồ Chí Minh, Quận 6, Nhà riêng tại đường Bình Tiên",15.3,3.0,2.0,,,2,1,Have certificate,,1.8,4
+"Hồ Chí Minh, Quận 6, Nhà riêng tại đường Bình Tiên",15.3,3.0,2.0,,,2,1,Have certificate,,1.8,4
+"Khánh Hòa, Ninh Hòa, Nhà riêng tại xã Ninh Đông",385.0,17.0,5.0,,,,,Have certificate,,3.15,4
+"Khánh Hòa, Nha Trang, Nhà riêng tại xã Vĩnh Ngọc",206.0,10.0,5.0,,,,,Have certificate,,4.2,4
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường 12",117.0,,,,,6,3,Have certificate,,10.2,4
+"Hồ Chí Minh, Quận 6, Nhà riêng tại đường Bình Tiên",15.3,3.0,2.0,,,2,1,Have certificate,,1.8,4
+"Hà Nội, Ba Đình, Nhà riêng tại đường Đội Cấn",105.7,,,,,,,Have certificate,,31.0,4
+"Hà Nội, Gia Lâm, Nhà riêng tại đường Giáp Hải",234.0,14.0,3.0,Tây - Nam,,4,4,Have certificate,Full,30.42,3
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Phạm Văn Đồng",57.0,,2.4,,,9,9,Have certificate,Full,12.9,3
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Võ Văn Hát",45.0,,4.0,Đông - Nam,Đông - Nam,,,Have certificate,,2.49,3
+"Hà Nội, Long Biên, Nhà riêng tại đường Ngọc Lâm",126.3,,,,,,,,,50.52,7
+"Hà Nội, Hai Bà Trưng, Nhà riêng tại phường Đồng Tâm",50.0,4.2,3.0,,,4,4,Have certificate,Basic,13.7,3
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Số 6",48.0,4.0,4.0,,,3,2,Have certificate,Basic,4.5,7
+"Hồ Chí Minh, Quận 2, Nhà riêng tại phố Lương Định Của",140.0,,,Tây - Bắc,,3,3,,Full,49.0,7
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà riêng tại đường Lương Văn Can",76.0,,,Đông,Đông,3,3,Have certificate,Full,6.5,1
+"Khánh Hòa, Diên Khánh, Nhà riêng tại xã Suối Tiên",574.5,11.0,8.0,Đông - Nam,Đông - Nam,3,1,Have certificate,Full,3.05,7
+"Đà Nẵng, Liên Chiểu, Nhà riêng tại phố Tôn Đức Thắng",73.0,,,Đông - Nam,,7,7,Have certificate,,4.7,6
+"Ninh Thuận, Ninh Phước, Nhà riêng tại thị trấn Phước Dân",592.0,22.19,2.7,,,1,1,Have certificate,Full,1.38,6
+"Lâm Đồng, Đạ Tẻh, Nhà riêng tại thị trấn Đạ Tẻh",140.0,7.0,2.7,,,1,1,Have certificate,Full,1.38,6
+"Hà Nội, Sơn Tây, Nhà riêng tại phường Trung Sơn Trầm",100.0,,,,,,,Have certificate,,0.05,6
+"Bình Thuận, Hàm Thuận Bắc, Nhà riêng tại xã Hàm Hiệp",200.0,10.5,3.5,,,2,2,Have certificate,,2.35,6
+"Bình Thuận, Hàm Thuận Bắc, Nhà riêng tại xã Hàm Liêm",100.0,5.0,20.0,,,2,2,Have certificate,,2.5,6
+"Hồ Chí Minh, Hóc Môn, Nhà riêng tại đường Tiền Lân 17",72.0,4.0,,,,3,4,Have certificate,Full,8.0,6
+"Bình Thuận, Phan Thiết, Nhà riêng tại xã Phong Nẫm",100.0,5.12,2.5,,Tây - Bắc,1,1,Have certificate,Full,1.55,6
+"Hà Nội, Ba Đình, Nhà riêng tại đường Điện Biên Phủ",78.0,,,,,,,Have certificate,Basic,82.0,5
+"Hà Nội, Ba Đình, Nhà riêng tại đường Điện Biên Phủ",26.0,3.7,3.0,,,3,4,Have certificate,Full,25.0,5
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Liên Khu 5-6",70.0,,,,,,,Have certificate,,4.5,5
+"Thái Bình, Thái Thuỵ, Nhà riêng tại đường Quốc Lộ 39",700.0,12.0,21.0,Đông - Bắc,Đông - Bắc,4,5,Have certificate,Basic,11.5,5
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Phan Huy Ích",99.0,,,,,15,16,Have certificate,,22.5,5
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại xã Lê Minh Xuân",1028.0,,9.0,,,6,,Have certificate,,16.0,8
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Mã Lò",88.0,5.5,8.0,Tây - Bắc,Tây - Bắc,3,3,Have certificate,Full,8.0,9
+"Hồ Chí Minh, Quận 6, Nhà riêng tại đường 2F",86.0,5.0,20.0,Đông,Tây,7,8,Have certificate,Basic,15.89,2
+"Hòa Bình, Hòa Bình, Nhà riêng tại phường Thịnh Lang",152.0,6.5,,Đông - Nam,Đông - Nam,,,Have certificate,,0.05,9
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Nguyễn Trãi",95.0,5.8,9.0,,,6,7,Have certificate,Full,47.8,9
+"Hà Nội, Ba Đình, Nhà riêng tại đường Đội Cấn",400.0,12.0,4.0,,,6,6,Have certificate,Full,120.0,9
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Nguyễn An Ninh",65.0,3.7,3.6,,,6,5,Have certificate,Basic,17.1,7
+"Hồ Chí Minh, Quận 10, Nhà riêng tại phố Lý Thường Kiệt",56.0,4.0,8.0,,,6,7,Have certificate,,14.0,9
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Sư Vạn Hạnh",140.0,10.0,8.0,,,,,Have certificate,,30.0,9
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Đất Thánh",60.0,4.0,6.0,,,3,,Have certificate,Basic,9.6,9
+"Hồ Chí Minh, Quận 11, Nhà riêng tại đường Lữ Gia",60.0,4.0,8.0,,,4,6,Have certificate,,14.5,9
+"Hà Nội, Gia Lâm, Nhà riêng tại đường Giáp Hải",234.0,14.0,3.0,Tây - Nam,,4,4,Have certificate,Full,30.42,3
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Cách Mạng Tháng Tám",200.0,,3.0,Tây - Bắc,Đông - Bắc,6,5,Have certificate,Basic,25.0,8
+"Hồ Chí Minh, Quận 9, Nhà riêng tại đường Trương Văn Thành",42.0,3.3,3.0,Nam,,2,1,Have certificate,,3.4,8
+"Hà Nội, Thanh Xuân, Nhà riêng tại phố Quan Nhân",32.0,3.2,,Tây - Bắc,Tây - Bắc,4,2,Have certificate,Full,7.7,8
+"Hà Nội, Ba Đình, Nhà riêng tại đường Điện Biên Phủ",26.0,3.8,5.0,,,3,3,Have certificate,Basic,23.5,8
+"Hà Nội, Đống Đa, Nhà riêng tại phố Chùa Bộc",38.4,4.0,3.0,,,3,3,Have certificate,,13.8,8
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại đường Tân Liêm",200.0,6.2,,,,8,8,Have certificate,Basic,13.0,2
+"Hà Nội, Cầu Giấy, Nhà riêng tại phường Quan Hoa",80.0,5.0,,,,,,Have certificate,,41.0,7
+"Bình Thuận, La Gi, Nhà riêng tại phường Phước Hội",175.0,,,Đông - Bắc,,,,Have certificate,,1.6,6
+"Kiên Giang, Phú Quốc, Nhà riêng tại đường Mạc Cửu",152.2,5.1,4.0,Đông - Bắc,Đông - Bắc,4,1,Have certificate,,4.0,12
+"Hà Nội, Đống Đa, Nhà riêng tại đường Đê La Thành",32.0,5.0,3.0,,,4,5,Have certificate,Full,10.8,10
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Đồng Nai",71.2,6.0,16.0,,,12,12,Have certificate,Full,22.5,11
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Nguyễn Hữu Cảnh",112.0,4.0,8.0,,,2,2,Have certificate,,25.0,4
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Số 8",50.0,,6.0,Đông - Nam,Đông - Nam,4,4,Have certificate,,5.4,11
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Phan Huy Ích",64.0,10.0,,,,4,4,Have certificate,,13.5,5
+"Khánh Hòa, Nha Trang, Nhà riêng tại đường Nguyễn Thị Định",60.0,7.0,10.0,Đông - Nam,,,,Have certificate,,5.8,11
+"Đà Nẵng, Thanh Khê, Nhà riêng tại đường Lê Độ",76.8,,8.0,,,4,3,Have certificate,Full,8.3,11
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Đông Ngạc",30.0,,,,,3,4,Have certificate,,7.5,11
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại phường Phương Canh",32.0,6.5,,,,6,6,Have certificate,Full,9.3,11
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Lê Đình Cẩn",40.0,,5.0,,,2,1,Have certificate,,2.0,11
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Lạc Long Quân",52.0,5.0,,,,3,4,Have certificate,,15.8,11
+"Hà Nội, Hà Đông, Nhà riêng tại phố Nguyễn Thanh Bình",48.0,11.0,10.0,Đông - Nam,Đông - Nam,6,6,Have certificate,Basic,29.0,8
+"Hà Nội, Tây Hồ, Nhà riêng tại phường Xuân La",60.0,5.0,,,,12,,,,25.7,10
+"Hà Nội, Hoàng Mai, Nhà riêng tại Tây Nam Hồ Linh Đàm",60.0,,,,,4,3,Have certificate,Basic,19.1,10
+"Hồ Chí Minh, Quận 5, Nhà riêng tại đường Trần Hưng Đạo",100.0,,,,,4,4,Have certificate,Full,14.8,10
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại đường Tân Túc",175.0,4.0,4.0,,,2,2,Have certificate,,6.5,10
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Vũ Trọng Phụng",76.0,,,Nam,,21,21,Have certificate,Full,22.5,14
+"Hà Nội, Hoàng Mai, Nhà riêng tại phường Hoàng Liệt",45.0,4.5,2.0,Đông - Nam,Đông - Nam,4,3,Have certificate,,7.3,14
+"Hồ Chí Minh, Quận 8, Nhà riêng tại đường Hưng Phú",25.0,3.0,3.0,Nam,Đông,3,1,Have certificate,Basic,3.85,7
+"Hà Nội, Ba Đình, Nhà riêng tại đường Ngọc Hà",40.0,4.0,1.5,Đông - Bắc,,5,5,Have certificate,,13.5,13
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Hoàng Quốc Việt",34.0,,,,,3,,Have certificate,Full,10.6,13
+"Hà Nội, Đống Đa, Nhà riêng tại phố Khâm Thiên",73.3,,,,,,,Have certificate,Basic,13.0,13
+"Tây Ninh, Dương Minh Châu, Nhà riêng tại xã Chà Là",286.0,,,Đông - Nam,,15,15,Have certificate,,3.2,13
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Nguyễn Thị Tú",60.0,4.0,9.0,Đông - Bắc,Đông - Bắc,4,3,Have certificate,Basic,,13
+"Bình Dương, Thuận An, Nhà riêng tại đường Bình Hòa 24",299.0,15.0,5.0,Đông - Bắc,Đông - Bắc,,,Have certificate,Basic,9.0,13
+"Đồng Nai, Biên Hòa, Nhà riêng tại đường Bùi Hữu Nghĩa",117.0,5.6,2.0,Tây,Tây,2,1,Have certificate,,2.38,13
+"Hồ Chí Minh, Quận 3, Nhà riêng tại đường Điện Biên Phủ",40.0,3.5,6.0,,,2,2,Have certificate,Basic,7.0,2
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Trương Phước Phan",52.6,4.3,3.0,Đông,Đông,3,2,Have certificate,Full,5.2,5
+"Bình Dương, Thuận An, Nhà riêng tại đường Bình Hòa 24",299.0,15.0,5.0,Đông - Bắc,Đông - Bắc,,,Have certificate,Basic,9.0,13
+"Hải Phòng, Hải An, Nhà riêng tại đường Đoàn Kết",40.0,3.8,2.8,,,3,2,Have certificate,,2.3,9
+"Bình Dương, Thuận An, Nhà riêng tại đường Bình Hòa 24",198.5,10.0,5.0,Đông - Nam,Đông - Nam,4,4,Have certificate,Full,11.0,12
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Khương Trung",50.0,4.0,8.0,,,4,5,Have certificate,Full,17.88,12
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Trần Duy Hưng",65.0,4.2,8.0,,,4,6,Have certificate,,31.33,12
+"Hà Nội, Thanh Oai, Nhà riêng tại xã Cao Viên",36.0,,,,,3,,Have certificate,,3.8,12
+"Thanh Hóa, Thanh Hóa, Nhà riêng tại đường Lê Lai",176.0,9.5,15.0,Đông - Nam,Đông - Nam,8,5,Have certificate,Full,34.0,12
+"Hà Nội, Đống Đa, Nhà riêng tại phố Thái Thịnh",53.9,3.33,1.5,Tây - Bắc,,4,3,Have certificate,Full,12.0,16
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Trần Kế Xương",36.8,4.0,15.0,,,3,3,Have certificate,Basic,5.9,16
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Nguyễn Công Hoan",483.8,15.0,4.0,,,,,Have certificate,,0.12,16
+"Hồ Chí Minh, Quận 1, Nhà riêng tại đường Nguyễn Trãi",47.0,,4.5,,,6,6,Have certificate,Full,10.6,16
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Huỳnh Văn Bánh",94.0,7.2,,,,5,4,Have certificate,,16.0,16
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Hoàng Diệu",35.0,,,,,,,Have certificate,,4.2,16
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Lê Đức Thọ",96.0,4.0,6.0,,,,,Have certificate,,12.8,2
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Lạc Long Quân",70.0,5.6,3.0,,,11,11,Have certificate,Full,25.0,16
+"Hồ Chí Minh, Nhà Bè, Nhà riêng tại đường Huỳnh Tấn Phát",64.0,6.4,4.0,Tây - Nam,Tây - Nam,5,5,Have certificate,Full,6.49,10
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Đền Lừ",50.0,4.35,6.0,,,4,4,Have certificate,Full,21.5,3
+"Hồ Chí Minh, Quận 2, Nhà riêng tại đường 30",95.0,,,Đông - Bắc,Đông - Bắc,3,2,Have certificate,Basic,6.5,4
+"Vĩnh Long, Bình Tân, Nhà riêng tại đường ĐT 910",138.0,4.0,,,,3,2,Have certificate,Basic,0.79,15
+"Hà Nội, Ba Đình, Nhà riêng tại phường Đội Cấn",100.0,4.0,4.0,,,6,6,Have certificate,Full,17.5,9
+"Đồng Nai, Long Thành, Nhà riêng tại đường Gò Đậu",109.0,4.0,4.0,Đông,Đông,4,2,Have certificate,Basic,3.5,15
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường 26/3",30.0,4.0,7.0,,,4,2,Have certificate,Full,5.2,15
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Hoàng Quốc Việt",52.0,,,,,,,,,21.9,15
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Cầu Giấy",33.0,,,,,4,4,Have certificate,,11.2,14
+"Hà Nội, Ba Đình, Nhà riêng tại đường Văn Cao",30.0,4.0,4.0,,,4,5,Have certificate,Full,8.9,8
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Xuân Đỉnh",35.0,4.0,4.0,,,4,4,Have certificate,Full,10.68,8
+"Hà Nội, Đống Đa, Nhà riêng tại phố Khâm Thiên",46.0,3.5,2.5,,,3,3,Have certificate,Full,8.3,14
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường 12",66.0,4.0,5.0,Tây - Bắc,Tây - Bắc,4,3,,Basic,7.2,18
+"Đà Nẵng, Cẩm Lệ, Nhà riêng tại đường Nguyễn Thuật",100.0,5.75,5.5,Tây - Bắc,Tây - Bắc,2,2,Have certificate,,5.1,18
+"Hà Nội, Ba Đình, Nhà riêng tại phường Ngọc Hà",31.0,,,,,4,4,Have certificate,,8.9,12
+"Thái Bình, Thái Thuỵ, Nhà riêng tại đường Quốc Lộ 39A",230.0,5.0,,,,,,Have certificate,Full,2.5,18
+"Hồ Chí Minh, Quận 7, Nhà riêng tại đường D1",90.0,5.0,20.0,Đông - Bắc,,4,3,Have certificate,,15.5,18
+"Đồng Nai, Cẩm Mỹ, Nhà riêng tại xã Xuân Mỹ",445.6,,6.0,,,2,1,Have certificate,,3.5,18
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Miếu Gò Xoài",92.9,4.0,8.0,Đông,Đông,2,,Have certificate,Full,6.5,18
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Hoàng Văn Thụ",83.5,,,,,5,7,Have certificate,Full,14.9,2
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Tân Trụ",285.0,8.7,6.0,Đông - Nam,,3,3,Have certificate,Basic,15.95,15
+"Đà Nẵng, Thanh Khê, Nhà riêng tại đường Hà Huy Tập",20.3,,2.5,Đông - Bắc,,2,2,Have certificate,,3.4,5
+"Bình Dương, Thủ Dầu Một, Nhà riêng tại phường Hiệp Thành",290.0,10.0,4.0,Tây - Bắc,,,,Have certificate,,7.0,17
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà riêng tại đường Nguyễn Trường Tộ",83.0,6.6,4.0,Nam,Nam,4,4,Have certificate,Basic,10.8,17
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Phú Diễn",30.1,3.5,,Đông - Bắc,Đông,2,2,Have certificate,Full,8.0,17
+"Tây Ninh, Dương Minh Châu, Nhà riêng tại đường 11",477.0,,,Đông,,3,,Have certificate,Basic,4.5,17
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Nguyễn Xiển",30.0,7.1,,Đông - Nam,,2,1,Sale contract,Basic,3.5,16
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Nguyễn Văn Lượng",42.2,4.0,5.0,Tây,Tây,4,5,Have certificate,Full,9.45,1
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Số 2",65.4,,,,,4,,Have certificate,Full,6.85,8
+"Tuyên Quang, Tuyên Quang, Nhà riêng tại phường Ỷ La",120.0,5.0,5.0,Đông - Nam,Đông - Nam,4,4,Have certificate,Full,5.9,17
+"Hà Nội, Đống Đa, Nhà riêng tại phố Chùa Bộc",105.0,5.2,,,,14,15,Have certificate,Full,36.0,17
+"Hồ Chí Minh, Quận 8, Nhà riêng tại đường Ba Đình",217.1,,,,,,,Have certificate,Full,33.0,17
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Xuân Đỉnh",31.0,,,,,4,4,,Full,10.6,12
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Lạc Long Quân",80.0,,,,,11,,Have certificate,Full,25.0,16
+"Bạc Liêu, Bạc Liêu, Nhà riêng tại xã Hiệp Thành",143.5,7.0,,Đông,Đông,3,3,Have certificate,,2.8,21
+"Hồ Chí Minh, Hóc Môn, Nhà riêng tại đường Nguyễn Ảnh Thủ",113.0,5.0,6.0,Đông - Bắc,Đông - Bắc,4,2,Have certificate,Full,5.6,6
+"Kiên Giang, Rạch Giá, Nhà riêng tại đường Nguyễn Trung Trực",154.0,6.0,3.7,Đông - Bắc,,4,4,Have certificate,Full,3.35,7
+"Hải Phòng, An Dương, Nhà riêng tại đường Máng Nước",50.0,,5.0,Đông - Bắc,Đông - Bắc,3,3,Have certificate,,4.0,1
+"Hồ Chí Minh, Quận 2, Nhà riêng tại đường 30",100.0,,,Đông,,10,10,Have certificate,Full,14.5,3
+"Đà Nẵng, Hải Châu, Nhà riêng tại đường Tiểu La",101.0,,,,,22,22,Have certificate,Full,10.8,14
+"Hà Nội, Long Biên, Nhà riêng tại phường Phúc Đồng",30.0,4.5,7.0,Tây - Nam,Tây - Nam,3,4,Have certificate,,7.8,3
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Hoàng Quốc Việt",58.0,,,,,,,,,24.3,15
+"Đồng Nai, Nhơn Trạch, Nhà riêng tại thị trấn Hiệp Phước",134.5,,,Đông,,1,2,Have certificate,Basic,2.7,14
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại đường Thanh Niên",60.0,,4.0,,,2,2,Have certificate,,2.0,17
+"Hồ Chí Minh, Tân Phú, Nhà riêng tại đường Trịnh Đình Trọng",64.0,8.0,,,,5,5,Have certificate,,12.35,19
+"Hồ Chí Minh, Tân Phú, Nhà riêng tại đường Trịnh Đình Trọng",64.0,4.0,7.0,,,4,3,Have certificate,,12.5,19
+"Hà Nội, Thanh Trì, Nhà riêng tại xã Ngũ Hiệp",52.0,4.5,20.0,,,4,4,Have certificate,Basic,8.8,4
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Hoa Bằng",150.0,8.0,,,,24,24,Have certificate,Full,59.0,18
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Thiên Phước",54.0,,6.0,Đông,,6,5,Have certificate,,7.0,18
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Hồ Tùng Mậu",110.0,,,,,30,30,Have certificate,Full,45.5,18
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Bà Hạt",44.0,4.1,,,,2,2,Have certificate,Basic,5.0,18
+"Bình Dương, Tân Uyên, Nhà riêng tại đường DH412",63.0,13.0,30.0,,,3,2,Have certificate,Full,2.2,22
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Bình Chiểu",54.0,4.0,5.0,Tây - Nam,,3,3,,Basic,3.25,22
+"Hồ Chí Minh, Quận 5, Nhà riêng tại đường Nguyễn Trãi",146.0,5.5,8.0,,,18,18,Have certificate,Basic,15.5,22
+"Đà Nẵng, Cẩm Lệ, Nhà riêng tại đường Bình Thái 4",95.0,9.0,,Đông,Đông,2,2,Have certificate,,4.0,22
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Hoàng Văn Thái",100.0,5.0,8.0,,,2,2,Have certificate,Basic,34.5,8
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Hoàng Văn Thái",100.0,5.0,8.0,,,2,2,Have certificate,,34.5,8
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Phan Văn Trị",60.0,12.0,12.0,,,,,Have certificate,,15.5,22
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại phường 11",200.0,,,,,75,,Have certificate,,52.0,22
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Phùng Khoang",85.3,6.5,,,,21,21,,Full,19.9,22
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Yên Hòa",64.0,4.5,,,,18,18,Have certificate,Full,16.9,22
+"Đồng Nai, Biên Hòa, Nhà riêng tại đường Đồng Khởi",113.6,5.0,4.0,,,4,2,Have certificate,Basic,3.68,22
+"Hồ Chí Minh, Quận 7, Nhà riêng tại đường Nguyễn Thị Thập",60.0,,,,,3,4,Have certificate,,8.15,22
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Bạch Đằng",50.0,4.0,5.0,,,3,4,Have certificate,,12.9,22
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Tân Mai",49.0,4.0,2.5,,,3,4,Have certificate,Full,8.2,22
+"Bình Dương, Bến Cát, Nhà riêng tại phường Hòa Lợi",175.0,,4.0,,,2,1,Have certificate,,2.4,22
+"Hà Nội, Đống Đa, Nhà riêng tại phố Xã Đàn",104.0,4.5,6.0,,,6,5,Have certificate,,35.0,22
+"Hà Nội, Đống Đa, Nhà riêng tại phố Láng Hạ",72.0,7.5,6.0,,,6,5,Have certificate,,35.0,22
+"Hà Nội, Đống Đa, Nhà riêng tại phố Hoàng Cầu",80.0,5.0,8.0,,,6,5,Have certificate,,48.5,22
+"Hà Nội, Đống Đa, Nhà riêng tại phố Thái Hà",67.0,4.5,6.0,,,6,5,Have certificate,,30.5,22
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Lạc Long Quân",50.0,3.7,3.0,Tây - Bắc,,8,8,Have certificate,Full,11.0,15
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Tân Thới Hiệp",111.0,6.0,6.0,Đông - Bắc,Đông - Bắc,4,3,,,6.65,22
+"An Giang, Long Xuyên, Nhà riêng tại phường Mỹ Hòa",121.5,9.0,,,,,,,,2.2,22
+"Quảng Ninh, Hạ Long, Nhà riêng tại đường Trần Quốc Nghiễn",107.0,5.0,5.0,Đông - Nam,Đông - Nam,4,5,Have certificate,Full,,22
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Thống Nhất",54.0,4.2,8.0,Bắc,Bắc,4,6,Have certificate,Full,12.8,22
+"Bà Rịa Vũng Tàu, Xuyên Mộc, Nhà riêng tại đường 1",507.0,14.0,6.0,,,3,2,Have certificate,Full,4.0,22
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Ngô Bệ",86.0,,1.5,Bắc,Bắc,4,3,Have certificate,Basic,8.86,22
+"Hồ Chí Minh, Tân Phú, Nhà riêng tại đường Kênh Tân Hóa",90.0,4.2,8.0,,,6,7,Have certificate,,12.5,22
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Hoàng Hoa Thám",57.2,,,,,3,,Have certificate,Full,13.2,1
+"Đà Nẵng, Ngũ Hành Sơn, Nhà riêng tại đường Nguyễn Văn Thoại",70.3,,5.5,Đông,Đông,6,7,Have certificate,Full,19.5,22
+"Cần Thơ, Ninh Kiều, Nhà riêng tại đường Tầm Vu",99.7,5.0,3.0,Tây - Nam,Tây - Nam,3,1,Have certificate,,3.49,22
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Số 10",61.0,,,,,,,Have certificate,,7.7,22
+"Cần Thơ, Ninh Kiều, Nhà riêng tại đường Nguyễn Văn Cừ",302.7,9.3,4.5,Đông - Nam,Đông - Nam,14,12,Have certificate,Full,12.9,22
+"Hà Nội, Đống Đa, Nhà riêng tại phố Xã Đàn",35.0,5.0,3.0,Tây - Bắc,Đông - Bắc,3,4,Have certificate,Full,10.8,22
+"Đà Nẵng, Hải Châu, Nhà riêng tại đường Nguyễn Hữu Thọ",71.0,,5.0,Đông - Bắc,Đông - Bắc,4,3,Have certificate,Full,7.3,22
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Tam Bình",36.0,,,,,2,2,Sale contract,,1.89,22
+"Hồ Chí Minh, Quận 3, Nhà riêng tại phố Nguyễn Thiện Thuật",44.0,,,,,3,,Have certificate,Basic,11.9,22
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Thịnh Liệt",200.0,,,,,,,Have certificate,,40.0,22
+"Hải Phòng, Hải An, Nhà riêng tại phường Đằng Hải",318.0,,,,,4,4,,,26.0,22
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại phường Xuân Đỉnh",87.0,4.8,4.0,Nam,Nam,17,18,Have certificate,Full,25.0,22
+"Hà Nội, Long Biên, Nhà riêng tại phường Thạch Bàn",47.0,,,,,5,3,Have certificate,,11.7,22
+"Hà Nội, Long Biên, Nhà riêng tại đường Vũ Xuân Thiều",51.0,,,,,4,3,Have certificate,Full,8.3,22
+"Hồ Chí Minh, Quận 3, Nhà riêng tại đường Phạm Ngọc Thạch",98.0,5.0,8.0,,,,,Have certificate,Basic,30.0,22
+"Tây Ninh, Bến Cầu, Nhà riêng tại đường Nguyễn Văn Độ",179.7,,,Nam,Nam,,,Have certificate,,22.0,22
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Xuân La",46.0,5.2,4.0,Tây,Tây,4,4,Have certificate,Basic,11.5,22
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Lạc Long Quân",80.0,4.0,,,,10,,Have certificate,,25.5,22
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại đường Công Nghệ Mới",105.0,5.0,6.0,,,3,2,Have certificate,Basic,5.55,22
+"Bình Dương, Thuận An, Nhà riêng tại Khu dân cư Thuận Giao",300.0,,18.0,Tây - Bắc,,1,,,,8.3,22
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Bùi Đình Túy",124.0,4.0,10.0,Đông - Nam,Đông,6,5,Have certificate,Full,37.0,22
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Tân Thới Nhất 18",290.0,,,,,34,,,Basic,27.0,22
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Thạnh Lộc 29",125.0,,6.0,,,4,3,Have certificate,Basic,6.35,22
+"Hải Phòng, Hồng Bàng, Nhà riêng tại đường Hoàng Văn Thụ",60.0,,,,,,,,,,22
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Quảng Hiền",111.0,,,Nam,Nam,2,1,Have certificate,,15.5,22
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Xuân Đỉnh",30.0,3.4,6.0,,,5,5,Have certificate,Full,8.8,22
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Hồ Văn Long",220.0,,10.0,,,37,37,Have certificate,Full,21.8,22
+"Bình Dương, Thuận An, Nhà riêng tại đường 743",72.0,4.0,10.0,,,3,2,Have certificate,Full,3.6,22
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà riêng tại phường 12",75.0,4.5,6.0,Tây - Nam,,2,2,Have certificate,Basic,3.8,22
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà riêng tại đường 30/4",66.0,6.0,5.0,Đông - Nam,Đông - Nam,2,2,Have certificate,Basic,4.6,22
+"Hà Nội, Hai Bà Trưng, Nhà riêng tại đường Đê Trần Khát Chân",35.0,5.0,2.0,Đông - Nam,,2,2,Have certificate,Basic,8.5,22
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Khương Trung",65.0,,,,,16,16,Have certificate,Full,19.9,23
+"Hà Nội, Đống Đa, Nhà riêng tại đường Nguyễn Chí Thanh",60.0,,,,,6,6,Have certificate,Full,25.9,23
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Phú Diễn",60.0,4.75,20.0,Nam,Nam,17,17,Have certificate,Full,17.9,23
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà riêng tại đường Tống Duy Tân",84.0,,,Đông - Nam,,2,2,,,10.5,23
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường 3/2",200.0,,4.0,,,,,Have certificate,,36.0,23
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Huỳnh Khương An",72.3,4.27,3.0,Đông - Bắc,,1,1,Have certificate,,8.2,23
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Quang Trung",195.0,6.0,6.0,,,,,Have certificate,,17.8,23
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Lạc Long Quân",73.0,4.2,2.5,Đông - Bắc,Đông - Bắc,4,5,Have certificate,Full,27.0,23
+"Hà Nội, Đống Đa, Nhà riêng tại phố Vũ Ngọc Phan",90.0,5.0,,,,21,21,Have certificate,Full,40.9,23
+"Hà Nội, Thanh Trì, Nhà riêng tại đường Quốc lộ 1A",46.0,4.0,4.0,,,4,3,Have certificate,Full,14.0,23
+"Hà Nội, Đống Đa, Nhà riêng tại đường Đê La Thành",59.7,5.0,,,,18,18,Have certificate,Full,17.9,23
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường 2",450.0,10.0,,,,18,18,Have certificate,Basic,,23
+"Đà Nẵng, Liên Chiểu, Nhà riêng tại phường Hòa Khánh Nam",95.0,5.0,11.5,Tây - Nam,Tây - Nam,3,2,Have certificate,Basic,3.85,23
+"Hà Nội, Gia Lâm, Nhà riêng tại đường Bát Khối",130.0,10.0,4.0,Đông - Bắc,Đông - Bắc,2,2,Have certificate,Basic,9.08,23
+"Lâm Đồng, Đà Lạt, Nhà riêng tại đường Nguyên Tử Lực",165.0,,,,,2,1,Have certificate,,8.5,23
+"Đà Nẵng, Ngũ Hành Sơn, Nhà riêng tại đường Mỹ Đa Đông 12",120.0,5.0,5.5,Tây,Tây,4,3,Have certificate,Basic,20.0,23
+"Hồ Chí Minh, Quận 1, Nhà riêng tại phố Hai Bà Trưng",67.8,4.2,4.0,Tây - Nam,Tây - Nam,5,4,Have certificate,Full,19.8,22
+"Đà Nẵng, Sơn Trà, Nhà riêng tại đường Nguyễn Phan Vinh",61.0,5.73,3.5,Tây - Bắc,Tây - Bắc,3,2,Have certificate,Full,5.65,22
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Dương Quảng Hàm",92.0,6.5,,,,24,24,Have certificate,Full,19.8,22
+"Bình Phước, Đồng Xoài, Nhà riêng tại đường Số 6",120.0,6.0,12.0,Tây - Nam,Tây - Nam,3,3,Have certificate,Full,3.8,22
+"Hồ Chí Minh, Nhà Bè, Nhà riêng tại đường Đào Sư Tích",82.0,,,Nam,Nam,2,2,Have certificate,,5.7,23
+"Hồ Chí Minh, Quận 8, Nhà riêng tại đường Nguyễn Duy",34.0,3.0,6.0,Bắc,Bắc,4,3,Have certificate,Basic,6.28,23
+"Hà Nội, Thanh Xuân, Nhà riêng tại phố Ngụy Như Kon Tum",52.0,,,,,4,,Have certificate,,26.9,23
+"Cần Thơ, Ninh Kiều, Nhà riêng tại đường Nguyễn Văn Cừ",107.0,6.0,4.0,Nam,Nam,4,2,Have certificate,Basic,4.3,23
+"Hà Nội, Đống Đa, Nhà riêng tại đường Hồ Đắc Di",40.0,5.3,,Nam,Nam,8,5,Have certificate,Basic,12.6,23
+"Hà Nội, Đống Đa, Nhà riêng tại phố Trung Liệt",88.0,6.0,,,,24,24,Have certificate,Full,29.8,23
+"Long An, Đức Hòa, Nhà riêng tại đường Gò Hưu",16.0,,,,,,,,,0.32,23
+"Hà Nội, Long Biên, Nhà riêng tại phố Phố Nha",52.8,5.0,3.0,,,5,4,,Full,,23
+"Hà Nội, Đống Đa, Nhà riêng tại đường Láng",63.8,,,,,18,18,Have certificate,Full,21.9,23
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Xuân Đỉnh",86.5,5.0,,,,24,24,Have certificate,Full,22.9,23
+"Hà Nội, Long Biên, Nhà riêng tại đường Bát Khối",60.0,,3.0,,,5,4,Have certificate,Full,11.0,23
+"Hà Nội, Long Biên, Nhà riêng tại đường Phố Trạm",58.0,4.0,6.0,Tây,Nam,5,5,,,,23
+"Hà Nội, Cầu Giấy, Nhà riêng tại phố Nguyễn Ngọc Vũ",66.5,5.0,,,,18,18,Have certificate,Full,19.9,23
+"Hà Nội, Thanh Xuân, Nhà riêng tại phố Cự Lộc",52.8,4.0,4.0,,,15,15,Have certificate,Full,16.9,23
+"Hà Nội, Đống Đa, Nhà riêng tại phố Xã Đàn",90.8,6.0,,,,21,21,Have certificate,Full,20.9,23
+"Lâm Đồng, Đà Lạt, Nhà riêng tại phố Đặng Thái Thân",458.92,19.0,6.0,,,24,25,Have certificate,Full,70.0,23
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Mã Lò",60.0,4.4,5.0,Đông,Đông,5,6,Have certificate,Full,7.2,23
+"Bình Dương, Dĩ An, Nhà riêng tại đường Số 3",100.0,5.0,12.0,Đông - Nam,Đông - Nam,3,2,Have certificate,Basic,,23
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Mỹ Đình",43.0,5.8,5.0,,,3,5,Have certificate,Full,12.0,23
+"Hồ Chí Minh, Quận 1, Nhà riêng tại đường Nguyễn Bỉnh Khiêm",40.0,4.7,2.0,,,2,2,Have certificate,Full,8.65,23
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Bình Thành",314.0,,,,,55,55,Have certificate,Full,25.5,24
+"Đà Nẵng, Liên Chiểu, Nhà riêng tại phố Tôn Đức Thắng",159.0,6.0,5.0,,,3,2,Have certificate,Basic,7.25,24
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Trích Sài",40.0,,,,,,,,,13.0,24
+"Hà Nội, Ba Đình, Nhà riêng tại đường Đội Cấn",82.0,,,Tây,Nam,18,18,Have certificate,Full,27.5,24
+"Long An, Cần Đước, Nhà riêng tại xã Long Trạch",270.0,,6.0,,,3,2,Have certificate,,3.1,24
+"Bà Rịa Vũng Tàu, Bà Rịa, Nhà riêng tại xã Hòa Long",140.0,,,,,4,3,Have certificate,,3.5,24
+"Hà Nội, Long Biên, Nhà riêng tại đường Bát Khối",72.0,,,,,4,5,Have certificate,Full,15.78,24
+"Hà Nội, Long Biên, Nhà riêng tại đường Cự Khối",65.0,5.0,,,,3,2,Have certificate,Full,4.6,24
+"Hồ Chí Minh, Hóc Môn, Nhà riêng tại xã Đông Thạnh",32.0,,,,,2,2,,,1.48,24
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Mễ Trì",100.0,,,,,25,25,Have certificate,Full,23.5,23
+"Hồ Chí Minh, Quận 7, Nhà riêng tại đường Nguyễn Thị Thập",160.0,7.0,8.0,,,5,5,Have certificate,,12.0,23
+"Hà Nội, Long Biên, Nhà riêng tại đường Thạch Bàn",70.0,,,,,4,4,Have certificate,Full,10.2,23
+"Hải Phòng, Hải An, Nhà riêng tại đường Phương Lưu",53.3,4.4,4.4,Bắc,Bắc,3,3,Have certificate,Basic,4.67,23
+"Đà Nẵng, Cẩm Lệ, Nhà riêng tại đường Bình Thái 1",76.0,,,,,,,Have certificate,Full,5.0,23
+"Hà Nội, Đan Phượng, Nhà riêng tại đường Phượng Trì",49.7,3.35,5.0,,,3,2,Have certificate,Basic,4.97,23
+"Bắc Ninh, Yên Phong, Nhà riêng tại xã Yên Trung",79.0,6.5,4.5,Tây,,,,Have certificate,,,23
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Nguyễn Gia Trí",48.0,4.8,6.0,,,5,6,Have certificate,Full,12.5,23
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Đông Ngạc",35.0,3.5,6.0,,,3,4,Have certificate,Basic,9.0,23
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Đông Ngạc",68.0,4.6,4.0,,,3,3,Have certificate,Basic,9.85,23
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Thống Nhất",47.0,5.5,6.0,Nam,,3,5,Have certificate,,10.5,23
+"Hồ Chí Minh, Quận 9, Nhà riêng tại đường Số 5",131.1,6.0,,,,34,,Have certificate,Full,23.0,24
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Số 475",131.9,6.82,,Tây - Bắc,,22,,Have certificate,,21.0,24
+"Hà Nội, Ba Đình, Nhà riêng tại phố Giảng Võ",40.0,3.3,2.0,,,5,4,Have certificate,Full,9.2,24
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Cách Mạng Tháng Tám",62.6,,,,,,,,,13.2,24
+"Hà Nội, Đống Đa, Nhà riêng tại phố Xã Đàn",22.0,3.0,2.0,,,3,3,Have certificate,Basic,5.2,24
+"Hà Nội, Ba Đình, Nhà riêng tại đường Quần Ngựa",90.0,4.0,5.0,,,4,4,Have certificate,,38.99,24
+"Hà Nội, Hà Đông, Nhà riêng tại đường Phan Đình Giót",33.2,,,Đông - Nam,,3,4,Have certificate,Full,7.0,24
+"Đà Nẵng, Cẩm Lệ, Nhà riêng tại đường Nguyễn Đức Thiệu",100.0,5.0,5.0,Tây - Bắc,,3,3,Have certificate,,6.85,24
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại đường Liên Ấp 2-3-4",56.0,4.0,6.0,,,3,2,,Basic,1.5,24
+"Hà Nội, Long Biên, Nhà riêng tại đường Nguyễn Văn Cừ",68.0,,,,,3,7,Have certificate,,15.0,24
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Nguyễn Thị Tú",71.0,,,,,4,,Have certificate,,5.0,24
+"Quảng Nam, Điện Bàn, Nhà riêng tại đường Tứ Ngân",85.0,,,,,3,2,Have certificate,Full,3.85,22
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại Khu dân cư Phi Long 5",85.0,,12.0,Tây - Nam,Tây,4,3,,Basic,7.5,24
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại Khu dân cư Phi Long 5",92.5,5.0,12.0,Tây - Nam,Tây - Nam,4,5,,Full,8.0,24
+"Hồ Chí Minh, Tân Phú, Nhà riêng tại đường Tô Hiệu",54.0,4.0,5.0,,,,,Have certificate,Full,8.59,24
+"Hồ Chí Minh, Quận 11, Nhà riêng tại đường Lạc Long Quân",11.2,,3.0,Đông - Bắc,Đông - Bắc,2,2,Have certificate,,2.29,24
+"Hồ Chí Minh, Quận 5, Nhà riêng tại phố Phù Đổng Thiên Vương",43.56,8.0,4.0,Nam,Nam,4,3,Have certificate,,6.5,24
+"Hà Nội, Đông Anh, Nhà riêng tại xã Dục Tú",99.0,4.0,7.0,Bắc,Bắc,4,3,Have certificate,,0.09,24
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Trương Công Định",100.0,,8.0,,,5,4,Have certificate,,8.9,10
+"Hà Nội, Thanh Trì, Nhà riêng tại xã Tứ Hiệp",40.0,5.0,3.0,,,4,5,Have certificate,Full,6.85,24
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Lê Hồng Phong",30.0,3.0,3.0,,,2,2,Have certificate,,4.6,25
+"Hải Phòng, Lê Chân, Nhà riêng tại đường Thiên Lôi",56.0,4.0,12.0,Đông - Nam,Tây - Bắc,5,6,Have certificate,Full,9.3,25
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Đông Thiên",36.8,,,,,,,Have certificate,Full,7.25,25
+"Hà Nội, Đống Đa, Nhà riêng tại phố Xã Đàn",33.0,5.0,,,,4,5,Have certificate,Full,10.2,24
+"Hải Phòng, Lê Chân, Nhà riêng tại đường Thiên Lôi",56.0,4.0,3.0,Đông - Bắc,Đông - Bắc,4,4,Have certificate,,4.75,24
+"Hải Phòng, Lê Chân, Nhà riêng tại đường Thiên Lôi",58.8,4.2,12.0,Nam,Nam,5,5,Have certificate,Full,9.8,24
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Tô Vĩnh Diện",60.0,5.0,,,,7,8,Have certificate,Full,28.0,24
+"Hà Nội, Hai Bà Trưng, Nhà riêng tại phường Bạch Mai",24.0,3.5,,,,3,4,Have certificate,,6.2,24
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Nguyễn Văn Khối",88.0,10.0,10.0,Tây,Đông,6,7,Have certificate,Full,17.9,24
+"Hải Phòng, Lê Chân, Nhà riêng tại đường Thiên Lôi",58.7,4.5,8.0,Tây - Bắc,Tây - Bắc,,,Have certificate,Full,8.6,24
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Lạc Long Quân",73.0,4.2,3.0,Đông - Bắc,Tây - Nam,6,4,Have certificate,Basic,25.5,24
+"Hồ Chí Minh, Quận 12, Nhà riêng tại phường Thạnh Xuân",60.0,,,,,,,,,6.5,24
+"Thái Bình, Thái Bình, Nhà riêng tại phường Trần Hưng Đạo",58.5,4.2,10.0,Đông - Nam,Đông - Nam,3,3,Have certificate,Basic,4.7,24
+"Hồ Chí Minh, Củ Chi, Nhà riêng tại đường Nguyễn Kim Cương",170.0,10.0,5.0,Tây - Bắc,,1,1,Have certificate,,2.53,24
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Lạc Long Quân",71.0,5.6,3.5,Đông - Nam,Đông - Nam,4,5,Have certificate,Basic,23.0,24
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Lê Đức Anh",70.8,4.0,6.0,,,2,1,Have certificate,,3.8,24
+"Đà Nẵng, Ngũ Hành Sơn, Nhà riêng tại đường Hoàng Bật Đạt",105.0,5.0,7.5,,,3,3,Have certificate,Full,6.5,24
+"Hà Nội, Hà Đông, Nhà riêng tại đường Ỷ La",40.0,,,,,7,7,Have certificate,Full,6.2,19
+"Đà Nẵng, Hải Châu, Nhà riêng tại đường Huỳnh Thúc Kháng",70.0,4.2,5.5,Đông,Đông,7,5,Have certificate,,11.5,24
+"Hà Nội, Thanh Trì, Nhà riêng tại đường Tứ Hiệp",40.0,,,,,4,4,Have certificate,Full,7.1,24
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Nơ Trang Long",141.0,5.0,8.0,,,,,Have certificate,,28.2,25
+"Cà Mau, Trần Văn Thời, Nhà riêng tại thị trấn Sông Đốc",174.4,4.7,4.0,Tây - Nam,Tây - Nam,6,3,Have certificate,,8.0,24
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Trích Sài",70.0,4.0,5.0,,,6,5,Have certificate,Full,42.0,24
+"Hà Nội, Ba Đình, Nhà riêng tại đường Hoàng Hoa Thám",122.0,,,,,,,,,26.5,25
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Cách Mạng Tháng Tám",148.0,8.5,4.0,,,10,10,Have certificate,,19.5,25
+"Hà Nội, Long Biên, Nhà riêng tại đường Ngọc Thụy",71.0,3.9,,,,,,Have certificate,,15.9,25
+"Hà Nội, Đống Đa, Nhà riêng tại phố Thái Thịnh",75.0,,,,,,,,,39.9,25
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Thịnh Liệt",34.0,3.0,7.0,,,4,,Have certificate,Full,10.0,25
+"Đà Nẵng, Hải Châu, Nhà riêng tại đường Nguyễn Văn Linh",46.0,,,,,,,Have certificate,,3.85,25
+"Hồ Chí Minh, Quận 9, Nhà riêng tại đường Số 138",129.7,,3.0,,,,,Have certificate,,6.4,25
+"Hồ Chí Minh, Quận 2, Nhà riêng tại đường Số 6",63.6,,,,,4,3,Have certificate,,6.2,25
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Phạm Văn Đồng",36.0,3.85,,,,4,4,Have certificate,Full,10.4,25
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Số 3",70.0,4.0,,Đông,,4,3,Have certificate,,6.3,25
+"Hồ Chí Minh, Quận 2, Nhà riêng tại đường Lê Văn Thịnh",104.0,5.0,,,,4,4,Have certificate,,10.5,23
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Linh Đông",49.5,,,Tây - Bắc,,1,1,Have certificate,Basic,4.89,25
+"Hà Nội, Long Biên, Nhà riêng tại đường Tình Quang",230.0,9.4,3.0,Đông - Bắc,Đông - Bắc,,,Have certificate,,27.0,25
+"Hà Nội, Đống Đa, Nhà riêng tại đường Trung Phụng",37.0,7.0,,,,4,3,Have certificate,Full,8.0,25
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Mễ Trì",60.0,,,,,15,15,Have certificate,Full,14.9,25
+"Hồ Chí Minh, Quận 8, Nhà riêng tại Chánh Hưng Apartment",81.25,6.5,,,,9,7,Have certificate,,,25
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Điện Biên Phủ",53.6,3.58,1.6,,,,,Have certificate,,9.3,25
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Số 21",113.4,6.0,4.7,Đông - Nam,,,,Have certificate,,9.2,25
+"Đà Nẵng, Liên Chiểu, Nhà riêng tại đường Nguyễn Văn Cừ",333.6,,,,,15,,Have certificate,,0.02,25
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Liên khu 4-5",44.0,,,,,2,2,Sale contract,Full,1.63,25
+"Đồng Nai, Biên Hòa, Nhà riêng tại phường Trảng Dài",161.0,,6.0,Đông - Bắc,,3,2,Have certificate,,2.88,25
+"Hải Phòng, Dương Kinh, Nhà riêng tại đường Phú Hải",59.0,4.2,3.0,Tây,,,,Have certificate,,4.68,25
+"Thái Bình, Thái Bình, Nhà riêng tại đường Hoàng Văn Thụ",130.0,4.0,6.0,Nam,,3,3,,Full,1.7,25
+"Bà Rịa Vũng Tàu, Phú Mỹ, Nhà riêng tại phường Tân Phước",973.0,21.0,6.0,Đông,Đông,17,17,Have certificate,Basic,11.0,25
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Nguyễn Trãi",56.0,,,,,,,Have certificate,Full,11.0,25
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Phạm Văn Đồng",33.0,3.2,,,,3,2,Have certificate,Basic,6.98,25
+"Đồng Nai, Biên Hòa, Nhà riêng tại đường Bùi Văn Hòa",95.0,5.0,,,,3,2,Have certificate,Full,,25
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Nguyễn Duy Trinh",83.2,4.0,6.0,,,2,2,Have certificate,,4.8,25
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Xa Lộ Hà Nội",60.0,,,Đông - Nam,Đông - Nam,3,,Have certificate,,5.0,25
+"Long An, Tân An, Nhà riêng tại đường Nguyễn Cửu Vân",681.0,12.0,6.0,,,24,24,Have certificate,Basic,10.5,25
+"Hà Nội, Long Biên, Nhà riêng tại đường Hoàng Như Tiếp",30.0,3.8,3.0,Nam,Nam,3,3,Have certificate,Basic,8.9,25
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường 6",61.0,,,,,2,2,Have certificate,,4.9,25
+"Hà Nội, Hà Đông, Nhà riêng tại đường Hà Trì 2",30.0,,,,,,,,,7.86,25
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường 4C",197.3,,4.0,Tây - Bắc,,,,,,13.5,25
+"Bình Dương, Dĩ An, Nhà riêng tại đường Nguyễn Trung Trực",100.0,5.0,6.0,,,4,4,Have certificate,Full,7.8,25
+"Hồ Chí Minh, Hóc Môn, Nhà riêng tại đường Tân Hiệp 46",203.5,10.0,6.0,Đông - Bắc,,4,3,Have certificate,,8.6,25
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Hoàng Văn Thụ",140.0,3.8,7.0,,,18,19,Have certificate,Full,16.4,26
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Số 138",80.0,8.0,4.0,Tây,,,,,,4.9,26
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Hoàng Công Chất",74.0,3.4,,,,3,4,,,6.5,26
+"Hà Nội, Sóc Sơn, Nhà riêng tại đường Tỉnh lộ 131",85.0,5.0,6.0,Đông - Bắc,Đông - Bắc,2,2,Have certificate,,3.1,26
+"Bà Rịa Vũng Tàu, Bà Rịa, Nhà riêng tại đường Lương Thế Vinh",97.5,5.0,16.0,Đông - Bắc,Đông - Bắc,4,2,Have certificate,Full,5.0,26
+"Hồ Chí Minh, Quận 12, Nhà riêng tại Khu dân cư Thạnh Xuân",110.0,4.0,6.0,Tây - Bắc,,2,2,Have certificate,Basic,5.3,26
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Dương Thị Giang",300.0,,,,,35,35,Have certificate,Full,26.0,25
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại đường Cây Bàng",18.24,3.0,4.0,Tây,Tây,1,1,Sale contract,,1.27,25
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Thiên Phước",30.0,,4.0,Tây - Nam,,4,3,Have certificate,Full,5.6,25
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Bình Trị Đông",70.0,4.0,8.0,,,,,Have certificate,Basic,7.4,25
+"Hà Nội, Long Biên, Nhà riêng tại đường Bát Khối",34.0,,,,,3,4,Have certificate,Full,5.4,25
+"Hà Nội, Hà Đông, Nhà riêng tại đường Kiến Hưng",38.0,4.5,,Đông - Bắc,Đông,5,4,Have certificate,,7.0,25
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Trung Kiên",40.0,5.0,,Đông,Tây - Bắc,4,3,Have certificate,Full,6.6,25
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Sinco",53.0,4.0,8.0,Đông - Nam,Đông - Nam,3,4,Have certificate,Basic,7.49,25
+"Lạng Sơn, Lạng Sơn, Nhà riêng tại phường Chi Lăng",60.0,6.0,,,,,,,,1.5,25
+"Hà Nội, Đống Đa, Nhà riêng tại đường Trường Chinh",54.7,5.03,3.0,Tây - Nam,Tây - Nam,4,3,Have certificate,Basic,0.35,25
+"Hồ Chí Minh, Quận 7, Nhà riêng tại đường Huỳnh Tấn Phát",107.2,4.2,2.0,Đông - Bắc,,2,2,Have certificate,,8.0,25
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Kênh 26/3",50.0,5.2,5.0,Tây - Bắc,Tây - Bắc,3,3,Have certificate,,6.5,25
+"An Giang, Long Xuyên, Nhà riêng tại phường Mỹ Hòa",114.0,6.0,12.0,Đông - Nam,,,,Have certificate,,4.4,25
+"Cần Thơ, Bình Thủy, Nhà riêng tại đường Cách Mạng Tháng Tám",130.0,6.0,3.6,,Đông - Bắc,,,Have certificate,,3.7,25
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Kim Giang",33.0,5.0,3.0,,,3,4,Have certificate,Full,7.0,26
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Định Công Thượng",30.0,4.5,3.0,,,3,4,Have certificate,Full,6.8,26
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Định Công Thượng",33.0,,,,,3,4,Have certificate,Full,7.3,26
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Định Công Thượng",36.0,3.7,2.5,,,3,2,Have certificate,Basic,7.0,26
+"Hà Nội, Thanh Trì, Nhà riêng tại đường Kim Giang",36.0,,3.0,,,5,6,Have certificate,Full,8.0,26
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Lê Trọng Tấn",35.0,,3.0,,,3,4,Have certificate,,7.0,26
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Bùi Xương Trạch",40.0,,3.0,,,4,5,Have certificate,Full,7.0,26
+"Hà Nội, Long Biên, Nhà riêng tại đường Tư Đình",52.0,7.1,5.0,Tây - Nam,,4,3,Have certificate,Full,20.0,26
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Số 9",153.0,10.0,10.0,,,,,Have certificate,,15.5,26
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại đường Quốc Lộ 50",180.0,,,,,1,1,Have certificate,,8.5,26
+"Bình Dương, Dĩ An, Nhà riêng tại đường Nguyễn Thị Chạy",63.0,4.5,4.0,Tây - Bắc,Tây - Bắc,4,3,,,2.0,26
+"Đồng Nai, Biên Hòa, Nhà riêng tại đường Hồ Văn Huê",106.0,5.0,5.0,Đông - Nam,,3,2,Sale contract,Full,1.65,26
+"Đồng Nai, Biên Hòa, Nhà riêng tại đường Phạm Văn Thuận",105.0,5.6,6.0,,,1,1,Have certificate,,5.5,26
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Số 16",142.6,4.5,3.9,Đông - Bắc,,,,Have certificate,,9.4,26
+"Hà Nội, Đống Đa, Nhà riêng tại đường Đê La Thành",20.0,3.0,3.0,,,3,3,Have certificate,Basic,5.45,26
+"Hà Nội, Đống Đa, Nhà riêng tại đường Đê La Thành",31.0,3.5,4.0,,,3,3,Have certificate,Full,10.0,26
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Trần Duy Hưng",50.0,8.0,,Đông - Nam,Đông - Nam,4,4,Have certificate,Full,13.4,26
+"Hồ Chí Minh, Quận 4, Nhà riêng tại đường Tôn Đản",95.0,4.8,4.08,Tây - Nam,,,,Have certificate,,6.8,26
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Vương Thừa Vũ",45.0,,4.0,Đông - Nam,,7,5,Have certificate,Full,12.5,26
+"Đà Nẵng, Sơn Trà, Nhà riêng tại đường Nguyễn Phan Vinh",140.0,7.0,5.5,Tây,,2,2,Have certificate,Basic,6.9,26
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Cách Mạng Tháng Tám",81.0,,,,,7,7,Have certificate,Full,19.0,26
+"Hồ Chí Minh, Hóc Môn, Nhà riêng tại xã Xuân Thới Thượng",100.0,4.6,,,,,,Have certificate,,4.8,26
+"Đồng Nai, Biên Hòa, Nhà riêng tại đường Nguyễn Tri Phương",84.0,5.0,6.0,,,3,2,Have certificate,Basic,3.85,26
+"Hồ Chí Minh, Quận 1, Nhà riêng tại đường Nguyễn Trãi",68.0,3.9,4.0,Đông - Bắc,,,2,Have certificate,Basic,18.0,26
+"Hà Nội, Hoàn Kiếm, Nhà riêng tại đường Cổng Đục",160.0,8.0,4.0,Đông - Bắc,Đông - Bắc,14,14,Have certificate,Full,126.0,26
+"Đồng Nai, Biên Hòa, Nhà riêng tại đường Bùi Hữu Nghĩa",119.0,7.0,,Tây - Nam,Tây,2,1,Have certificate,,1.9,26
+"Hải Phòng, Lê Chân, Nhà riêng tại phố Trần Nguyên Hãn",60.0,4.5,,,,,,Have certificate,,,26
+"Hà Nội, Đống Đa, Nhà riêng tại phố Chùa Láng",35.0,,,,,5,5,Have certificate,Full,14.0,26
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Phạm Văn Đồng",59.0,8.0,3.0,Đông - Nam,Đông - Nam,13,13,Have certificate,Full,15.0,26
+"Hà Nội, Cầu Giấy, Nhà riêng tại phố Trung Kính",66.0,,,,,4,4,Have certificate,,27.0,26
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Ngô Đức Kế",62.0,5.8,4.0,,,7,7,Have certificate,,9.79,26
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Xô Viết Nghệ Tĩnh",108.0,7.0,4.0,,,3,2,Have certificate,Basic,15.5,26
+"Bà Rịa Vũng Tàu, Bà Rịa, Nhà riêng tại Lan Anh Residential",100.0,,6.0,Bắc,Bắc,3,2,Have certificate,Full,3.2,26
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Bùi Xương Trạch",45.0,5.2,10.0,Đông,Đông,4,4,Have certificate,,16.2,26
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường 16",54.0,12.0,6.0,Bắc,,4,3,Have certificate,,7.3,26
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Xô Viết Nghệ Tĩnh",41.6,3.5,5.0,Đông - Bắc,,,,Have certificate,,8.0,26
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại phường 26",102.36,,,Bắc,,16,16,Have certificate,Basic,25.0,25
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Kim Giang",33.0,,3.0,,,3,4,Have certificate,Full,7.3,26
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Thích Quảng Đức",145.0,5.6,5.0,,,,,Have certificate,,,26
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Bùi Xương Trạch",30.0,,4.0,,,3,4,Have certificate,,6.8,26
+"Bình Dương, Tân Uyên, Nhà riêng tại đường D2",72.0,4.5,7.0,,,3,4,Have certificate,Full,3.3,27
+"Bình Dương, Dĩ An, Nhà riêng tại đường Đào Sư Tích",73.0,4.5,4.0,Bắc,Bắc,4,2,Have certificate,Basic,4.25,27
+"Khánh Hòa, Nha Trang, Nhà riêng tại đường Dương Văn An",55.8,5.0,,Tây - Bắc,,1,1,Have certificate,,5.88,27
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại Khu dân cư Phi Long 5",92.5,12.0,12.0,Đông - Bắc,Đông - Bắc,5,5,,,6.9,27
+"Hải Phòng, Hồng Bàng, Nhà riêng tại đường Trương Văn Lực",57.3,3.7,3.0,Tây,,3,3,Have certificate,Full,3.35,27
+"Hồ Chí Minh, Tân Phú, Nhà riêng tại đường Lê Đình Thám",108.0,,,Đông,,5,4,Have certificate,Basic,11.3,27
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường 49",44.0,4.0,,,,3,2,Have certificate,,4.5,26
+"Đà Nẵng, Cẩm Lệ, Nhà riêng tại đường Bình Thái 1",80.0,5.0,5.0,,,3,3,Have certificate,Full,4.95,27
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Nguyễn Thượng Hiền",51.0,,6.0,,,3,4,Have certificate,Full,13.95,27
+"Hà Nội, Long Biên, Nhà riêng tại đường Ngọc Lâm",23.0,,,,,2,2,Have certificate,Basic,5.0,26
+"Hà Nội, Long Biên, Nhà riêng tại đường Nguyễn Văn Cừ",85.0,5.2,7.0,,,17,17,Have certificate,Full,29.0,26
+"Hà Nội, Long Biên, Nhà riêng tại đường Ngọc Lâm",64.0,5.8,,,,6,5,Have certificate,Full,14.5,26
+"Hà Nội, Thanh Trì, Nhà riêng tại đường Cầu Bươu",95.5,7.0,3.0,Đông - Nam,,3,2,Have certificate,Full,17.5,26
+"Hồ Chí Minh, Quận 3, Nhà riêng tại đường Trần Quang Diệu",35.4,,6.0,Bắc,Bắc,4,3,Have certificate,Full,17.0,26
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Số 6",94.7,,2.5,Tây - Bắc,,5,5,Have certificate,Basic,3.7,26
+"Hà Nội, Thanh Trì, Nhà riêng tại đường Ngũ Hiệp",72.0,4.2,3.5,,,5,3,Have certificate,Basic,10.5,26
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Hồ Tùng Mậu",60.0,,,,,18,18,Have certificate,Full,17.5,26
+"Khánh Hòa, Nha Trang, Nhà riêng tại đường Trần Phú",112.2,4.0,25.0,Nam,,1,1,Have certificate,,7.8,26
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Phan Xích Long",33.8,,6.0,,,3,4,Have certificate,Basic,7.5,26
+"Hồ Chí Minh, Quận 3, Nhà riêng tại đường Trần Quang Diệu",57.9,4.0,8.0,Đông,Đông,5,3,Have certificate,,15.0,12
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Phạm Đăng Giảng",66.0,4.2,6.0,Đông - Bắc,Đông - Bắc,2,1,Have certificate,Full,5.85,25
+"Hà Nội, Cầu Giấy, Nhà riêng tại phố Mai Dịch",60.0,,,,,15,15,Have certificate,Full,16.0,27
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Phạm Văn Đồng",100.0,,,,,24,24,Have certificate,Full,22.9,22
+"Hải Phòng, Ngô Quyền, Nhà riêng tại phố Đà Nẵng",43.0,5.0,2.0,,,4,3,Have certificate,,3.65,27
+"Hải Phòng, Hải An, Nhà riêng tại đường Phủ Thượng Đoạn",64.0,4.2,5.0,,,4,3,Have certificate,Basic,2.95,24
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Liên khu 4-5",95.8,4.0,8.0,Nam,Nam,4,5,Have certificate,Full,8.0,27
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Cách Mạng Tháng Tám",56.0,4.0,6.0,,,4,4,Have certificate,Full,10.0,27
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại phường 13",43.0,,,,,,,,,12.0,27
+"Hồ Chí Minh, Nhà Bè, Nhà riêng tại đường Nguyễn Văn Tạo",80.0,,20.0,,,1,1,Have certificate,,5.3,27
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Giáp Nhất",90.0,,,,,22,22,Have certificate,Full,24.0,22
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Minh Khai",32.0,3.2,,,,4,3,Have certificate,Basic,7.75,26
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Đồng Nai",60.0,6.0,16.0,,,2,3,Have certificate,,11.5,27
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Nguyễn Tuân",71.4,,,,,,,Have certificate,,9.0,25
+"Hà Nội, Hoài Đức, Nhà riêng tại đường Vạn Xuân",34.0,4.0,,Tây - Nam,,3,5,Have certificate,Basic,7.9,27
+"Hồ Chí Minh, Tân Phú, Nhà riêng tại phường Tây Thạnh",40.0,4.0,3.0,,,3,,Have certificate,Basic,4.05,27
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Số 48",71.0,7.0,4.0,Đông - Nam,,4,5,Have certificate,,8.9,27
+"Hồ Chí Minh, Nhà Bè, Nhà riêng tại đường Lê Văn Lương",36.0,5.0,2.0,Bắc,Bắc,3,2,,,1.75,24
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Thích Quảng Đức",60.0,4.0,5.0,Đông - Nam,Đông - Nam,3,3,Have certificate,Full,9.2,27
+"Đồng Nai, Long Thành, Nhà riêng tại đường Lê Duẩn",439.0,12.0,5.0,,,,2,Have certificate,,,27
+"Đà Nẵng, Cẩm Lệ, Nhà riêng tại đường Phước Hòa 5",73.0,5.0,3.0,,,4,4,Have certificate,Full,6.69,27
+"Hà Nội, Long Biên, Nhà riêng tại phố Sài Đồng",77.0,5.0,10.0,Đông - Bắc,Đông - Bắc,6,4,Sale contract,Full,23.1,28
+"Hà Nội, Gia Lâm, Nhà riêng tại đường Cổ Bi",140.0,8.3,8.0,Đông - Bắc,Đông - Bắc,8,6,,Full,12.6,28
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Nguyễn Văn Quá",300.0,8.8,8.0,Đông - Bắc,Đông - Bắc,14,14,Have certificate,Basic,23.8,28
+"Hồ Chí Minh, Củ Chi, Nhà riêng tại đường Nguyễn Văn Khạ",1520.0,29.0,12.0,Tây - Bắc,,2,2,Have certificate,Basic,19.0,28
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Kha Vạn Cân",73.0,10.0,5.0,,,2,2,Have certificate,,4.99,28
+"Hà Nội, Đống Đa, Nhà riêng tại phố Hào Nam",62.0,,,,,12,12,Have certificate,Full,15.05,28
+"Hà Nội, Mê Linh, Nhà riêng tại thị trấn Quang Minh",40.8,4.0,2.0,,,2,1,Have certificate,,2.45,28
+"Hồ Chí Minh, Nhà Bè, Nhà riêng tại đường Lê Văn Lương",21.0,3.0,6.0,,,2,3,Have certificate,,1.83,28
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Phạm Văn Chiêu",75.0,5.0,6.0,,,5,5,Have certificate,Full,7.29,23
+"Hồ Chí Minh, Tân Phú, Nhà riêng tại phường Phú Thọ Hòa",18.0,,,,,2,2,,,2.9,28
+"Đồng Nai, Vĩnh Cửu, Nhà riêng tại đường Cây Quéo",88.4,6.0,6.0,Tây - Bắc,Tây - Bắc,3,2,Have certificate,Basic,1.83,22
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Quốc Lộ 13",84.0,,5.0,Đông - Nam,,4,2,Have certificate,,7.5,28
+"Hà Nội, Đông Anh, Nhà riêng tại đường Lễ Pháp",70.0,4.0,6.0,Nam,Nam,2,1,Have certificate,Basic,,5
+"Hà Nội, Thanh Xuân, Nhà riêng tại phố Nhân Hòa",45.0,3.5,,,,7,,Have certificate,,9.8,27
+"Hồ Chí Minh, Quận 2, Nhà riêng tại đường Số 6",71.0,4.9,,,,5,5,Have certificate,Full,7.5,27
+"Hà Nội, Hoàng Mai, Nhà riêng tại phường Giáp Bát",96.0,,,Đông - Nam,Đông - Nam,24,24,Have certificate,Full,29.5,23
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Tô Ký",58.0,4.3,4.0,,,2,2,Have certificate,Basic,3.5,27
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Dương Quảng Hàm",39.0,,6.0,,,3,4,Have certificate,Full,7.35,27
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Lê Văn Hiến",41.0,3.5,3.5,,,5,3,Have certificate,,10.9,27
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Bờ Tây Sông Nhuệ",43.0,3.5,3.5,,,5,3,Have certificate,Full,10.8,27
+"Hà Nội, Hà Đông, Nhà riêng tại phường Yên Nghĩa",35.0,3.7,3.0,,,3,4,Have certificate,Full,5.98,25
+"Tây Ninh, Tây Ninh, Nhà riêng tại đường Nguyễn Hữu Thọ",291.3,,,,,,,,,1.52,28
+"Hà Nội, Chương Mỹ, Nhà riêng tại đường Quốc lộ 6",35.0,3.7,3.5,,,3,4,Have certificate,Basic,3.95,25
+"Hà Nội, Quốc Oai, Nhà riêng tại xã Hưng Đạo",53.0,4.0,3.0,,,3,3,Have certificate,Basic,4.5,25
+"Hà Nội, Quốc Oai, Nhà riêng tại xã Hưng Đạo",100.0,5.0,3.5,,,4,4,Have certificate,Basic,6.05,25
+"Hà Nội, Hoài Đức, Nhà riêng tại xã An Khánh",50.0,3.7,3.0,,,4,3,Have certificate,Full,7.95,25
+"Hải Phòng, Hồng Bàng, Nhà riêng tại đường Đinh Tiên Hoàng",60.0,6.5,,,,,,Have certificate,Basic,6.0,28
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Lê Tự Tài",72.0,6.0,6.0,,,3,3,Have certificate,,13.0,24
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Liên khu 4-5",60.0,4.0,7.0,,,4,4,Have certificate,Full,6.35,27
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Vườn Lài",45.0,5.0,10.0,,,2,,,,3.85,28
+"Khánh Hòa, Nha Trang, Nhà riêng tại đường Nguyễn Thị Minh Khai",89.0,6.59,6.0,Tây - Nam,,18,18,Have certificate,Full,31.5,28
+"Đồng Nai, Biên Hòa, Nhà riêng tại đường Huỳnh Mẫn Đạt",64.0,4.6,6.0,,Tây - Nam,3,2,Have certificate,Basic,2.99,25
+"Đà Nẵng, Liên Chiểu, Nhà riêng tại đường Hoàng Văn Thái",101.0,,,,,3,2,Have certificate,,3.6,28
+"Hải Phòng, Hồng Bàng, Nhà riêng tại đường Đống Hương",62.0,4.5,,,,2,1,Have certificate,Basic,1.75,24
+"Hà Nội, Long Biên, Nhà riêng tại đường Phúc Lợi",48.0,,,,,3,5,Have certificate,Full,8.9,28
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Bằng Liệt",45.0,4.0,4.0,,,4,4,Have certificate,Full,9.6,26
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Lê Văn Lương",38.0,,,,,,,Have certificate,Basic,11.0,22
+"Quảng Nam, Hội An, Nhà riêng tại đường Tống Văn Sương",108.0,5.0,3.0,Đông - Nam,Đông - Nam,1,1,Have certificate,,,28
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Trương Quốc Dung",520.0,13.0,12.0,,,11,13,Have certificate,Basic,170.0,28
+"Đà Nẵng, Cẩm Lệ, Nhà riêng tại đường Nguyễn Như Đãi",68.3,,2.0,Tây - Bắc,Tây - Bắc,,,Have certificate,Basic,2.7,28
+"Bà Rịa Vũng Tàu, Phú Mỹ, Nhà riêng tại đường Số 1",150.0,5.0,30.0,Nam,,2,2,Have certificate,Full,2.4,29
+"Đồng Nai, Vĩnh Cửu, Nhà riêng tại Lavender City",215.0,5.0,17.0,Đông - Bắc,Đông - Bắc,3,3,Have certificate,Full,3.8,29
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Bình Thành",140.0,14.0,8.0,Bắc,Bắc,8,6,Have certificate,Full,,29
+"Tiền Giang, Mỹ Tho, Nhà riêng tại đường Hùng Vương",104.5,5.5,2.5,Tây,,2,1,Have certificate,,0.96,29
+"Hà Nội, Quốc Oai, Nhà riêng tại đường 21",100.0,,,,,6,6,Have certificate,,,29
+"Phú Yên, Tuy Hòa, Nhà riêng tại đường Phan Huy Chú",100.0,5.0,16.0,Nam,Nam,4,3,Have certificate,Basic,3.6,26
+"Phú Thọ, Thanh Thủy, Nhà riêng tại thị trấn Thanh Thủy",393.0,14.0,5.0,,,4,2,Have certificate,Basic,0.03,29
+"Hà Nội, Hoài Đức, Nhà riêng tại đường Hậu Ái",55.0,,,,,4,,Have certificate,Basic,6.2,29
+"Hồ Chí Minh, Nhà Bè, Nhà riêng tại đường Đào Tông Nguyên",85.0,5.0,,Tây - Nam,Tây - Nam,4,5,Have certificate,Full,9.79,29
+"Hồ Chí Minh, Quận 7, Nhà riêng tại đường Gò Ô Môi",60.0,,8.0,,,4,5,Have certificate,Full,9.99,27
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Yên Hòa",35.0,3.5,5.0,,,4,6,Have certificate,Full,13.8,29
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Nguyễn Khang",35.0,3.5,3.5,,,5,7,Have certificate,Full,13.6,29
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường 3",140.0,7.0,9.0,Tây - Nam,Tây - Nam,5,6,Have certificate,,12.5,25
+"Hà Nội, Ba Đình, Nhà riêng tại đường Đội Cấn",31.0,4.5,3.0,,,3,3,Have certificate,Full,8.81,28
+"Hà Nội, Ba Đình, Nhà riêng tại đường Nguyễn Tri Phương",61.0,6.0,6.0,,,4,5,Have certificate,,69.0,5
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Dương Quảng Hàm",62.0,,4.5,,,4,2,Have certificate,Basic,7.6,26
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Dương Quảng Hàm",41.0,,6.0,,,3,2,Have certificate,Basic,6.5,28
+"Hà Nội, Hà Đông, Nhà riêng tại phường Yên Nghĩa",35.0,4.0,3.0,,,3,4,Have certificate,Full,6.45,25
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Lê Thị Hồng",118.0,6.0,,,,,,Have certificate,,14.2,23
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Lê Đức Thọ",55.0,,,,,,,,,18.9,28
+"Đồng Nai, Long Khánh, Nhà riêng tại đường Lê Văn Vận",250.0,5.0,6.0,Tây - Nam,,10,10,Have certificate,,3.5,29
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Bùi Quang Là",23.0,,3.0,,,2,2,Have certificate,Full,3.79,29
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Nơ Trang Long",48.2,,5.0,,,3,2,Have certificate,Basic,6.45,25
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Thạnh Lộc 50",56.0,4.0,,Tây - Bắc,Tây - Bắc,2,2,Have certificate,,3.85,29
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Trường Chinh",70.0,4.0,8.0,,,4,5,Have certificate,Full,9.0,23
+"Hải Phòng, Ngô Quyền, Nhà riêng tại phường Đằng Giang",46.0,4.0,11.0,Tây - Nam,Tây - Nam,3,3,Have certificate,Full,10.2,29
+"Đắk Lắk, Buôn Ma Thuột, Nhà riêng tại đường Nguyễn Phúc Chu",150.0,6.0,6.0,Đông - Nam,,2,2,Have certificate,Full,3.2,29
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Tam Châu",100.0,5.0,5.0,Đông - Nam,,2,2,Have certificate,,6.2,29
+"Long An, Tân An, Nhà riêng tại đường Châu Văn Giác",637.12,,,,,,,Have certificate,Basic,11.5,29
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Lê Đức Thọ",418.0,10.0,8.0,,,,,Have certificate,,32.5,29
+"Hồ Chí Minh, Quận 6, Nhà riêng tại đường Chợ Lớn",64.0,4.0,6.0,,,3,2,Have certificate,Full,7.9,29
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Phan Huy Ích",264.0,12.0,,Tây - Bắc,Tây - Bắc,33,34,Have certificate,Full,38.5,29
+"Hồ Chí Minh, Nhà Bè, Nhà riêng tại đường Đào Sư Tích",108.2,,4.0,Tây,Tây,7,6,Have certificate,Basic,6.5,29
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Lưu Hữu Phước",66.0,4.5,4.0,Tây,Tây,4,3,Have certificate,Full,,29
+"Hà Nội, Long Biên, Nhà riêng tại đường Cổ Linh",72.0,5.0,3.0,,,4,4,Have certificate,Basic,10.2,26
+"Hải Dương, Hải Dương, Nhà riêng tại đường Nguyễn Hữu Cầu",60.8,5.0,2.0,Đông - Nam,Đông - Nam,3,3,Have certificate,Full,2.5,29
+"Hồ Chí Minh, Quận 7, Nhà riêng tại đường Nguyễn Văn Quỳ",84.2,,,Bắc,,,,Have certificate,,4.5,29
+"Hồ Chí Minh, Quận 7, Nhà riêng tại đường Nguyễn Văn Quỳ",74.7,8.16,4.0,Đông - Bắc,Đông - Bắc,4,4,Have certificate,,5.3,29
+"Hồ Chí Minh, Quận 9, Nhà riêng tại đường Trần Thị Điệu",120.0,,,Đông - Nam,,3,,,,12.8,29
+"Đồng Nai, Vĩnh Cửu, Nhà riêng tại đường ĐT 768",82.2,6.0,12.0,Tây - Nam,Tây - Nam,3,2,Have certificate,Basic,1.79,29
+"Hà Nội, Hoài Đức, Nhà riêng tại đường Cao Xá 2",80.0,4.5,5.0,Đông - Bắc,Đông - Bắc,1,1,Have certificate,Basic,0.09,29
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Hoàng Bật Đạt",60.0,,,,,5,4,,,9.0,29
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Nguyễn Văn Trỗi",35.0,,7.0,,,4,5,Have certificate,Basic,8.5,29
+"Hà Nội, Hoàn Kiếm, Nhà riêng tại đường Lê Duẩn",31.0,4.5,,,,,,Have certificate,,10.5,29
+"Đồng Nai, Biên Hòa, Nhà riêng tại phường Trảng Dài",71.0,,6.0,,,3,2,Have certificate,,2.79,29
+"Bắc Ninh, Bắc Ninh, Nhà riêng tại đường Nguyễn Văn Cừ",84.0,6.0,,Đông - Nam,,,,,,8.0,29
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Nguyễn Thị Kiểu",71.0,,,,,3,2,Have certificate,,6.1,29
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Nguyễn Khánh Toàn",60.0,5.0,3.0,,,6,4,Have certificate,Full,12.0,29
+"Kiên Giang, Rạch Giá, Nhà riêng tại Khu dân cư An Bình",90.0,4.5,7.5,,,3,3,Have certificate,Full,2.89,29
+"Hồ Chí Minh, Quận 10, Nhà riêng tại đường Cách Mạng Tháng Tám",65.0,4.0,6.0,Tây - Nam,Tây - Nam,4,3,Have certificate,Basic,11.0,28
+"Bình Dương, Thủ Dầu Một, Nhà riêng tại đường Bạch Đằng",133.3,8.0,3.0,Đông - Nam,,2,1,Have certificate,Basic,2.6,29
+"Hồ Chí Minh, Tân Phú, Nhà riêng tại đường Nguyễn Văn Săng",56.0,5.6,6.0,Nam,Nam,2,2,Have certificate,Basic,5.7,25
+"Hà Nội, Ba Đình, Nhà riêng tại đường Phan Kế Bính",38.0,4.5,2.0,,,3,4,Have certificate,,10.8,29
+"Đồng Nai, Biên Hòa, Nhà riêng tại phường Trảng Dài",107.0,,6.0,Đông,Đông,3,2,Have certificate,,3.05,29
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Mễ Trì Hạ",30.0,5.0,3.0,,,3,4,Have certificate,Full,8.3,29
+"Hà Nội, Đống Đa, Nhà riêng tại phố Thái Hà",67.0,4.5,7.0,,,5,5,Have certificate,,30.0,29
+"Hà Nội, Ba Đình, Nhà riêng tại đường Đội Cấn",45.0,4.0,3.5,,,4,5,Have certificate,,10.5,29
+"Hà Nội, Ba Đình, Nhà riêng tại đường Đội Cấn",35.0,4.5,3.0,,,3,4,Have certificate,,8.8,29
+"Hà Nội, Ba Đình, Nhà riêng tại đường Đào Tấn",43.0,5.86,4.0,,,4,5,Have certificate,Full,16.8,29
+"Hồ Chí Minh, Bình Tân, Nhà riêng tại đường Bùi Tư Toàn",44.0,4.0,8.0,Đông - Nam,Đông - Nam,3,2,Have certificate,Basic,5.6,29
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Thạnh Lộc 49",54.4,,5.0,Đông - Nam,,3,4,Have certificate,Full,4.65,28
+"Đà Nẵng, Thanh Khê, Nhà riêng tại đường Trường Chinh",78.0,7.0,4.0,,,3,3,Have certificate,Full,4.98,23
+"Hà Nội, Long Biên, Nhà riêng tại đường Phố Trạm",40.0,4.53,5.0,,,3,5,Have certificate,Full,11.4,30
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Thạnh Lộc 41",87.5,,,,,,,Have certificate,,6.1,30
+"Hà Nội, Thanh Trì, Nhà riêng tại đường Tả Thanh Oai",35.0,,,,,,,,Full,,30
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Đình Thôn",120.0,,,,,24,24,Have certificate,Full,23.9,30
+"Hồ Chí Minh, Quận 6, Nhà riêng tại phường 14",40.0,,,,,3,,,,5.56,30
+"Hà Nội, Gia Lâm, Nhà riêng tại đường Kiêu Kỵ",65.0,4.8,,Đông - Bắc,Đông - Bắc,4,3,Have certificate,Full,5.2,30
+"Hồ Chí Minh, Quận 1, Nhà riêng tại đường Nguyễn Trãi",30.0,,15.0,,,,,Have certificate,Full,,30
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Vũ Tùng",80.0,4.8,2.5,,,3,3,Have certificate,Basic,10.5,30
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Xuân Thủy",35.0,3.5,3.0,,,4,6,Have certificate,Full,10.9,30
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Hiệp Bình",130.0,6.5,10.0,,,3,3,Have certificate,Full,11.0,29
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Lê Văn Chí",76.0,4.2,5.0,,,4,5,Have certificate,Full,8.9,29
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Phan Sào Nam",128.0,5.35,8.0,,,7,8,Have certificate,Full,19.0,29
+"Hồ Chí Minh, Quận 5, Nhà riêng tại đường Trần Phú",35.0,,,,,3,3,Have certificate,Full,9.0,29
+"Hà Nội, Hoài Đức, Nhà riêng tại đường Quốc lộ 32",35.0,3.5,2.5,Đông - Bắc,Đông - Bắc,5,3,Have certificate,Full,6.7,29
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Lê Văn Thịnh",106.0,6.0,5.0,,,5,6,Have certificate,Full,9.89,29
+"Đà Nẵng, Liên Chiểu, Nhà riêng tại đường Nguyễn Chánh",72.3,,,,,,,,,4.75,29
+"Đồng Nai, Biên Hòa, Nhà riêng tại phường Trảng Dài",161.0,,6.0,,,3,2,Have certificate,,2.88,29
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Cầu Giấy",40.0,4.6,4.0,,,3,4,Have certificate,Full,11.28,28
+"Tiền Giang, Mỹ Tho, Nhà riêng tại đường Phan Thanh Giản",44.0,10.0,2.0,Đông - Nam,Đông - Nam,2,1,Have certificate,Basic,1.33,30
+"Hà Nội, Long Biên, Nhà riêng tại phố Hoàng Thế Thiện",69.8,3.6,2.5,Nam,Nam,2,1,Have certificate,Basic,9.5,30
+"Hồ Chí Minh, Bình Chánh, Nhà riêng tại đường An Phú Tây - Hưng Long",80.0,,,,,3,3,Have certificate,Basic,,30
+"Hà Nội, Long Biên, Nhà riêng tại phường Phúc Đồng",49.8,,,,,,,Have certificate,,15.1,30
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Hồ Tùng Mậu",43.7,,,,,3,2,Have certificate,Basic,13.6,30
+"Hà Nội, Thanh Trì, Nhà riêng tại đường Yên Kiện",82.0,5.1,6.0,,,2,2,Have certificate,,10.1,30
+"Bình Thuận, Đức Linh, Nhà riêng tại thị trấn Đức Tài",90.0,4.5,,,,1,1,Have certificate,,0.97,30
+"Hà Nội, Hoài Đức, Nhà riêng tại đường Đại lộ Thăng Long",61.0,3.6,2.3,,,2,1,Have certificate,Full,,30
+"Hà Nội, Hai Bà Trưng, Nhà riêng tại phường Đồng Nhân",35.0,,,,,3,4,Have certificate,Full,8.6,30
+"Phú Yên, Tuy Hòa, Nhà riêng tại đường Nguyễn Trường Tộ",178.0,,,Tây - Bắc,Tây - Bắc,2,2,Have certificate,Basic,7.0,30
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Võ Chí Công",90.6,4.8,5.0,Tây - Bắc,Tây - Bắc,3,2,Have certificate,Basic,29.9,22
+"Hà Nội, Hoàn Kiếm, Nhà riêng tại phố Nhà Chung",100.0,4.5,3.0,,,2,1,Have certificate,,37.5,24
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Nguyễn An Ninh",30.0,3.6,2.5,,,3,4,Have certificate,Full,7.9,30
+"Hà Nội, Sóc Sơn, Nhà riêng tại đường Võ Nguyên Giáp",58.0,3.4,5.0,Tây - Nam,Tây - Nam,2,1,Have certificate,Basic,3.0,30
+"Bình Dương, Dĩ An, Nhà riêng tại đường Thống Nhất",65.0,,,,,,,Have certificate,,8.2,30
+"Bà Rịa Vũng Tàu, Phú Mỹ, Nhà riêng tại xã Tân Hòa",1000.0,,,,,5,6,Have certificate,Full,11.0,30
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Phan Đình Phùng",167.0,18.0,,,,,,Have certificate,,15.9,30
+"Hồ Chí Minh, Quận 1, Nhà riêng tại đường Tôn Thất Tùng",128.0,6.7,,,,,,Have certificate,,54.0,30
+"Bình Định, Quy Nhơn, Nhà riêng tại đường Trạng Quỳnh",34.6,3.1,2.0,Đông - Bắc,Đông - Bắc,3,3,Have certificate,Basic,2.9,30
+"Hồ Chí Minh, Quận 12, Nhà riêng tại đường Thạnh Lộc 39",61.5,7.0,7.0,Tây - Bắc,,4,5,Have certificate,Full,6.6,27
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại phố Vạn Kiếp",36.0,,,,,,,,,6.3,30
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Phan Xích Long",36.0,,4.0,,,2,3,,Full,6.3,30
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại phố Phan Đăng Lưu",36.0,,,,,,,,,6.3,30
+"Đồng Nai, Xuân Lộc, Nhà riêng tại xã Xuân Trường",139.4,15.0,2.5,Đông - Nam,,2,1,Have certificate,,0.76,30
+"Hà Nội, Cầu Giấy, Nhà riêng tại Khu đô thị mới Cầu Giấy",126.0,7.2,25.0,Đông - Bắc,Đông - Bắc,10,11,Have certificate,Full,79.0,30
+"Hồ Chí Minh, Quận 8, Nhà riêng tại phố Tạ Quang Bửu",129.0,5.0,,,,3,,,,21.0,26
+"Hồ Chí Minh, Quận 8, Nhà riêng tại phường 15",40.08,3.6,,,,2,2,,,4.0,26
+"Bình Dương, Dĩ An, Nhà riêng tại phường Dĩ An",200.0,,,,,20,20,Have certificate,Basic,9.0,30
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Lê Trọng Tấn",50.0,4.0,,,,4,5,Have certificate,Full,12.7,30
+"Hồ Chí Minh, Gò Vấp, Nhà riêng tại đường Nguyễn Văn Nghi",49.0,3.8,2.0,Đông - Bắc,Đông - Bắc,3,2,Have certificate,,4.9,29
+"Tây Ninh, Dương Minh Châu, Nhà riêng tại xã Suối Đá",113.0,,,Tây - Bắc,,2,1,Have certificate,,0.77,30
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Phạm Văn Đồng",68.0,,,,,10,,Have certificate,Full,13.2,30
+"Hà Nội, Cầu Giấy, Nhà riêng tại phố Trần Quốc Hoàn",40.1,10.0,10.0,Đông - Nam,Đông - Nam,5,5,Have certificate,,19.9,30
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Trần Thái Tông",260.0,10.0,,,,,,Have certificate,,109.0,23
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Mạc Thái Tổ",62.0,6.0,,,,,,Have certificate,Full,21.0,23
+"Hồ Chí Minh, Quận 6, Nhà riêng tại đường Cư Xá Phú Lâm D",67.0,3.5,8.0,,,5,6,Have certificate,Full,8.5,29
+"Hà Nội, Cầu Giấy, Nhà riêng tại phố Phùng Chí Kiên",115.0,,,,,,,,,36.0,23
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Trần Thái Tông",120.0,8.0,,,,,,Have certificate,,55.0,23
+"Hà Nội, Long Biên, Nhà riêng tại phố Sài Đồng",58.0,4.2,2.5,,,5,4,Have certificate,Full,7.9,30
+"Hồ Chí Minh, Quận 7, Nhà riêng tại đường Huỳnh Tấn Phát",50.0,4.0,3.0,Tây - Bắc,Tây - Bắc,3,1,Have certificate,Basic,3.79,30
+"Hà Nội, Đống Đa, Nhà riêng tại đường Phạm Ngọc Thạch",18.0,3.0,2.0,,,3,3,Have certificate,Full,3.8,30
+"Hồ Chí Minh, Quận 11, Nhà riêng tại đường Lê Đại Hành",87.0,4.0,8.0,,,4,4,Have certificate,Basic,10.8,30
+"Hồ Chí Minh, Nhà Bè, Nhà riêng tại đường Đào Tông Nguyên",95.0,5.0,8.0,,,4,5,Have certificate,Full,8.1,30
+"Hà Nội, Ba Đình, Nhà riêng tại phố Kim Mã Thượng",30.0,34.0,3.5,Tây - Bắc,,4,6,Have certificate,,15.9,30
+"Đà Nẵng, Liên Chiểu, Nhà riêng tại đường Hồ Tùng Mậu",99.0,5.5,,,,,,,,,30
+"Hà Nội, Hoàn Kiếm, Nhà riêng tại đường Tức Mạc",114.2,,,,,,,Have certificate,Full,80.0,28
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Trường Chinh",30.0,3.5,5.0,,,4,3,Have certificate,Full,6.5,25
+"Hồ Chí Minh, Tân Bình, Nhà riêng tại đường Trần Văn Quang",50.0,,,,,4,4,Have certificate,Full,8.6,25
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Yên Hòa",68.0,10.0,,,,,,Have certificate,Full,22.9,30
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Nguyễn Khang",79.0,4.4,,,,17,17,Have certificate,Full,27.0,30
+"Đồng Nai, Xuân Lộc, Nhà riêng tại đường ĐT 765",538.2,17.2,3.5,Tây - Nam,,3,,Have certificate,,1.57,30
+"Hồ Chí Minh, Quận 2, Nhà riêng tại phường An Phú",80.0,4.0,12.0,,,,,,,16.0,30
+"Hồ Chí Minh, Quận 5, Nhà riêng tại đường Sư Vạn Hạnh",100.0,,,,,,,,,30.0,30
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Mỹ Đình",55.0,,,,,14,14,Have certificate,Full,18.5,30
+"Hà Nội, Long Biên, Nhà riêng tại đường Bát Khối",50.0,5.0,,,,5,7,Have certificate,Full,11.75,30
+"Hà Nội, Nam Từ Liêm, Nhà riêng tại đường Tu Hoàng",50.0,,9.0,,,4,3,Have certificate,Full,13.99,30
+"Đà Nẵng, Thanh Khê, Nhà riêng tại đường Lê Duẩn",43.9,4.5,2.5,Nam,Nam,3,2,Have certificate,,3.85,30
+"Hà Nội, Tây Hồ, Nhà riêng tại đường Thụy Khuê",41.0,4.8,3.0,,,6,6,Have certificate,Full,14.8,30
+"Hà Nội, Bắc Từ Liêm, Nhà riêng tại đường Thụy Phương",68.0,4.6,3.0,Đông - Bắc,Đông - Bắc,3,3,Have certificate,Full,9.95,30
+"Khánh Hòa, Nha Trang, Nhà riêng tại đường Tuệ Tĩnh",88.6,6.0,6.0,Tây - Nam,Tây - Nam,1,1,Have certificate,Full,12.0,30
+"Hồ Chí Minh, Thủ Đức, Nhà riêng tại đường Phạm Văn Đồng",111.0,7.5,8.0,,,4,3,Have certificate,Full,8.0,24
+"Hồ Chí Minh, Quận 7, Nhà riêng tại phố Trần Xuân Soạn",50.0,,3.0,,,3,2,Have certificate,,4.29,28
+"Hồ Chí Minh, Quận 6, Nhà riêng tại đường Nguyễn Văn Luông",62.0,4.0,,Nam,,,,Have certificate,,7.9,22
+"Hà Nội, Ba Đình, Nhà riêng tại đường Giang Văn Minh",280.0,13.5,12.0,Bắc,Đông - Bắc,45,52,Have certificate,Full,,11
+"Hà Nội, Đống Đa, Nhà riêng tại phố Hoàng Cầu",60.0,4.0,6.0,,,5,5,Have certificate,Basic,26.5,30
+"Hà Nội, Đống Đa, Nhà riêng tại phố Hoàng Cầu",60.0,4.0,6.0,,,5,5,Have certificate,Basic,26.5,30
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Cầu Giấy",39.0,,3.0,,,3,4,Have certificate,Basic,11.5,30
+"Đồng Nai, Biên Hòa, Nhà riêng tại đường Huỳnh Văn Nghệ",100.0,7.0,7.0,,,,,Have certificate,,2.0,25
+"Hồ Chí Minh, Hóc Môn, Nhà riêng tại đường Tân Thới Nhì",90.0,4.7,10.0,,,2,,Have certificate,,3.7,22
+"Hà Nội, Hoàng Mai, Nhà riêng tại đường Kim Đồng",61.0,4.0,3.5,,,5,4,Have certificate,Full,15.45,2
+"Bình Dương, Thủ Dầu Một, Nhà riêng tại đường Hồ Văn Cống",120.0,4.0,6.0,,,3,2,Have certificate,Basic,2.45,30
+"Hồ Chí Minh, Bình Thạnh, Nhà riêng tại đường Ung Văn Khiêm",64.0,4.0,10.0,,,,,Have certificate,,11.0,29
+"Đồng Nai, Vĩnh Cửu, Nhà riêng tại Lavender City",70.0,6.0,5.0,Đông,Đông - Bắc,3,2,Have certificate,Basic,2.8,29
+"Hà Nội, Cầu Giấy, Nhà riêng tại đường Hoàng Quốc Việt",55.0,5.8,7.0,Đông - Bắc,Đông - Bắc,4,4,,,20.0,30
+"Hà Nội, Cầu Giấy, Nhà riêng tại phố Nghĩa Đô",48.0,6.6,5.0,,,6,5,Have certificate,Basic,18.5,30
+"Hồ Chí Minh, Phú Nhuận, Nhà riêng tại đường Đặng Văn Ngữ",45.2,5.0,5.0,,,4,5,Have certificate,Basic,11.4,28
+"Đồng Nai, Vĩnh Cửu, Nhà riêng tại đường Miễu Ông",88.4,6.0,6.0,Tây - Nam,Tây - Nam,3,2,Have certificate,Basic,1.99,29
+"Hà Nội, Thanh Xuân, Nhà riêng tại đường Nguyễn Xiển",62.0,4.5,20.0,,,5,4,Have certificate,Full,34.0,8
+"Hồ Chí Minh, Quận 9, Nhà riêng tại đường Võ Văn Hát",92.3,,,,,,,,,13.8,24

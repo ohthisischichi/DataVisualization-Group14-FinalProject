@@ -17,15 +17,14 @@ COLUMN_DTYPES: dict = {
     "Access Road": "float64",
     "House direction": "object",
     "Balcony direction": "object",
-    "Floors": "float64",
     "Bedrooms": "float64",
     "Bathrooms": "float64",
     "Legal status": "object",
     "Furniture state": "object",
     "Price": "float64",
+    "Day": "float64",
     "Province": "object",
     "District": "object",
-    "Ward": "object",
     "Detail": "object",
     "Price_per_m2": "float64",
     "Area_Group": "object",
@@ -74,7 +73,7 @@ def get_numeric_columns(df: pd.DataFrame) -> list[str]:
     """Trả về danh sách cột số dùng cho correlation heatmap."""
     return [
         col for col in [
-            "Area", "Frontage", "Access Road", "Floors",
+            "Area", "Frontage", "Access Road", "Day",
             "Bedrooms", "Bathrooms", "Price", "Price_per_m2"
         ]
         if col in df.columns
