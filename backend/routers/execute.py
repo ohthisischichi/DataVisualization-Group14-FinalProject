@@ -377,7 +377,10 @@ async def execute_code(request: ExecuteRequest):
             error_msg = f"Code chạy quá {EXECUTE_TIMEOUT_SECONDS}s và đã bị hủy (timeout)."
         else:
             error_msg = "Process con thoát bất thường (có thể do lỗi hệ thống / segfault)."
-        _update_log_status(request.request_id, status="error", result_summary=error_msg)
+        _update_log_status(
+            request.request_id, status="error",
+            result_summary=error_msg, executed_code=request.code,
+        )
         return ExecuteResult(request_id=request.request_id, success=False, error=error_msg)
 
     # Đã rút được kết quả, chờ child kết thúc gọn (đừng để join treo vô hạn).
@@ -399,7 +402,10 @@ async def execute_code(request: ExecuteRequest):
 
     status = "executed" if success else "error"
     summary = error or f"Kết quả dạng: {output.get('result_type')}"
-    _update_log_status(request.request_id, status=status, result_summary=summary)
+    _update_log_status(
+        request.request_id, status=status,
+        result_summary=summary, executed_code=request.code,
+    )
 
     # Response chỉ mang meta data. 
     # Load result_data qua GET /execute/result/{request_id}
@@ -438,7 +444,12 @@ async def get_result(request_id: str):
     )
 
 
-def _update_log_status(request_id: str, status: str, result_summary: str) -> None:
+def _update_log_status(
+    request_id: str,
+    status: str,
+    result_summary: str,
+    executed_code: str | None = None,
+) -> None:
     """Cập nhật lại log entry gốc (đã tạo lúc gọi AI API) với kết quả thực thi."""
     entry = get_log_entry(request_id)
     if entry is None:
@@ -447,12 +458,14 @@ def _update_log_status(request_id: str, status: str, result_summary: str) -> Non
             request_id=request_id,
             prompt="(không rõ, không có log AI gốc)",
             code="",
+            executed_code=executed_code,
             explanation="",
             result_summary=result_summary,
             status=status,
             timestamp=datetime.now().isoformat(),
         )
     else:
+        entry.executed_code = executed_code
         entry.status = status
         entry.result_summary = result_summary
         entry.timestamp = datetime.now().isoformat()

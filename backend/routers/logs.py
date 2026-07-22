@@ -18,6 +18,7 @@ def init_db() -> None:
                 request_id TEXT PRIMARY KEY,
                 prompt TEXT,
                 code TEXT,
+                executed_code TEXT,
                 explanation TEXT,
                 result_summary TEXT,
                 status TEXT,
@@ -43,9 +44,10 @@ def save_log_entry(entry: LogEntry) -> None:
     with _get_conn() as conn:
         conn.execute(
             """
-            INSERT INTO logs (request_id, prompt, code, explanation, result_summary, status, timestamp)
-            VALUES (:request_id, :prompt, :code, :explanation, :result_summary, :status, :timestamp)
+            INSERT INTO logs (request_id, prompt, code, executed_code, explanation, result_summary, status, timestamp)
+            VALUES (:request_id, :prompt, :code, :executed_code, :explanation, :result_summary, :status, :timestamp)
             ON CONFLICT(request_id) DO UPDATE SET
+                executed_code=excluded.executed_code,
                 explanation=excluded.explanation,
                 result_summary=excluded.result_summary,
                 status=excluded.status,
