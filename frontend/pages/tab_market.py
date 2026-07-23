@@ -47,21 +47,49 @@ def _render_area_segment_distribution(df: pd.DataFrame) -> None:
         y="Số tin",
         color="Price_Segment",
         barmode="stack",
-        category_orders={"Area_Group": AREA_GROUP_ORDER, "Price_Segment": PRICE_SEGMENT_ORDER},
+        category_orders={
+            "Area_Group": AREA_GROUP_ORDER,
+            "Price_Segment": PRICE_SEGMENT_ORDER,
+        },
         color_discrete_sequence=COLOR_SEQUENCE,
-        labels={"Area_Group": "Nhóm diện tích", "Price_Segment": "Phân khúc giá"},
+        labels={
+            "Area_Group": "Nhóm diện tích",
+            "Price_Segment": "Phân khúc giá",
+        },
     )
-    fig.update_traces(hovertemplate="<b>%{x}</b><br>%{fullData.name}: %{y:,} tin<extra></extra>")
+
+    fig.update_traces(
+        hovertemplate="<b>%{x}</b><br>%{fullData.name}: %{y:,} tin<extra></extra>"
+    )
+
     apply_theme(fig, "Phân phối phân khúc giá theo nhóm diện tích")
-    fig.update_layout(height=390, legend_title_text="Phân khúc giá")
-    st.plotly_chart(fig, width="stretch", key="seg_area_price_stack")
 
-    dominant = summary.loc[summary.groupby("Area_Group", observed=True)["Số tin"].idxmax()]
-    dominant_text = "; ".join(
-        f"<b>{row['Area_Group']}</b>: {row['Price_Segment']}" for _, row in dominant.iterrows()
+    fig.update_layout(
+        height=420,
+        showlegend=False,   # Ẩn legend
     )
-    st.markdown(render_insight(f"Phân khúc chiếm ưu thế theo diện tích — {dominant_text}."), unsafe_allow_html=True)
 
+    st.plotly_chart(
+        fig,
+        width="stretch",
+        key="seg_area_price_stack",
+    )
+
+    dominant = summary.loc[
+        summary.groupby("Area_Group", observed=True)["Số tin"].idxmax()
+    ]
+
+    dominant_text = "; ".join(
+        f"<b>{row['Area_Group']}</b>: {row['Price_Segment']}"
+        for _, row in dominant.iterrows()
+    )
+
+    st.markdown(
+        render_insight(
+            f"Phân khúc chiếm ưu thế theo diện tích — {dominant_text}."
+        ),
+        unsafe_allow_html=True,
+    )
 
 def _render_price_segment_pie(df: pd.DataFrame) -> None:
     summary = (
@@ -80,24 +108,50 @@ def _render_price_segment_pie(df: pd.DataFrame) -> None:
         color_discrete_sequence=COLOR_SEQUENCE,
         category_orders={"Price_Segment": PRICE_SEGMENT_ORDER},
     )
-    
-    # Cấu hình vị trí nhãn để tránh bị tràn lề
+
     fig.update_traces(
-        hovertemplate="<b>%{label}</b><br>%{value:,} tin (%{percent})<extra></extra>",
-        textposition="outside",          # Đẩy nhãn ra bên ngoài
-        textinfo="percent+label",        # Hiển thị cả tên phân khúc và phần trăm
+        hovertemplate=(
+            "<b>%{label}</b><br>"
+            "Số tin: %{value:,}<br>"
+            "Tỷ trọng: %{percent}"
+            "<extra></extra>"
+        ),
+        textinfo="percent",          # Chỉ hiển thị %
+        textposition="inside",       # Hiển thị % bên trong donut
+        textfont=dict(
+            size=14,
+            color="white",
+        ),
     )
-    
+
     apply_theme(fig, "Tỷ trọng thị trường theo phân khúc giá")
-    
-    # Tăng chiều cao và nới rộng lề (đặc biệt lề dưới b=40 và lề trái/phải) để không bị cắt chữ
+
     fig.update_layout(
-        height=420,                      
-        showlegend=False,                # Tắt legend ngoài vì đã hiện trực tiếp trên biểu đồ
-        margin=dict(l=40, r=40, t=50, b=40), # Nới rộng các lề xung quanh
+        height=420,
+        showlegend=True,
+        legend=dict(
+            title="Phân khúc giá",
+            x=1,
+            y=0.95,
+            xanchor="left",
+            yanchor="middle",
+            bgcolor="rgba(255,255,255,0.8)",
+            borderwidth=0,
+            font=dict(size=12),
+        ),
+        margin=dict(
+            l=40,
+            r=120,
+            t=50,
+            b=40,
+        ),
     )
-    
-    st.plotly_chart(fig, width="stretch", key="seg_price_donut")
+
+    st.plotly_chart(
+        fig,
+        width="stretch",
+        key="seg_price_donut",
+    )
 
 
 def _render_legal_segment_bar(df: pd.DataFrame) -> None:
@@ -121,42 +175,16 @@ def _render_legal_segment_bar(df: pd.DataFrame) -> None:
     )
     fig.update_traces(hovertemplate="<b>%{x}</b><br>%{fullData.name}: %{y:,} tin<extra></extra>")
     apply_theme(fig, "Pháp lý × phân khúc giá")
-    fig.update_layout(height=390, legend_title_text="Phân khúc giá", xaxis_tickangle=-20)
+    
+    # Đồng bộ chiều cao = 480 để cân đối hoàn hảo với biểu đồ Scatter bên cạnh
+    fig.update_layout(height=480, legend_title_text="Phân khúc giá", xaxis_tickangle=-20)
+    
     st.plotly_chart(fig, width="stretch", key="seg_legal_price_bar")
 
-
-def _render_furniture_price_bar(df: pd.DataFrame) -> None:
-    plot_df = _clean_categories(df, ["Furniture state", "Price_per_m2"])
-    summary = (
-        plot_df.groupby("Furniture state", observed=True)["Price_per_m2"]
-        .mean()
-        .reset_index(name="Giá TB/m²")
-        .sort_values("Giá TB/m²", ascending=False)
-    )
-    fig = px.bar(
-        summary,
-        x="Furniture state",
-        y="Giá TB/m²",
-        color="Furniture state",
-        color_discrete_sequence=COLOR_SEQUENCE,
-        labels={"Furniture state": "Tình trạng nội thất", "Giá TB/m²": "Giá trung bình/m² (tỷ VNĐ)"},
-        text_auto=".4f",
-    )
-    fig.update_traces(hovertemplate="<b>%{x}</b><br>Giá TB/m²: %{y:.4f} tỷ<extra></extra>")
-    apply_theme(fig, "Giá trung bình/m² theo tình trạng nội thất")
-    fig.update_layout(height=390, showlegend=False, xaxis_tickangle=-20)
-    st.plotly_chart(fig, width="stretch", key="seg_furniture_price_bar")
-
-    top = summary.iloc[0]
-    st.markdown(
-        render_insight(f"Nhóm <b>{top['Furniture state']}</b> có giá trung bình cao nhất: <b>{top['Giá TB/m²']:.4f} tỷ/m²</b>."),
-        unsafe_allow_html=True,
-    )
 
 
 def _render_area_price_scatter(df: pd.DataFrame) -> None:
     plot_df = _clean_categories(df, ["Area", "Price", "Price_Segment"])
-    # Cắt 1% ngoại lệ ở mỗi biến để ranh giới phân khúc dễ quan sát hơn.
     plot_df = plot_df[
         (plot_df["Area"] <= plot_df["Area"].quantile(0.99))
         & (plot_df["Price"] <= plot_df["Price"].quantile(0.99))
@@ -178,9 +206,10 @@ def _render_area_price_scatter(df: pd.DataFrame) -> None:
     fig.update_traces(marker=dict(size=8, line=dict(width=0)))
     apply_theme(fig, "Diện tích và giá theo phân khúc")
     
+    # Đồng bộ chiều cao = 480 để cân đối hoàn hảo với biểu đồ Pháp lý bên cạnh
     fig.update_layout(
         height=480, 
-        legend_title_text="Phân khúc giá",
+        showlegend=False,
         xaxis=dict(tickformat=",.0f")
     )
     
@@ -201,6 +230,7 @@ def render(df_filtered: pd.DataFrame) -> None:
     st.markdown("### Phân khúc thị trường")
     st.caption("Khám phá cơ cấu nguồn cung, mức giá và ranh giới giữa các phân khúc thị trường.")
 
+    # Hàng 1: Phân phối diện tích & Donut tỷ trọng giá
     left, right = st.columns(2)
     with left:
         _render_area_segment_distribution(df_filtered)
@@ -208,19 +238,17 @@ def render(df_filtered: pd.DataFrame) -> None:
         _render_price_segment_pie(df_filtered)
 
     st.markdown("---")
+    
+    # Hàng 2: Scatter diện tích-giá & Pháp lý x Phân khúc giá (Đồng bộ chiều cao = 480)
     left, right = st.columns(2)
     with left:
-        _render_legal_segment_bar(df_filtered)
+        _render_area_price_scatter(df_filtered)
     with right:
-        _render_furniture_price_bar(df_filtered)
+        _render_legal_segment_bar(df_filtered)
 
-    st.markdown("---")
-    _render_area_price_scatter(df_filtered)
+ 
 
 
-# ─────────────────────────────────────────────
-# BOOTSTRAP — cho phép file này chạy như native page (Streamlit multipage)
-# ─────────────────────────────────────────────
 if __name__ == "__main__":
     import sys
     from pathlib import Path

@@ -101,13 +101,19 @@ def _render_top_province_bar(df: pd.DataFrame) -> None:
         .sort_values("count")  # Sắp xếp tăng dần để bar ngang dễ đọc
     )
 
+    custom_bluescale = [
+        [0.0, "#92BEF0"],  # Đáy bắt đầu bằng xanh dương sáng (Blue 300) thay vì trắng
+        [0.5, "#3B82F6"],  # Giữa là xanh tươi
+        [1.0, "#163CA5"],  # Đỉnh là xanh đậm hoàng gia
+    ]
+
     fig = px.bar(
         top10,
         x="count",
         y="Province",
         orientation="h",
         color="count",
-        color_continuous_scale=CONTINUOUS_SCALE,
+        color_continuous_scale=custom_bluescale, # <--- Dùng scale mới
         labels={"count": "Số tin đăng", "Province": "Tỉnh / Thành phố"},
         hover_data={"count": ":,"},
     )
@@ -166,7 +172,7 @@ def _render_price_hist_and_donut(df: pd.DataFrame) -> None:
             df_hist,
             x="Price",
             nbins=50,
-            color_discrete_sequence=[COLORS["primary_light"]],
+            color_discrete_sequence=["#1D4ED8"],
             labels={"Price": "Giá (tỷ VNĐ)", "count": "Số lượng"},
         )
         fig_hist.update_traces(
@@ -181,7 +187,7 @@ def _render_price_hist_and_donut(df: pd.DataFrame) -> None:
             x=avg,
             line_dash="dash",
             line_color=COLORS["accent"],
-            annotation_text=f"TB: {avg:.1f} tỷ",
+            annotation_text=f"  TB: {avg:.1f} tỷ",
             annotation_position="top right",
             annotation_font_color=COLORS["accent"],
         )
@@ -189,11 +195,12 @@ def _render_price_hist_and_donut(df: pd.DataFrame) -> None:
             x=med,
             line_dash="dot",
             line_color=COLORS["success"],
-            annotation_text=f"TV: {med:.1f} tỷ",
+            annotation_text=f"TV: {med:.1f} tỷ  ",
             annotation_position="top left",
             annotation_font_color=COLORS["success"],
         )
         apply_theme(fig_hist, "Phân phối giá bất động sản")
+        fig_hist.update_yaxes(title_text="Số lượng")
         fig_hist.update_layout(
             height=340, 
             showlegend=False,
@@ -206,7 +213,7 @@ def _render_price_hist_and_donut(df: pd.DataFrame) -> None:
             st.markdown(
                 render_insight(
                     f"Giá trung bình ({avg:.1f} tỷ) cao hơn trung vị ({med:.1f} tỷ) "
-                    f"→ phân phối lệch phải, tồn tại nhiều bất động sản giá cao kéo TB lên."
+                    f"-> phân phối lệch phải, tồn tại nhiều bất động sản giá cao kéo TB lên."
                 ),
                 unsafe_allow_html=True,
             )
@@ -298,7 +305,7 @@ def _render_area_chart_time_trends(df: pd.DataFrame) -> None:
             x=time_stats["Day"],
             y=time_stats["count"],
             name="Số lượng tin đăng",
-            marker=dict(color=COLORS["primary"], opacity=0.65),
+            marker=dict(color="#1D4ED8", opacity=1),
             yaxis="y1",
             hovertemplate="Ngày %{x}<br>Số tin: %{y:,}<extra></extra>",
         )
@@ -335,7 +342,16 @@ def _render_area_chart_time_trends(df: pd.DataFrame) -> None:
             side="right",
             showgrid=False,
         ),
-        legend=dict(orientation="h", yanchor="bottom", y=1.05, xanchor="center", x=0.5),
+        legend=dict(
+            orientation="h",      # hoặc bỏ dòng này, mặc định là dọc
+            yanchor="top",
+            y=1.1,
+            xanchor="right",
+            x=1,
+            bgcolor="rgba(255,255,255,0.7)",  # tùy chọn
+            bordercolor="rgba(0,0,0,0.1)",    # tùy chọn
+            borderwidth=1,
+        ),
         hovermode="x unified",
         bargap=0.2,
     )
@@ -374,10 +390,6 @@ def render(df_filtered: pd.DataFrame) -> None:
         return
 
     st.markdown("### Tổng quan thị trường bất động sản")
-    st.markdown(
-        "Dữ liệu hiển thị theo bộ lọc hiện tại. "
-        "Click vào tên tỉnh trên biểu đồ để drill-down."
-    )
     st.markdown("")
 
     # Hiển thị các thành phần theo thứ tự
