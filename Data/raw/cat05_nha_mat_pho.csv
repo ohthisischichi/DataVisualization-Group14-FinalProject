@@ -1,15 +1,32 @@
 Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bathrooms,Legal status,Furniture state,Price,Day
-"Quảng Ninh, Vân Đồn, Nhà mặt phố tại xã Quan Lạn",132.8,6.0,7.5,Đông - Bắc,,7,8,Have certificate,Full,10.0,3
-"Vĩnh Phúc, Vĩnh Yên, Nhà mặt phố tại đường Mê Linh",90.0,4.5,40.0,Nam,Nam,6,3,Have certificate,Full,16.5,2
-"Hồ Chí Minh, Tân Bình, Nhà mặt phố tại đường Hoàng Hoa Thám",75.0,15.0,,,,2,3,Have certificate,,21.5,2
-"Đắk Lắk, Buôn Ma Thuột, Nhà mặt phố tại đường Nguyễn Viết Xuân",240.0,5.5,,Tây,Tây,,,Have certificate,,15.8,2
-"Quảng Ninh, Hạ Long, Nhà mặt phố tại đường Lê Thánh Tông",32.0,,,,,,,,,12.5,2
-"Hồ Chí Minh, Quận 12, Nhà mặt phố tại đường Lê Thị Riêng",80.0,,,,,,,Have certificate,,12.8,1
-"Long An, Cần Giuộc, Nhà mặt phố tại đường ĐT 826C",453.0,11.1,,,,6,4,Have certificate,,26.0,1
-"Khánh Hòa, Nha Trang, Nhà mặt phố tại đường Tỉnh lộ 3",470.0,6.23,18.0,Đông - Bắc,,2,1,Have certificate,,4.2,1
+"Hồ Chí Minh, Quận 10, Nhà mặt phố tại đường Sư Vạn Hạnh",98.0,7.5,,Tây,,,,Have certificate,,22.5,2
+"Khánh Hòa, Nha Trang, Nhà mặt phố tại đường Dã Tượng",102.75,,,,,,,Have certificate,,14.5,4
+"Bình Dương, Thủ Dầu Một, Nhà mặt phố tại Khu dân cư Phú Hòa",200.0,10.0,,,,4,2,Have certificate,Basic,12.5,7
+"Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường Bến Phú Lâm",99.7,6.2,,,,,,Have certificate,,13.0,7
+"Lâm Đồng, Di Linh, Nhà mặt phố tại đường Phan Bội Châu",219.0,,,,,3,2,Have certificate,,3.45,6
+"Ninh Thuận, Ninh Phước, Nhà mặt phố tại đường Tỉnh Lộ 710",548.0,11.47,10.0,,,1,1,Have certificate,,1.28,6
+"Bình Thuận, Bắc Bình, Nhà mặt phố tại thị trấn Chợ Lầu",144.0,3.61,20.0,,Nam,2,2,Have certificate,Full,2.5,6
+"Bình Thuận, Phan Thiết, Nhà mặt phố tại phường Phú Thủy",173.32,4.4,12.0,,,,,Have certificate,Full,19.98,6
+"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Huỳnh Thúc Kháng",787.0,17.0,8.0,Tây - Nam,,,,Have certificate,Full,85.0,6
+"Hồ Chí Minh, Quận 2, Nhà mặt phố tại Khu dân cư Thạnh Mỹ Lợi",160.0,20.0,20.0,Tây - Bắc,,,,Have certificate,,115.0,6
+"Hà Nội, Long Biên, Nhà mặt phố tại đường Đức Giang",140.0,6.5,15.0,Tây - Bắc,Nam,7,7,Have certificate,Basic,46.5,6
+"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Nguyễn Trọng Tuyển",365.0,,,,,12,12,Have certificate,,160.0,5
+"Hồ Chí Minh, Quận 8, Nhà mặt phố tại đường An Dương Vương",405.0,9.0,40.0,Tây,Tây,,,Have certificate,,45.0,5
 "Cần Thơ, Ninh Kiều, Nhà mặt phố tại đường 3/2",194.1,6.54,40.0,,,2,2,Have certificate,Basic,,5
 "Quảng Bình, Đồng Hới, Nhà mặt phố tại đường Trần Hưng Đạo",232.0,8.0,,Bắc,,5,3,Have certificate,Full,32.0,1
 "Quảng Nam, Duy Xuyên, Nhà mặt phố tại đường Quốc lộ 14H",179.0,9.0,10.0,,,,,Have certificate,,5.6,5
+"Đà Nẵng, Sơn Trà, Nhà mặt phố tại đường An Thượng",172.0,6.0,7.5,,,,,,,40.0,5
+"An Giang, Long Xuyên, Nhà mặt phố tại đường Số 1",90.0,,,,,,,Have certificate,,2.5,4
+"Hà Nội, Thanh Xuân, Nhà mặt phố tại đường Trường Chinh",30.0,7.0,50.0,,,6,3,Have certificate,,22.5,9
+"Hà Nội, Đống Đa, Nhà mặt phố tại đường Láng Thượng",272.0,30.0,,,,32,32,Have certificate,,,9
+"Đắk Lắk, Buôn Ma Thuột, Nhà mặt phố tại EcoCity Premia",120.0,6.0,20.0,,,4,5,Have certificate,,9.5,9
+"Đà Nẵng, Hải Châu, Nhà mặt phố tại đường Trần Quốc Toản",116.0,4.4,10.5,Tây,Tây - Nam,3,4,Have certificate,,28.0,9
+"Hà Nội, Thanh Xuân, Nhà mặt phố tại phố Vũ Tông Phan",80.0,6.0,14.0,,,8,10,Have certificate,Basic,45.0,9
+"Hồ Chí Minh, Quận 10, Nhà mặt phố tại đường Ngô Gia Tự",56.0,4.3,12.0,,,10,11,Have certificate,,24.5,9
+"Hồ Chí Minh, Quận 10, Nhà mặt phố tại đường Ba Vì",92.6,4.0,8.0,,,,,Have certificate,,23.0,9
+"Hồ Chí Minh, Quận 10, Nhà mặt phố tại đường Trường Sơn",75.0,5.0,10.0,,,,,Have certificate,,28.0,9
+"Hồ Chí Minh, Quận 3, Nhà mặt phố tại đường Số 3 Cư xá Đô Thành",81.0,6.0,8.0,,,,,Have certificate,,25.0,9
+"Hồ Chí Minh, Bình Thạnh, Nhà mặt phố tại đường Lê Quang Định",92.0,4.0,25.0,Đông,Đông,5,4,Have certificate,Basic,34.0,8
 "Hà Nội, Thanh Xuân, Nhà mặt phố tại phố Hạ Đình",120.0,4.3,14.0,,,2,2,Have certificate,Basic,27.0,8
 "Hồ Chí Minh, Tân Bình, Nhà mặt phố tại đường Nguyễn Trọng Tuyển",51.0,3.9,8.0,Đông - Bắc,Đông - Bắc,6,5,Have certificate,Basic,13.0,8
 "Hà Nội, Thanh Xuân, Nhà mặt phố tại đường Vương Thừa Vũ",88.0,4.6,18.0,,,4,4,Have certificate,Basic,42.0,8
@@ -19,92 +36,21 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hồ Chí Minh, Quận 4, Nhà mặt phố tại đường Xóm Chiếu",141.0,5.2,7.0,Đông - Nam,Đông - Nam,8,9,Have certificate,,32.0,8
 "Hà Nội, Đống Đa, Nhà mặt phố tại đường Đặng Tiến Đông",65.0,4.0,8.0,,,4,4,Have certificate,,41.0,8
 "Hà Nội, Thanh Xuân, Nhà mặt phố tại phố Hạ Đình",68.0,5.2,18.0,,,6,5,Have certificate,,30.0,8
-"Bình Dương, Thủ Dầu Một, Nhà mặt phố tại Khu dân cư Phú Hòa",200.0,10.0,,,,4,2,Have certificate,Basic,12.5,7
-"Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường Bến Phú Lâm",99.7,6.2,,,,,,Have certificate,,13.0,7
-"Lâm Đồng, Di Linh, Nhà mặt phố tại đường Phan Bội Châu",219.0,,,,,3,2,Have certificate,,3.45,6
-"Ninh Thuận, Ninh Phước, Nhà mặt phố tại đường Tỉnh Lộ 710",548.0,11.47,10.0,,,1,1,Have certificate,,1.28,6
-"Bình Thuận, Bắc Bình, Nhà mặt phố tại thị trấn Chợ Lầu",144.0,3.61,20.0,,Nam,2,2,Have certificate,Full,2.5,6
-"Bình Thuận, Phan Thiết, Nhà mặt phố tại phường Phú Thủy",173.32,4.4,12.0,,,,,Have certificate,Full,19.98,6
-"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Huỳnh Thúc Kháng",787.0,17.0,8.0,Tây - Nam,,,,Have certificate,Full,85.0,6
-"Hồ Chí Minh, Quận 2, Nhà mặt phố tại Khu dân cư Thạnh Mỹ Lợi",160.0,20.0,20.0,Tây - Bắc,,,,Have certificate,,115.0,6
-"Hà Nội, Long Biên, Nhà mặt phố tại đường Đức Giang",140.0,6.5,15.0,Tây - Bắc,Nam,7,7,Have certificate,Basic,46.5,6
-"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Nguyễn Trọng Tuyển",365.0,,,,,12,12,Have certificate,,160.0,5
-"Hồ Chí Minh, Quận 8, Nhà mặt phố tại đường An Dương Vương",405.0,9.0,40.0,Tây,Tây,,,Have certificate,,45.0,5
+"Hồ Chí Minh, Bình Thạnh, Nhà mặt phố tại đường Phan Văn Hân",50.0,4.7,16.0,,,4,3,Have certificate,Full,22.0,12
+"Hà Nội, Ba Đình, Nhà mặt phố tại phường Ngọc Hà",240.0,,,,,38,38,Have certificate,,150.0,12
+"Hà Nội, Sóc Sơn, Nhà mặt phố tại đường Quốc Lộ 2A",76.0,15.0,,,,3,1,Have certificate,Full,14.0,12
+"Lào Cai, Sa Pa, Nhà mặt phố tại phố Thác Bạc",600.0,20.0,30.0,,,58,60,Have certificate,Full,235.0,12
+"Đà Nẵng, Sơn Trà, Nhà mặt phố tại đường An Đồn",140.0,,,,,26,,Have certificate,Full,45.0,12
+"Hồ Chí Minh, Quận 12, Nhà mặt phố tại phường Đông Hưng Thuận",645.7,,,,,1,,Have certificate,,35.0,12
+"Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường Cao Văn Lầu",147.9,5.2,,,,,,,,20.5,12
+"Quảng Trị, Vĩnh Linh, Nhà mặt phố tại thị trấn Cửa Tùng",419.3,,,,,,,,,10.0,11
+"Đồng Nai, Biên Hòa, Nhà mặt phố tại đường B5",125.0,5.0,,,,5,6,Have certificate,Basic,7.9,11
+"Quảng Ninh, Hạ Long, Nhà mặt phố tại đường Vườn Đào",54.2,4.2,30.0,,,9,10,Have certificate,Full,8.5,11
 "Quảng Ninh, Hạ Long, Nhà mặt phố tại đường Vườn Đào",52.0,4.0,16.0,,,12,13,Have certificate,Full,7.5,11
 "Cà Mau, Cà Mau, Nhà mặt phố tại đường Trần Hưng Đạo",223.0,5.5,,,,,,Have certificate,Full,23.0,11
 "Nam Định, Nam Định, Nhà mặt phố tại đường Quang Trung",54.0,5.5,20.0,Đông - Nam,Đông - Nam,2,2,Have certificate,,18.0,11
 "Hà Nội, Nam Từ Liêm, Nhà mặt phố tại đường Lương Thế Vinh",85.0,6.0,30.0,Đông - Bắc,Đông - Bắc,5,5,Have certificate,Basic,40.0,11
 "Hồ Chí Minh, Quận 2, Nhà mặt phố tại An Phú - An Khánh",80.0,4.0,30.0,,,4,4,Have certificate,,23.5,11
-"Hải Dương, Hải Dương, Nhà mặt phố tại đường Quang Trung",114.9,6.14,20.0,Đông,Đông,4,7,Have certificate,Full,20.68,13
-"Đà Nẵng, Hải Châu, Nhà mặt phố tại đường Lê Đình Lý",390.0,10.0,15.0,Đông - Nam,Đông - Nam,3,3,Have certificate,Full,59.0,13
-"Hà Nội, Đống Đa, Nhà mặt phố tại đường La Thành",74.0,5.0,,,,5,4,,,57.0,13
-"Hồ Chí Minh, Tân Bình, Nhà mặt phố tại đường Tân Trụ",108.0,8.0,,,,7,7,Have certificate,Full,16.1,13
-"Cần Thơ, Ninh Kiều, Nhà mặt phố tại đường Đồng Khởi",221.2,,,Đông - Nam,,,,Have certificate,,28.0,13
-"Tây Ninh, Hòa Thành, Nhà mặt phố tại phố Tôn Đức Thắng",343.2,11.0,30.0,Tây,,4,2,Have certificate,Basic,6.9,13
-"Hồ Chí Minh, Quận 9, Nhà mặt phố tại đường Man Thiện",113.0,,,,,,,,,17.0,13
-"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại đường Tân Sơn",72.0,,,,,,,Have certificate,Full,15.8,13
-"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại Cityland Center Hills",192.5,10.0,,Đông - Nam,Đông - Nam,,,Have certificate,,56.0,11
-"Hồ Chí Minh, Bình Thạnh, Nhà mặt phố tại đường Ngô Đức Kế",145.0,5.2,15.0,,,24,25,Have certificate,Basic,37.3,8
-"Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Lê Cao Lãng",20.0,3.6,12.0,,,2,2,Have certificate,Basic,3.1,9
-"Hà Nội, Thanh Xuân, Nhà mặt phố tại đường Vương Thừa Vũ",55.0,4.6,,,,6,7,Have certificate,,27.0,17
-"Đà Nẵng, Ngũ Hành Sơn, Nhà mặt phố tại đường Khuê Mỹ Đông 7",68.0,5.0,5.5,,,6,8,Have certificate,Full,24.0,17
-"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại Cityland Center Hills",192.5,20.0,20.0,Đông - Nam,Đông - Nam,,,Have certificate,,56.0,10
-"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại Cityland Center Hills",121.0,20.0,20.0,Đông - Nam,Đông - Nam,,,Have certificate,,36.0,9
-"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Nguyễn Trọng Tuyển",170.0,,,,,11,11,Have certificate,,35.0,16
-"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Lê Hồng Phong",82.0,4.5,6.0,,,6,5,Have certificate,Full,9.0,16
-"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Nguyễn Đình Chiểu",121.0,5.4,20.0,,,7,7,Have certificate,Full,23.0,16
-"Hà Nội, Hà Đông, Nhà mặt phố tại đường Nguyễn Khuyến",286.0,39.0,50.0,,,5,5,Have certificate,Full,99.9,15
-"Thái Bình, Thái Bình, Nhà mặt phố tại đường Lê Quý Đôn",162.0,10.0,30.0,Tây - Bắc,Tây - Bắc,16,8,,,32.0,15
-"Hồ Chí Minh, Thủ Đức, Nhà mặt phố tại đường Phạm Văn Đồng",200.0,13.0,60.0,,,,,Have certificate,,40.0,15
-"Cần Thơ, Ninh Kiều, Nhà mặt phố tại đường Số 1",92.5,4.5,8.0,Đông - Bắc,Đông - Bắc,2,1,Have certificate,Full,2.85,15
-"Phú Yên, Tuy Hòa, Nhà mặt phố tại đường Nguyễn Tất Thành",235.0,,,,,3,4,,Full,4.9,15
-"Đà Nẵng, Sơn Trà, Nhà mặt phố tại đường Chính Hữu",88.0,,,,,15,15,Have certificate,Full,36.0,14
-"Hà Nội, Đống Đa, Nhà mặt phố tại phố Xã Đàn",80.0,,,,,20,20,Have certificate,,39.0,14
-"Hà Nội, Ba Đình, Nhà mặt phố tại đường Hoàng Hoa Thám",300.0,10.0,6.0,,,52,52,Have certificate,Full,150.0,8
-"Hà Nội, Ba Đình, Nhà mặt phố tại phường Ngọc Hà",300.0,20.0,6.0,,,47,47,Have certificate,Full,150.0,8
-"Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Gò Dầu",71.0,,,,,4,3,Have certificate,,10.2,20
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Bùi Thị Xuân",61.0,4.0,,,,,,Have certificate,Basic,53.0,19
-"Đà Nẵng, Thanh Khê, Nhà mặt phố tại đường Đinh Tiên Hoàng",56.9,4.0,5.5,Tây - Bắc,Tây - Bắc,3,3,Have certificate,Basic,7.3,19
-"Bình Định, Quy Nhơn, Nhà mặt phố tại đường Tây Sơn",440.0,17.0,40.0,Tây - Nam,Tây - Nam,9,7,Have certificate,Full,39.0,19
-"Đà Nẵng, Ngũ Hành Sơn, Nhà mặt phố tại đường Khuê Mỹ Đông 11",102.0,6.0,7.0,Đông,Đông,10,11,Have certificate,Full,35.0,11
-"Thanh Hóa, Thanh Hóa, Nhà mặt phố tại đường Quang Trung 3",92.2,5.7,24.0,Đông,Đông,7,4,Have certificate,,9.2,19
-"Hà Nội, Ba Đình, Nhà mặt phố tại đường Quán Thánh",60.0,6.0,,,,3,3,Have certificate,,44.0,18
-"Hà Nội, Ba Đình, Nhà mặt phố tại đường Cửa Bắc",50.0,,,,,3,3,Have certificate,,44.0,17
-"Hà Nội, Đống Đa, Nhà mặt phố tại đường Võ Văn Dũng",48.0,4.5,,,,6,4,Have certificate,Full,39.0,17
-"Hà Nội, Đống Đa, Nhà mặt phố tại đường Trần Quang Diệu",48.0,4.5,,,,6,4,Have certificate,Full,39.0,17
-"Hà Nội, Đống Đa, Nhà mặt phố tại phố Hoàng Cầu",48.0,4.5,,,,6,4,Have certificate,Full,39.0,17
-"Hà Nội, Đông Anh, Nhà mặt phố tại đường Cao Lỗ",89.0,5.0,15.0,Tây - Bắc,,,,Have certificate,,15.5,17
-"Hà Nội, Thanh Xuân, Nhà mặt phố tại phố Nhân Hòa",65.0,4.0,12.0,,,4,6,Have certificate,Full,26.0,17
-"Hồ Chí Minh, Quận 12, Nhà mặt phố tại đường Lê Thị Riêng",80.0,,,,,,,Have certificate,,12.8,1
-"Long An, Cần Giuộc, Nhà mặt phố tại đường ĐT 826C",453.0,11.1,,,,6,4,Have certificate,,26.0,1
-"Khánh Hòa, Nha Trang, Nhà mặt phố tại đường Tỉnh lộ 3",470.0,6.23,18.0,Đông - Bắc,,2,1,Have certificate,,4.2,1
-"Hồ Chí Minh, Bình Thạnh, Nhà mặt phố tại đường Bạch Đằng",140.0,3.5,30.0,Đông,Đông,1,1,Have certificate,,23.0,8
-"Hồ Chí Minh, Quận 4, Nhà mặt phố tại đường Xóm Chiếu",141.0,5.2,7.0,Đông - Nam,Đông - Nam,8,9,Have certificate,,32.0,8
-"Hà Nội, Đống Đa, Nhà mặt phố tại đường Đặng Tiến Đông",65.0,4.0,8.0,,,4,4,Have certificate,,41.0,8
-"Hà Nội, Thanh Xuân, Nhà mặt phố tại phố Hạ Đình",68.0,5.2,18.0,,,6,5,Have certificate,,30.0,8
-"Bình Dương, Thủ Dầu Một, Nhà mặt phố tại Khu dân cư Phú Hòa",200.0,10.0,,,,4,2,Have certificate,Basic,12.5,7
-"Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường Bến Phú Lâm",99.7,6.2,,,,,,Have certificate,,13.0,7
-"Lâm Đồng, Di Linh, Nhà mặt phố tại đường Phan Bội Châu",219.0,,,,,3,2,Have certificate,,3.45,6
-"Ninh Thuận, Ninh Phước, Nhà mặt phố tại đường Tỉnh Lộ 710",548.0,11.47,10.0,,,1,1,Have certificate,,1.28,6
-"Bình Thuận, Bắc Bình, Nhà mặt phố tại thị trấn Chợ Lầu",144.0,3.61,20.0,,Nam,2,2,Have certificate,Full,2.5,6
-"Bình Thuận, Phan Thiết, Nhà mặt phố tại phường Phú Thủy",173.32,4.4,12.0,,,,,Have certificate,Full,19.98,6
-"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Huỳnh Thúc Kháng",787.0,17.0,8.0,Tây - Nam,,,,Have certificate,Full,85.0,6
-"Hồ Chí Minh, Quận 2, Nhà mặt phố tại Khu dân cư Thạnh Mỹ Lợi",160.0,20.0,20.0,Tây - Bắc,,,,Have certificate,,115.0,6
-"Hà Nội, Long Biên, Nhà mặt phố tại đường Đức Giang",140.0,6.5,15.0,Tây - Bắc,Nam,7,7,Have certificate,Basic,46.5,6
-"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Nguyễn Trọng Tuyển",365.0,,,,,12,12,Have certificate,,160.0,5
-"Hồ Chí Minh, Quận 8, Nhà mặt phố tại đường An Dương Vương",405.0,9.0,40.0,Tây,Tây,,,Have certificate,,45.0,5
-"Cần Thơ, Ninh Kiều, Nhà mặt phố tại đường 3/2",194.1,6.54,40.0,,,2,2,Have certificate,Basic,,5
-"Quảng Bình, Đồng Hới, Nhà mặt phố tại đường Trần Hưng Đạo",232.0,8.0,,Bắc,,5,3,Have certificate,Full,32.0,1
-"Quảng Nam, Duy Xuyên, Nhà mặt phố tại đường Quốc lộ 14H",179.0,9.0,10.0,,,,,Have certificate,,5.6,5
-"Thanh Hóa, Thanh Hóa, Nhà mặt phố tại đường Quang Trung 2",90.5,5.8,25.0,Đông,Đông,3,1,Have certificate,Basic,27.0,10
-"Quảng Ngãi, Quảng Ngãi, Nhà mặt phố tại Khu đô thị HUD - Phú Mỹ",150.0,,50.0,,,,,Have certificate,,4.5,10
-"Lâm Đồng, Đạ Huoai, Nhà mặt phố tại thị trấn Ma Đa Guôi",48.0,,,Đông - Bắc,,1,1,Have certificate,Full,1.48,3
-"An Giang, Long Xuyên, Nhà mặt phố tại đường Số 1",90.0,,,,,,,Have certificate,,2.5,4
-"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại đường Tân Sơn",72.0,,,,,,,Have certificate,Full,15.8,13
-"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại Cityland Center Hills",121.0,20.0,20.0,Đông - Nam,Đông - Nam,,,Have certificate,,36.0,9
-"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Nguyễn Trọng Tuyển",170.0,,,,,11,11,Have certificate,,35.0,16
-"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Lê Hồng Phong",82.0,4.5,6.0,,,6,5,Have certificate,Full,9.0,16
-"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Nguyễn Đình Chiểu",121.0,5.4,20.0,,,7,7,Have certificate,Full,23.0,16
 "Hà Nội, Hà Đông, Nhà mặt phố tại đường Nguyễn Khuyến",286.0,39.0,50.0,,,5,5,Have certificate,Full,99.9,15
 "Thái Bình, Thái Bình, Nhà mặt phố tại đường Lê Quý Đôn",162.0,10.0,30.0,Tây - Bắc,Tây - Bắc,16,8,,,32.0,15
 "Hồ Chí Minh, Thủ Đức, Nhà mặt phố tại đường Phạm Văn Đồng",200.0,13.0,60.0,,,,,Have certificate,,40.0,15
@@ -121,12 +67,7 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Cần Thơ, Ninh Kiều, Nhà mặt phố tại đường Đồng Khởi",221.2,,,Đông - Nam,,,,Have certificate,,28.0,13
 "Tây Ninh, Hòa Thành, Nhà mặt phố tại phố Tôn Đức Thắng",343.2,11.0,30.0,Tây,,4,2,Have certificate,Basic,6.9,13
 "Hồ Chí Minh, Quận 9, Nhà mặt phố tại đường Man Thiện",113.0,,,,,,,,,17.0,13
-"Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Gò Dầu",71.0,,,,,4,3,Have certificate,,10.2,20
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Bùi Thị Xuân",61.0,4.0,,,,,,Have certificate,Basic,53.0,19
-"Đà Nẵng, Thanh Khê, Nhà mặt phố tại đường Đinh Tiên Hoàng",56.9,4.0,5.5,Tây - Bắc,Tây - Bắc,3,3,Have certificate,Basic,7.3,19
-"Bình Định, Quy Nhơn, Nhà mặt phố tại đường Tây Sơn",440.0,17.0,40.0,Tây - Nam,Tây - Nam,9,7,Have certificate,Full,39.0,19
-"Đà Nẵng, Ngũ Hành Sơn, Nhà mặt phố tại đường Khuê Mỹ Đông 11",102.0,6.0,7.0,Đông,Đông,10,11,Have certificate,Full,35.0,11
-"Thanh Hóa, Thanh Hóa, Nhà mặt phố tại đường Quang Trung 3",92.2,5.7,24.0,Đông,Đông,7,4,Have certificate,,9.2,19
+"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại đường Tân Sơn",72.0,,,,,,,Have certificate,Full,15.8,13
 "Hà Nội, Ba Đình, Nhà mặt phố tại đường Quán Thánh",60.0,6.0,,,,3,3,Have certificate,,44.0,18
 "Hà Nội, Ba Đình, Nhà mặt phố tại đường Cửa Bắc",50.0,,,,,3,3,Have certificate,,44.0,17
 "Hà Nội, Đống Đa, Nhà mặt phố tại đường Võ Văn Dũng",48.0,4.5,,,,6,4,Have certificate,Full,39.0,17
@@ -141,70 +82,40 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hồ Chí Minh, Bình Thạnh, Nhà mặt phố tại đường Ngô Đức Kế",145.0,5.2,15.0,,,24,25,Have certificate,Basic,37.3,8
 "Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Lê Cao Lãng",20.0,3.6,12.0,,,2,2,Have certificate,Basic,3.1,9
 "Hà Nội, Thanh Xuân, Nhà mặt phố tại đường Vương Thừa Vũ",55.0,4.6,,,,6,7,Have certificate,,27.0,17
-"Thái Nguyên, Thái Nguyên, Nhà mặt phố tại đường Phú Thái",143.4,4.0,,Tây - Nam,Tây - Nam,3,3,Have certificate,,6.9,22
-"Hồ Chí Minh, Quận 9, Nhà mặt phố tại đường Bưng Ông Thoàn",172.8,,,,,,,Have certificate,,18.5,22
-"Bình Dương, Dĩ An, Nhà mặt phố tại Green Square",81.0,4.5,10.0,Đông - Bắc,Đông - Bắc,,,Have certificate,Full,11.0,22
-"Bình Định, Quy Nhơn, Nhà mặt phố tại phường Bùi Thị Xuân",125.0,5.0,12.0,Tây,Tây,6,7,Have certificate,,3.19,22
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Lê Thị Hồng Gấm",150.0,15.0,30.0,,,7,14,Have certificate,Full,130.0,22
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại phố Tôn Đức Thắng",294.0,15.0,40.0,Đông - Bắc,,8,10,Have certificate,Full,430.0,22
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Phạm Ngọc Thạch",640.0,16.0,30.0,,,3,4,Have certificate,,,22
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Lê Duẩn",329.3,,40.0,Tây - Nam,,4,4,Have certificate,,399.0,22
-"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Trường Sa",56.0,4.0,16.0,,,5,4,Have certificate,,20.5,22
-"Hà Nội, Hoàn Kiếm, Nhà mặt phố tại phố Hội Vũ",60.0,,,,,4,4,Have certificate,,39.0,22
-"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Hoàng Sa",55.0,,,,,5,4,Have certificate,Full,20.0,22
-"Hải Phòng, Thủy Nguyên, Nhà mặt phố tại Vlasta Thủy Nguyên",62.5,5.0,51.0,Bắc,Bắc,4,,Have certificate,,,21
-"Đà Nẵng, Sơn Trà, Nhà mặt phố tại đường Mỹ Khê 8",80.0,,,,,,,,,24.5,22
-"Hồ Chí Minh, Quận 2, Nhà mặt phố tại Sala Đại Quang Minh",236.7,9.4,24.7,Tây - Nam,Tây - Nam,,,Have certificate,Full,195.0,22
-"Lâm Đồng, Đà Lạt, Nhà mặt phố tại phố Bà Triệu",75.0,4.6,6.0,,,13,13,Have certificate,Full,12.0,22
-"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Nguyễn Trung Trực",63.0,5.5,8.0,Đông - Nam,Đông - Nam,2,2,Have certificate,Basic,7.5,22
-"Hồ Chí Minh, Quận 3, Nhà mặt phố tại đường Điện Biên Phủ",48.0,4.0,20.0,Tây - Bắc,Tây - Bắc,3,3,Have certificate,,15.0,22
-"Lâm Đồng, Đà Lạt, Nhà mặt phố tại phố Hai Bà Trưng",250.0,10.5,12.0,Tây - Nam,Tây - Nam,40,,Have certificate,Full,65.0,22
-"Hồ Chí Minh, Bình Chánh, Nhà mặt phố tại đường Huỳnh Bá Chánh",85.0,5.0,,Tây,,5,6,Have certificate,Basic,6.9,22
-"Lâm Đồng, Đạ Huoai, Nhà mặt phố tại đường Quốc Lộ 20",360.0,,,Đông - Bắc,,3,2,Have certificate,,6.2,22
-"Ninh Thuận, Phan Rang - Tháp Chàm, Nhà mặt phố tại Khu đô thị mới Đông Bắc (Khu 1)",85.0,5.0,12.0,Nam,Nam,3,1,Have certificate,Basic,5.45,22
-"Hà Nội, Long Biên, Nhà mặt phố tại đường Ngọc Thụy",150.0,6.0,,Đông - Nam,Đông - Nam,,,Have certificate,,21.0,22
-"Hà Nội, Cầu Giấy, Nhà mặt phố tại đường Hoàng Ngân",48.0,,,,,,,,,25.0,22
-"Đà Nẵng, Sơn Trà, Nhà mặt phố tại đường Lý Văn Tố",73.0,,5.5,Đông,,7,7,Have certificate,Full,19.0,22
-"Đồng Nai, Vĩnh Cửu, Nhà mặt phố tại đường Lương Thực",86.0,6.0,6.0,Tây - Nam,Tây - Nam,3,2,Have certificate,Basic,1.78,22
-"Quảng Nam, Duy Xuyên, Nhà mặt phố tại xã Duy Vinh",97.0,,,,,2,2,,Full,1.85,22
-"Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Cây Keo",83.0,5.0,15.0,Tây - Nam,Đông - Nam,4,4,Have certificate,,25.0,22
-"Thanh Hóa, Thanh Hóa, Nhà mặt phố tại đường Lê Lai",180.0,10.0,,,,4,4,Have certificate,Full,33.0,22
-"Hà Nội, Nam Từ Liêm, Nhà mặt phố tại đường Đại Mỗ",44.0,,8.0,,,4,,Have certificate,Basic,6.95,22
-"Đà Nẵng, Cẩm Lệ, Nhà mặt phố tại đường Bùi Trang Chước",100.0,5.0,10.5,Đông - Bắc,Đông - Bắc,3,2,,,8.6,22
-"Hồ Chí Minh, Quận 9, Nhà mặt phố tại đường 14",1.0,20.0,10.0,,,5,5,Have certificate,Basic,60.0,22
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Pasteur",885.8,,,Đông - Bắc,,10,12,Have certificate,Full,,22
-"Hồ Chí Minh, Thủ Đức, Nhà mặt phố tại đường Phạm Văn Đồng",310.0,9.0,60.0,Đông - Bắc,,,,Have certificate,Full,50.0,23
+"Đà Nẵng, Ngũ Hành Sơn, Nhà mặt phố tại đường Khuê Mỹ Đông 7",68.0,5.0,5.5,,,6,8,Have certificate,Full,24.0,17
+"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại Cityland Center Hills",192.5,20.0,20.0,Đông - Nam,Đông - Nam,,,Have certificate,,56.0,10
+"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại Cityland Center Hills",121.0,20.0,20.0,Đông - Nam,Đông - Nam,,,Have certificate,,36.0,9
+"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Nguyễn Trọng Tuyển",170.0,,,,,11,11,Have certificate,,35.0,16
+"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Lê Hồng Phong",82.0,4.5,6.0,,,6,5,Have certificate,Full,9.0,16
+"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Nguyễn Đình Chiểu",121.0,5.4,20.0,,,7,7,Have certificate,Full,23.0,16
 "Bình Dương, Thủ Dầu Một, Nhà mặt phố tại đường Lê Lợi",112.0,7.0,,,,5,5,Have certificate,Full,16.0,23
 "Hồ Chí Minh, Bình Tân, Nhà mặt phố tại đường Tân Hòa Đông",85.0,4.2,20.0,Đông - Nam,Đông - Nam,2,2,Have certificate,,10.3,23
-"Hà Nội, Hai Bà Trưng, Nhà mặt phố tại phố Quỳnh Mai",60.0,5.0,15.0,Bắc,,2,2,Have certificate,,,22
-"Hồ Chí Minh, Quận 7, Nhà mặt phố tại Khu dân cư Phú Mỹ",130.0,,,,,,,,,25.0,22
-"Đà Nẵng, Liên Chiểu, Nhà mặt phố tại đường Phạm Như Xương",145.0,5.0,10.0,Tây - Nam,Tây - Nam,3,2,Have certificate,Basic,9.0,22
-"Hồ Chí Minh, Quận 3, Nhà mặt phố tại đường Nguyễn Thị Minh Khai",92.0,,,,,,,Have certificate,,43.0,22
-"Hồ Chí Minh, Quận 7, Nhà mặt phố tại đường Số 54",176.0,15.0,12.0,,,35,37,Have certificate,Full,65.0,22
-"Hồ Chí Minh, Quận 9, Nhà mặt phố tại đường Nguyễn Văn Tăng",279.0,15.0,20.0,,,,,Have certificate,,39.0,22
-"Hà Nội, Đống Đa, Nhà mặt phố tại phố Tôn Đức Thắng",54.7,4.7,,Đông - Nam,,,,Have certificate,,35.56,22
-"Bình Dương, Phú Giáo, Nhà mặt phố tại đường DH507",595.3,9.8,8.0,Đông,Đông,,,Have certificate,,2.65,22
-"Quảng Ninh, Hạ Long, Nhà mặt phố tại đường Hạ Long",120.0,7.5,15.0,Đông - Nam,Đông - Nam,16,16,Have certificate,Full,16.0,22
-"Hải Phòng, Hồng Bàng, Nhà mặt phố tại đường Hùng Vương",105.0,6.55,,,,,,Have certificate,,13.0,22
-"Đà Nẵng, Thanh Khê, Nhà mặt phố tại đường Thanh Huy 2",100.0,5.0,5.5,Tây - Bắc,,,,Have certificate,,8.15,22
-"Hồ Chí Minh, Củ Chi, Nhà mặt phố tại đường Bàu Trâm",390.0,10.0,12.0,,,20,20,Have certificate,,8.4,22
-"Đà Nẵng, Hải Châu, Nhà mặt phố tại đường 2/9",50.0,4.36,,Đông - Nam,,4,4,Have certificate,,8.0,23
+"Hải Dương, Hải Dương, Nhà mặt phố tại đường Đoàn Kết",150.0,,,,,,,,,,22
+"Hà Nội, Long Biên, Nhà mặt phố tại đường Ngọc Thụy",150.0,6.0,,Đông - Nam,Đông - Nam,,,Have certificate,,21.0,22
+"Quảng Nam, Duy Xuyên, Nhà mặt phố tại xã Duy Vinh",97.0,,,,,2,2,,Full,1.85,22
+"Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Cây Keo",83.0,5.0,15.0,Tây - Nam,Đông - Nam,4,4,Have certificate,,25.0,22
+"Thái Nguyên, Thái Nguyên, Nhà mặt phố tại đường Phú Thái",143.4,4.0,,Tây - Nam,Tây - Nam,3,3,Have certificate,,6.9,22
+"Hải Phòng, Thủy Nguyên, Nhà mặt phố tại Vlasta Thủy Nguyên",62.5,5.0,51.0,Bắc,Bắc,4,,Have certificate,,,21
+"Bình Dương, Thủ Dầu Một, Nhà mặt phố tại đường Thích Quảng Đức",180.0,6.0,16.0,,,2,2,Have certificate,,13.0,23
 "Bình Dương, Thủ Dầu Một, Nhà mặt phố tại Khu dân cư Hiệp Thành III",147.0,,8.0,,,5,5,Have certificate,,8.3,23
 "Bình Định, Quy Nhơn, Nhà mặt phố tại đường Số 28",100.0,4.0,16.0,Tây - Bắc,Tây - Bắc,2,2,Have certificate,,1.35,23
 "Hồ Chí Minh, Quận 5, Nhà mặt phố tại đường Trần Chánh Chiếu",100.0,4.0,,Bắc,Bắc,6,5,Have certificate,,23.0,23
 "Đà Nẵng, Cẩm Lệ, Nhà mặt phố tại đường Xuân Thủy",100.0,5.0,30.0,,,5,6,Have certificate,Full,,23
 "Đà Nẵng, Hải Châu, Nhà mặt phố tại đường Nguyễn Văn Linh",106.0,4.5,35.0,Nam,Nam,5,4,Have certificate,Full,35.0,23
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Trần Quang Khải",745.0,,,,,40,25,Have certificate,Full,,23
 "Hà Nội, Nam Từ Liêm, Nhà mặt phố tại đường Đình Thôn",33.0,3.3,7.0,Đông - Bắc,,6,6,Have certificate,Full,15.8,23
 "Đà Nẵng, Liên Chiểu, Nhà mặt phố tại đường Dương Đức Hiền",72.0,5.0,5.5,Tây - Nam,,4,2,Have certificate,Full,7.69,23
+"Hồ Chí Minh, Thủ Đức, Nhà mặt phố tại đường Nguyễn Tư Nghiêm",89.0,4.17,10.0,Bắc,Bắc,6,6,Have certificate,Full,13.25,23
 "Đà Nẵng, Hải Châu, Nhà mặt phố tại đường Mai Lão Bạng",127.6,6.4,,,,,,Have certificate,,,23
 "Hà Nội, Cầu Giấy, Nhà mặt phố tại đường Trần Thái Tông",140.0,10.0,,,,,,Have certificate,,95.0,23
 "Đắk Lắk, Buôn Ma Thuột, Nhà mặt phố tại phố Mai Hắc Đế",104.0,6.5,,,,6,6,Have certificate,,14.3,23
 "Tiền Giang, Chợ Gạo, Nhà mặt phố tại đường Vàm",185.5,8.0,,Đông,,,,Have certificate,,3.5,23
 "Hà Nội, Long Biên, Nhà mặt phố tại đường Đàm Quang Trung",75.0,8.0,7.0,,,4,7,Have certificate,Full,31.5,23
+"Đà Nẵng, Liên Chiểu, Nhà mặt phố tại đường Nguyễn Như Hạnh",102.0,4.9,7.5,,,4,3,Have certificate,Full,7.6,23
 "Hồ Chí Minh, Thủ Đức, Nhà mặt phố tại đường 11",176.0,13.0,,,,,,Have certificate,,13.9,23
-"Yên Bái, Yên Bình, Nhà mặt phố tại đường Quốc lộ 70",4.2,18.6,21.0,,,,,Have certificate,,0.0,23
+"Yên Bái, Yên Bình, Nhà mặt phố tại đường Quốc lộ 70",4200.0,18.6,21.0,,,,,Have certificate,,0.0,23
 "Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại đường Phạm Văn Bạch",160.0,8.0,15.0,,,2,,Have certificate,,26.0,23
-"Hồ Chí Minh, Quận 2, Nhà mặt phố tại đường 54",700.0,,,,,,,,,0.9,24
+"Hồ Chí Minh, Thủ Đức, Nhà mặt phố tại đường Phạm Văn Đồng",310.0,9.0,60.0,Đông - Bắc,,,,Have certificate,Full,50.0,23
 "Bình Dương, Thủ Dầu Một, Nhà mặt phố tại đường DX 095",105.0,4.0,8.0,Đông,Đông,5,3,Have certificate,Full,3.4,24
 "Lào Cai, Lào Cai, Nhà mặt phố tại đường Cốc Lếu",112.0,6.0,,,,6,6,Have certificate,Full,18.5,24
 "Thanh Hóa, Thọ Xuân, Nhà mặt phố tại đường Quốc lộ 47",100.0,5.0,25.0,Tây - Bắc,,,,Have certificate,,0.03,24
@@ -224,7 +135,7 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hồ Chí Minh, Bình Thạnh, Nhà mặt phố tại đường Phan Văn Trị",69.3,3.8,,,,2,3,Have certificate,Full,12.5,23
 "An Giang, Long Xuyên, Nhà mặt phố tại Sao Mai Bình Khánh 3",78.54,4.2,14.0,Đông - Nam,,3,2,Have certificate,,2.55,23
 "Đà Nẵng, Ngũ Hành Sơn, Nhà mặt phố tại đường Phan Tôn",95.0,,,,,3,2,Have certificate,,30.0,23
-"Hải Phòng, Lê Chân, Nhà mặt phố tại phố Đình Đông",67.0,5.05,15.0,Tây - Nam,Tây - Nam,2,1,Have certificate,,12.0,24
+"Đà Nẵng, Hải Châu, Nhà mặt phố tại đường 2/9",50.0,4.36,,Đông - Nam,,4,4,Have certificate,,8.0,23
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Hoàng Minh Thảo",262.0,15.0,20.0,Đông - Bắc,Đông - Bắc,1,1,Have certificate,Basic,38.0,24
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Miếu Hai Xã",54.0,3.75,20.0,Tây - Bắc,Tây - Bắc,3,4,Have certificate,Basic,7.6,24
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Cát Cụt",76.0,,,,,,,,,15.5,24
@@ -241,9 +152,11 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường Số 26",76.0,,20.0,Bắc,Bắc,4,4,Have certificate,Full,15.0,24
 "Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Trần Hưng Đạo",94.0,20.0,20.0,,,5,5,Have certificate,Full,17.2,24
 "Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Chế Lan Viên",70.0,20.0,25.0,Tây - Nam,,3,3,Have certificate,Full,13.6,24
-"Nam Định, Nam Định, Nhà mặt phố tại Khu đô thị Hòa Vượng",50.0,4.0,8.0,Bắc,Bắc,5,4,Have certificate,Full,5.2,24
 "Long An, Tân An, Nhà mặt phố tại đường Lê Minh Xuân",301.0,12.0,30.0,,,1,1,Have certificate,Full,2.69,24
 "Đồng Nai, Biên Hòa, Nhà mặt phố tại đường Trần Công An",179.6,10.0,,Bắc,Bắc,23,23,Have certificate,Full,25.0,24
+"Hồ Chí Minh, Quận 2, Nhà mặt phố tại đường 54",700.0,,,,,,,,,0.9,24
+"Bình Định, Quy Nhơn, Nhà mặt phố tại đường Tây Sơn",230.0,6.4,40.0,Tây - Nam,Tây - Nam,9,7,Have certificate,Basic,15.9,25
+"Hà Nội, Cầu Giấy, Nhà mặt phố tại đường Trần Thái Tông",40.0,,,,,,,Have certificate,,30.0,20
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Đông Trà",90.0,4.5,11.0,Đông - Bắc,,5,6,Have certificate,Full,12.8,24
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Thiên Lôi",100.0,4.0,,Tây - Nam,Tây - Nam,1,1,Have certificate,,9.8,24
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Hồ Sen",46.0,9.0,25.0,Đông,Đông,3,4,Have certificate,,15.0,24
@@ -260,9 +173,7 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hải Phòng, Lê Chân, Nhà mặt phố tại phố Hai Bà Trưng",47.0,3.8,18.0,,Bắc,5,5,Have certificate,Full,12.8,24
 "Hải Phòng, Lê Chân, Nhà mặt phố tại phố Khúc Thừa Dụ",100.0,4.0,12.0,Đông - Nam,Đông - Nam,1,1,Have certificate,Basic,8.9,24
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Thiên Lôi",101.0,,,,,,,,,15.99,24
-"Hồ Chí Minh, Quận 3, Nhà mặt phố tại phố Nguyễn Thiện Thuật",40.0,3.0,20.0,,,3,3,Have certificate,Basic,19.5,24
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Dư Hàng",127.0,5.2,20.0,Đông - Bắc,Đông - Bắc,4,4,Have certificate,Basic,16.5,24
-"Hải Phòng, Lê Chân, Nhà mặt phố tại phố Trần Nguyên Hãn",75.0,4.2,20.0,Tây - Bắc,Tây - Bắc,6,8,Have certificate,Full,13.5,24
 "Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Phạm Ngọc Thạch",798.0,20.0,30.0,,,8,10,Have certificate,,650.0,25
 "Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Nguyễn Thái Học",550.0,12.5,,,,4,5,Have certificate,Basic,350.0,25
 "Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Trần Hưng Đạo",431.0,19.0,30.0,,,6,8,Have certificate,Basic,285.0,25
@@ -277,13 +188,10 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường Cư Xá Phú Lâm D",42.0,3.5,10.0,Nam,,5,5,Have certificate,Full,8.2,25
 "Hồ Chí Minh, Bình Thạnh, Nhà mặt phố tại đường Nguyễn Gia Trí",80.0,4.0,25.0,,,4,5,Have certificate,Basic,24.5,24
 "Hà Nội, Cầu Giấy, Nhà mặt phố tại đường Trần Duy Hưng",120.0,8.0,50.0,,,5,7,Have certificate,Full,95.0,25
-"Hồ Chí Minh, Thủ Đức, Nhà mặt phố tại đường Nguyễn Văn Bá",1.3,50.0,,,,,,Have certificate,,250.0,25
+"Hồ Chí Minh, Thủ Đức, Nhà mặt phố tại đường Nguyễn Văn Bá",1300.0,50.0,,,,,,Have certificate,,250.0,25
 "Hải Phòng, Ngô Quyền, Nhà mặt phố tại phố Lạch Tray",60.0,4.25,28.0,Đông - Bắc,Đông - Bắc,7,8,Have certificate,Full,33.0,25
-"Tiền Giang, Gò Công Tây, Nhà mặt phố tại đường Quốc Lộ 50",424.0,6.5,,Nam,,,,Have certificate,,4.3,25
-"Hà Nội, Tây Hồ, Nhà mặt phố tại đường Phú Gia",350.0,15.0,,,,,,,,,25
-"Bình Định, Quy Nhơn, Nhà mặt phố tại đường Tây Sơn",230.0,6.4,40.0,Tây - Nam,Tây - Nam,9,7,Have certificate,Basic,15.9,25
-"Hà Nội, Cầu Giấy, Nhà mặt phố tại đường Trần Thái Tông",40.0,,,,,,,Have certificate,,30.0,20
-"Hải Phòng, Ngô Quyền, Nhà mặt phố tại phố Lạch Tray",92.0,2.5,,,,,,Have certificate,,10.5,25
+"Hồ Chí Minh, Quận 7, Nhà mặt phố tại Khu dân cư Kim Sơn",100.0,5.0,12.0,Đông,Đông,6,5,Have certificate,Full,27.8,25
+"Hồ Chí Minh, Bình Chánh, Nhà mặt phố tại đường Trần Văn Giàu",133.0,,,,,5,4,Have certificate,,7.0,25
 "Hồ Chí Minh, Quận 3, Nhà mặt phố tại đường Trương Định",816.0,,25.0,,,6,8,Have certificate,Basic,540.0,25
 "Hải Phòng, Ngô Quyền, Nhà mặt phố tại đường Lê Lợi",90.0,8.5,,,,,,Have certificate,,,25
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Tô Hiệu",203.0,7.1,,,,,,Have certificate,,,25
@@ -296,17 +204,19 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Thủ Khoa Huân",621.0,,,,,,,,,710.0,25
 "Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Tôn Thất Tùng",305.0,24.0,30.0,Đông - Nam,Đông - Nam,5,6,Have certificate,Basic,,25
 "Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Lê Lai",576.0,18.0,30.0,Đông - Nam,,4,6,Have certificate,,450.0,25
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại phường Bến Nghé",1.1,25.0,30.0,,,1,1,Have certificate,,999.0,25
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại phường Bến Nghé",1100.0,25.0,30.0,,,1,1,Have certificate,,999.0,25
 "Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Nguyễn Trãi",126.0,8.2,30.0,,,32,34,Have certificate,,110.0,25
 "Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Nguyễn Đình Chiểu",450.0,,,,,,,Have certificate,,,25
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Lê Thánh Tôn",1.49,30.0,30.0,,,11,13,Have certificate,Basic,,25
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Nguyễn Đình Chiểu",1.1,30.0,30.0,,,10,12,Have certificate,,,25
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Trần Đình Xu",170.1,8.35,30.0,Tây - Nam,,18,20,Have certificate,Full,175.0,25
-"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Lê Thánh Tôn",150.0,8.0,30.0,,,,,Have certificate,,255.0,25
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Lê Thánh Tôn",1490.0,30.0,30.0,,,11,13,Have certificate,Basic,,25
+"Hải Phòng, Lê Chân, Nhà mặt phố tại phố Trần Nguyên Hãn",84.0,8.4,,,,,,Have certificate,,,27
+"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Nguyễn Kiệm",99.6,4.1,,,,,,,,16.5,27
+"Bình Dương, Thuận An, Nhà mặt phố tại đường 22/12",249.0,5.4,,,,,,Have certificate,Basic,12.5,27
+"Đà Nẵng, Sơn Trà, Nhà mặt phố tại Làng Châu Âu (Euro Village)",100.0,,,,,4,4,Have certificate,Basic,22.0,26
+"Thừa Thiên Huế, Huế, Nhà mặt phố tại đường Võ Thị Sáu",424.0,10.0,14.0,Đông - Nam,Đông - Nam,6,5,Have certificate,,59.36,26
 "Thừa Thiên Huế, Huế, Nhà mặt phố tại đường Võ Thị Sáu",190.8,7.1,12.0,Tây - Bắc,Tây - Bắc,5,5,Have certificate,Basic,34.34,26
 "Hải Phòng, Dương Kinh, Nhà mặt phố tại phố Trần Bá Lương",50.0,4.0,4.0,Nam,Nam,5,3,Have certificate,,3.5,26
 "Lào Cai, Lào Cai, Nhà mặt phố tại đường Cốc Lếu",108.0,6.0,,,,5,5,Have certificate,Full,15.8,26
-"Tây Ninh, Gò Dầu, Nhà mặt phố tại đường Quốc Lộ 22",1.532,22.0,,,,16,16,Have certificate,,13.0,26
+"Tây Ninh, Gò Dầu, Nhà mặt phố tại đường Quốc Lộ 22",1532.0,22.0,,,,16,16,Have certificate,,13.0,26
 "An Giang, Tịnh Biên, Nhà mặt phố tại thị trấn Nhà Bàng",118.0,4.74,4.0,,,2,1,Have certificate,Basic,4.5,26
 "Hồ Chí Minh, Bình Chánh, Nhà mặt phố tại đường Văn Tiến Dũng",193.0,5.0,,,,1,2,Have certificate,,12.5,26
 "Đồng Nai, Nhơn Trạch, Nhà mặt phố tại đường D9",140.0,7.0,16.0,Đông - Bắc,Đông - Bắc,3,3,Have certificate,,8.5,26
@@ -321,14 +231,18 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại đường Phạm Văn Chiêu",39.8,3.04,15.0,Đông - Nam,,1,1,Have certificate,,7.0,25
 "Hà Nội, Cầu Giấy, Nhà mặt phố tại đường Hồ Tùng Mậu",111.0,12.0,,,,,,Have certificate,,66.0,25
 "Hồ Chí Minh, Quận 7, Nhà mặt phố tại Khu đô thị Nam Long",130.0,,,,,14,15,Have certificate,Full,28.0,25
-"Hồ Chí Minh, Bình Chánh, Nhà mặt phố tại đường Trần Văn Giàu",133.0,,,,,5,4,Have certificate,,7.0,25
+"Hải Phòng, Lê Chân, Nhà mặt phố tại phố Trần Nguyên Hãn",84.0,8.4,,,,,,Have certificate,,,27
+"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Nguyễn Kiệm",99.6,4.1,,,,,,,,16.5,27
 "Bình Dương, Thuận An, Nhà mặt phố tại đường 22/12",249.0,5.4,,,,,,Have certificate,Basic,12.5,27
 "Hà Nội, Đông Anh, Nhà mặt phố tại đường Cao Lỗ",84.8,4.7,,,,3,3,Have certificate,,16.2,27
 "Đà Nẵng, Ngũ Hành Sơn, Nhà mặt phố tại đường Lê Quang Đạo",160.0,,,,,,,,,57.0,27
 "Hà Nội, Đống Đa, Nhà mặt phố tại phố Mai Anh Tuấn",100.0,6.37,,,,6,8,Have certificate,Full,70.5,27
+"Hồ Chí Minh, Bình Thạnh, Nhà mặt phố tại đường Nguyễn Văn Đậu",100.0,,,,,,,Have certificate,,23.0,28
+"Hồ Chí Minh, Bình Thạnh, Nhà mặt phố tại đường Nguyễn Văn Đậu",100.0,,,,,,,Have certificate,,23.0,28
 "Hồ Chí Minh, Quận 11, Nhà mặt phố tại đường Tạ Uyên",84.0,,,Tây,Tây - Nam,8,8,Have certificate,,25.0,28
 "Đà Nẵng, Ngũ Hành Sơn, Nhà mặt phố tại đường An Thượng 11",75.0,5.0,5.0,,,4,3,Have certificate,Basic,19.2,28
 "Cần Thơ, Bình Thủy, Nhà mặt phố tại đường Lê Thị Hồng Gấm",106.0,4.75,7.0,Đông - Nam,Đông - Nam,2,1,Have certificate,,1.99,28
+"Hồ Chí Minh, Quận 12, Nhà mặt phố tại đường Thới An 3",66.1,4.3,20.0,,,2,2,Have certificate,Basic,5.0,28
 "Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Huỳnh Văn Bánh",62.5,3.6,16.0,Nam,Nam,5,6,Have certificate,Basic,20.9,28
 "Hồ Chí Minh, Bình Tân, Nhà mặt phố tại đường Nguyễn Cửu Phú",88.0,4.0,10.0,Tây,Tây,10,10,Have certificate,,15.0,28
 "Khánh Hòa, Nha Trang, Nhà mặt phố tại đường Cửu Long",345.0,,10.0,,,,,Have certificate,Full,45.0,28
@@ -338,29 +252,78 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hà Nội, Long Biên, Nhà mặt phố tại Noble Palace Long Biên",150.0,,,,,5,4,Have certificate,,46.0,27
 "Hồ Chí Minh, Quận 8, Nhà mặt phố tại KDC Chợ Bình Điền",110.0,5.0,20.0,Nam,Nam,,,Have certificate,Basic,11.5,27
 "Đà Nẵng, Sơn Trà, Nhà mặt phố tại đường An Thượng 22",90.0,,,Đông,,14,15,Have certificate,Full,0.33,27
-"Hồ Chí Minh, Củ Chi, Nhà mặt phố tại đường 538",3.0,10.0,15.0,Đông,Nam,3,3,Have certificate,Full,0.01,27
+"Hồ Chí Minh, Củ Chi, Nhà mặt phố tại đường 538",3000.0,10.0,15.0,Đông,Nam,3,3,Have certificate,Full,0.01,27
+"Hà Nội, Hoàng Mai, Nhà mặt phố tại đường Đền Lừ",100.0,8.0,30.0,Đông - Nam,Đông - Nam,7,7,Have certificate,Full,70.0,27
+"Đà Nẵng, Sơn Trà, Nhà mặt phố tại đường Lý Đạo Thành",100.0,7.5,4.0,Tây - Bắc,Tây - Bắc,4,2,,Basic,8.9,27
 "Đà Nẵng, Liên Chiểu, Nhà mặt phố tại đường Mê Linh",99.5,,33.0,Tây - Bắc,Tây - Bắc,3,4,,,7.25,27
 "Đà Nẵng, Hải Châu, Nhà mặt phố tại đường Duy Tân",91.0,5.0,,Tây - Nam,,4,4,Have certificate,Full,16.9,27
-"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Nguyễn Kiệm",99.6,4.1,,,,,,,,16.5,27
+"Lào Cai, Sa Pa, Nhà mặt phố tại đường Fansipan",405.0,19.0,7.0,Nam,Đông - Nam,22,20,Have certificate,Full,25.0,29
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà mặt phố tại đường Nam Kỳ Khởi Nghĩa",298.0,7.4,35.0,Tây - Bắc,,9,4,Have certificate,Full,35.0,29
 "Lâm Đồng, Bảo Lộc, Nhà mặt phố tại đường Quốc Lộ 20",139.0,20.0,15.0,Tây - Bắc,,2,1,Have certificate,Basic,8.0,29
 "Hồ Chí Minh, Quận 8, Nhà mặt phố tại đường Hưng Phú",29.7,,,Bắc,,3,2,Have certificate,Full,11.85,29
+"Đà Nẵng, Cẩm Lệ, Nhà mặt phố tại đường Lê Hy",100.0,5.0,7.5,Tây - Bắc,,2,2,Have certificate,,5.5,29
+"Lào Cai, Sa Pa, Nhà mặt phố tại đường Fansipan",130.0,,,Đông - Nam,Tây - Nam,15,16,Have certificate,Full,18.0,29
 "Quảng Ninh, Vân Đồn, Nhà mặt phố tại xã Minh Châu",352.0,40.0,24.0,Đông - Bắc,Đông - Bắc,18,19,Have certificate,Full,0.2,29
 "Tiền Giang, Gò Công, Nhà mặt phố tại đường Số 3",279.0,35.0,10.0,Đông - Bắc,Tây - Bắc,2,3,Have certificate,Basic,16.5,27
 "Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Tô Hiến Thành",80.0,4.0,,,,17,17,Have certificate,,15.0,29
 "Khánh Hòa, Vạn Ninh, Nhà mặt phố tại đường Quốc lộ 1A",911.6,18.0,30.0,Tây - Bắc,,,,Have certificate,Full,8.0,29
+"Hồ Chí Minh, Phú Nhuận, Nhà mặt phố tại đường Trần Khắc Chân",68.0,4.0,10.0,,,,,Have certificate,,12.8,24
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Cầu Cáp",45.0,3.5,7.0,Bắc,Bắc,4,3,Have certificate,Basic,5.65,29
 "Hải Phòng, Hải An, Nhà mặt phố tại đường Lũng Đông",124.0,7.7,11.0,Đông - Nam,Đông - Nam,5,4,Have certificate,Basic,11.7,29
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Dân Lập",82.2,18.0,9.0,Đông - Bắc,Đông - Bắc,5,4,Have certificate,Basic,14.3,29
 "Hải Phòng, Lê Chân, Nhà mặt phố tại đường Hàng Kênh",54.4,4.0,11.0,Tây - Nam,Tây - Nam,4,4,Have certificate,Basic,11.5,29
 "Hải Phòng, Lê Chân, Nhà mặt phố tại phố Trần Nguyên Hãn",76.0,4.2,11.0,Tây - Bắc,Tây - Bắc,6,6,Have certificate,Basic,13.8,29
+"Hải Phòng, Lê Chân, Nhà mặt phố tại đường Nguyễn Công Trứ",91.1,4.4,11.0,Nam,Nam,4,3,Have certificate,Basic,10.5,28
+"Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường An Dương Vương",127.0,3.8,20.0,,,2,3,Have certificate,Full,17.8,28
 "Hải Phòng, Hồng Bàng, Nhà mặt phố tại đường Trần Hưng Đạo",90.0,8.0,40.0,Đông - Nam,Đông - Nam,9,9,Have certificate,Full,33.0,28
 "Hồ Chí Minh, Bình Thạnh, Nhà mặt phố tại đường Nguyễn Văn Đậu",100.0,,,,,,,Have certificate,,23.0,28
-"Đà Nẵng, Thanh Khê, Nhà mặt phố tại đường Tôn Đản",102.0,4.3,,,Đông - Nam,4,2,Have certificate,,7.49,30
-"Hồ Chí Minh, Bình Tân, Nhà mặt phố tại đường Lê Cơ",126.0,,,,,,,,,17.5,30
-"Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường Bình Phú",80.0,4.0,16.0,,,5,5,Have certificate,Full,24.5,29
-"Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường Bình Phú 2",40.0,4.0,8.0,,,3,3,Have certificate,Full,6.9,29
-"Hồ Chí Minh, Nhà Bè, Nhà mặt phố tại đường Lê Văn Lương",336.0,7.2,40.0,,,1,,Have certificate,,39.0,29
-"Hồ Chí Minh, Quận 2, Nhà mặt phố tại đường Bùi Tá Hán",80.0,4.0,18.0,,Tây,,,Have certificate,,23.8,29
-"Kiên Giang, Rạch Giá, Nhà mặt phố tại đường Huỳnh Thúc Kháng",36.0,4.5,19.0,Tây - Nam,Đông - Bắc,3,3,Have certificate,Basic,3.4,29
 "Cần Thơ, Ninh Kiều, Nhà mặt phố tại đường Ung Văn Khiêm",64.0,,,,,,,Have certificate,,13.0,29
 "Đà Nẵng, Liên Chiểu, Nhà mặt phố tại đường Đồng Xoài",80.0,5.0,7.5,Tây - Bắc,,,,Have certificate,,5.5,29
+"Hồ Chí Minh, Quận 3, Nhà mặt phố tại đường Nguyễn Thị Minh Khai",743.0,17.0,,,,,,Have certificate,,400.0,29
+"Hồ Chí Minh, Thủ Đức, Nhà mặt phố tại đường Quốc Lộ 13",52.0,,,,,,,,,7.65,29
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Lê Thánh Tôn",300.0,12.0,30.0,,,70,76,Have certificate,Full,600.0,29
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Nguyễn Trãi",183.0,8.0,30.0,,,2,4,Have certificate,Basic,100.0,29
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Nguyễn Trãi",450.0,30.0,30.0,,,22,24,Have certificate,Full,1.0,29
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Lê Thánh Tôn",249.0,10.0,30.0,Đông - Nam,,12,16,Have certificate,Full,380.0,29
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Pasteur",260.0,18.0,30.0,,,4,5,Have certificate,Full,360.0,29
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Nguyễn Văn Thủ",812.8,30.0,30.0,,,30,35,Have certificate,,499.0,29
+"Đà Nẵng, Sơn Trà, Nhà mặt phố tại đường Trần Nhân Tông",110.0,23.0,15.5,Đông,Đông,7,7,Have certificate,Full,21.0,29
+"Hồ Chí Minh, Bình Chánh, Nhà mặt phố tại đường Hoàng Phan Thái",100.0,30.0,,,,,,Have certificate,,4.9,29
+"Hồ Chí Minh, Quận 3, Nhà mặt phố tại phố Hai Bà Trưng",225.0,9.0,,,,,,Have certificate,Full,180.0,29
+"Thừa Thiên Huế, Huế, Nhà mặt phố tại đường Hùng Vương",119.0,,,,,,,,,32.0,29
+"Long An, Tân An, Nhà mặt phố tại đường Quốc lộ 1A",393.6,4.0,,,,,,Have certificate,Full,12.5,29
+"Khánh Hòa, Nha Trang, Nhà mặt phố tại đường Lý Thái Tổ",160.0,8.0,20.0,Nam,Nam,6,4,Have certificate,,16.8,29
+"Thừa Thiên Huế, Huế, Nhà mặt phố tại Phú Xuân City",202.5,10.0,16.5,,Tây,5,5,Have certificate,Full,17.5,29
+"Đồng Nai, Biên Hòa, Nhà mặt phố tại đường Phạm Văn Thuận",421.0,6.3,,Nam,Nam,7,5,Have certificate,Basic,30.0,29
+"Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường Lý Chiêu Hoàng",70.0,4.0,22.0,,,6,6,Have certificate,Full,12.9,29
+"Đà Nẵng, Ngũ Hành Sơn, Nhà mặt phố tại Khu đô thị Hòa Quý",100.0,5.0,7.5,Đông - Bắc,Đông - Bắc,2,1,Have certificate,Basic,5.9,29
+"Hồ Chí Minh, Bình Tân, Nhà mặt phố tại đường Lê Cơ",126.0,,,,,,2,Have certificate,Full,17.5,30
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Nguyễn Trãi",235.46,12.0,30.0,Đông - Nam,,65,67,Have certificate,Full,450.0,30
+"Hà Nội, Long Biên, Nhà mặt phố tại đường Ngô Gia Tự",65.2,2.8,50.0,,,4,3,Have certificate,,16.6,30
+"Hồ Chí Minh, Quận 6, Nhà mặt phố tại đường Số 44",80.0,4.0,16.0,,,5,5,Have certificate,Full,11.2,29
+"Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Ỷ Lan",116.0,,,,,3,3,Have certificate,,10.5,30
+"Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Lê Sao",81.0,4.5,13.0,,,3,3,Have certificate,,9.5,30
+"Hà Nội, Long Biên, Nhà mặt phố tại Khu đô thị Sài Đồng",222.0,16.0,30.0,,,6,6,Have certificate,Basic,48.0,30
+"Hồ Chí Minh, Quận 4, Nhà mặt phố tại đường Hoàng Diệu",105.0,4.5,40.0,,,10,10,Have certificate,Full,58.0,30
+"Hà Nội, Long Biên, Nhà mặt phố tại đường Ngô Gia Tự",97.0,4.4,,,,,,Have certificate,Basic,33.0,30
+"Bình Dương, Dĩ An, Nhà mặt phố tại đường Nguyễn Đức Thiệu",160.0,,13.0,Tây - Nam,,2,3,Have certificate,Basic,7.7,30
+"Khánh Hòa, Nha Trang, Nhà mặt phố tại đường Lý Thái Tổ",60.0,5.0,25.0,Nam,,11,,,Full,16.0,30
+"Hà Nội, Hoàng Mai, Nhà mặt phố tại phường Đại Kim",53.2,4.2,12.0,Tây - Bắc,Tây - Bắc,4,7,Have certificate,,33.0,30
+"Hồ Chí Minh, Quận 8, Nhà mặt phố tại đường Phạm Thế Hiển",111.0,7.0,12.0,,,8,9,Have certificate,Full,19.48,30
+"Hồ Chí Minh, Tân Bình, Nhà mặt phố tại đường Huỳnh Văn Nghệ",98.7,,,Đông - Bắc,Đông - Bắc,3,3,Have certificate,Full,10.5,30
+"An Giang, Long Xuyên, Nhà mặt phố tại đường Trần Hưng Đạo",300.0,6.6,24.0,,,2,1,Have certificate,,8.5,30
+"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại đường Huỳnh Khương An",40.0,4.0,,Đông - Nam,Đông,2,3,Have certificate,Full,10.3,30
+"An Giang, Long Xuyên, Nhà mặt phố tại đường Trần Hưng Đạo",195.0,,,,,,,Have certificate,,17.0,30
+"Đà Nẵng, Thanh Khê, Nhà mặt phố tại đường Tôn Đản",81.0,4.5,7.0,Đông,,,,Have certificate,Basic,6.7,30
+"Hà Nội, Thanh Trì, Nhà mặt phố tại đường Quốc lộ 1A",102.0,3.8,,Tây,,,,Have certificate,,18.5,30
+"Đồng Nai, Biên Hòa, Nhà mặt phố tại Aqua City",117.0,6.0,11.0,Bắc,Bắc,3,4,,,5.9,30
+"Lâm Đồng, Đà Lạt, Nhà mặt phố tại đường Trần Nhật Duật",99.75,5.25,7.0,,,,,Have certificate,,12.5,30
+"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại CityLand Park Hills",200.0,10.0,30.0,Bắc,Bắc,,,Have certificate,Full,57.5,25
+"Hồ Chí Minh, Gò Vấp, Nhà mặt phố tại Cityland Center Hills",121.0,6.5,,Đông - Nam,Đông - Nam,,,Have certificate,,36.0,25
+"Hà Nội, Hà Đông, Nhà mặt phố tại đường Phan Đình Phùng",30.0,3.3,12.0,Đông - Nam,Đông - Nam,2,3,Have certificate,Basic,13.6,30
+"Hồ Chí Minh, Quận 1, Nhà mặt phố tại đường Nguyễn Trãi",235.0,12.0,,,,65,65,Have certificate,,450.0,30
+"Lào Cai, Lào Cai, Nhà mặt phố tại đường Hồng Hà",112.6,6.0,,,,6,6,Have certificate,Full,16.8,30
+"Quảng Nam, Tam Kỳ, Nhà mặt phố tại đường Phan Châu Trinh",160.0,5.2,30.0,Đông - Bắc,,4,2,,,19.0,30
+"Hồ Chí Minh, Tân Phú, Nhà mặt phố tại đường Lê Đình Thám",71.0,6.0,8.0,Nam,Nam,3,3,Have certificate,Basic,12.5,30
+"Bắc Ninh, Từ Sơn, Nhà mặt phố tại Centa Riverside",100.0,5.0,15.0,Nam,Nam,5,5,Have certificate,,7.0,29
+"Hồ Chí Minh, Tân Bình, Nhà mặt phố tại đường Trần Văn Hoàng",133.61,,,,,,,,,38.0,26

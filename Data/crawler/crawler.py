@@ -158,33 +158,101 @@ def parse_detail_html(html_content, detail_url):
                 month = int(date_m.group(2))
                 year = int(date_m.group(3))
 
+    # Phân loại danh mục từ URL để hỗ trợ phân tích diện tích
+    url_lower = str(detail_url).lower()
+    is_large_area_category = any(k in url_lower for k in ['ban-dat', 'ban-kho-nha-xuong', 'ban-trang-trai', 'ban-loai-bat-dong-san-khac'])
+
     # Làm sạch các trường dữ liệu số
-    def safe_float_convert(val_str):
+    def safe_float_convert(val_str, is_area=False):
         if not val_str:
             return None
-        m = re.search(r'([\d.,]+)', str(val_str))
+        
+        # Rút trích phần chuỗi chứa số và các dấu phân cách
+        m = re.search(r'([\d.,\s]+)', str(val_str))
         if not m:
             return None
             
-        num_str = m.group(1)
-        # Xử lý format Việt Nam: 1.850,5 -> 1850.5 | 1.850 -> 1850 | 100,5 -> 100.5
+        num_str = m.group(1).strip()
+        # Loại bỏ khoảng trắng giữa các chữ số (ví dụ: "12 500" -> "12500")
+        num_str = re.sub(r'\s+', '', num_str)
+        
+        # 1. Trường hợp có cả dấu chấm và dấu phẩy (ví dụ: "1.250,5" hoặc "1,250.5")
         if '.' in num_str and ',' in num_str:
-            num_str = num_str.replace('.', '').replace(',', '.')
-        elif ',' in num_str:
-            num_str = num_str.replace(',', '.')
-        elif '.' in num_str:
-            if num_str.count('.') > 1: # Vd: 1.850.1 (lỗi gõ) hoặc 1.850.000
-                num_str = num_str.replace('.', '')
-            elif len(num_str.split('.')[-1]) == 3: # Vd: 1.850 -> là phần ngàn
-                num_str = num_str.replace('.', '')
+            dot_idx = num_str.rfind('.')
+            comma_idx = num_str.rfind(',')
+            if dot_idx > comma_idx:
+                # Dấu chấm là thập phân, dấu phẩy là phần ngàn
+                num_str = num_str.replace(',', '')
+            else:
+                # Dấu phẩy là thập phân, dấu chấm là phần ngàn
+                num_str = num_str.replace('.', '').replace(',', '.')
                 
+        # 2. Chỉ có dấu phẩy (ví dụ: "12,5" hoặc "12,500")
+        elif ',' in num_str:
+            if num_str.count(',') > 1:
+                # Nhiều dấu phẩy -> Chắc chắn là phân cách phần ngàn
+                num_str = num_str.replace(',', '')
+            else:
+                # 1 dấu phẩy
+                left, right = num_str.split(',')
+                if len(right) == 3:
+                    # Trường hợp mơ hồ: có thể là thập phân (tiếng Việt) hoặc phần ngàn (tiếng Anh)
+                    try:
+                        dec_val = float(left + '.' + right)
+                    except ValueError:
+                        dec_val = 0.0
+                    
+                    if is_area:
+                        if dec_val < 30.0 or is_large_area_category:
+                            # Coi là phần ngàn
+                            num_str = left + right
+                        else:
+                            # Coi là thập phân
+                            num_str = left + '.' + right
+                    else:
+                        # Kích thước tuyến tính (mặt tiền / đường vào) -> luôn là thập phân
+                        num_str = left + '.' + right
+                else:
+                    # Không phải 3 chữ số phía sau -> thập phân
+                    num_str = left + '.' + right
+
+        # 3. Chỉ có dấu chấm (ví dụ: "12.5" hoặc "12.500")
+        elif '.' in num_str:
+            if num_str.count('.') > 1:
+                # Nhiều dấu chấm -> phần ngàn
+                num_str = num_str.replace('.', '')
+            else:
+                # 1 dấu chấm
+                left, right = num_str.split('.')
+                if len(right) == 3:
+                    # Trường hợp mơ hồ: có thể là phần ngàn (tiếng Việt) hoặc thập phân (tiếng Anh)
+                    try:
+                        dec_val = float(left + '.' + right)
+                    except ValueError:
+                        dec_val = 0.0
+                    
+                    if is_area:
+                        if dec_val < 30.0 or is_large_area_category:
+                            # Coi là phần ngàn
+                            num_str = left + right
+                        else:
+                            # Coi là thập phân
+                            num_str = left + '.' + right
+                    else:
+                        # Kích thước tuyến tính -> luôn là thập phân
+                        num_str = left + '.' + right
+                else:
+                    # Không phải 3 chữ số phía sau -> thập phân
+                    pass
+                    
         try:
             return float(num_str)
         except ValueError:
             return None # Trả về None nếu vẫn lỗi, đảm bảo script không bao giờ bị crash
-    area = safe_float_convert(area)
-    frontage = safe_float_convert(frontage)
-    access_road = safe_float_convert(access_road)
+
+    area = safe_float_convert(area, is_area=True)
+    frontage = safe_float_convert(frontage, is_area=False)
+    access_road = safe_float_convert(access_road, is_area=False)
     
     if bedrooms:
         m = re.search(r'(\d+)', str(bedrooms))
