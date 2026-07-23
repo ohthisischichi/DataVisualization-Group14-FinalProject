@@ -95,7 +95,7 @@ Given a failed `request_id`, the executed code, and the error message, generates
 * **`POST /execute/run`** → `ExecuteResult`
 Executes the approved code (`approved = true` is mandatory; otherwise `400`). Code is validated by AST inspection before execution and run in an isolated subprocess. The response contains only metadata and logs; the payload is retrieved separately. Returns `422` when validation fails.
 * **`GET /execute/result/{request_id}`** → `ExecuteResult`
-Loads the persisted result for a request. `result_type` is one of `chart` (Plotly JSON), `image` (base64 PNG), `dataframe` (records), or `text`.
+Loads the persisted result for a request. `result_type` is one of `chart` (Plotly JSON), `image` (base64 PNG), `dataframe` (records), `text`, or `multi`. For `multi` (when the code returns a `dict`/`list` of several artifacts), `result_data` is a list of `{name, type, data}` parts, each `data` shaped like the corresponding single-artifact payload.
 
 ### Logs (`/logs`)
 
