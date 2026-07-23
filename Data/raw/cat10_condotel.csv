@@ -1,12 +1,8 @@
 Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bathrooms,Legal status,Furniture state,Price,Day
-"Bà Rịa Vũng Tàu, Vũng Tàu, Condotel tại The Maris Vũng Tàu",44.54,,,Đông - Nam,Tây - Bắc,,,Have certificate,Full,2.95,2
-"Quảng Ninh, Hạ Long, Condotel tại Prima Bay",31.0,,,,Đông - Bắc,1,1,Sale contract,Full,1.4,4
 "Đà Nẵng, Sơn Trà, Condotel tại Symphony 5",30.0,,,,,,,Sale contract,Basic,2.5,9
 "Quảng Ninh, Hạ Long, Condotel tại Sun Festo Town",33.0,,,,,1,,,,,2
 "Quảng Ninh, Hạ Long, Condotel tại Best Western Premier Sapphire Hạ Long",35.0,,,Tây,Tây,1,1,Sale contract,Full,,1
 "Quảng Ninh, Hạ Long, Condotel tại Best Western Premier Sapphire Hạ Long",70.0,,,Tây,Tây,2,2,Have certificate,Full,,1
-"Quảng Ninh, Hạ Long, Condotel tại Sun Centro Town",34.0,,,Tây - Bắc,Tây - Bắc,1,1,Sale contract,Full,2.0,18
-"Kiên Giang, Phú Quốc, Condotel tại The Sunset",30.0,,,,,1,1,Sale contract,Basic,2.5,18
 "Hải Phòng, Cát Hải, Condotel tại Xanh Island Cát Bà",34.0,,,Tây - Bắc,Đông - Nam,1,1,Sale contract,Full,2.1,10
 "Đà Nẵng, Sơn Trà, Condotel tại Symphony 5",30.1,,,Đông - Nam,Tây - Bắc,1,1,Sale contract,,,16
 "Quảng Ninh, Hạ Long, Condotel tại Sun Festo Town",31.0,,,Tây - Bắc,Đông - Nam,1,1,Have certificate,Full,2.5,16
@@ -25,8 +21,13 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Bà Rịa Vũng Tàu, Vũng Tàu, Condotel tại The Maris Vũng Tàu",42.4,,,Đông - Nam,Tây - Bắc,1,1,Have certificate,Full,2.77,3
 "Bà Rịa Vũng Tàu, Vũng Tàu, Condotel tại The Maris Vũng Tàu",78.26,,,Tây - Bắc,Đông - Nam,2,2,Have certificate,,4.99,6
 "Bà Rịa Vũng Tàu, Vũng Tàu, Condotel tại The Maris Vũng Tàu",42.4,,,Tây - Bắc,Đông - Nam,1,1,Have certificate,,2.77,6
+"Bà Rịa Vũng Tàu, Vũng Tàu, Condotel tại The Maris Vũng Tàu",44.54,,,Đông - Nam,Tây - Bắc,,,Have certificate,Full,2.95,2
+"Quảng Ninh, Hạ Long, Condotel tại Prima Bay",31.0,,,,Đông - Bắc,1,1,Sale contract,Full,1.4,4
+"Quảng Ninh, Hạ Long, Condotel tại The Holiday Hạ Long",55.2,,,,,1,1,Sale contract,Full,3.6,29
+"Phú Thọ, Thanh Thủy, Condotel tại Wyndham Thanh Thủy Hotels & Resorts",32.4,,,Tây - Bắc,Đông - Nam,1,1,Sale contract,Full,1.7,29
+"Phú Thọ, Thanh Thủy, Condotel tại Wyndham Thanh Thủy Hotels & Resorts",32.4,,,Đông - Nam,Đông - Nam,1,1,Sale contract,Full,1.7,29
+"Bà Rịa Vũng Tàu, Vũng Tàu, Condotel tại Blanca City",65.0,,,,,2,2,Sale contract,Full,6.8,29
 "Hà Nội, Đống Đa, Condotel tại The Ninety Complex",65.0,,,Tây - Bắc,Đông - Nam,2,2,Sale contract,Full,7.0,28
-"Phú Thọ, Thanh Thủy, Condotel tại Wyndham Thanh Thủy Hotels & Resorts",43.86,,,,,2,,Sale contract,,1.6,22
 "Quảng Ninh, Hạ Long, Condotel tại SkyM",35.2,,,Bắc,Nam,,,Have certificate,Basic,1.63,27
 "Kiên Giang, Phú Quốc, Condotel tại Grand World Phú Quốc",29.9,,,,,1,1,Sale contract,Full,1.1,24
 "Bà Rịa Vũng Tàu, Xuyên Mộc, Condotel tại Maia Resort Hồ Tràm",35.0,,,Đông - Bắc,,1,1,Sale contract,,2.67,27
@@ -38,10 +39,7 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Đà Nẵng, Sơn Trà, Condotel tại Vinpearl Condotel Đà Nẵng",58.0,,,,,,,,,3.5,23
 "Đà Nẵng, Sơn Trà, Condotel tại Sun Costa Residence",50.2,,,,,1,1,Have certificate,Full,,23
 "Đà Nẵng, Sơn Trà, Condotel tại Sun Symphony Residence",49.7,,,Đông,Đông,1,1,Sale contract,,3.52,8
-"Kiên Giang, Phú Quốc, Condotel tại The Sunset",50.0,,,Tây - Nam,Đông - Bắc,1,1,Sale contract,Full,3.3,22
-"Kiên Giang, Phú Quốc, Condotel tại The Sunset",30.0,,,Tây - Nam,Tây - Nam,1,1,Sale contract,Full,3.4,22
-"Kiên Giang, Phú Quốc, Condotel tại The Sunset",69.0,,,Tây - Nam,Đông - Bắc,2,2,Sale contract,Full,4.6,22
-"Hải Phòng, Cát Hải, Condotel tại Flamingo Cat Ba Beach Resort",42.2,,,Đông - Nam,Tây - Bắc,1,1,Have certificate,Full,3.9,22
-"Quảng Ninh, Vân Đồn, Condotel tại Crystal Holidays Harbour Vân Đồn",74.0,,,Đông - Nam,Tây - Bắc,2,2,Have certificate,Full,2.7,22
 "Quảng Ninh, Hạ Long, Condotel tại SkyM",30.5,,,Đông - Nam,Đông - Nam,1,1,Have certificate,Basic,1.55,21
 "Hải Phòng, Cát Hải, Condotel tại Flamingo Cat Ba Beach Resort",58.2,,,Đông - Nam,Tây - Bắc,1,1,Have certificate,Full,3.8,19
+"Quảng Ninh, Hạ Long, Condotel tại Sun Centro Town",34.0,,,Tây - Bắc,Tây - Bắc,1,1,Sale contract,Full,2.0,18
+"Kiên Giang, Phú Quốc, Condotel tại The Sunset",30.0,,,,,1,1,Sale contract,Basic,2.5,18

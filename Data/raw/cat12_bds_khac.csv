@@ -1,12 +1,11 @@
 Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bathrooms,Legal status,Furniture state,Price,Day
 "Bắc Giang, Việt Yên, Loại bất động sản khác tại đường 295B",56.0,5.0,,,,2,2,Sale contract,Basic,1.1,29
 "Hà Nội, Bắc Từ Liêm, Loại bất động sản khác tại ROX Tower",150.0,10.0,17.0,,,1,,Have certificate,Basic,7.5,27
-"Bình Phước, Đồng Xoài, Loại bất động sản khác tại xã Tân Thành",1.541,31.0,4.0,Nam,,,,Have certificate,Full,4.0,24
+"Bình Phước, Đồng Xoài, Loại bất động sản khác tại xã Tân Thành",1541.0,31.0,4.0,Nam,,,,Have certificate,Full,4.0,24
 "Hà Nội, Cầu Giấy, Loại bất động sản khác tại AZ Lâm Viên Complex",940.0,,,,,,,Sale contract,,40.0,23
 "Hòa Bình, Hòa Bình, Loại bất động sản khác tại Lạc Hồng Viên",48.0,,,Nam,,,,Sale contract,,,23
-"Hồ Chí Minh, Quận 8, Loại bất động sản khác tại đường Phạm Thế Hiển",1.68,28.0,16.0,Đông - Nam,Đông - Nam,,,Sale contract,Full,1.8,23
-"Hà Nội, Thanh Trì, Loại bất động sản khác tại Tứ Hiệp Plaza",55.0,,,Tây - Bắc,Đông - Nam,1,1,Have certificate,Basic,2.3,22
-"Khánh Hòa, Nha Trang, Loại bất động sản khác tại phường Lộc Thọ",430.0,15.0,,,,,,Have certificate,,450.0,22
-"Hồ Chí Minh, Gò Vấp, Loại bất động sản khác tại CityLand Park Hills",2.7,,,Đông,Đông,,,Have certificate,,,3
+"Hồ Chí Minh, Quận 8, Loại bất động sản khác tại đường Phạm Thế Hiển",1680.0,28.0,16.0,Đông - Nam,Đông - Nam,,,Sale contract,Full,1.8,23
+"Hồ Chí Minh, Gò Vấp, Loại bất động sản khác tại CityLand Park Hills",2700.0,,,Đông,Đông,,,Have certificate,,,3
 "Đà Nẵng, Sơn Trà, Loại bất động sản khác tại đường Hà Bổng",513.0,,,,,,,,,255.0,3
-"Đồng Nai, Biên Hòa, Loại bất động sản khác tại đường Bùi Văn Hòa",2.15,,,,,,,Have certificate,,92.0,2
+"Đồng Nai, Biên Hòa, Loại bất động sản khác tại đường Bùi Văn Hòa",2150.0,,,,,,,Have certificate,,92.0,2
+"Hà Nội, Nam Từ Liêm, Loại bất động sản khác tại đường Phạm Hùng",10000.0,,,,,,,,,950.0,23

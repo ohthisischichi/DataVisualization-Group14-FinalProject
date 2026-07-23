@@ -1,19 +1,21 @@
 Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bathrooms,Legal status,Furniture state,Price,Day
-"Thanh Hóa, Thanh Hóa, Nhà biệt thự, liền kề tại Heragon City",70.0,5.0,7.0,Tây - Bắc,Đông - Nam,5,5,Have certificate,,3.4,2
-"Quảng Ninh, Quảng Yên, Nhà biệt thự, liền kề tại Quảng Yên Centro",85.0,5.0,,Nam,,,,Have certificate,,0.05,2
-"Quảng Ninh, Quảng Yên, Nhà biệt thự, liền kề tại Vinhomes Global Gate Hạ Long",50.0,5.0,13.0,Đông - Bắc,Đông - Bắc,4,4,Sale contract,,4.77,2
-"Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại Khu đô thị Tây Mỗ",115.0,5.2,10.0,,,5,5,Have certificate,Full,20.3,3
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 3",90.0,5.0,13.0,Tây - Bắc,,,,Sale contract,,13.4,3
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Sol Lake Villa",75.0,5.0,12.0,Đông - Nam,Đông - Nam,6,,Have certificate,,15.0,3
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Sol Lake Villa",176.0,5.0,12.0,Đông - Bắc,Đông - Nam,6,7,Have certificate,Basic,31.5,3
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 3",126.0,,,,,,,Sale contract,,0.13,3
-"Hà Nội, Hoàng Mai, Nhà biệt thự, liền kề tại Khu đô thị mới Đại Kim - Định Công",90.0,6.0,12.0,,,,,,,,3
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Centa Riverside",480.0,16.0,25.0,Nam,Nam,,,Have certificate,Basic,69.0,3
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Centa Riverside",225.0,10.0,61.0,,,,,,,18.36,3
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Centa Riverside",225.0,10.0,61.0,,,,,Have certificate,,18.56,3
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Centa Riverside",322.0,14.0,61.0,Nam,Nam,,,Have certificate,Basic,26.7,3
+"Quảng Ninh, Quảng Yên, Nhà biệt thự, liền kề tại Quảng Yên Centro",85.0,,,Nam,,,,Have certificate,,0.05,1
+"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Hà Nội Oriental",75.0,5.0,17.0,,,5,,Have certificate,,15.7,2
+"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 3",126.0,7.0,,Tây - Bắc,Tây - Bắc,4,4,Sale contract,,13.0,2
+"Quảng Nam, Hội An, Nhà biệt thự, liền kề tại Casamia Balanca",173.0,8.0,22.0,,,4,4,Have certificate,,0.06,2
+"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại phường Phúc Lợi",181.0,14.0,17.0,Đông - Nam,Đông - Nam,6,4,Have certificate,Full,78.0,3
+"Quảng Ninh, Cẩm Phả, Nhà biệt thự, liền kề tại Yoko Onsen Villa",600.0,,,,,,,Have certificate,Full,18.0,3
+"Hà Nội, Chương Mỹ, Nhà biệt thự, liền kề tại xã Phụng Châu",488.0,14.0,10.0,,,,,Have certificate,Full,29.0,3
+"Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại phường Đại Yên",162.0,9.0,13.0,Đông - Bắc,Đông - Bắc,6,5,Have certificate,,13.62,5
+"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Phú Thị Riverside",75.0,,,,Đông - Nam,4,,Have certificate,,10.9,5
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại đường Trần Phú",100.0,25.0,17.0,,,5,6,Have certificate,Full,32.0,5
+"Khánh Hòa, Nha Trang, Nhà biệt thự, liền kề tại Gran Melia Nha Trang",1025.5,,,,,4,5,Have certificate,Full,100.0,5
 "Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Sơn Đồng Center",80.0,6.25,,,,,,Have certificate,,13.2,5
 "Khánh Hòa, Cam Ranh, Nhà biệt thự, liền kề tại Para Draco",600.0,,,,,3,3,,,0.05,4
+"Đà Nẵng, Ngũ Hành Sơn, Nhà biệt thự, liền kề tại Fusion Resort & Villas Da Nang",650.0,,,,Đông,4,4,Have certificate,Full,47.0,8
+"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Alluvia City",300.0,15.0,13.0,Đông - Nam,Đông - Nam,4,5,Sale contract,Basic,60.0,3
+"Hà Nội, Quốc Oai, Nhà biệt thự, liền kề tại Khu du lịch sinh thái Tuần Châu Hà Nội",138.0,,,,,,,,,0.03,8
+"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Long Biên Golf Villas",463.0,,,Đông - Nam,Tây - Bắc,,,Have certificate,,320.0,8
 "Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Khu đô thị Sài Đồng",179.0,13.0,,,,4,3,Have certificate,,48.0,7
 "Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",86.0,6.0,,,,3,3,Have certificate,Full,44.0,7
 "Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại Lan Anh Village",377.0,,,,,,,,,220.0,7
@@ -30,11 +32,18 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Bình Thuận, Phan Thiết, Nhà biệt thự, liền kề tại Novahills Mũi Né Resort & Villas",250.0,,,,,,,Sale contract,,5.9,5
 "Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Vinhomes Global Gate",77.0,,,,,3,4,,Full,28.0,5
 "Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Vinhomes Global Gate",80.0,,,,,,,,,29.0,5
-"Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại phường Đại Yên",162.0,9.0,13.0,Đông - Bắc,Đông - Bắc,6,5,Have certificate,,13.62,5
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Phú Thị Riverside",75.0,,,,Đông - Nam,4,,Have certificate,,10.9,5
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại đường Trần Phú",100.0,25.0,17.0,,,5,6,Have certificate,Full,32.0,5
+"Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại đường Trích Sài",271.0,15.0,,,,6,6,Have certificate,,65.0,10
+"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Emerald Symphony",80.0,,,Nam,,,,Have certificate,,7.67,4
+"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Vinhomes Grand Park",96.0,,,,,,,,,21.0,10
+"Hà Nội, Đan Phượng, Nhà biệt thự, liền kề tại Noble Palace Tây Thăng Long",75.0,,,,,,,Have certificate,,17.0,10
+"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",250.4,15.0,21.0,Đông - Bắc,Tây - Nam,4,4,Sale contract,Basic,,10
 "Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",208.1,17.0,17.0,Đông - Bắc,Tây - Nam,4,4,Sale contract,Basic,30.94,10
 "Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại FLC Premier Parc Đại Mỗ",90.0,,,Đông - Nam,,,,Sale contract,,,10
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại The Maris Vũng Tàu",650.0,,12.0,Đông - Bắc,Đông - Bắc,3,4,Have certificate,Full,45.0,11
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại The Maris Vũng Tàu",650.0,,12.0,Đông - Nam,Đông - Nam,3,4,Have certificate,Full,48.0,11
+"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 3",90.0,5.0,15.0,Tây - Bắc,,7,4,Sale contract,,12.8,5
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại An Khang Villa",450.0,20.0,50.0,,,5,5,Have certificate,Full,,11
+"Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Vinhomes Global Gate",127.5,8.5,30.0,,,8,9,Have certificate,,45.0,11
 "Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại xã Nghĩa Trụ",126.0,7.0,15.0,Tây - Bắc,Tây - Bắc,6,4,Sale contract,,13.8,5
 "Khánh Hòa, Cam Ranh, Nhà biệt thự, liền kề tại ParaSol",122.4,,,,,,,Have certificate,Full,6.0,11
 "Đồng Nai, Nhơn Trạch, Nhà biệt thự, liền kề tại đường D7",140.0,7.0,,Tây - Nam,Tây - Nam,4,5,Have certificate,Full,11.2,11
@@ -50,11 +59,14 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Nghệ An, Nghi Lộc, Nhà biệt thự, liền kề tại Meysenses Lucia Bay Bãi Lữ",322.9,,6.0,Đông - Nam,,,,Sale contract,,12.0,11
 "Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",197.0,10.0,14.0,Đông - Nam,Đông - Nam,6,6,Sale contract,,,11
 "Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",270.2,12.0,15.0,,Đông - Bắc,7,7,Sale contract,,,11
-"Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại đường Trích Sài",271.0,15.0,,,,6,6,Have certificate,,65.0,10
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Emerald Symphony",80.0,,,Nam,,,,Have certificate,,7.67,4
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Vinhomes Grand Park",96.0,,,,,,,,,21.0,10
-"Hà Nội, Đan Phượng, Nhà biệt thự, liền kề tại Noble Palace Tây Thăng Long",75.0,,,,,,,Have certificate,,17.0,10
-"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",250.4,15.0,21.0,Đông - Bắc,Tây - Nam,4,4,Sale contract,Basic,,10
+"Hòa Bình, Lương Sơn, Nhà biệt thự, liền kề tại Ivory Villas & Resort",400.0,,30.0,Đông - Nam,Nam,4,4,Have certificate,Full,6.5,13
+"Hà Nội, Đống Đa, Nhà biệt thự, liền kề tại đường Huỳnh Thúc Kháng",100.0,,,,,,,Have certificate,,78.0,13
+"Thanh Hóa, Sầm Sơn, Nhà biệt thự, liền kề tại Vlasta Sầm Sơn",84.5,6.5,27.0,Tây - Nam,Tây - Nam,,,Have certificate,,7.83,16
+"Quảng Ninh, Vân Đồn, Nhà biệt thự, liền kề tại Sonasea Vân Đồn Harbor City",160.0,,,Nam,Nam,3,2,,,8.0,16
+"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Khe Sanh",200.0,10.0,6.0,,,5,6,Have certificate,Full,18.0,16
+"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường An Sơn",200.0,8.0,8.0,,,5,6,Have certificate,Full,19.5,16
+"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường An Sơn",412.0,19.0,10.0,,,13,16,Have certificate,,31.0,16
+"Hà Nội, Cầu Giấy, Nhà biệt thự, liền kề tại đường Thọ Tháp",189.0,14.0,14.0,,,4,3,Have certificate,,86.0,15
 "Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Anh Dũng II - Sao Đỏ I",396.0,,12.0,,,,,Have certificate,,23.0,9
 "Bình Dương, Bàu Bàng, Nhà biệt thự, liền kề tại Thăng Long Central City",80.0,5.0,25.0,Tây - Nam,,4,3,Have certificate,,2.8,15
 "Hà Nội, Cầu Giấy, Nhà biệt thự, liền kề tại phường Quan Hoa",225.0,7.6,4.0,,,5,5,Have certificate,Full,56.0,9
@@ -62,14 +74,19 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Làng Việt Kiều Châu Âu Euroland",139.0,10.0,12.0,,,5,5,Have certificate,Full,40.0,15
 "Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",100.0,5.0,17.0,Tây,Nam,,,Have certificate,,16.0,15
 "Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",215.0,10.0,17.0,Tây - Nam,,,,,,60.0,15
+"Phú Thọ, Việt Trì, Nhà biệt thự, liền kề tại Palm Manor Việt Trì",98.0,6.0,,,,,,Have certificate,,0.07,15
 "Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",63.0,5.0,13.0,Đông - Nam,Đông - Nam,6,5,Have certificate,Basic,8.5,14
 "Hà Nội, Ba Đình, Nhà biệt thự, liền kề tại The Heritage Láng Hạ",91.0,5.2,8.0,Nam,Nam,10,6,Have certificate,,56.0,8
 "Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại Khu Dân cư Thủ Thiêm Villa",550.0,25.0,16.0,,,,,Have certificate,Full,92.0,14
 "Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại An Phú Shop Villa",238.0,,,,,,,Have certificate,,43.5,14
 "Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại đường Lê Hữu Kiều",890.0,25.0,12.0,,,,,Have certificate,,110.0,6
 "Hòa Bình, Lương Sơn, Nhà biệt thự, liền kề tại Ivory Villas & Resort",600.0,30.0,30.0,Đông - Nam,Nam,5,5,Have certificate,Full,8.5,13
-"Hòa Bình, Lương Sơn, Nhà biệt thự, liền kề tại Ivory Villas & Resort",400.0,,30.0,Đông - Nam,Nam,4,4,Have certificate,Full,6.5,13
-"Hà Nội, Đống Đa, Nhà biệt thự, liền kề tại đường Huỳnh Thúc Kháng",100.0,,,,,,,Have certificate,,78.0,13
+"Bình Dương, Thuận An, Nhà biệt thự, liền kề tại Lavela Garden",70.0,10.0,5.0,Đông - Nam,Tây - Bắc,4,3,Have certificate,,3.1,11
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị mới Văn Phú",860.0,28.0,15.0,,,5,5,Have certificate,Full,,17
+"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Belhomes Hải Phòng",80.0,5.0,12.0,Tây - Bắc,Tây - Bắc,,,Have certificate,,5.05,17
+"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Khu đô thị Mạnh Đức",170.0,8.5,15.0,Đông - Nam,,,,Have certificate,,16.5,17
+"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Khu đô thị Mạnh Đức",175.0,7.0,20.5,Bắc,,,,Have certificate,,18.7,17
+"Hồ Chí Minh, Gò Vấp, Nhà biệt thự, liền kề tại CityLand Park Hills",100.0,5.0,,Nam,Nam,,,Have certificate,,22.0,11
 "Long An, Cần Giuộc, Nhà biệt thự, liền kề tại T&T Millennia City Long Hậu",120.0,6.0,10.0,,,5,4,Have certificate,Basic,6.0,17
 "Khánh Hòa, Nha Trang, Nhà biệt thự, liền kề tại La Tiên Villas",164.8,8.0,10.0,Đông,Đông,3,4,Have certificate,Full,16.3,17
 "Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại The Collectors'",958.0,,12.0,Nam,Nam,6,7,Have certificate,,179.0,8
@@ -78,50 +95,12 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vista Nam An Khánh",400.0,15.0,,,,,,,,100.0,17
 "Hồ Chí Minh, Gò Vấp, Nhà biệt thự, liền kề tại CityLand Park Hills",575.0,125.0,30.0,Nam,Nam,,,Have certificate,,131.0,11
 "Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại Khu Biệt Thự Mỹ Kim 1, 2",320.0,,,Bắc,,,,Have certificate,,170.0,17
-"Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Villa Avenue Vân Trì",1.188,31.0,,,,,,Have certificate,,220.0,17
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vista Nam An Khánh",1.04,,,,,,,Have certificate,,300.0,17
+"Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Villa Avenue Vân Trì",1188.0,31.0,,,,,,Have certificate,,220.0,17
+"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vista Nam An Khánh",1040.0,,,,,,,Have certificate,,300.0,17
 "Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Vinhomes Royal Island",99.0,6.0,,Tây - Nam,,,,Sale contract,,13.3,17
 "Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Vinhomes Royal Island",180.1,,,Đông,,,,Have certificate,,20.92,17
 "Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Vinhomes Royal Island",236.4,7.0,,Đông,,,,Have certificate,,21.83,17
 "Thanh Hóa, Sầm Sơn, Nhà biệt thự, liền kề tại Vlasta Sầm Sơn",198.0,12.0,14.0,,,,,Have certificate,,9.5,17
-"Thanh Hóa, Sầm Sơn, Nhà biệt thự, liền kề tại Vlasta Sầm Sơn",84.5,6.5,27.0,Tây - Nam,Tây - Nam,,,Have certificate,,7.83,16
-"Quảng Ninh, Vân Đồn, Nhà biệt thự, liền kề tại Sonasea Vân Đồn Harbor City",160.0,,,Nam,Nam,3,2,,,8.0,16
-"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Khe Sanh",200.0,10.0,6.0,,,5,6,Have certificate,Full,18.0,16
-"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường An Sơn",200.0,8.0,8.0,,,5,6,Have certificate,Full,19.5,16
-"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường An Sơn",412.0,19.0,10.0,,,13,16,Have certificate,,31.0,16
-"Hà Nội, Cầu Giấy, Nhà biệt thự, liền kề tại đường Thọ Tháp",189.0,14.0,14.0,,,4,3,Have certificate,,86.0,15
-"Đà Nẵng, Sơn Trà, Nhà biệt thự, liền kề tại Sun Symphony Residence",216.2,12.0,15.0,Đông,Đông,,,Have certificate,,63.44,18
-"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Thành phố Giao Lưu",241.0,13.0,21.0,,,6,5,Have certificate,Basic,111.9,18
-"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại đường Thái Ly",813.0,20.0,12.0,,,,,Have certificate,Full,180.0,14
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị mới Phú Lương",220.0,10.0,12.0,,,,,Have certificate,Full,30.0,18
-"Hưng Yên, Văn Lâm, Nhà biệt thự, liền kề tại The Fullton",115.0,,,,,,,,,0.17,18
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại phường Vạn Phúc",50.0,,,,,,,,,23.8,18
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Làng Việt Kiều Châu Âu Euroland",700.0,20.0,20.0,,,5,6,Have certificate,Full,169.0,18
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Làng Việt Kiều Châu Âu Euroland",300.0,20.0,20.0,,,5,6,Have certificate,Full,70.0,18
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại thị trấn Trạm Trôi",39.0,,,,,,,,,7.0,12
-"Kiên Giang, Phú Quốc, Nhà biệt thự, liền kề tại The Residence Phú Quốc",135.0,,,,,3,4,Have certificate,,8.0,18
-"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Essensia Broadway",153.0,12.0,15.0,Đông - Bắc,Đông - Bắc,4,3,,,38.0,18
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Mega Complex - Vinhomes Ocean Park 2",90.0,,35.0,,,,,Have certificate,Basic,17.9,18
-"Hòa Bình, Hòa Bình, Nhà biệt thự, liền kề tại Dasong Village",250.0,,,,,,,Have certificate,,8.5,18
-"Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Villa Avenue Vân Trì",1.188,31.0,,,,,,Have certificate,Basic,195.0,18
-"Bình Dương, Thuận An, Nhà biệt thự, liền kề tại Lavela Garden",70.0,10.0,5.0,Đông - Nam,Tây - Bắc,4,3,Have certificate,,3.1,11
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị mới Văn Phú",860.0,28.0,15.0,,,5,5,Have certificate,Full,,17
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Belhomes Hải Phòng",80.0,5.0,12.0,Tây - Bắc,Tây - Bắc,,,Have certificate,,5.05,17
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Khu đô thị Mạnh Đức",170.0,8.5,15.0,Đông - Nam,,,,Have certificate,,16.5,17
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Khu đô thị Mạnh Đức",175.0,7.0,20.5,Bắc,,,,Have certificate,,18.7,17
-"Hồ Chí Minh, Gò Vấp, Nhà biệt thự, liền kề tại CityLand Park Hills",100.0,5.0,,Nam,Nam,,,Have certificate,,22.0,11
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Khu đô thị Ecopark",80.0,5.0,14.0,Nam,Nam,5,6,Have certificate,,14.0,20
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Khu đô thị Ecopark",90.0,5.5,30.0,Đông,Đông,5,6,Have certificate,,18.5,20
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Thủy Tiên Sky Villas - Ecopark",100.0,5.0,40.0,Bắc,Bắc,5,4,Have certificate,Full,20.9,20
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Khu đô thị Ecopark",80.0,5.0,30.0,Tây - Nam,Tây - Nam,4,4,Have certificate,,17.0,20
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị mới Dương Nội",700.0,20.0,20.0,,,5,5,Have certificate,Full,169.0,20
-"Hải Phòng, Đồ Sơn, Nhà biệt thự, liền kề tại Ruby Coastal City",294.0,,,Đông - Nam,,6,5,Have certificate,Full,0.04,20
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Vlasta Thủy Nguyên",62.5,5.0,15.0,,,4,4,Have certificate,,4.59,20
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Khu đô thị Bắc Sông Cấm",150.5,8.0,14.0,Đông,Đông,5,6,Have certificate,,17.7,20
-"Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại Grand Bay Halong Villas",628.0,,,Đông - Nam,,,,Have certificate,,0.23,20
-"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại đường Nguyễn Văn Hưởng",651.0,9.0,,,,,,Have certificate,Full,115.0,19
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",300.0,,,Đông - Nam,,,,,,0.39,19
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 3",126.0,,,,,,,,,14.4,19
 "Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 3",90.0,,,,,,,,,,19
 "Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Vinhomes Golden City",98.0,7.7,15.0,Tây - Bắc,Tây - Bắc,4,4,Have certificate,,6.0,19
 "Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại phường Xuân La",102.0,,,,,,,,,50.0,19
@@ -130,95 +109,55 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Bình Dương, Thuận An, Nhà biệt thự, liền kề tại Eco Xuân - Lái Thiêu",180.0,,,,,5,5,Have certificate,Full,16.0,19
 "Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại Khu đô thị Vườn Đào",300.0,15.0,,,,5,5,Have certificate,Full,0.5,18
 "Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Thành phố Giao Lưu",129.0,8.0,40.0,,,5,5,Have certificate,Basic,48.0,18
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",150.0,15.0,15.0,Đông - Nam,,2,2,Have certificate,Basic,36.0,22
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",150.0,,,Đông - Nam,Đông,2,2,Have certificate,Full,25.5,22
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",150.0,10.0,15.0,Nam,Đông,5,3,Have certificate,Basic,26.0,22
-"Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Vinhomes Global Gate",269.0,10.0,50.0,Đông - Nam,Đông - Nam,,,Have certificate,,145.0,22
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Aqua Bay Sky Residences",200.0,10.0,24.0,Bắc,Bắc,4,4,Have certificate,Basic,47.0,22
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Vinhomes Royal Island",75.0,5.0,15.0,Tây - Bắc,,6,4,Have certificate,,9.16,22
+"Đà Nẵng, Sơn Trà, Nhà biệt thự, liền kề tại Sun Symphony Residence",216.2,12.0,15.0,Đông,Đông,,,Have certificate,,63.44,18
+"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Thành phố Giao Lưu",241.0,13.0,21.0,,,6,5,Have certificate,Basic,111.9,18
+"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại đường Thái Ly",813.0,20.0,12.0,,,,,Have certificate,Full,180.0,14
+"Hưng Yên, Văn Lâm, Nhà biệt thự, liền kề tại The Fullton",115.0,,,,,,,,,0.17,18
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại phường Vạn Phúc",50.0,,,,,,,,,23.8,18
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Làng Việt Kiều Châu Âu Euroland",700.0,20.0,20.0,,,5,6,Have certificate,Full,169.0,18
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Làng Việt Kiều Châu Âu Euroland",300.0,20.0,20.0,,,5,6,Have certificate,Full,70.0,18
+"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại thị trấn Trạm Trôi",39.0,,,,,,,,,7.0,12
+"Kiên Giang, Phú Quốc, Nhà biệt thự, liền kề tại The Residence Phú Quốc",135.0,,,,,3,4,Have certificate,,8.0,18
+"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Essensia Broadway",153.0,12.0,15.0,Đông - Bắc,Đông - Bắc,4,3,,,38.0,18
+"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Mega Complex - Vinhomes Ocean Park 2",90.0,,35.0,,,,,Have certificate,Basic,17.9,18
+"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.5,,,7,4,Have certificate,,6.0,16
+"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.5,,,7,4,Have certificate,,6.0,16
+"Bình Định, Phù Cát, Nhà biệt thự, liền kề tại Baia Retreat Hội Vân",120.0,,,,,6,6,Have certificate,,4.0,22
+"Bình Định, Phù Cát, Nhà biệt thự, liền kề tại Khu du lịch khách sạn và nghỉ dưỡng Vĩnh Hội",240.0,,,,,3,3,,,12.5,22
+"Bình Định, Phù Cát, Nhà biệt thự, liền kề tại Fusion Maia Quy Nhơn Resort",240.0,,,,,3,3,Sale contract,Basic,9.8,22
+"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Lê Văn Tám",273.0,10.0,,,,7,7,Have certificate,Full,34.0,22
+"Đà Nẵng, Liên Chiểu, Nhà biệt thự, liền kề tại Gami Eco Charm",160.0,,,,,,,,,,22
+"Hà Nội, Cầu Giấy, Nhà biệt thự, liền kề tại Khu nhà ở Học viện Tư pháp",100.0,5.95,,Tây - Bắc,,,,Have certificate,,39.5,22
+"Hà Nội, Hoàng Mai, Nhà biệt thự, liền kề tại phường Đại Kim",78.0,7.0,10.0,Đông - Nam,,5,6,Have certificate,Full,31.5,22
+"Vĩnh Phúc, Phúc Yên, Nhà biệt thự, liền kề tại Thanh Xuân Valley",245.15,12.0,15.0,Đông - Nam,,4,4,Have certificate,,19.0,22
+"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Izumi Gardenia",143.5,7.0,11.0,Nam,Nam,4,3,Have certificate,,7.6,22
 "Bình Dương, Bến Cát, Nhà biệt thự, liền kề tại Golden Center City",125.0,7.5,9.0,Đông - Bắc,,,,Have certificate,,4.8,22
 "Bắc Ninh, Bắc Ninh, Nhà biệt thự, liền kề tại Him Lam Green Park",108.0,,,,,,,,,,22
 "Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",82.0,5.0,17.0,Đông - Bắc,Đông - Nam,5,5,Have certificate,,16.3,21
 "Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Vinhomes Global Gate",63.0,,15.0,,,5,5,Have certificate,,25.0,21
-"Long An, Cần Giuộc, Nhà biệt thự, liền kề tại T&T Millennia City Long Hậu",200.0,,,,,5,,,,14.0,22
-"Kiên Giang, Rạch Giá, Nhà biệt thự, liền kề tại Khu Đô Thị Mới Phú Cường",69.75,4.5,6.0,Tây - Bắc,Đông - Nam,4,3,Have certificate,Basic,2.15,22
-"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",120.0,8.0,30.0,,,8,9,Have certificate,Full,56.0,22
-"Hải Phòng, Hồng Bàng, Nhà biệt thự, liền kề tại Vinhomes Imperia Hải Phòng",405.0,20.0,13.0,Bắc,Bắc,4,4,Have certificate,Full,61.0,22
-"Hải Phòng, Lê Chân, Nhà biệt thự, liền kề tại Vinhomes Marina Cầu Rào 2",347.0,23.0,13.0,Tây - Bắc,,4,4,Have certificate,,42.5,22
-"Hải Phòng, Hồng Bàng, Nhà biệt thự, liền kề tại Vinhomes Imperia Hải Phòng",247.0,17.0,15.0,Nam,Nam,4,4,Have certificate,Full,40.5,22
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Thanh Hà Mường Thanh",100.0,,,,,,,Sale contract,,9.0,22
-"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",168.0,8.0,30.0,,,8,9,Have certificate,Full,89.0,22
-"Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại Khu đô thị Vườn Đào",368.0,20.0,20.0,,,4,4,Have certificate,Full,230.0,22
-"Hưng Yên, Văn Lâm, Nhà biệt thự, liền kề tại Economy City",99.38,5.0,15.5,Nam,Nam,6,4,Sale contract,,11.3,22
-"Cần Thơ, Cái Răng, Nhà biệt thự, liền kề tại đường Lê Trọng Tấn",267.0,10.0,47.0,Đông - Nam,Đông - Nam,3,5,Have certificate,,17.0,22
-"Đà Nẵng, Liên Chiểu, Nhà biệt thự, liền kề tại Gami Eco Charm",160.0,,,,,,,,,,22
-"Đà Nẵng, Hải Châu, Nhà biệt thự, liền kề tại Regal Pavillon Đà Nẵng",120.0,6.0,,Bắc,,,,Have certificate,,15.5,22
-"Hà Nội, Cầu Giấy, Nhà biệt thự, liền kề tại Khu nhà ở Học viện Tư pháp",100.0,5.95,,Tây - Bắc,,,,Have certificate,,39.5,22
-"Hà Nội, Hoàng Mai, Nhà biệt thự, liền kề tại phường Đại Kim",78.0,7.0,10.0,Đông - Nam,,5,6,Have certificate,Full,31.5,22
-"Vĩnh Phúc, Phúc Yên, Nhà biệt thự, liền kề tại Thanh Xuân Valley",245.15,12.0,15.0,Đông - Nam,,4,4,Have certificate,,19.0,22
-"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại đường Huỳnh Thị Đồng",624.0,23.0,12.0,,,2,2,Have certificate,Full,35.0,22
-"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Izumi Canaria",200.0,10.0,,Đông - Nam,Tây - Bắc,4,4,Sale contract,,15.0,22
-"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Izumi Gardenia",143.5,7.0,11.0,Nam,Nam,4,3,Have certificate,,7.6,22
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",70.8,,51.0,Đông - Nam,,3,3,Have certificate,Full,21.0,22
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Sol Lake Villa",250.0,10.0,17.5,Tây - Bắc,Đông - Bắc,6,8,Have certificate,,36.0,22
-"Hải Phòng, Hồng Bàng, Nhà biệt thự, liền kề tại Royal River City",75.0,5.0,7.5,Bắc,Bắc,,,,,10.3,22
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Sol Lake Villa",162.0,9.0,13.0,Tây - Nam,Tây - Nam,6,6,Have certificate,,28.0,22
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị mới An Hưng",406.0,16.0,12.0,Tây - Nam,Tây - Bắc,8,9,Have certificate,,0.3,22
-"Thanh Hóa, Thanh Hóa, Nhà biệt thự, liền kề tại Vinhomes Star City",180.0,,,,,,,Have certificate,,13.0,22
-"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Izumi Gardenia",164.0,8.0,,,,4,4,Have certificate,,11.0,22
-"Hà Nội, Đan Phượng, Nhà biệt thự, liền kề tại Noble Palace Tây Thăng Long",75.0,5.0,,,,4,3,Have certificate,,13.2,22
-"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Lê Văn Tám",273.0,10.0,,,,7,7,Have certificate,Full,34.0,22
-"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Trương Văn Hoàn",602.0,13.0,8.0,,,3,4,Have certificate,Full,26.0,22
-"Bà Rịa Vũng Tàu, Long Điền, Nhà biệt thự, liền kề tại Gold Coast Vũng Tàu",108.0,6.0,68.0,Đông - Nam,,,,Sale contract,,8.0,22
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Khu dân cư Nam Long",240.0,,12.0,,,,,Have certificate,,22.0,22
-"Hà Nội, Thạch Thất, Nhà biệt thự, liền kề tại Hà Nội Tropical Garden",250.0,10.0,13.0,Bắc,Bắc,5,3,Sale contract,,19.2,22
-"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại The Global City",152.0,8.0,17.0,Nam,Nam,5,5,Sale contract,,58.0,22
-"Thừa Thiên Huế, Huế, Nhà biệt thự, liền kề tại đường Trần Thái Tông",194.7,7.9,4.5,Đông - Nam,Đông - Nam,5,6,Have certificate,,8.7,22
-"Hà Nội, Mê Linh, Nhà biệt thự, liền kề tại Khu đô thị CEO Mê Linh",95.0,5.0,16.0,Tây - Bắc,Đông - Nam,,,Have certificate,,,22
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Alumi - Alluvia City",200.0,10.0,13.0,Đông - Bắc,Đông - Bắc,,,Sale contract,,26.8,22
-"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại phường 1",4.768,,,,,,,Have certificate,,650.0,22
-"Long An, Bến Lức, Nhà biệt thự, liền kề tại Eco Retreat Long An",220.0,,,Đông - Bắc,,,,Sale contract,,20.3,22
-"Long An, Cần Giuộc, Nhà biệt thự, liền kề tại T&T Millennia City Long Hậu",90.0,,,,,,,Sale contract,,,22
-"Long An, Cần Giuộc, Nhà biệt thự, liền kề tại T&T Millennia City Long Hậu",90.0,,,,Nam,,,Sale contract,,4.9,22
-"Khánh Hòa, Nha Trang, Nhà biệt thự, liền kề tại Vinhomes Pearl Bay",54.0,4.0,15.0,Đông - Bắc,Đông - Bắc,4,5,Sale contract,,14.23,22
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Vlasta Thủy Nguyên",62.5,5.0,15.0,Nam,Nam,4,4,Have certificate,,4.5,22
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.5,,,7,4,Have certificate,,6.0,16
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.5,,,7,4,Have certificate,,6.0,16
-"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Xô Viết Nghệ Tĩnh",1.4,18.0,5.0,,,7,7,Have certificate,Full,17.0,22
-"Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại Jamona City",85.0,,12.0,,,4,5,,Full,14.0,22
-"Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại Khu đô thị Him Lam Kênh Tẻ",100.0,,,,,,,,,26.5,22
-"Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại Khu dân cư Phú Mỹ",126.0,6.0,,,,4,5,,Basic,20.0,22
-"Bình Định, Phù Cát, Nhà biệt thự, liền kề tại Baia Retreat Hội Vân",120.0,,,,,6,6,Have certificate,,4.0,22
-"Bình Định, Phù Cát, Nhà biệt thự, liền kề tại Khu du lịch khách sạn và nghỉ dưỡng Vĩnh Hội",240.0,,,,,3,3,,,12.5,22
-"Hồ Chí Minh, Tân Bình, Nhà biệt thự, liền kề tại đường Cách Mạng Tháng Tám",462.0,20.0,8.0,,,12,14,Have certificate,Full,125.0,22
-"Long An, Bến Lức, Nhà biệt thự, liền kề tại Eco Retreat Long An",162.0,,,,,,,,,10.97,22
-"Hà Nội, Hoàng Mai, Nhà biệt thự, liền kề tại phường Định Công",150.0,10.0,7.5,,,,,Have certificate,Full,,22
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",270.0,,,Đông - Bắc,,,,,,95.0,22
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",288.0,,,Đông - Nam,,,,Have certificate,,140.0,22
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",288.0,,,Đông - Nam,,,,Have certificate,,73.0,22
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",150.0,,,,,,,Have certificate,,37.0,22
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",288.0,,,Tây - Bắc,,,,,,78.0,22
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",264.0,,,,,,,Have certificate,,100.0,22
-"Bình Định, Phù Cát, Nhà biệt thự, liền kề tại Fusion Maia Quy Nhơn Resort",240.0,,,,,3,3,Sale contract,Basic,9.8,22
+"Long An, Cần Đước, Nhà biệt thự, liền kề tại xã Long Trạch",80.0,,,Đông - Nam,,3,2,Have certificate,Basic,1.9,23
+"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Biệt thự Mimosa - Ecopark",227.0,12.5,13.0,Đông - Nam,Đông - Nam,4,5,Have certificate,Full,43.0,23
+"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Aqua City",117.0,6.0,11.0,Tây - Bắc,Tây - Bắc,3,4,,,5.8,23
+"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại Sola - Đảo Ánh Dương",114.0,12.0,20.0,Nam,Nam,4,5,Sale contract,,48.0,23
+"Khánh Hòa, Cam Lâm, Nhà biệt thự, liền kề tại Vinpearl Bãi Dài",420.0,,,,,2,2,Sale contract,,6.5,23
 "Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",150.0,,,,,2,5,Have certificate,Full,36.0,23
 "Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Khu đô thị mới Nghĩa Đô",350.0,40.0,15.0,Đông - Nam,,6,8,Have certificate,Full,,23
 "Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Izumi City",114.0,6.0,11.0,Tây - Bắc,Tây - Bắc,2,4,Sale contract,,8.06,23
 "Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Goldsilk Complex",126.0,6.75,,,,,,Have certificate,,0.25,23
 "Hồ Chí Minh, Phú Nhuận, Nhà biệt thự, liền kề tại đường Phổ Quang",275.0,10.0,5.0,,,6,7,Have certificate,,64.0,23
+"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",68.0,5.0,40.0,Đông - Bắc,Đông - Bắc,,,Have certificate,Basic,18.5,23
 "Đà Nẵng, Liên Chiểu, Nhà biệt thự, liền kề tại Vinhomes Hải Vân Bay",220.4,,,Đông - Nam,,,,Have certificate,,61.4,15
 "Thanh Hóa, Sầm Sơn, Nhà biệt thự, liền kề tại Vlasta Sầm Sơn",198.0,12.0,13.0,Đông - Bắc,Đông - Nam,7,7,Have certificate,,9.2,23
 "Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Hưng Phú 1",185.0,,15.0,,,4,5,Have certificate,Full,27.0,8
 "Bình Dương, Dĩ An, Nhà biệt thự, liền kề tại Bcons Uni Valley",100.0,13.0,13.0,Đông - Nam,,5,6,Have certificate,,11.83,23
-"Bình Dương, Dĩ An, Nhà biệt thự, liền kề tại Bcons Uni Valley",60.0,4.0,14.0,Đông - Nam,,5,6,Have certificate,,7.5,23
-"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Jade Lake Residence",136.0,,,Đông - Bắc,,,,Have certificate,,39.0,23
 "Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Geleximco - Lê Trọng Tấn",100.0,,,,,5,5,Have certificate,Full,30.0,23
 "Hà Nội, Sơn Tây, Nhà biệt thự, liền kề tại đường Quốc lộ 21A(Quốc lộ 21)",100.0,6.0,,Đông - Nam,,,,Have certificate,,3.0,23
-"Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại The Manor - Hà Nội",168.0,21.0,17.5,,,5,,Have certificate,,88.0,22
 "Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại đường Lạc Long Quân",194.0,13.0,10.0,,,6,,Have certificate,Full,174.0,22
-"Long An, Tân An, Nhà biệt thự, liền kề tại Lavilla Green City",100.0,,,,,4,4,Have certificate,,3.6,22
-"Long An, Bến Lức, Nhà biệt thự, liền kề tại Trần Anh Riverside",112.0,,,,,5,5,Have certificate,,2.9,22
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị mới Phú Lương",500.0,30.0,15.0,,,5,5,Have certificate,Full,80.0,22
-"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",345.0,20.0,30.0,,,8,9,Have certificate,Full,175.0,22
+"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Mega Village",75.0,5.0,12.0,Tây - Bắc,Tây - Bắc,3,3,Have certificate,,8.0,23
+"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",216.0,40.0,20.0,Đông - Bắc,Đông - Nam,5,6,Have certificate,,,23
+"Hà Nội, Thanh Oai, Nhà biệt thự, liền kề tại xã Cự Khê",100.0,5.0,30.0,,,,,Sale contract,,0.1,23
+"Đà Nẵng, Ngũ Hành Sơn, Nhà biệt thự, liền kề tại The Ocean Villas",508.0,,,,,3,,,Full,38.0,17
+"Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại Tuần Châu Marina Hạ Long",500.0,20.0,15.0,Bắc,Đông - Nam,6,3,Have certificate,Full,29.5,23
 "Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại Little Việt Nam",81.3,,,,,,,Have certificate,,11.0,23
 "Hà Nam, Phủ Lý, Nhà biệt thự, liền kề tại Sun Urban City",60.0,,20.0,,,5,5,Have certificate,,4.6,23
 "Hà Nội, Sơn Tây, Nhà biệt thự, liền kề tại Hòa Lạc Premier Residence",78.5,5.0,13.0,Nam,Nam,8,4,Have certificate,,,23
@@ -226,181 +165,37 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại The Terra An Hưng",65.0,6.5,14.0,Đông - Nam,Đông - Nam,10,6,Have certificate,,27.0,23
 "Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại The Terra An Hưng",65.0,6.5,14.0,Tây - Bắc,Tây - Bắc,,,Have certificate,,20.0,23
 "Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Trịnh Hoài Đức",205.0,16.5,5.0,,,8,9,Have certificate,Full,10.0,23
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Alumi - Alluvia City",200.0,10.0,13.0,Đông - Bắc,Đông - Bắc,4,4,Sale contract,,26.0,23
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Alumi - Alluvia City",300.0,15.0,13.0,Đông - Nam,Đông - Nam,,,Sale contract,,55.0,23
-"Hồ Chí Minh, Gò Vấp, Nhà biệt thự, liền kề tại CityLand Park Hills",100.0,5.0,14.0,,,,,Have certificate,Basic,22.0,23
 "Hồ Chí Minh, Gò Vấp, Nhà biệt thự, liền kề tại CityLand Park Hills",100.0,5.0,14.0,Đông,,,,Have certificate,Basic,24.5,23
 "Hà Nội, Sơn Tây, Nhà biệt thự, liền kề tại Hòa Lạc Premier Residence",78.5,,13.0,Nam,,8,4,Have certificate,,4.9,23
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Hoàng Thành Villas",90.0,5.0,12.0,Đông - Bắc,,,,Have certificate,,40.0,23
-"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại Khu dân cư Đông Thủ Thiêm",213.9,10.0,16.0,Đông - Bắc,Đông - Bắc,5,5,Have certificate,Basic,27.0,23
-"Long An, Cần Đước, Nhà biệt thự, liền kề tại xã Long Trạch",80.0,,,Đông - Nam,,3,2,Have certificate,Basic,1.9,23
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Biệt thự Mimosa - Ecopark",227.0,12.5,13.0,Đông - Nam,Đông - Nam,4,5,Have certificate,Full,43.0,23
-"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Aqua City",117.0,6.0,11.0,Tây - Bắc,Tây - Bắc,3,4,,,5.8,23
-"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại Sola - Đảo Ánh Dương",114.0,12.0,20.0,Nam,Nam,4,5,Sale contract,,48.0,23
-"Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại Khu đô thị Nam Thăng Long - Ciputra",140.0,,,,,,,,,51.8,22
-"Khánh Hòa, Cam Lâm, Nhà biệt thự, liền kề tại Vinpearl Bãi Dài",420.0,,,,,2,2,Sale contract,,6.5,23
-"Hà Nội, Hoàng Mai, Nhà biệt thự, liền kề tại The Park Lane Linh Đàm",150.0,,,,,,,,,0.26,24
-"Long An, Tân An, Nhà biệt thự, liền kề tại Lavilla Green City",100.0,,,,,3,,Have certificate,Full,3.6,24
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Vinhomes Grand Park",84.0,7.0,14.0,Tây - Nam,Tây - Nam,,,Have certificate,,16.5,24
-"Bình Thuận, Phan Thiết, Nhà biệt thự, liền kề tại Mũi Né Domaine",520.0,,,,,,,Have certificate,Basic,18.2,24
-"Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại đường Nguyễn Văn Linh",123.0,6.0,8.0,Tây - Nam,Tây - Nam,4,5,Have certificate,Full,23.0,24
-"Hòa Bình, Hòa Bình, Nhà biệt thự, liền kề tại TSG HoaBinh Centre",108.0,6.0,,Tây - Bắc,,,,Have certificate,,5.1,24
-"Hồ Chí Minh, Thủ Đức, Nhà biệt thự, liền kề tại Vạn Phúc 1",102.0,6.0,13.0,Bắc,,5,5,Have certificate,Full,22.2,24
-"Đà Nẵng, Liên Chiểu, Nhà biệt thự, liền kề tại Futa Kim Phát",92.0,5.0,6.0,,,,,Sale contract,,9.1,24
-"Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại Louis City Đại Mỗ",96.0,6.0,,Đông - Nam,,,,,,,24
-"Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại Louis City Đại Mỗ",120.0,6.0,40.0,,,,,Have certificate,,,24
-"Đà Nẵng, Ngũ Hành Sơn, Nhà biệt thự, liền kề tại đường Đa Mặn",200.0,10.2,7.5,,,4,5,Have certificate,Full,,24
-"Hải Phòng, Đồ Sơn, Nhà biệt thự, liền kề tại Hong Kong Town",60.0,5.0,15.0,Đông - Nam,Đông - Nam,,,,,4.2,24
-"Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại Sun Grand City Feria Hạ Long",219.0,,,,,,,Sale contract,Full,28.0,24
-"Hà Nội, Thanh Oai, Nhà biệt thự, liền kề tại xã Cự Khê",200.0,10.0,25.0,Nam,,,,Sale contract,,0.1,23
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại An Khang Villa",300.0,39.0,,,,6,6,Have certificate,Full,70.0,23
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Mega Village",75.0,5.0,12.0,Tây - Bắc,Tây - Bắc,3,3,Have certificate,,8.0,23
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",216.0,40.0,20.0,Đông - Bắc,Đông - Nam,5,6,Have certificate,,,23
-"Hà Nội, Thanh Oai, Nhà biệt thự, liền kề tại xã Cự Khê",100.0,5.0,30.0,,,,,Sale contract,,0.1,23
-"Đà Nẵng, Ngũ Hành Sơn, Nhà biệt thự, liền kề tại The Ocean Villas",508.0,,,,,3,,,Full,38.0,17
-"Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại Tuần Châu Marina Hạ Long",500.0,20.0,15.0,Bắc,Đông - Nam,6,3,Have certificate,Full,29.5,23
-"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại Blanca City",280.0,,,,,5,8,Have certificate,,34.5,24
-"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại Blanca City",200.0,10.0,,,,8,10,Have certificate,,26.0,24
-"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại Blanca City",170.0,10.0,,,,5,7,Have certificate,,26.0,24
-"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại Blanca City",131.0,7.5,,,,9,5,Have certificate,,21.0,24
-"Hải Phòng, Lê Chân, Nhà biệt thự, liền kề tại Vinhomes Marina Cầu Rào 2",165.0,11.0,20.0,Đông - Nam,Đông - Nam,4,4,Have certificate,Full,23.0,24
-"Thái Bình, Thái Bình, Nhà biệt thự, liền kề tại Thái Bình Dragon City",95.0,5.0,45.0,Tây - Nam,Tây - Nam,5,5,Have certificate,,6.6,24
-"Cần Thơ, Thới Lai, Nhà biệt thự, liền kề tại đường Số 10",198.8,4.5,9.0,Đông - Bắc,,,,Have certificate,,1.5,24
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Khu biệt thự Vườn Cam - Orange Graden",300.0,15.0,13.5,Đông - Nam,Đông - Bắc,4,3,,,0.09,24
-"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",216.3,9.0,30.0,,,9,10,Have certificate,Full,72.0,24
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Aqua Bay Sky Residences",189.0,10.0,17.0,,,5,3,Have certificate,Full,43.0,24
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.0,,,7,4,Have certificate,,6.0,18
-"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại SOHO - The Global City",95.0,14.0,,Đông - Nam,,,,Have certificate,,31.0,24
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.5,,,7,4,Have certificate,,6.0,18
-"Đà Nẵng, Sơn Trà, Nhà biệt thự, liền kề tại Sun Ponte Residence Đà Nẵng",150.0,15.0,30.0,Đông - Nam,Đông - Nam,4,3,Have certificate,Full,50.0,25
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại An Lạc Green Symphony",150.0,,,Nam,Đông,,,Have certificate,Full,,25
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Thanh Hà Mường Thanh",100.0,5.0,17.0,,,5,5,,,12.0,25
-"Đà Nẵng, Ngũ Hành Sơn, Nhà biệt thự, liền kề tại Premier Village Đà Nẵng",448.0,16.0,5.5,Nam,Nam,4,4,Have certificate,,73.0,25
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vista Nam An Khánh",261.4,31.84,,,,,,Have certificate,,0.16,25
-"Long An, Cần Giuộc, Nhà biệt thự, liền kề tại T&T Millennia City Long Hậu",120.0,6.0,40.0,,,5,4,Have certificate,,6.0,25
-"Phú Thọ, Việt Trì, Nhà biệt thự, liền kề tại đường Hàm Nghi",100.0,5.0,8.0,Tây - Nam,,,,Have certificate,,6.85,25
-"Long An, Đức Hòa, Nhà biệt thự, liền kề tại Imperia Grand Plaza Đức Hòa",110.0,5.0,20.0,Tây - Nam,,,,Have certificate,,11.0,25
-"Long An, Đức Hòa, Nhà biệt thự, liền kề tại Vinhomes Green City",150.0,10.0,15.0,,,,,Have certificate,,15.0,25
-"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Huyền Trân Công Chúa",360.0,11.8,10.0,,,14,14,Have certificate,,20.0,16
-"Đồng Nai, Nhơn Trạch, Nhà biệt thự, liền kề tại KĐT Detaco Nhơn Trạch (DTA City)",100.0,5.0,17.0,Đông - Bắc,,2,2,Have certificate,,2.55,22
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.0,,,6,4,Have certificate,,,20
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Vlasta Thủy Nguyên",67.5,5.0,15.0,Đông - Nam,Đông - Nam,,,Have certificate,,0.09,24
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Hoàng Huy New City",90.0,6.0,36.0,Đông - Nam,Đông - Nam,6,5,Have certificate,,0.14,24
-"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",105.0,,,,,,,,,15.31,24
-"Kiên Giang, Phú Quốc, Nhà biệt thự, liền kề tại Sun Grand City New An Thới",120.0,6.0,12.5,Đông - Nam,Đông - Nam,10,10,Have certificate,Basic,9.5,24
-"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",75.0,,,,,,,,,15.0,24
-"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",270.0,13.5,,,,,,,,30.0,24
-"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",280.0,,,,,,,,,32.0,24
-"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại Blanca City",175.0,,,,,5,5,Have certificate,,24.0,24
-"Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Vinhomes Golden City",170.0,10.0,20.0,,,,,,,9.6,25
-"Long An, Bến Lức, Nhà biệt thự, liền kề tại Eco Retreat Long An",402.4,,,Đông - Nam,,,,,,39.62,25
-"Hồ Chí Minh, Quận 12, Nhà biệt thự, liền kề tại đường Võ Thị Liễu",51.0,4.2,12.0,Đông - Nam,,7,7,Have certificate,Full,5.79,25
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Eurowindow Twin Parks",192.0,,,,,,,Have certificate,Basic,33.0,25
-"Vĩnh Phúc, Phúc Yên, Nhà biệt thự, liền kề tại Flamingo Đại Lải Resort",150.0,,,,,3,4,Have certificate,,13.9,25
-"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Hoàng Hoa Thám",488.0,18.0,5.0,,,18,18,Have certificate,Full,15.0,25
-"Bình Định, Phù Cát, Nhà biệt thự, liền kề tại The Ocean Villas Quy Nhơn",600.0,15.0,,,,4,5,Have certificate,,28.5,25
-"Bình Dương, Dĩ An, Nhà biệt thự, liền kề tại Bcons Uni Valley",86.0,,,,,,,,,10.9,25
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Bạch Đằng 1288",126.0,30.0,,Đông,,,,,,11.0,25
-"Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại Iconia Lakeside",79.0,5.0,10.0,Tây - Bắc,Đông - Nam,4,4,Have certificate,,34.0,25
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại The Manhattan - Vinhomes Grand Park",144.0,8.0,9.0,Đông - Bắc,Đông - Bắc,5,5,Have certificate,Full,29.5,25
 "Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Khe Sanh",200.5,10.0,5.0,,,5,6,Have certificate,Full,18.0,25
 "Kiên Giang, Phú Quốc, Nhà biệt thự, liền kề tại Sun Grand City New An Thới",90.0,7.5,13.5,Đông,Đông,10,10,Have certificate,,10.6,25
-"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại SOHO - The Global City",95.0,5.0,14.0,Đông - Nam,Đông - Nam,,,Have certificate,,34.6,25
 "Long An, Cần Giuộc, Nhà biệt thự, liền kề tại T&T Millennia City Long Hậu",90.0,,,,,,,,,5.6,25
 "Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Ecopark Grand - The Island",600.0,,,Tây - Bắc,,,,Sale contract,,180.0,25
 "Hải Phòng, Lê Chân, Nhà biệt thự, liền kề tại Waterfront City",270.0,,,,,5,5,Have certificate,Full,35.0,25
 "Đà Nẵng, Ngũ Hành Sơn, Nhà biệt thự, liền kề tại đường Lưu Văn Lang",150.0,15.0,,Đông,Đông,,,Have certificate,,15.0,25
 "Bà Rịa Vũng Tàu, Phú Mỹ, Nhà biệt thự, liền kề tại Salacia Villas",85.0,5.0,15.0,,,4,3,Have certificate,,4.8,25
 "Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Thanh Hà Mường Thanh",90.0,5.0,25.0,,,,,Sale contract,,0.13,25
-"Hồ Chí Minh, Hóc Môn, Nhà biệt thự, liền kề tại Vinhomes Saigon Park",172.0,,,,,4,3,Have certificate,,34.6,23
-"Long An, Đức Hòa, Nhà biệt thự, liền kề tại Bella Villa",136.0,,,,,5,5,,Basic,5.6,26
-"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Essensia Broadway",154.0,,,,,4,6,Have certificate,,,26
-"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Zeitgeist City",119.0,7.0,12.0,Tây - Nam,Tây - Nam,4,,Sale contract,,17.0,26
-"Bình Dương, Thủ Dầu Một, Nhà biệt thự, liền kề tại đường Đồng Khởi",200.0,12.0,10.0,,,5,6,,,15.0,26
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.0,,,6,4,Have certificate,,,21
-"Thanh Hóa, Thanh Hóa, Nhà biệt thự, liền kề tại phường Đông Hải",75.0,5.0,9.25,Bắc,,,,Have certificate,Full,4.68,25
-"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",284.0,,,,,,,,,28.1,25
-"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",75.0,,,,,,,,,10.1,25
-"Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại Khu đô thị Nam Thăng Long - Ciputra",428.0,,,Đông - Bắc,,6,4,Sale contract,,,25
-"Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại Khu đô thị Nam Thăng Long - Ciputra",638.3,47.0,40.0,Tây - Nam,,6,,Have certificate,,,25
-"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Jade Square",260.0,45.0,30.0,,,,,Sale contract,,,25
-"Hồ Chí Minh, Quận 1, Nhà biệt thự, liền kề tại Vinhomes Golden River Ba Son",225.0,,,,,,,Have certificate,,249.9,25
-"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại đường Huỳnh Thị Đồng",624.0,,12.0,,,2,2,Have certificate,,35.5,25
-"Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Vinhomes Golden City",67.5,4.5,15.0,Tây - Bắc,,,,Sale contract,,5.58,25
-"Hải Phòng, Hồng Bàng, Nhà biệt thự, liền kề tại Vinhomes Imperia Hải Phòng",96.0,8.0,13.0,Đông - Bắc,Đông - Bắc,4,5,Have certificate,Full,15.5,25
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Aqua Bay Sky Residences",244.6,12.0,40.0,,,4,4,Have certificate,Basic,50.0,25
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Thanh Hà Mường Thanh",200.0,10.0,14.0,Tây,,6,6,,Basic,16.0,25
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Eurowindow Twin Parks",75.0,,16.0,Tây - Bắc,,,,,,16.0,25
-"Hồ Chí Minh, Hóc Môn, Nhà biệt thự, liền kề tại Vinhomes Saigon Park",60.0,,,Đông - Bắc,,5,4,Sale contract,,4.0,26
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",642.0,,,,,,,Sale contract,,81.0,26
-"Long An, Cần Giuộc, Nhà biệt thự, liền kề tại The Sol City",75.0,13.0,50.0,Tây - Bắc,Tây - Bắc,3,3,Have certificate,Basic,3.55,26
-"Cần Thơ, Cái Răng, Nhà biệt thự, liền kề tại Khu dân cư Phú An",62.0,4.0,6.0,,,,,Have certificate,,3.7,26
-"Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại Jamona Golden Silk",133.2,7.4,,Nam,,,,,Full,20.0,26
-"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Lavila Kiến Á - Nhà Bè",96.8,5.5,,Tây - Bắc,,4,,Have certificate,,12.0,26
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vista Nam An Khánh",1.05,24.0,16.0,Đông,,,,Have certificate,,,26
-"Hà Nội, Mê Linh, Nhà biệt thự, liền kề tại Khu đô thị CEO Mê Linh",90.0,5.0,21.0,Nam,,,,Have certificate,,9.9,26
-"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Thành phố Giao Lưu",220.0,11.0,13.0,Đông - Bắc,Đông - Bắc,4,5,Have certificate,Full,95.0,26
-"Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại Khu đô thị Nam Thăng Long - Ciputra",180.0,9.0,11.0,Bắc,,5,5,Have certificate,Full,69.5,26
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",100.0,5.0,17.0,Đông - Nam,,,,Have certificate,,16.0,26
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị mới Văn Quán",300.0,30.0,39.0,,,5,6,Have certificate,Full,90.0,26
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị mới Văn Phú",220.0,,12.0,,,5,5,Have certificate,,36.0,26
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị mới Dương Nội",560.0,39.0,20.5,,,5,5,Have certificate,Full,150.0,26
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Hoàng Thành Villas",120.0,22.0,15.0,,,5,5,Have certificate,Full,40.0,26
-"Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Vinhomes Golden City",67.5,4.5,15.0,Tây - Bắc,,,,Sale contract,,5.58,26
-"Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại Khu đô thị mới Phùng Khoang",148.0,7.1,15.0,Bắc,Bắc,6,7,Have certificate,Full,31.9,26
-"Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Vinhomes Golden City",170.0,10.0,20.0,,,,,,,9.6,26
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Thanh Hà Mường Thanh",100.0,5.0,14.0,,,6,5,,,7.9,26
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Đông Dương Residence",80.0,,12.0,,,,,Have certificate,,10.5,23
+"Đà Nẵng, Sơn Trà, Nhà biệt thự, liền kề tại Sun Ponte Residence Đà Nẵng",150.0,15.0,30.0,Đông - Nam,Đông - Nam,4,3,Have certificate,Full,50.0,25
+"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại An Lạc Green Symphony",150.0,,,Nam,Đông,,,Have certificate,Full,,25
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Thanh Hà Mường Thanh",100.0,5.0,17.0,,,5,5,,,12.0,25
+"Đà Nẵng, Ngũ Hành Sơn, Nhà biệt thự, liền kề tại Premier Village Đà Nẵng",448.0,16.0,5.5,Nam,Nam,4,4,Have certificate,,73.0,25
+"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.0,,,6,4,Have certificate,,,22
+"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",60.0,5.0,13.0,Tây - Bắc,,6,4,Sale contract,Full,9.8,27
+"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Khu dân cư 6B Intresco",312.0,,,,,,,,,25.0,26
+"Hà Nội, Đan Phượng, Nhà biệt thự, liền kề tại Vinhomes Wonder City",260.0,26.0,30.0,Đông - Nam,,,,Sale contract,,67.0,26
+"Thanh Hóa, Sầm Sơn, Nhà biệt thự, liền kề tại FLC Lux City Samson",216.0,,,,,7,7,Have certificate,Full,12.6,26
+"Hà Nội, Thạch Thất, Nhà biệt thự, liền kề tại Xanh Villas",378.22,21.0,,Đông - Nam,,6,8,,,,26
 "Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại La Vida Residences",78.0,5.0,10.0,Đông - Bắc,Tây - Nam,4,4,Have certificate,,6.0,26
 "Hà Nội, Ba Đình, Nhà biệt thự, liền kề tại Grandeur Palace Giảng Võ",239.0,,,,,,,,,228.0,26
 "Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Centa Riverside",322.0,,,,,,,,,28.0,26
 "Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại La Vida Residences",170.0,10.0,12.0,Đông - Nam,Tây - Bắc,4,5,Have certificate,,13.0,26
 "Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.0,,,6,4,Have certificate,,6.0,20
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Vlasta Thủy Nguyên",62.5,5.0,15.0,,,,,,,4.7,26
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.0,,,6,4,Have certificate,,6.0,20
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",81.0,4.5,17.0,Đông - Bắc,,5,4,Have certificate,Full,,26
 "Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại Vinhomes Gardenia",285.0,15.0,30.0,,,4,5,Have certificate,,200.0,26
 "Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại Khu đô thị Nam Long",192.0,,,,,,,Have certificate,,27.0,26
 "Khánh Hòa, Nha Trang, Nhà biệt thự, liền kề tại Charmora City",180.0,,,,,,,,,16.8,26
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.0,,,Tây,,4,5,Sale contract,,18.8,26
-"Thừa Thiên Huế, Huế, Nhà biệt thự, liền kề tại An Cựu City",126.0,7.0,26.0,Đông - Bắc,Đông - Bắc,4,4,Have certificate,,8.6,26
-"Bà Rịa Vũng Tàu, Xuyên Mộc, Nhà biệt thự, liền kề tại Ixora Hồ Tràm",371.0,,,,,3,4,,,31.0,26
-"Hà Nội, Thường Tín, Nhà biệt thự, liền kề tại Khu đô thị thể thao Olympic",60.0,,,,,,,,,,26
-"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Izumi Canaria",246.0,12.0,,,,4,3,Sale contract,,17.0,26
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Centa Riverside",480.0,16.0,61.0,Nam,Nam,6,7,,,69.0,26
-"Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Vinhomes Global Gate",145.0,,,,,,,Have certificate,,59.0,26
-"Đồng Nai, Long Thành, Nhà biệt thự, liền kề tại Khu đô thị ID Junction",115.5,,,,,,,Have certificate,,7.6,26
-"Quảng Ninh, Quảng Yên, Nhà biệt thự, liền kề tại Vinhomes Global Gate Hạ Long",60.0,5.0,17.0,,,,,,,5.5,26
-"Hà Nam, Phủ Lý, Nhà biệt thự, liền kề tại Osaka Garden",216.0,12.0,12.0,Bắc,,,,Have certificate,,0.06,26
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",58.0,,,,,,,Have certificate,,9.1,22
-"Thanh Hóa, Thanh Hóa, Nhà biệt thự, liền kề tại Central Riverside Thanh Hóa",85.0,,67.0,Đông - Bắc,,6,5,Have certificate,,5.89,22
-"Trà Vinh, Trà Vinh, Nhà biệt thự, liền kề tại đường Dương Quang Đông",295.0,10.0,6.0,Bắc,Bắc,3,3,Have certificate,Full,6.5,27
-"Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại Nam Phú Villas",288.0,12.0,,,,,,Have certificate,,35.0,27
-"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại Sola - Đảo Ánh Dương",114.0,,,,,5,6,,,,27
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Thanh Hà Mường Thanh",372.93,12.0,25.0,,,8,6,,,,27
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 3",100.0,5.0,20.0,,,,,Have certificate,,15.6,21
-"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Aqua City",97.5,,,,,3,4,Sale contract,Basic,5.2,27
-"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Sapphire Gem Hải Phòng",150.0,7.0,30.0,Nam,Đông,4,4,Have certificate,,8.0,27
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.0,,,6,4,Have certificate,,,22
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",60.0,5.0,13.0,Tây - Bắc,,6,4,Sale contract,Full,9.8,27
-"Ninh Bình, Ninh Bình, Nhà biệt thự, liền kề tại đường Lưu Cơ",248.1,9.0,7.0,Bắc,,,,Have certificate,Basic,22.0,26
-"Long An, Cần Giuộc, Nhà biệt thự, liền kề tại T&T Millennia City Long Hậu",120.0,6.0,40.0,,,5,4,Have certificate,,6.0,26
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Dương Hồng Garden House",100.0,5.0,,,,,,Have certificate,,9.5,26
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Khu dân cư 6B Intresco",312.0,,,,,,,,,25.0,26
-"Hà Nội, Đan Phượng, Nhà biệt thự, liền kề tại Vinhomes Wonder City",260.0,26.0,30.0,Đông - Nam,,,,Sale contract,,67.0,26
-"Thanh Hóa, Sầm Sơn, Nhà biệt thự, liền kề tại FLC Lux City Samson",216.0,,,,,7,7,Have certificate,Full,12.6,26
-"Hà Nội, Mê Linh, Nhà biệt thự, liền kề tại Pearl Rivera Hà Nội",102.0,6.0,15.0,Đông,Nam,,,Have certificate,,,22
-"Hà Nội, Thạch Thất, Nhà biệt thự, liền kề tại Xanh Villas",378.22,21.0,,Đông - Nam,,6,8,,,,26
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại The Meadow Bình Chánh",85.0,5.0,,,,5,5,Sale contract,Basic,7.0,28
-"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Sunshine City",228.0,,,,,5,4,Have certificate,,0.42,27
-"Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Vinhomes Global Gate",63.0,,,,,5,4,Have certificate,,16.9,27
-"Nghệ An, Hưng Nguyên, Nhà biệt thự, liền kề tại Casa Flora",120.0,,,Đông - Nam,,5,5,Sale contract,,,27
-"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes The Harmony",90.0,,,,,5,3,,,45.0,27
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",97.5,7.5,,Tây - Nam,Tây - Nam,3,4,Have certificate,Full,20.0,22
-"Hà Nội, Quốc Oai, Nhà biệt thự, liền kề tại xã Phú Cát",303.0,12.0,7.0,Đông - Bắc,Đông - Bắc,3,3,Have certificate,,0.08,27
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",62.5,5.0,13.0,Tây - Bắc,Tây - Bắc,,,Have certificate,,8.4,26
-"Hồ Chí Minh, Thủ Đức, Nhà biệt thự, liền kề tại Sunlake Villas",160.0,,,,,5,,Have certificate,,42.0,27
 "Hưng Yên, Ân Thi, Nhà biệt thự, liền kề tại The Gateway City",75.0,,,Đông - Nam,,,,Have certificate,,,27
+"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",75.0,,,,,,,,,15.0,27
+"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại đường Số 57",183.0,,,,,4,5,,,38.0,29
 "Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",75.0,,,,,,,,,15.0,27
 "Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",380.0,,,,,,,,,47.0,27
 "Hà Nội, Ba Đình, Nhà biệt thự, liền kề tại The Heritage Láng Hạ",120.0,5.2,12.0,,,6,6,Have certificate,Full,64.0,27
@@ -411,7 +206,51 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại La Casta Văn Phú",73.0,5.0,20.0,Tây - Nam,Tây - Nam,5,4,Have certificate,Full,21.9,27
 "Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Jade Lake Residence",102.0,,,,,,,,,0.3,27
 "Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Vinhomes Royal Island",101.9,6.0,,,,6,4,Have certificate,,13.07,27
+"Hà Nam, Phủ Lý, Nhà biệt thự, liền kề tại Osaka Garden",216.0,12.0,12.0,Bắc,,,,Have certificate,,0.06,26
+"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",58.0,,,,,,,Have certificate,,9.1,22
+"Trà Vinh, Trà Vinh, Nhà biệt thự, liền kề tại đường Dương Quang Đông",295.0,10.0,6.0,Bắc,Bắc,3,3,Have certificate,Full,6.5,27
+"Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại Nam Phú Villas",288.0,12.0,,,,,,Have certificate,,35.0,27
+"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại Sola - Đảo Ánh Dương",114.0,,,,,5,6,,,,27
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Thanh Hà Mường Thanh",372.93,12.0,25.0,,,8,6,,,,27
+"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 3",100.0,5.0,20.0,,,,,Have certificate,,15.6,21
+"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Aqua City",97.5,,,,,3,4,Sale contract,Basic,5.2,27
+"Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Sapphire Gem Hải Phòng",150.0,7.0,30.0,Nam,Đông,4,4,Have certificate,,8.0,27
+"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,5.0,17.0,,,6,4,Have certificate,,,22
+"Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Vinhomes Global Gate",65.0,5.0,13.0,Đông - Bắc,Đông - Bắc,5,5,Sale contract,,18.0,28
+"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",100.0,,12.0,,,,,Have certificate,,15.7,24
+"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",100.0,,,,,,,Have certificate,,15.5,24
+"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",100.0,5.0,12.0,,,,,Have certificate,,0.15,24
+"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Izumi Canaria",164.0,8.0,,Bắc,,3,3,Sale contract,,11.83,28
+"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Dragon Parc",168.0,,,,,5,5,,Basic,18.8,28
+"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Khu biệt thự Ngân Long",210.0,,60.0,,,5,5,Have certificate,,27.5,28
+"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Khu đô thị Mạnh Đức",175.0,7.0,22.0,,,4,4,Have certificate,,18.6,22
+"Hà Nội, Ba Đình, Nhà biệt thự, liền kề tại phường Đội Cấn",51.0,,3.0,Đông - Nam,Đông - Nam,8,8,Have certificate,Full,16.8,28
+"Long An, Cần Giuộc, Nhà biệt thự, liền kề tại T&T Millennia City Long Hậu",120.0,,,,,4,3,Sale contract,,6.0,28
+"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Dự án Thuận An",87.0,6.0,10.5,Đông - Nam,Đông - Nam,4,6,Have certificate,Full,19.5,28
+"Phú Yên, Tuy Hòa, Nhà biệt thự, liền kề tại phường Phú Đông",586.5,25.0,15.5,Tây,Tây,2,2,Have certificate,Full,13.5,26
+"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",181.8,9.0,50.0,Đông - Nam,,4,5,,,27.8,28
+"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",428.0,40.0,20.0,Đông - Bắc,Đông - Nam,5,6,Have certificate,,,23
+"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",100.0,,,,,,,,,12.7,28
+"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại The Venica",262.0,10.0,24.0,Đông - Bắc,Đông - Bắc,4,5,Have certificate,Full,56.0,28
+"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Lucasta Villa",175.0,10.0,20.0,Nam,Nam,4,5,Have certificate,,26.0,28
+"Hải Phòng, Hồng Bàng, Nhà biệt thự, liền kề tại Vinhomes Imperia Hải Phòng",405.0,,,,,,,Have certificate,Basic,,28
+"Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại Grand Bay Halong Villas",659.0,,,,,,,Have certificate,,,28
+"Hồ Chí Minh, Củ Chi, Nhà biệt thự, liền kề tại xã Tân Thông Hội",2750.0,45.0,,Tây - Nam,,5,3,Have certificate,,13.0,28
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại đường Trần Phú",38.0,3.6,7.0,,,3,4,Have certificate,Full,13.0,23
+"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes The Harmony",391.0,,,,,6,5,Have certificate,,300.0,28
 "Long An, Cần Giuộc, Nhà biệt thự, liền kề tại T&T Millennia City Long Hậu",120.0,6.0,12.0,Nam,,,,Have certificate,,5.65,28
+"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,,,,,,,,,,29
+"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Jade Lake Residence",200.0,10.0,60.0,,,,,,,,26
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Kiến Hưng Luxury",67.5,5.0,12.0,Tây - Nam,Tây - Nam,5,5,Have certificate,Full,20.0,29
+"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại The Manhattan Glory - Vinhomes Grand Park",96.0,8.0,13.0,Đông - Bắc,,,,Have certificate,,15.5,29
+"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",244.0,,,Tây,,5,4,Sale contract,,36.0,29
+"Hà Nội, Thanh Oai, Nhà biệt thự, liền kề tại Phúc Anh Riverside",67.5,4.5,12.0,,,,,Have certificate,,11.5,29
+"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại đường Số 14",309.0,9.3,,,,,,,,27.0,29
+"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại The Manhattan Glory - Vinhomes Grand Park",84.0,7.0,13.0,Đông - Bắc,,,,Sale contract,,13.8,29
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Thanh Hà Mường Thanh",200.0,10.0,14.0,,,7,6,,Basic,0.08,29
+"Hà Nội, Đan Phượng, Nhà biệt thự, liền kề tại Noble Palace Tây Thăng Long",63.0,,30.0,Tây - Bắc,,,,Sale contract,,,29
+"Hà Nội, Hoàng Mai, Nhà biệt thự, liền kề tại Gelexia Riverside",70.0,4.0,,,,4,4,Have certificate,Full,21.0,23
+"Đà Nẵng, Ngũ Hành Sơn, Nhà biệt thự, liền kề tại Fusion Resort & Villas Da Nang",537.0,,,Đông,,2,2,Have certificate,Full,34.9,29
 "Hà Nội, Đan Phượng, Nhà biệt thự, liền kề tại The Phoenix Garden",200.0,8.0,,Đông - Bắc,,,,Sale contract,,0.08,25
 "Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại Blanca City",150.0,,,,,,,Sale contract,,34.5,29
 "Phú Yên, Đông Hòa, Nhà biệt thự, liền kề tại đường Hùng Vương",170.0,7.5,14.0,Đông,,3,1,Have certificate,,10.0,29
@@ -420,45 +259,6 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Bắc Giang, Việt Yên, Nhà biệt thự, liền kề tại Khang Phát Century",90.0,,,,,,,Have certificate,Full,,29
 "Thanh Hóa, Thanh Hóa, Nhà biệt thự, liền kề tại Eurowindow Light City",96.0,6.0,17.0,Đông - Bắc,Đông - Bắc,,,Sale contract,,6.08,29
 "Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Làng Việt Kiều Châu Âu Euroland",192.0,10.0,24.0,Bắc,,5,5,Have certificate,Full,,29
-"Lâm Đồng, Đà Lạt, Nhà biệt thự, liền kề tại đường Đa Minh",211.0,15.0,6.0,,,4,3,Have certificate,Full,15.0,29
-"Phú Yên, Tuy Hòa, Nhà biệt thự, liền kề tại phường Phú Đông",586.5,25.0,15.5,Tây,Tây,2,2,Have certificate,Full,13.5,26
-"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",181.8,9.0,50.0,Đông - Nam,,4,5,,,27.8,28
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",428.0,40.0,20.0,Đông - Bắc,Đông - Nam,5,6,Have certificate,,,23
-"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",100.0,,,,,,,,,12.7,28
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại The Venica",262.0,10.0,24.0,Đông - Bắc,Đông - Bắc,4,5,Have certificate,Full,58.0,28
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Lucasta Villa",175.0,10.0,20.0,Nam,Nam,4,5,Have certificate,,26.0,28
-"Hải Phòng, Hồng Bàng, Nhà biệt thự, liền kề tại Vinhomes Imperia Hải Phòng",405.0,,,,,,,Have certificate,Basic,,28
-"Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại Grand Bay Halong Villas",659.0,,,,,,,Have certificate,,,28
-"Hồ Chí Minh, Củ Chi, Nhà biệt thự, liền kề tại xã Tân Thông Hội",2.75,,,Tây - Nam,,5,3,Have certificate,,13.0,28
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại đường Trần Phú",38.0,3.6,7.0,,,3,4,Have certificate,Full,13.0,23
-"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes The Harmony",391.0,,,,,6,5,Have certificate,,300.0,28
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Belhomes Từ Sơn",75.0,5.0,15.0,,,3,3,Have certificate,,5.6,23
-"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Jade Lake Residence",122.0,6.0,24.0,,,,,Have certificate,,53.0,29
-"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Jade Lake Residence",102.0,6.0,60.0,Tây - Nam,Tây - Nam,,,Have certificate,,,26
-"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Amelie Villa Phú Mỹ Hưng",125.6,6.0,12.0,Tây - Nam,,,,Have certificate,,14.1,29
-"Đà Nẵng, Liên Chiểu, Nhà biệt thự, liền kề tại The Lumia Danang",100.0,,,,,5,5,,,5.6,29
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại VSIP Bắc Ninh",75.0,,,,,,,Have certificate,,,29
-"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại The Maris Vũng Tàu",600.0,20.0,20.0,Đông - Nam,Tây - Bắc,5,5,Have certificate,Full,,29
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Vietsing Square",75.0,,,,,,,,,,29
-"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Jade Lake Residence",200.0,10.0,60.0,,,,,,,,26
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Kiến Hưng Luxury",67.5,5.0,12.0,Tây - Nam,Tây - Nam,5,5,Have certificate,Full,20.0,29
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại The Manhattan Glory - Vinhomes Grand Park",96.0,8.0,13.0,Đông - Bắc,,,,Have certificate,,15.5,29
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",244.0,,,Tây,,5,4,Sale contract,,36.0,29
-"Thanh Hóa, Thanh Hóa, Nhà biệt thự, liền kề tại Khu đô thị Xuân Hưng",60.0,5.0,17.5,Nam,,4,3,Have certificate,,4.59,22
-"Hà Nội, Thanh Oai, Nhà biệt thự, liền kề tại Phúc Anh Riverside",67.5,4.5,12.0,,,,,Have certificate,,11.5,29
-"Hồ Chí Minh, Quận 2, Nhà biệt thự, liền kề tại đường Số 14",309.0,9.3,,,,,,,,27.0,29
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại The Manhattan Glory - Vinhomes Grand Park",84.0,7.0,13.0,Đông - Bắc,,,,Sale contract,,13.8,29
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Khu đô thị Thanh Hà Mường Thanh",200.0,10.0,14.0,,,7,6,,Basic,0.08,29
-"Hà Nội, Đan Phượng, Nhà biệt thự, liền kề tại Noble Palace Tây Thăng Long",63.0,,30.0,Tây - Bắc,,,,Sale contract,,,29
-"Hà Nội, Hoàng Mai, Nhà biệt thự, liền kề tại Gelexia Riverside",70.0,4.0,,,,4,4,Have certificate,Full,21.0,23
-"Đà Nẵng, Ngũ Hành Sơn, Nhà biệt thự, liền kề tại Fusion Resort & Villas Da Nang",537.0,,,Đông,,2,2,Have certificate,Full,34.9,29
-"Hải Phòng, Ngô Quyền, Nhà biệt thự, liền kề tại phố Đà Nẵng",206.0,9.0,7.0,Tây - Nam,Tây - Nam,4,5,Have certificate,,18.2,29
-"Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại đường Trung Văn",147.0,10.0,20.0,,,6,6,Have certificate,Full,70.0,29
-"Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại Grand Bay Town House",104.0,6.5,,Đông - Nam,,,,,,,29
-"Hà Nội, Ba Đình, Nhà biệt thự, liền kề tại Grandeur Palace Giảng Võ",287.0,,,,,,,Have certificate,,,29
-"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Avenue Garden",342.0,,,,,,,Have certificate,,,29
-"Khánh Hòa, Cam Ranh, Nhà biệt thự, liền kề tại ParaSol",120.0,,,,,,,Have certificate,,4.2,4
-"Hồ Chí Minh, Hóc Môn, Nhà biệt thự, liền kề tại Vinhomes Saigon Park",60.0,,,,,,,Have certificate,Basic,6.0,21
 "Nghệ An, Hưng Nguyên, Nhà biệt thự, liền kề tại Casa Flora",102.0,6.0,12.0,Đông,,4,3,Have certificate,,5.4,29
 "Hà Nội, Quốc Oai, Nhà biệt thự, liền kề tại New House City",290.0,15.0,13.0,Tây - Bắc,Tây - Bắc,5,5,Have certificate,,,29
 "Hưng Yên, Văn Lâm, Nhà biệt thự, liền kề tại The Fullton",300.0,17.0,,,,,,,,50.0,29
@@ -472,12 +272,13 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Đà Nẵng, Sơn Trà, Nhà biệt thự, liền kề tại đường Phan Bá Vành",150.0,,10.5,,,4,,Have certificate,Full,22.0,29
 "Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại Biệt thự lâu đài Chateau",759.8,,19.0,Tây - Bắc,,,,Have certificate,,300.0,29
 "Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 3",60.0,,,,,5,5,,,10.5,29
-"Long An, Bến Lức, Nhà biệt thự, liền kề tại Solar City",75.0,,,,,,,Have certificate,,0.03,30
-"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại PHC Complex 158 Nguyễn Sơn",87.5,5.0,11.0,Tây - Bắc,Tây - Bắc,,,Have certificate,,35.0,30
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vista Nam An Khánh",633.0,,,,,6,6,Have certificate,Full,0.12,30
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Làng Việt Kiều Châu Âu Euroland",260.0,15.0,12.0,,,5,5,Have certificate,Full,60.0,30
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Làng Việt Kiều Châu Âu Euroland",180.0,,15.0,,,5,5,Have certificate,Full,,30
-"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Aqua City",200.0,10.0,14.0,Đông - Bắc,,4,4,Sale contract,,15.9,30
+"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Belhomes Từ Sơn",75.0,5.0,15.0,,,3,3,Have certificate,,5.6,23
+"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Jade Lake Residence",122.0,6.0,24.0,,,,,Have certificate,,53.0,29
+"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Jade Lake Residence",102.0,6.0,60.0,Tây - Nam,Tây - Nam,,,Have certificate,,,26
+"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Amelie Villa Phú Mỹ Hưng",125.6,6.0,12.0,Tây - Nam,,,,Have certificate,,14.1,29
+"Đà Nẵng, Liên Chiểu, Nhà biệt thự, liền kề tại The Lumia Danang",100.0,,,,,5,5,,,5.6,29
+"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại VSIP Bắc Ninh",75.0,,,,,,,Have certificate,,,29
+"Bà Rịa Vũng Tàu, Vũng Tàu, Nhà biệt thự, liền kề tại The Maris Vũng Tàu",600.0,20.0,20.0,Đông - Nam,Tây - Bắc,5,5,Have certificate,Full,,29
 "Quảng Ngãi, Quảng Ngãi, Nhà biệt thự, liền kề tại đường Lê Thánh Tôn",105.0,7.5,10.0,Đông - Nam,Đông - Nam,4,4,Have certificate,Full,6.8,30
 "Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Centa Riverside",225.0,10.0,15.2,Nam,Nam,5,3,Have certificate,Full,18.55,30
 "Bắc Ninh, Yên Phong, Nhà biệt thự, liền kề tại Kim Đô City",100.0,5.0,15.0,Đông,Đông,,,Have certificate,,,30
@@ -489,15 +290,15 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại đường Lê Đức Thọ",105.0,7.0,20.0,Đông - Nam,Đông - Nam,8,8,Have certificate,,59.9,5
 "Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vinhomes Thăng Long",123.0,7.0,13.0,Đông - Nam,,4,5,Have certificate,,,29
 "Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vinhomes Thăng Long",90.0,5.0,13.0,Đông,Đông - Nam,,,Have certificate,Basic,21.5,29
-"Hà Nam, Phủ Lý, Nhà biệt thự, liền kề tại Sun Urban City",60.0,,,,,3,2,,Full,4.7,22
 "Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Vinhomes Golden City",70.0,5.0,15.0,Đông - Bắc,,,,Have certificate,,,29
 "Đà Nẵng, Sơn Trà, Nhà biệt thự, liền kề tại Habour Ville",580.0,20.0,,Đông - Nam,,,,,,,29
-"Hồ Chí Minh, Cần Giờ, Nhà biệt thự, liền kề tại Vinhomes Green Paradise",75.0,5.0,15.0,,,6,7,Have certificate,Basic,10.9,30
-"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",90.0,6.0,30.0,,,4,5,Have certificate,Full,37.0,30
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",398.0,20.0,24.0,,,,,,,92.0,30
-"Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Vinhomes Global Gate",75.0,5.0,17.0,,,6,7,Have certificate,,18.5,30
-"Khánh Hòa, Nha Trang, Nhà biệt thự, liền kề tại Vinhomes Pearl Bay",240.0,16.0,30.0,,,6,8,Have certificate,Basic,41.35,30
-"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",176.0,,50.0,,,6,7,Have certificate,Full,54.0,30
+"Hải Phòng, Ngô Quyền, Nhà biệt thự, liền kề tại phố Đà Nẵng",206.0,9.0,7.0,Tây - Nam,Tây - Nam,4,5,Have certificate,,18.2,29
+"Hà Nội, Nam Từ Liêm, Nhà biệt thự, liền kề tại đường Trung Văn",147.0,10.0,20.0,,,6,6,Have certificate,Full,70.0,29
+"Quảng Ninh, Hạ Long, Nhà biệt thự, liền kề tại Grand Bay Town House",104.0,6.5,,Đông - Nam,,,,,,,29
+"Hà Nội, Ba Đình, Nhà biệt thự, liền kề tại Grandeur Palace Giảng Võ",287.0,,,,,,,Have certificate,,,29
+"Hà Nội, Bắc Từ Liêm, Nhà biệt thự, liền kề tại Avenue Garden",342.0,,,,,,,Have certificate,,,29
+"Khánh Hòa, Cam Ranh, Nhà biệt thự, liền kề tại ParaSol",120.0,,,,,,,Have certificate,,4.2,4
+"Hồ Chí Minh, Hóc Môn, Nhà biệt thự, liền kề tại Vinhomes Saigon Park",60.0,,,,,,,Have certificate,Basic,6.0,21
 "Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại thị trấn Trâu Quỳ",260.0,12.95,30.0,,,5,6,Have certificate,Full,56.0,30
 "Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",405.0,20.0,40.0,,,8,10,Have certificate,Full,202.5,30
 "Thái Nguyên, Thái Nguyên, Nhà biệt thự, liền kề tại Flamingo Majestic Islands Resort",685.0,18.0,40.0,,,10,11,Have certificate,Basic,31.5,30
@@ -512,13 +313,12 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại KĐT Tây Hồ Tây - Starlake Hà Nội",136.0,8.0,13.5,Tây - Nam,Tây - Nam,,7,Have certificate,,39.0,22
 "Hải Phòng, Ngô Quyền, Nhà biệt thự, liền kề tại đường Lê Hồng Phong",253.0,14.0,15.0,Đông - Nam,Nam,5,4,Have certificate,Full,32.0,30
 "Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Aqua City",300.0,15.0,14.0,Đông,Đông,5,5,Sale contract,,19.9,30
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại An Quý Villa - KĐT Dương Nội",198.0,9.0,12.0,Tây - Bắc,Đông - Bắc,6,7,Have certificate,,48.0,30
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Sol Lake Villa",220.0,10.0,15.0,Đông - Bắc,Tây - Bắc,5,6,Have certificate,,0.2,30
-"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại An Quý Villa - KĐT Dương Nội",198.0,9.0,12.0,Tây - Bắc,Đông - Bắc,5,6,Have certificate,,42.9,30
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",67.5,5.5,,Tây - Nam,Tây - Nam,,,Have certificate,,16.0,30
-"Quảng Bình, Đồng Hới, Nhà biệt thự, liền kề tại Nam Mekong Heritage City",250.0,,,,,,,,,,30
-"Ninh Thuận, Phan Rang - Tháp Chàm, Nhà biệt thự, liền kề tại MK Central City",56.0,5.0,13.5,Tây - Nam,Tây - Nam,6,6,Have certificate,,3.3,30
-"Thái Nguyên, Thái Nguyên, Nhà biệt thự, liền kề tại Flamingo Majestic Islands Resort",250.0,,,,,6,7,Have certificate,Basic,28.0,30
+"Long An, Bến Lức, Nhà biệt thự, liền kề tại Solar City",75.0,,,,,,,Have certificate,,0.03,30
+"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại PHC Complex 158 Nguyễn Sơn",87.5,5.0,11.0,Tây - Bắc,Tây - Bắc,,,Have certificate,,35.0,30
+"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vista Nam An Khánh",633.0,,,,,6,6,Have certificate,Full,0.12,30
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Làng Việt Kiều Châu Âu Euroland",260.0,15.0,12.0,,,5,5,Have certificate,Full,60.0,30
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Làng Việt Kiều Châu Âu Euroland",180.0,,15.0,,,5,5,Have certificate,Full,,30
+"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Aqua City",200.0,10.0,14.0,Đông - Bắc,,4,4,Sale contract,,15.9,30
 "Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại Khu đô thị Nam Thăng Long - Ciputra",240.0,10.0,,Nam,,4,4,Have certificate,Full,70.0,30
 "Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Khu đô thị Ecopark",750.0,18.0,30.0,,,10,10,Have certificate,,90.0,30
 "Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",96.0,6.0,20.0,,,6,6,Have certificate,Full,40.0,30
@@ -532,13 +332,11 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",215.0,9.0,30.0,,,4,5,Have certificate,Full,95.0,30
 "Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",260.0,16.0,30.0,,,6,7,Have certificate,Full,97.0,30
 "Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes The Harmony",90.0,6.0,30.0,,,4,5,Have certificate,Basic,38.0,30
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.25,,,,,5,4,Sale contract,,19.29,30
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.09,,,,,4,4,,,21.02,30
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.09,,,,,5,4,Sale contract,,19.27,30
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vista Serena",210.0,7.5,,,,,,Have certificate,,38.0,30
-"Khánh Hòa, Nha Trang, Nhà biệt thự, liền kề tại La Tiên Villas",125.0,10.0,16.0,Đông - Nam,Đông - Nam,3,4,Sale contract,Full,16.0,30
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.01,,,,,5,4,Sale contract,,19.26,30
-"Đà Nẵng, Liên Chiểu, Nhà biệt thự, liền kề tại Vinhomes Hải Vân Bay",80.0,6.0,30.0,,,8,9,Have certificate,Full,8.1,30
+"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",90.0,6.0,30.0,,,4,5,Have certificate,Full,37.0,30
+"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",398.0,20.0,24.0,,,,,,,92.0,30
+"Hà Nội, Đông Anh, Nhà biệt thự, liền kề tại Vinhomes Global Gate",75.0,5.0,17.0,,,6,7,Have certificate,,18.5,30
+"Khánh Hòa, Nha Trang, Nhà biệt thự, liền kề tại Vinhomes Pearl Bay",240.0,16.0,30.0,,,6,8,Have certificate,Basic,41.35,30
+"Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",176.0,,50.0,,,6,7,Have certificate,Full,54.0,30
 "Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.25,,,,,5,4,Sale contract,,21.02,30
 "Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.25,,,,,5,4,Sale contract,,19.29,30
 "Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.08,,,,,5,4,Sale contract,,21.43,30
@@ -552,52 +350,36 @@ Address,Area,Frontage,Access Road,House direction,Balcony direction,Bedrooms,Bat
 "Hà Nội, Long Biên, Nhà biệt thự, liền kề tại Vinhomes Riverside",90.0,6.0,20.0,,,4,5,Have certificate,Full,36.5,30
 "Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Khu đô thị mới Lideco - Bắc Quốc lộ 32",144.0,,,,,,,Have certificate,Full,23.5,24
 "Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại The Terra An Hưng",65.0,6.5,12.0,Tây - Bắc,Tây - Bắc,8,9,Have certificate,Basic,23.5,30
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại An Quý Villa - KĐT Dương Nội",198.0,9.0,12.0,Tây - Bắc,Đông - Bắc,6,7,Have certificate,,48.0,30
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại Sol Lake Villa",220.0,10.0,15.0,Đông - Bắc,Tây - Bắc,5,6,Have certificate,,0.2,30
+"Hà Nội, Hà Đông, Nhà biệt thự, liền kề tại An Quý Villa - KĐT Dương Nội",198.0,9.0,12.0,Tây - Bắc,Đông - Bắc,5,6,Have certificate,,42.9,30
+"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",67.5,5.5,,Tây - Nam,Tây - Nam,,,Have certificate,,16.0,30
+"Quảng Bình, Đồng Hới, Nhà biệt thự, liền kề tại Nam Mekong Heritage City",250.0,,,,,,,,,,30
+"Ninh Thuận, Phan Rang - Tháp Chàm, Nhà biệt thự, liền kề tại MK Central City",56.0,5.0,13.5,Tây - Nam,Tây - Nam,6,6,Have certificate,,3.3,30
+"Thái Nguyên, Thái Nguyên, Nhà biệt thự, liền kề tại Flamingo Majestic Islands Resort",250.0,,,,,6,7,Have certificate,Basic,28.0,30
 "Phú Thọ, Thanh Thủy, Nhà biệt thự, liền kề tại Vườn Vua Resort & Villas",380.0,,,,,3,3,Sale contract,Full,5.5,30
 "Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.0,,,,,4,4,Sale contract,,19.26,30
 "Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.13,,,,,,,Sale contract,,18.85,30
 "Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.31,,,,,5,5,Sale contract,,18.87,30
 "Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.25,,,,,5,4,Sale contract,,21.02,30
 "Hải Phòng, Thủy Nguyên, Nhà biệt thự, liền kề tại Belhomes Hải Phòng",75.0,5.0,12.0,Nam,Nam,4,3,Have certificate,,4.25,30
-"Hưng Yên, Văn Lâm, Nhà biệt thự, liền kề tại The Fullton",255.0,17.0,,,,,,,,42.8,26
-"Hà Nội, Mê Linh, Nhà biệt thự, liền kề tại HUD Me Linh Central",159.0,15.0,13.5,Tây - Nam,Đông - Bắc,4,5,Have certificate,,13.95,24
+"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.25,,,,,5,4,Sale contract,,19.29,30
+"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.09,,,,,4,4,,,21.02,30
+"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.09,,,,,5,4,Sale contract,,19.27,30
+"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Vista Serena",210.0,7.5,,,,,,Have certificate,,38.0,30
+"Khánh Hòa, Nha Trang, Nhà biệt thự, liền kề tại La Tiên Villas",125.0,10.0,16.0,Đông - Nam,Đông - Nam,3,4,Sale contract,Full,16.0,30
+"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại Trellia Cove",126.01,,,,,5,4,Sale contract,,19.26,30
+"Đà Nẵng, Liên Chiểu, Nhà biệt thự, liền kề tại Vinhomes Hải Vân Bay",80.0,6.0,30.0,,,8,9,Have certificate,Full,8.1,30
 "Hồ Chí Minh, Gò Vấp, Nhà biệt thự, liền kề tại CityLand Park Hills",287.5,12.5,,Nam,Nam,,,Have certificate,,66.8,25
 "Hồ Chí Minh, Gò Vấp, Nhà biệt thự, liền kề tại CityLand Park Hills",575.0,23.0,30.0,Nam,Nam,,,Have certificate,,131.0,25
 "Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Khu đô thị Mạnh Đức",175.0,7.0,22.0,,,4,4,Have certificate,,18.6,25
 "Bà Rịa Vũng Tàu, Xuyên Mộc, Nhà biệt thự, liền kề tại Ixora Hồ Tràm",380.0,60.0,60.0,Đông - Nam,Đông - Nam,3,4,Have certificate,Full,25.0,1
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Khu biệt thự Thảo Nguyên Sài Gòn",384.0,,,,,,,,,25.0,25
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 3",112.0,7.0,13.0,Tây - Bắc,Tây - Bắc,5,4,Have certificate,Basic,14.4,24
 "Hà Nội, Ba Đình, Nhà biệt thự, liền kề tại Grandeur Palace Giảng Võ",290.0,,,,,,,,,190.0,26
 "Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Essensia Broadway",150.0,60.0,60.0,Đông - Bắc,Đông - Bắc,4,5,Sale contract,,37.0,29
 "Thanh Hóa, Thanh Hóa, Nhà biệt thự, liền kề tại Central Riverside Thanh Hóa",83.75,5.0,,,,,,Have certificate,,5.9,26
+"Hưng Yên, Văn Lâm, Nhà biệt thự, liền kề tại The Fullton",255.0,17.0,,,,,,,,42.8,26
+"Hà Nội, Mê Linh, Nhà biệt thự, liền kề tại HUD Me Linh Central",159.0,15.0,13.5,Tây - Nam,Đông - Bắc,4,5,Have certificate,,13.95,24
 "Đà Nẵng, Liên Chiểu, Nhà biệt thự, liền kề tại Vinhomes Hải Vân Bay",63.0,,,,,,,,,,15
 "Hà Nội, Mê Linh, Nhà biệt thự, liền kề tại HUD Me Linh Central",135.0,6.0,13.5,Tây - Nam,Đông - Bắc,4,5,,,10.6,25
 "Hà Nam, Phủ Lý, Nhà biệt thự, liền kề tại Sun Urban City",65.0,,,,,,,Have certificate,,4.6,30
 "Hồ Chí Minh, Gò Vấp, Nhà biệt thự, liền kề tại CityLand Park Hills",100.0,5.0,,Nam,Nam,,,Have certificate,,22.0,25
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Belhomes Từ Sơn",75.0,5.0,17.0,,,3,3,Have certificate,,5.6,26
-"Hà Nội, Mê Linh, Nhà biệt thự, liền kề tại Pearl Rivera Hà Nội",105.0,6.0,21.0,,,,4,Have certificate,,0.12,29
-"Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Vinhomes Golden City",63.0,4.5,15.0,,,,,,,4.8,26
-"Hải Phòng, Đồ Sơn, Nhà biệt thự, liền kề tại Hong Kong Town",60.0,5.0,12.0,Đông,Đông,,,Have certificate,,4.06,11
-"Long An, Cần Giuộc, Nhà biệt thự, liền kề tại The Sol City",75.0,5.0,8.0,Tây - Bắc,Tây - Bắc,4,4,Have certificate,Basic,4.5,13
-"Hồ Chí Minh, Nhà Bè, Nhà biệt thự, liền kề tại Essensia Broadway",150.0,,,,,,,,,37.0,19
-"Hưng Yên, Văn Giang, Nhà biệt thự, liền kề tại Vinhomes Ocean Park 2",120.0,7.0,20.0,Tây - Nam,,,,Have certificate,,0.13,29
-"Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại Khu đô thị Nam Thăng Long - Ciputra",410.0,12.0,20.0,,,4,4,,Full,200.0,29
-"Bình Thuận, Phan Thiết, Nhà biệt thự, liền kề tại NovaWorld Phan Thiết",200.0,,,,,4,3,,Full,6.8,16
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại An Lạc Green Symphony",202.0,10.0,25.0,Đông - Nam,Đông - Nam,,,Sale contract,Basic,45.0,22
-"Hồ Chí Minh, Quận 9, Nhà biệt thự, liền kề tại Khu dân cư Khang An",168.0,8.0,16.0,Đông,,,,Have certificate,,19.0,27
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Centa Diamond",75.0,5.0,12.0,,,,,Have certificate,,,27
-"Hà Nội, Hoài Đức, Nhà biệt thự, liền kề tại Hinode Royal Park",232.0,11.0,24.0,,,,,,,75.0,30
-"Hà Nội, Mê Linh, Nhà biệt thự, liền kề tại HUD Me Linh Central",201.0,,,,,,,,,14.5,26
-"Hồ Chí Minh, Bình Chánh, Nhà biệt thự, liền kề tại The Meadow Bình Chánh",420.0,20.0,,,,8,8,Sale contract,Basic,23.0,28
-"Hà Nội, Ba Đình, Nhà biệt thự, liền kề tại The Heritage Láng Hạ",109.5,6.0,20.0,Đông - Nam,Đông - Nam,6,7,Have certificate,Basic,54.0,16
-"Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Vinhomes Golden City",98.0,8.0,15.0,,,,,,,5.5,26
-"Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Vinhomes Golden City",63.0,4.5,15.0,,,,,,,4.8,25
-"Hải Phòng, Dương Kinh, Nhà biệt thự, liền kề tại Vinhomes Golden City",105.0,8.0,20.0,,,,,,,8.0,25
-"Hà Nội, Tây Hồ, Nhà biệt thự, liền kề tại Khu đô thị Nam Thăng Long - Ciputra",230.0,10.0,17.0,Đông - Bắc,Đông - Bắc,3,3,Sale contract,Basic,0.45,23
-"Ninh Thuận, Phan Rang - Tháp Chàm, Nhà biệt thự, liền kề tại Bình Sơn Ocean Park",100.0,5.0,21.0,Đông,Đông,,,Have certificate,,7.07,26
-"Ninh Thuận, Phan Rang - Tháp Chàm, Nhà biệt thự, liền kề tại Bình Sơn Ocean Park",117.0,6.0,21.0,Đông,Đông,20,22,Have certificate,,10.4,26
-"Bắc Ninh, Từ Sơn, Nhà biệt thự, liền kề tại Khu đô thị Mạnh Đức",175.0,7.0,22.0,,,4,4,Have certificate,,18.6,28
-"Đồng Nai, Biên Hòa, Nhà biệt thự, liền kề tại Aqua City",375.0,15.0,33.0,Tây,Tây,4,5,Sale contract,,20.9,22
-"Hà Nội, Gia Lâm, Nhà biệt thự, liền kề tại Vinhomes Ocean Park Gia Lâm",70.8,5.9,,Đông - Nam,Đông - Nam,,,Have certificate,,21.9,28
-"Thanh Hóa, Thanh Hóa, Nhà biệt thự, liền kề tại Central Riverside Thanh Hóa",85.0,5.0,17.0,Đông - Bắc,Đông - Bắc,5,5,Have certificate,,5.9,13
-"Thanh Hóa, Sầm Sơn, Nhà biệt thự, liền kề tại Vlasta Sầm Sơn",198.0,11.8,17.0,Đông - Bắc,Đông - Bắc,6,6,Have certificate,,9.5,26
-"Hồ Chí Minh, Quận 7, Nhà biệt thự, liền kề tại phường Tân Phong",240.0,12.0,,,,7,7,Have certificate,Full,51.0,24
