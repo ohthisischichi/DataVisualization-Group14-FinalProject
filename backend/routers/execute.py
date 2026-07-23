@@ -71,44 +71,117 @@ def _safe_result_dir(request_id: str) -> str:
     return os.path.join(RESULTS_DIR, request_id)
 
 
+def _persist_one(obj, result_dir: str, stem: str) -> tuple[str, str]:
+    """Ghi MỘT artifact xuống đĩa với tên file bắt đầu bằng `stem`.
+    Trả về (result_type, tên_file).
+    - DataFrame -> .data.json (records)
+    - plotly Figure -> .chart.json (to_json)
+    - matplotlib Figure -> .image.png (savefig trực tiếp)
+    - còn lại -> .text.txt
+    """
+    module = type(obj).__module__ or ""
+    type_name = type(obj).__name__
+
+    if type_name == "DataFrame":
+        fname = f"{stem}.data.json"
+        with open(os.path.join(result_dir, fname), "w", encoding="utf-8") as f:
+            json.dump(obj.to_dict(orient="records"), f, ensure_ascii=False)
+        return "dataframe", fname
+    if module.startswith("plotly"):
+        fname = f"{stem}.chart.json"
+        with open(os.path.join(result_dir, fname), "w", encoding="utf-8") as f:
+            f.write(obj.to_json())
+        return "chart", fname
+    if module.startswith("matplotlib"):
+        fname = f"{stem}.image.png"
+        obj.savefig(
+            os.path.join(result_dir, fname),
+            format="png", bbox_inches="tight", dpi=120,
+        )
+        return "image", fname
+
+    fname = f"{stem}.text.txt"
+    with open(os.path.join(result_dir, fname), "w", encoding="utf-8") as f:
+        f.write(str(obj))
+    return "text", fname
+
+
+def _as_parts(result) -> list[tuple[str, object]] | None:
+    """Nếu `result` là container gồm nhiều thành phần (dict/list/tuple), trả về
+    list (tên, object) bỏ qua các phần None; ngược lại trả None (artifact đơn).
+    Khóa dict được dùng làm tiêu đề hiển thị của từng thành phần."""
+    if isinstance(result, dict):
+        return [(str(k), v) for k, v in result.items() if v is not None]
+    if isinstance(result, (list, tuple)):
+        return [(f"Kết quả {i + 1}", v) for i, v in enumerate(result) if v is not None]
+    return None
+
+
 def _persist_result(request_id: str, result) -> str | None:
     """
-    Ghi kết quả xuống đĩa theo từng loại và trả về result_type.
-    - DataFrame -> data.json (records)
-    - plotly Figure -> chart.json (to_json)
-    - matplotlib Figure -> image.png (savefig trực tiếp, không qua base64 trong RAM)
-    - còn lại -> text.txt
+    Ghi kết quả xuống đĩa và trả về result_type.
+    Luôn ghi kèm manifest.json mô tả từng thành phần [{name, type, file}].
+    - 0 thành phần  -> None
+    - 1 thành phần  -> chính type của thành phần đó (chart/dataframe/image/text)
+    - >1 thành phần -> "multi"
     """
     if result is None:
         return None
 
-    module = type(result).__module__ or ""
-    type_name = type(result).__name__
     result_dir = _safe_result_dir(request_id)
     os.makedirs(result_dir, exist_ok=True)
 
-    if type_name == "DataFrame":
-        with open(os.path.join(result_dir, "data.json"), "w", encoding="utf-8") as f:
-            json.dump(result.to_dict(orient="records"), f, ensure_ascii=False)
-        return "dataframe"
-    if module.startswith("plotly"):
-        with open(os.path.join(result_dir, "chart.json"), "w", encoding="utf-8") as f:
-            f.write(result.to_json())
-        return "chart"
-    if module.startswith("matplotlib"):
-        result.savefig(
-            os.path.join(result_dir, "image.png"),
-            format="png", bbox_inches="tight", dpi=120,
-        )
-        return "image"
+    parts = _as_parts(result)
+    if parts is None:
+        parts = [("Kết quả", result)]
 
-    with open(os.path.join(result_dir, "text.txt"), "w", encoding="utf-8") as f:
-        f.write(str(result))
-    return "text"
+    manifest = []
+    for i, (name, obj) in enumerate(parts):
+        ptype, fname = _persist_one(obj, result_dir, f"part{i}")
+        manifest.append({"name": name, "type": ptype, "file": fname})
+
+    with open(os.path.join(result_dir, "manifest.json"), "w", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False)
+
+    if not manifest:
+        return None
+    if len(manifest) == 1:
+        return manifest[0]["type"]
+    return "multi"
+
+
+def _load_part(result_dir: str, entry: dict) -> dict:
+    """Đọc lại payload của một thành phần theo manifest entry, trả về
+    {name, type, data} với data đúng shape frontend cần."""
+    ptype = entry["type"]
+    path = os.path.join(result_dir, entry["file"])
+    if ptype == "image":
+        with open(path, "rb") as f:
+            data = base64.b64encode(f.read()).decode("ascii")
+    elif ptype == "dataframe":
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    else:  # chart (JSON string) | text
+        with open(path, "r", encoding="utf-8") as f:
+            data = f.read()
+    return {"name": entry.get("name"), "type": ptype, "data": data}
 
 
 def _load_result_data(result_dir: str) -> tuple[str | None, object]:
-    """Đọc lại payload từ đĩa, trả về (result_type, result_data) đúng shape frontend cần."""
+    """Đọc lại payload từ đĩa, trả về (result_type, result_data) đúng shape frontend cần.
+    Với "multi", result_data là list [{name, type, data}]."""
+    manifest_path = os.path.join(result_dir, "manifest.json")
+    if os.path.exists(manifest_path):
+        with open(manifest_path, "r", encoding="utf-8") as f:
+            manifest = json.load(f)
+        parts = [_load_part(result_dir, entry) for entry in manifest]
+        if not parts:
+            return None, None
+        if len(parts) == 1:
+            return parts[0]["type"], parts[0]["data"]
+        return "multi", parts
+
+    # Fallback cho kết quả cũ lưu trước khi có manifest (tên file cố định).
     chart_path = os.path.join(result_dir, "chart.json")
     image_path = os.path.join(result_dir, "image.png")
     data_path = os.path.join(result_dir, "data.json")
@@ -218,13 +291,10 @@ def _summarize_plotly_trace(tr: dict, x_title: str, y_title: str, max_rows: int)
     return f"Chuỗi '{name}' (loại {ttype}) [{header_cols}]:\n" + "\n".join(rows) + truncated
 
 
-def _result_for_llm(request_id: str, max_rows: int = 30) -> tuple[str, str | None]:
-    """Returns (text_summary, base64_png_or_None)."""
-    result_dir = _safe_result_dir(request_id)
-    result_type, data = _load_result_data(result_dir)
-
+def _summarize_one(result_type: str | None, data, max_rows: int) -> tuple[str, str | None]:
+    """Tóm tắt MỘT thành phần thành (text, base64_png_or_None)."""
     if result_type == "image":
-        # _load_result_data return base64 PNG
+        # data là base64 PNG
         return "Kết quả là một biểu đồ. Hãy phân tích hình ảnh kèm theo.", data
     if result_type == "dataframe":
         df = pd.DataFrame(data)
@@ -247,6 +317,26 @@ def _result_for_llm(request_id: str, max_rows: int = 30) -> tuple[str, str | Non
     if result_type == "text":
         return f"Kết quả: {data}", None
     return "Không có kết quả.", None
+
+
+def _result_for_llm(request_id: str, max_rows: int = 30) -> tuple[str, str | None]:
+    """Returns (text_summary, base64_png_or_None).
+    Với "multi": ghép tóm tắt từng thành phần, lấy ảnh đầu tiên (nếu có)."""
+    result_dir = _safe_result_dir(request_id)
+    result_type, data = _load_result_data(result_dir)
+
+    if result_type == "multi":
+        texts: list[str] = []
+        image: str | None = None
+        for part in data:
+            text, img = _summarize_one(part["type"], part["data"], max_rows)
+            label = part.get("name") or ""
+            texts.append(f"### {label}\n{text}" if label else text)
+            if image is None and img is not None:
+                image = img
+        return "\n\n".join(texts), image
+
+    return _summarize_one(result_type, data, max_rows)
 
 # Filename gán cho code người dùng khi compile/exec, để lọc traceback đúng frame.
 _USER_CODE_FILENAME = "<user_code>"

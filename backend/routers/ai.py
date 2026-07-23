@@ -63,6 +63,9 @@ Tùy yêu cầu người dùng, `result` có thể là:
 - một con số hoặc chuỗi — khi chỉ cần trả về giá trị thống kê
 - một pandas DataFrame — khi cần bảng số liệu hoặc bảng so sánh
 - một plotly Figure hoặc matplotlib Figure — khi người dùng cần biểu đồ
+- một dict hoặc list gồm nhiều thành phần trên — khi cần trả về ĐỒNG THỜI nhiều kết quả
+  (ví dụ vừa bảng số liệu vừa biểu đồ). Với dict, KHÓA sẽ được dùng làm tiêu đề hiển thị
+  cho từng thành phần, ví dụ: result = {{"Bảng thống kê": stats_df, "Biểu đồ": fig}}
 Chỉ vẽ biểu đồ khi yêu cầu thực sự cần trực quan hóa; nếu chỉ hỏi số liệu thì trả
 thẳng số hoặc DataFrame, không cần vẽ.
 

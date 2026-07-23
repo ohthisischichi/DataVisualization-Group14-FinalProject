@@ -47,8 +47,8 @@ class ExecuteRequest(BaseModel):
 class ExecuteResult(BaseModel):
     request_id: str
     success: bool
-    result_type: Optional[str] = None   # "chart" | "dataframe" | "image" | "text" | None
-    result_data: Optional[Any] = None   # JSON của chart (plotly) hoặc dataframe (records) hoặc text
+    result_type: Optional[str] = None   # "chart" | "dataframe" | "image" | "text" | "multi" | None
+    result_data: Optional[Any] = None   # chart JSON | dataframe records | text | (multi) list[{name,type,data}]
     logs: str = ""
     error: Optional[str] = None
 
