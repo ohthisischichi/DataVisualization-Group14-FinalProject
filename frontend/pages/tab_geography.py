@@ -159,6 +159,7 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
         fig_map.update_coloraxes(
             colorbar_title_text="Giá/m² (tỷ)",
             colorbar_tickformat=".3f",
+            colorbar_outlinewidth=0,
         )
 
         apply_theme(fig_map, "Bản đồ Choropleth: Giá/m² theo Tỉnh/Thành phố")
@@ -246,7 +247,7 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
                         clicked_province = top15_prov.iloc[point_idx]["Province"]
 
     st.caption(
-        "🗺️ **Bản đồ & Biểu đồ thứ hạng**: Click vào bất kỳ tỉnh/thành phố nào trên bản đồ hoặc biểu đồ cột để xem chi tiết quận/huyện bên dưới."
+        "🗺️ Bản đồ chỉ thể hiện dữ liệu BĐS đất liền, chưa thể hiện dữ liệu trên các đảo, quần đảo thuộc chủ quyền Việt Nam."
     )
 
     # Insight tự động
@@ -283,10 +284,13 @@ def _render_district_drilldown(df: pd.DataFrame, province: str) -> None:
     """
     col_title, col_back = st.columns([4, 1])
     with col_title:
-        st.markdown(f"#### 📍 Quận/Huyện tại **{province}** — Giá/m² trung bình")
+        st.markdown(f"##### Quận/Huyện tại **{province}** — Giá/m² trung bình")
     with col_back:
         if st.button("← Xem tất cả tỉnh", key="geo_back_btn", type="secondary"):
             st.session_state.pop("geo_selected_province", None)
+            # Clear selected points from map and bar widgets to reset selection state
+            st.session_state.pop("geo_province_map", None)
+            st.session_state.pop("geo_province_bar", None)
             st.rerun()
 
     # Lọc chỉ lấy huyện của tỉnh này
@@ -408,6 +412,7 @@ def _render_province_area_heatmap(df: pd.DataFrame) -> None:
             colorbar=dict(
                 title=dict(text="Giá/m² (tỷ)"),
                 tickformat=".4f",
+                outlinewidth=0,
             ),
         )
     )
@@ -435,7 +440,7 @@ def _render_province_summary_table(df: pd.DataFrame) -> None:
     """
     Bảng tổng hợp chi tiết các chỉ số bất động sản theo từng Tỉnh/Thành phố.
     """
-    st.markdown("#### 📋 Bảng tổng hợp chỉ số thị trường theo Tỉnh / Thành phố")
+    st.markdown("#####  Bảng tổng hợp chỉ số thị trường theo Tỉnh / Thành phố")
     
     summary = (
         df.groupby("Province", observed=True)
@@ -491,8 +496,8 @@ def render(df_filtered: pd.DataFrame) -> None:
 
     st.markdown("### Phân tích thị trường theo địa lý")
     st.markdown(
-        "Click vào từng tỉnh/thành phố trên bản đồ để xem chi tiết quận/huyện (drill-down). "
-        "Heatmap bên dưới cho thấy phân khúc diện tích nào ở tỉnh nào đắt nhất."
+        "Chọn từng tỉnh/thành phố để xem thêm thông tin về thị trường BĐS ở các quận/huyện của tỉnh/thành đó."
+       
     )
     st.markdown("")
 

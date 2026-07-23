@@ -217,6 +217,7 @@ def _render_correlation_heatmap(df: pd.DataFrame) -> None:
             colorbar=dict(
                 title=dict(text="Pearson r"),
                 tickformat=".2f",
+                outlinewidth=0,
             ),
             showscale=True,
         )

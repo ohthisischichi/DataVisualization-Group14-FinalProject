@@ -7,7 +7,7 @@ import streamlit as st
 
 
 def render_log_panel(logs: list[dict[str, Any]]) -> None:
-	st.subheader("Logs")
+	st.subheader("Lịch sử")
 	if not logs:
 		st.caption("Chưa có log nào được ghi nhận.")
 		return

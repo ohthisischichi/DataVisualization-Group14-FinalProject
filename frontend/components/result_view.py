@@ -14,9 +14,9 @@ def _render_result_value(result: Any) -> None:
 
 	if isinstance(result, dict):
 		if "success" in result or "result_type" in result or "result_data" in result:
-			st.markdown(f"**Success:** {result.get('success')}")
+			st.markdown(f"**Thành công:** {result.get('success')}")
 			if result.get("result_type") is not None:
-				st.markdown(f"**Result type:** {result.get('result_type')}")
+				st.markdown(f"**Loại kết quả:** {result.get('result_type')}")
 			result_data = result.get("result_data")
 			if result.get("result_type") == "image" and isinstance(result_data, str):
 				import base64
@@ -33,7 +33,7 @@ def _render_result_value(result: Any) -> None:
 				st.write(result_data)
 			logs = result.get("logs")
 			if logs:
-				with st.expander("Execution logs", expanded=False):
+				with st.expander("Nhật ký thực thi", expanded=False):
 					st.write(logs)
 			if result.get("error"):
 				st.error(result.get("error"))
@@ -64,12 +64,12 @@ def render_result_panel(
 	error_message: str | None,
 	logs: list[dict[str, Any]],
 ) -> None:
-	st.subheader("Result Viewer")
+	st.subheader("Bộ hiển thị kết quả")
 	if error_message:
 		st.error(error_message)
 	else:
 		_render_result_value(result)
 
 	if logs:
-		with st.expander("Execution Logs", expanded=False):
+		with st.expander("Nhật ký thực thi", expanded=False):
 			st.write(logs)

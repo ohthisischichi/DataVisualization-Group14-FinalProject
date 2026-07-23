@@ -25,7 +25,7 @@ from theme import KPI_CARD_CSS, AI_POPUP_CSS
 DATASET_PATH = Path(__file__).resolve().parent.parent / "Data" / "processed" / "house_price_clean.csv"
 
 APP_TITLE = "Nhóm 14"
-HEADER_TITLE= "DASHBOARD PHÂN TÍCH THỊ TRƯỜNG BẤT ĐỘNG SẢN VIỆT NAM"
+HEADER_TITLE= "PHÂN TÍCH THỊ TRƯỜNG BẤT ĐỘNG SẢN VIỆT NAM"
 APP_SUBTITLE = "VIETNAM REAL ESTATE INTELLIGENCE"
 
 DEFAULT_PROMPT = (
@@ -271,7 +271,7 @@ def render_dashboard_tabs(df_filtered: pd.DataFrame) -> None:
         render_market_tab(df_filtered)
 
 
-@st.dialog("AI Workspace", width="large")
+@st.dialog("Trợ lý AI", width="large")
 def render_ai_popup() -> None:
     # --- CSS đưa spinner ra giữa màn hình ---
     st.markdown(
@@ -332,7 +332,7 @@ def render_ai_popup() -> None:
             else:
                 html = f"""
                 <div style="display: flex; justify-content: flex-start; margin-bottom: 20px; align-items: flex-start; gap: 12px; width: 100%;">
-                    <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #22C55E; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #1D4ED8; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(29, 78, 216, 0.3);">
                         AI
                     </div>
                     <div style="background: #F3F4F6; color: #1F2937; padding: 12px 18px; border-radius: 20px 20px 20px 0px; max-width: 75%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border: 1px solid #E5E7EB; font-size: 0.95rem; line-height: 1.5;">
@@ -392,10 +392,10 @@ def render_ai_popup() -> None:
                         btn_col1, btn_col2, _ = st.columns([1, 1, 2])
                         with btn_col1:
                             st.markdown('<span id="btn-approve-marker"></span>', unsafe_allow_html=True)
-                            st.button("✅ Chấp nhận", use_container_width=True, key="popup_approve", on_click=handle_approve, args=(code_text,))
+                            st.button("Chấp nhận", use_container_width=True, key="popup_approve", on_click=handle_approve, args=(code_text,))
                         with btn_col2:
                             st.markdown('<span id="btn-reject-marker"></span>', unsafe_allow_html=True)
-                            st.button("❌ Từ chối", use_container_width=True, key="popup_reject", on_click=handle_reject)
+                            st.button("Từ chối", use_container_width=True, key="popup_reject", on_click=handle_reject)
 
                     # ── Trạng thái: Bị từ chối ──
                     elif status == "Bị từ chối":
@@ -454,21 +454,14 @@ def render_ai_popup() -> None:
         _, col_gen = st.columns([3, 1])
         with col_gen:
             st.markdown('<span id="btn-generate-marker"></span>', unsafe_allow_html=True)
-            st.button("🚀 Generate Code", use_container_width=True, key="btn_generate", on_click=handle_generate)
+            st.button("Tạo mã nguồn", use_container_width=True, key="btn_generate", on_click=handle_generate)
 
 
 
 def build_popup_trigger() -> None:
-    trigger_left, trigger_right = st.columns([8.0, 1.2])
-    with trigger_left:
-        st.markdown(
-            '<div class="dashboard-note">Dashboard có 4 tab. Bấm nút AI Assistant để mở popup chatbot ở bất kỳ tab nào.</div>',
-            unsafe_allow_html=True,
-        )
-    with trigger_right:
-        st.markdown('<span id="btn-ai-popup-marker"></span>', unsafe_allow_html=True)
-        if st.button("💬", use_container_width=True, key="open_ai_popup"):
-            st.session_state.show_ai_popup = True
+    st.markdown('<span id="btn-ai-popup-marker"></span>', unsafe_allow_html=True)
+    if st.button("💬", use_container_width=True, key="open_ai_popup"):
+        st.session_state.show_ai_popup = True
 
     if st.session_state.show_ai_popup:
         render_ai_popup()
@@ -479,7 +472,6 @@ def main() -> None:
     st.set_page_config(page_title=APP_TITLE, page_icon="🧠", layout="wide")
     initialize_state()
     inject_styles()
-    build_header()
 
     # Load dữ liệu
     if DATASET_PATH.exists():
