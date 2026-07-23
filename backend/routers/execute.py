@@ -4,6 +4,7 @@ import os
 import re
 import json
 import base64
+import traceback
 import contextlib
 import multiprocessing
 from queue import Empty
@@ -247,6 +248,34 @@ def _result_for_llm(request_id: str, max_rows: int = 30) -> tuple[str, str | Non
         return f"Kết quả: {data}", None
     return "Không có kết quả.", None
 
+# Filename gán cho code người dùng khi compile/exec, để lọc traceback đúng frame.
+_USER_CODE_FILENAME = "<user_code>"
+
+
+def _format_user_traceback(code: str, exc: BaseException) -> str:
+    """Dựng thông báo lỗi cho LLM sửa code: giữ lại traceback thuộc code người dùng
+    (frame '<user_code>') kèm số dòng và dòng code tương ứng.
+
+    Trả về nhiều dòng, ví dụ:
+        Traceback (dòng lỗi trong code):
+          Dòng 30: result_df.loc['Phân khúc giá phổ biến', ...] = popular_segment_str
+        TypeError: Invalid value '4-6 tỷ (4 tin)' for dtype 'float64'
+    """
+    code_lines = code.splitlines()
+    frames = []
+    for frame in traceback.extract_tb(exc.__traceback__):
+        if frame.filename != _USER_CODE_FILENAME:
+            continue  # bỏ frame trong execute.py, chỉ giữ code do model sinh
+        lineno = frame.lineno or 0
+        src = frame.line or (code_lines[lineno - 1].strip() if 0 < lineno <= len(code_lines) else "")
+        frames.append(f"  Dòng {lineno}: {src}")
+
+    final = f"{type(exc).__name__}: {exc}"
+    if not frames:
+        return final  # không có frame '<user_code>' (vd lỗi ngoài exec) -> fallback 1 dòng
+    return "Traceback (dòng lỗi trong code):\n" + "\n".join(frames) + "\n" + final
+
+
 def _run_in_subprocess(code: str, dataset_path: str, request_id: str, queue: multiprocessing.Queue) -> None:
     """
     Hàm chạy trong process con: load dataset vào biến df, exec code,
@@ -305,7 +334,8 @@ def _run_in_subprocess(code: str, dataset_path: str, request_id: str, queue: mul
     stdout_buffer = io.StringIO()
     try:
         with contextlib.redirect_stdout(stdout_buffer):
-            exec(code, safe_globals)
+            # Compile với filename <user_code> để traceback code người dùng
+            exec(compile(code, _USER_CODE_FILENAME, "exec"), safe_globals)
         result = safe_globals.get("result")
 
         # Fallback khi model chỉ gọi fig.show()/plt.show() mà không gán `result`.
@@ -337,7 +367,7 @@ def _run_in_subprocess(code: str, dataset_path: str, request_id: str, queue: mul
             "success": False,
             "result_type": None,
             "logs": stdout_buffer.getvalue(),
-            "error": f"{type(exc).__name__}: {exc}",
+            "error": _format_user_traceback(code, exc),
         })
 
 
