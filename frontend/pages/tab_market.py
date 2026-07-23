@@ -116,8 +116,8 @@ def _render_price_segment_pie(df: pd.DataFrame) -> None:
             "Tỷ trọng: %{percent}"
             "<extra></extra>"
         ),
-        textinfo="percent",          # Chỉ hiển thị %
-        textposition="inside",       # Hiển thị % bên trong donut
+        textinfo="percent",       # Chỉ hiển thị %
+        textposition="inside",    # Hiển thị % bên trong donut
         textfont=dict(
             size=14,
             color="white",
@@ -153,6 +153,18 @@ def _render_price_segment_pie(df: pd.DataFrame) -> None:
         key="seg_price_donut",
     )
 
+    # Thêm insight cho biểu đồ Donut phân khúc giá
+    if not summary.empty:
+        total_listings = summary["Số tin"].sum()
+        top_segment = summary.loc[summary["Số tin"].idxmax()]
+        top_pct = (top_segment["Số tin"] / total_listings) * 100
+        st.markdown(
+            render_insight(
+                f"Phân khúc chủ lực của thị trường là <b>{top_segment['Price_Segment']}</b>, chiếm <b>{top_pct:.1f}%</b> tổng nguồn cung."
+            ),
+            unsafe_allow_html=True,
+        )
+
 
 def _render_legal_segment_bar(df: pd.DataFrame) -> None:
     summary = (
@@ -181,6 +193,15 @@ def _render_legal_segment_bar(df: pd.DataFrame) -> None:
     
     st.plotly_chart(fig, width="stretch", key="seg_legal_price_bar")
 
+    # Thêm insight cho biểu đồ Pháp lý x Phân khúc giá
+    if not summary.empty:
+        top_legal = summary.groupby("Legal status", observed=True)["Số tin"].sum().idxmax()
+        st.markdown(
+            render_insight(
+                f"Tình trạng pháp lý phổ biến nhất thuộc về loại <b>{top_legal}</b>, tập trung chủ yếu ở các phân khúc giá tương ứng."
+            ),
+            unsafe_allow_html=True,
+        )
 
 
 def _render_area_price_scatter(df: pd.DataFrame) -> None:
@@ -215,6 +236,16 @@ def _render_area_price_scatter(df: pd.DataFrame) -> None:
     
     st.plotly_chart(fig, width="stretch", key="seg_area_price_scatter")
 
+    # Thêm insight cho biểu đồ Scatter Diện tích - Giá
+    if not plot_df.empty:
+        corr = plot_df["Area"].corr(plot_df["Price"])
+        st.markdown(
+            render_insight(
+                f"Mối tương quan giữa diện tích và tổng giá thể hiện sự đồng biến rõ rệt (hệ số tương quan ~{corr:.2f}), với ranh giới phân tách các phân khúc giá khá rõ ràng theo quy mô diện tích."
+            ),
+            unsafe_allow_html=True,
+        )
+
 
 def render(df_filtered: pd.DataFrame) -> None:
     """Hiển thị toàn bộ tab Market Segmentation từ dữ liệu đã lọc."""
@@ -246,7 +277,7 @@ def render(df_filtered: pd.DataFrame) -> None:
     with right:
         _render_legal_segment_bar(df_filtered)
 
- 
+  
 
 
 if __name__ == "__main__":
