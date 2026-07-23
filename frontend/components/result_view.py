@@ -7,6 +7,24 @@ import streamlit as st
 import plotly.io as pio
 
 
+def _render_part(part: dict[str, Any]) -> None:
+	"""Hiển thị một thành phần của kết quả 'multi' ({name, type, data})."""
+	name = part.get("name")
+	if name:
+		st.markdown(f"**{name}**")
+	ptype = part.get("type")
+	pdata = part.get("data")
+	if ptype == "image" and isinstance(pdata, str):
+		import base64
+		st.image(base64.b64decode(pdata), width="stretch")
+	elif ptype == "chart" and isinstance(pdata, str):
+		st.plotly_chart(pio.from_json(pdata), width="stretch")
+	elif ptype == "dataframe":
+		st.dataframe(pd.DataFrame(pdata), width="stretch")
+	else:
+		st.write(pdata)
+
+
 def _render_result_value(result: Any) -> None:
 	if result is None:
 		st.info("Chưa có kết quả thực thi. Hãy duyệt code để xem đầu ra.")
@@ -18,7 +36,10 @@ def _render_result_value(result: Any) -> None:
 			if result.get("result_type") is not None:
 				st.markdown(f"**Loại kết quả:** {result.get('result_type')}")
 			result_data = result.get("result_data")
-			if result.get("result_type") == "image" and isinstance(result_data, str):
+			if result.get("result_type") == "multi" and isinstance(result_data, list):
+				for part in result_data:
+					_render_part(part)
+			elif result.get("result_type") == "image" and isinstance(result_data, str):
 				import base64
 				st.image(base64.b64decode(result_data), width="stretch")
 			elif result.get("result_type") == "chart" and isinstance(result_data, str):

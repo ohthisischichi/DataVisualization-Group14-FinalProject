@@ -289,19 +289,22 @@ def render_ai_popup() -> None:
     st.markdown(
         """
         <style>
-        /* Tùy chỉnh spinner ra giữa */
+        /* Tùy chỉnh giao diện khối spinner */
         div[data-testid="stSpinner"] {
-            margin: 10px auto 20px auto; /* Căn giữa ngang */
             padding: 10px 16px;
             background: #F3F4F6;
             border-radius: 20px; /* Tròn đều các góc */
             color: #1F2937;
-            display: flex; /* Dùng flex để dễ căn chỉnh nội dung */
-            justify-content: center;
-            align-items: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border: 1px solid #E5E7EB;
             width: fit-content;
+        }
+        
+        /* Căn giữa container bọc ngoài spinner */
+        div:has(> div[data-testid="stSpinner"]) {
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
         /* Căn chỉnh icon quay quay bên trong cho cân đối */
         div[data-testid="stSpinner"] > div {
@@ -315,15 +318,16 @@ def render_ai_popup() -> None:
     # ── XỬ LÝ ACTIONS (Cho vào spinner_container để hiển thị phía dưới lịch sử) ──
     with spinner_container:
         pending_action = st.session_state.get("popup_pending_action")
-        if pending_action == "generate":
-            st.session_state.popup_pending_action = None
-            request_ai_generation(st.session_state.prompt_text)
-        elif pending_action == "approve":
-            st.session_state.popup_pending_action = None
-            approve_and_execute(st.session_state.pending_code_text)
-        elif pending_action == "reject":
-            st.session_state.popup_pending_action = None
-            reject_current_code()
+        if pending_action:
+            if pending_action == "generate":
+                st.session_state.popup_pending_action = None
+                request_ai_generation(st.session_state.prompt_text)
+            elif pending_action == "approve":
+                st.session_state.popup_pending_action = None
+                approve_and_execute(st.session_state.pending_code_text)
+            elif pending_action == "reject":
+                st.session_state.popup_pending_action = None
+                reject_current_code()
 
     # ── Lịch sử hội thoại ──────────────────────────────────────────────
     with chat_container:
