@@ -25,7 +25,7 @@ from theme import KPI_CARD_CSS, AI_POPUP_CSS
 DATASET_PATH = Path(__file__).resolve().parent.parent / "Data" / "processed" / "house_price_clean.csv"
 
 APP_TITLE = "Nhóm 14"
-HEADER_TITLE= "DASHBOARD PHÂN TÍCH THỊ TRƯỜNG BẤT ĐỘNG SẢN VIỆT NAM"
+HEADER_TITLE= "PHÂN TÍCH THỊ TRƯỜNG BẤT ĐỘNG SẢN VIỆT NAM"
 APP_SUBTITLE = "VIETNAM REAL ESTATE INTELLIGENCE"
 
 DEFAULT_PROMPT = (
@@ -200,8 +200,9 @@ def request_ai_fix(error_msg: str, broken_code: str) -> None:
     st.session_state.chat_history.append({
         "role": "assistant",
         "content": (
-            "Hệ thống đang gặp một số lỗi khi thực hiện lệnh vừa rồi, "
-            "bạn vui lòng hãy chạy lại đoạn code mới dưới đây!"
+            f"Hệ thống gặp lỗi khi thực hiện lệnh vừa rồi:\n"
+            f"```\n{error_msg}\n```\n"
+            f"Đang tự động tạo lại đoạn code mới để khắc phục, bạn vui lòng xem code bên dưới nhé!"
         ),
     })
 
@@ -242,6 +243,7 @@ def approve_and_execute(code_text: str) -> None:
         if st.session_state.chat_history[i].get("role") == "assistant":
             st.session_state.chat_history[i]["execution_result"] = execution
             st.session_state.chat_history[i]["answer_text"] = st.session_state.answer_text
+            st.session_state.chat_history[i]["executed_code"] = code_text
             break
 
 
@@ -250,6 +252,12 @@ def reject_current_code() -> None:
     st.session_state.execution_result = None
     st.session_state.execution_error = None
     st.session_state.answer_text = None
+    
+    # Lưu lại code bị từ chối vào tin nhắn AI cuối cùng trong lịch sử
+    for i in range(len(st.session_state.chat_history)-1, -1, -1):
+        if st.session_state.chat_history[i].get("role") == "assistant":
+            st.session_state.chat_history[i]["rejected_code"] = st.session_state.code_editor_text
+            break
 
 
 def render_dashboard_tabs(df_filtered: pd.DataFrame) -> None:
@@ -271,164 +279,184 @@ def render_dashboard_tabs(df_filtered: pd.DataFrame) -> None:
         render_market_tab(df_filtered)
 
 
-@st.dialog("AI Workspace", width="large")
+@st.dialog("Trợ lý AI", width="large")
 def render_ai_popup() -> None:
-    # --- CSS đưa spinner ra giữa màn hình ---
+    # --- KHỞI TẠO BỐ CỤC ---
+    chat_container = st.container()
+    spinner_container = st.container()
+
+    # --- CSS Tối ưu vị trí spinner thành bong bóng chat AI ---
     st.markdown(
         """
         <style>
-        /* Target the spinner container */
+        /* Tùy chỉnh giao diện khối spinner */
         div[data-testid="stSpinner"] {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            background: white;
-            padding: 20px 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            padding: 10px 16px;
+            background: #F3F4F6;
+            border-radius: 20px; /* Tròn đều các góc */
+            color: #1F2937;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border: 1px solid #E5E7EB;
+            width: fit-content;
+        }
+        
+        /* Căn giữa container bọc ngoài spinner */
+        div:has(> div[data-testid="stSpinner"]) {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        /* Căn chỉnh icon quay quay bên trong cho cân đối */
+        div[data-testid="stSpinner"] > div {
+            margin-bottom: 0 !important;
         }
         </style>
         """,
         unsafe_allow_html=True,
     )
 
-    # ── XỬ LÝ ACTIONS ──
-    pending_action = st.session_state.get("popup_pending_action")
-    if pending_action == "generate":
-        st.session_state.popup_pending_action = None
-        with st.spinner("⏳ Đang gọi AI API để sinh code..."):
-            request_ai_generation(st.session_state.prompt_text)
-    elif pending_action == "approve":
-        st.session_state.popup_pending_action = None
-        with st.spinner("⏳ Đang thực thi code..."):
-            approve_and_execute(st.session_state.pending_code_text)
-    elif pending_action == "reject":
-        st.session_state.popup_pending_action = None
-        reject_current_code()
+    # ── XỬ LÝ ACTIONS (Cho vào spinner_container để hiển thị phía dưới lịch sử) ──
+    with spinner_container:
+        pending_action = st.session_state.get("popup_pending_action")
+        if pending_action:
+            if pending_action == "generate":
+                st.session_state.popup_pending_action = None
+                request_ai_generation(st.session_state.prompt_text)
+            elif pending_action == "approve":
+                st.session_state.popup_pending_action = None
+                approve_and_execute(st.session_state.pending_code_text)
+            elif pending_action == "reject":
+                st.session_state.popup_pending_action = None
+                reject_current_code()
 
     # ── Lịch sử hội thoại ──────────────────────────────────────────────
-    for idx, message in enumerate(st.session_state.chat_history):
-        role = message.get("role", "assistant")
-        content = message.get("content", "")
+    with chat_container:
+        for idx, message in enumerate(st.session_state.chat_history):
+            role = message.get("role", "assistant")
+            content = message.get("content", "")
         
-        # Render bong bóng chat bằng HTML thuần để đảm bảo UI chính xác 100%
-        if content:
-            safe_content = content.replace('\n', '<br>')
-            if role == "user":
-                html = f"""
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 20px; align-items: flex-start; gap: 12px; width: 100%;">
-                    <div style="background: linear-gradient(135deg, #1D4ED8, #2563EB); color: white; padding: 12px 18px; border-radius: 20px 20px 0px 20px; max-width: 75%; box-shadow: 0 4px 6px rgba(29, 78, 216, 0.2); font-size: 0.95rem; line-height: 1.5;">
-                        {safe_content}
+            # Render bong bóng chat bằng HTML thuần để đảm bảo UI chính xác 100%
+            if content:
+                safe_content = content.replace('\n', '<br>')
+                if role == "user":
+                    html = f"""
+                    <div style="display: flex; justify-content: flex-end; margin-bottom: 20px; align-items: flex-start; gap: 12px; width: 100%;">
+                        <div style="background: linear-gradient(135deg, #1D4ED8, #2563EB); color: white; padding: 12px 18px; border-radius: 20px 20px 0px 20px; max-width: 75%; box-shadow: 0 4px 6px rgba(29, 78, 216, 0.2); font-size: 0.95rem; line-height: 1.5;">
+                            {safe_content}
+                        </div>
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #F97316; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(249, 115, 22, 0.3);">
+                            U
+                        </div>
                     </div>
-                    <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #F97316; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(249, 115, 22, 0.3);">
-                        U
+                    """
+                    st.markdown(html, unsafe_allow_html=True)
+                else:
+                    html = f"""
+                    <div style="display: flex; justify-content: flex-start; margin-bottom: 20px; align-items: flex-start; gap: 12px; width: 100%;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #1D4ED8; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(29, 78, 216, 0.3);">
+                            AI
+                        </div>
+                        <div style="background: #F3F4F6; color: #1F2937; padding: 12px 18px; border-radius: 20px 20px 20px 0px; max-width: 75%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border: 1px solid #E5E7EB; font-size: 0.95rem; line-height: 1.5;">
+                            {safe_content}
+                        </div>
                     </div>
-                </div>
-                """
-                st.markdown(html, unsafe_allow_html=True)
-            else:
-                html = f"""
-                <div style="display: flex; justify-content: flex-start; margin-bottom: 20px; align-items: flex-start; gap: 12px; width: 100%;">
-                    <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #22C55E; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3);">
-                        AI
-                    </div>
-                    <div style="background: #F3F4F6; color: #1F2937; padding: 12px 18px; border-radius: 20px 20px 20px 0px; max-width: 75%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border: 1px solid #E5E7EB; font-size: 0.95rem; line-height: 1.5;">
-                        {safe_content}
-                    </div>
-                </div>
-                """
-                st.markdown(html, unsafe_allow_html=True)
+                    """
+                    st.markdown(html, unsafe_allow_html=True)
 
-        # Với tin nhắn AI cuối cùng: hiện code editor + nút / trạng thái (thụt lề một chút cho đẹp)
-        is_last  = idx == len(st.session_state.chat_history) - 1
-        is_ai    = role == "assistant"
-        has_code = bool(st.session_state.generated_code)
-        status   = st.session_state.approval_status
+            # Với tin nhắn AI cuối cùng: hiện code editor + nút / trạng thái (thụt lề một chút cho đẹp)
+            is_last  = idx == len(st.session_state.chat_history) - 1
+            is_ai    = role == "assistant"
+            has_code = bool(st.session_state.generated_code)
+            status   = st.session_state.approval_status
 
-        if is_ai:
-            with st.container():
-                st.markdown('<div style="padding-left: 48px; margin-bottom: 20px;">', unsafe_allow_html=True)
-                # Render các widget tương tác chỉ cho tin nhắn cuối
-                if is_last:
-                    # ── Trạng thái: AI đang sửa lỗi (đang chờ backend) ──
-                    if status == "Lỗi - Đang sửa":
-                        st.markdown(
-                            """
-                            <div style="
-                                display:flex; align-items:center; gap:10px;
-                                background:#FEF3C7; border:1px solid #F59E0B;
-                                border-radius:10px; padding:12px 16px;
-                                margin-top:8px;
-                            ">
-                                <span style="font-size:1.5rem">⏳</span>
-                                <span style="color:#92400E; font-weight:600; font-size:0.95rem;">
-                                    Đang chờ AI sinh lại code, vui lòng đợi...
-                                </span>
-                            </div>
-                            """,
-                            unsafe_allow_html=True,
-                        )
+            if is_ai:
+                with st.container():
+                    st.markdown('<div style="padding-left: 48px; margin-bottom: 20px;">', unsafe_allow_html=True)
+                    # Render các widget tương tác chỉ cho tin nhắn cuối
+                    if is_last:
+                        # ── Trạng thái: AI đang sửa lỗi (đang chờ backend) ──
+                        if status == "Lỗi - Đang sửa":
+                            st.markdown(
+                                """
+                                <div style="
+                                    display:flex; align-items:center; gap:10px;
+                                    background:#FEF3C7; border:1px solid #F59E0B;
+                                    border-radius:10px; padding:12px 16px;
+                                    margin-top:8px;
+                                ">
+                                    <span style="font-size:1.5rem">⏳</span>
+                                    <span style="color:#92400E; font-weight:600; font-size:0.95rem;">
+                                        Đang chờ AI sinh lại code, vui lòng đợi...
+                                    </span>
+                                </div>
+                                """,
+                                unsafe_allow_html=True,
+                            )
 
-                    # ── Trạng thái: Chờ duyệt (có code để review) ──
-                    elif status == "Chờ duyệt" and has_code:
-                        code_text = render_code_editor_panel(
-                            code_text=st.session_state.code_editor_text,
-                            explanation_text=st.session_state.generated_explanation,
-                            approval_status=status,
-                            widget_key=f"code_editor_widget_{st.session_state.code_editor_revision}",
-                        )
-                        st.session_state.code_editor_text = code_text
+                        # ── Trạng thái: Chờ duyệt (có code để review) ──
+                        elif status == "Chờ duyệt" and has_code:
+                            code_text = render_code_editor_panel(
+                                code_text=st.session_state.code_editor_text,
+                                explanation_text=st.session_state.generated_explanation,
+                                approval_status=status,
+                                widget_key=f"code_editor_widget_{st.session_state.code_editor_revision}",
+                            )
+                            st.session_state.code_editor_text = code_text
 
-                        def handle_approve(code):
-                            st.session_state.pending_code_text = code
-                            st.session_state.popup_pending_action = "approve"
+                            def handle_approve(code):
+                                st.session_state.pending_code_text = code
+                                st.session_state.popup_pending_action = "approve"
 
-                        def handle_reject():
-                            st.session_state.popup_pending_action = "reject"
+                            def handle_reject():
+                                st.session_state.popup_pending_action = "reject"
 
-                        btn_col1, btn_col2, _ = st.columns([1, 1, 2])
-                        with btn_col1:
-                            st.markdown('<span id="btn-approve-marker"></span>', unsafe_allow_html=True)
-                            st.button("✅ Chấp nhận", use_container_width=True, key="popup_approve", on_click=handle_approve, args=(code_text,))
-                        with btn_col2:
-                            st.markdown('<span id="btn-reject-marker"></span>', unsafe_allow_html=True)
-                            st.button("❌ Từ chối", use_container_width=True, key="popup_reject", on_click=handle_reject)
+                            btn_col1, btn_col2, _ = st.columns([1, 1, 2])
+                            with btn_col1:
+                                st.markdown('<span id="btn-approve-marker"></span>', unsafe_allow_html=True)
+                                st.button("Chấp nhận", use_container_width=True, key="popup_approve", on_click=handle_approve, args=(code_text,))
+                            with btn_col2:
+                                st.markdown('<span id="btn-reject-marker"></span>', unsafe_allow_html=True)
+                                st.button("Từ chối", use_container_width=True, key="popup_reject", on_click=handle_reject)
 
-                    # ── Trạng thái: Bị từ chối ──
-                    elif status == "Bị từ chối":
-                        st.markdown(
-                            """
-                            <div style="
-                                background:#FEF2F2; border:1px solid #EF4444;
-                                border-radius:10px; padding:10px 14px;
-                                color:#991B1B; font-size:0.9rem;
-                            ">
-                                ❌ Code đã bị từ chối. Nhập yêu cầu mới bên dưới để bắt đầu lại.
-                            </div>
-                            """,
-                            unsafe_allow_html=True,
-                        )
+                        # ── Trạng thái: Bị từ chối ──
+                        elif status == "Bị từ chối":
+                            st.markdown(
+                                """
+                                <div style="
+                                    background:#FEF2F2; border:1px solid #EF4444;
+                                    border-radius:10px; padding:10px 14px;
+                                    color:#991B1B; font-size:0.9rem;
+                                ">
+                                    ❌ Code đã bị từ chối. Nhập yêu cầu mới bên dưới để bắt đầu lại.
+                                </div>
+                                """,
+                                unsafe_allow_html=True,
+                            )
 
-                # ── Hiển thị kết quả thực thi (cho cả lịch sử và tin hiện tại) ──
-                ans_text = message.get("answer_text") if not (is_last and status == "Đã duyệt") else st.session_state.answer_text
-                exec_res = message.get("execution_result") if not (is_last and status == "Đã duyệt") else st.session_state.execution_result
+                    # ── Hiển thị kết quả thực thi (cho cả lịch sử và tin hiện tại) ──
+                    ans_text = message.get("answer_text") if not (is_last and status == "Đã duyệt") else st.session_state.answer_text
+                    exec_res = message.get("execution_result") if not (is_last and status == "Đã duyệt") else st.session_state.execution_result
+                    exec_code = message.get("executed_code") if not (is_last and status == "Đã duyệt") else (st.session_state.code_editor_text if status == "Đã duyệt" else None)
+                    rej_code = message.get("rejected_code") if not (is_last and status == "Bị từ chối") else (st.session_state.code_editor_text if status == "Bị từ chối" else None)
                 
-                if ans_text or exec_res:
-                    if ans_text:
-                        st.markdown(
-                            f"**📊 Kết quả phân tích:**\n\n{ans_text}"
-                        )
-                    if exec_res:
-                        render_result_panel(
-                            result=exec_res,
-                            error_message=exec_res.get("error"),
-                            logs=fetch_logs(exec_res.get("request_id")) if exec_res.get("request_id") else [],
-                        )
+                    if ans_text or exec_res or exec_code or rej_code:
+                        if exec_code:
+                            st.markdown("**Code đã chạy  (Chấp nhận):**")
+                            st.code(exec_code, language="python")
+                        elif rej_code:
+                            st.markdown("**Code đã bỏ qua (Từ chối):**")
+                            st.code(rej_code, language="python")
+                        
+                        if ans_text:
+                            st.markdown(f"**📊 Kết quả phân tích:**\n\n{ans_text}")
+                        if exec_res:
+                            render_result_panel(
+                                result=exec_res,
+                                error_message=exec_res.get("error"),
+                                logs=fetch_logs(exec_res.get("request_id")) if exec_res.get("request_id") else [],
+                            )
 
-                st.markdown('</div>', unsafe_allow_html=True)
+                    st.markdown('</div>', unsafe_allow_html=True)
 
     # ── Khung nhập liệu ────────────────────────────────────────────────
     st.divider()
@@ -454,21 +482,14 @@ def render_ai_popup() -> None:
         _, col_gen = st.columns([3, 1])
         with col_gen:
             st.markdown('<span id="btn-generate-marker"></span>', unsafe_allow_html=True)
-            st.button("🚀 Generate Code", use_container_width=True, key="btn_generate", on_click=handle_generate)
+            st.button("Tạo mã nguồn", use_container_width=True, key="btn_generate", on_click=handle_generate)
 
 
 
 def build_popup_trigger() -> None:
-    trigger_left, trigger_right = st.columns([8.0, 1.2])
-    with trigger_left:
-        st.markdown(
-            '<div class="dashboard-note">Dashboard có 4 tab. Bấm nút AI Assistant để mở popup chatbot ở bất kỳ tab nào.</div>',
-            unsafe_allow_html=True,
-        )
-    with trigger_right:
-        st.markdown('<span id="btn-ai-popup-marker"></span>', unsafe_allow_html=True)
-        if st.button("💬", use_container_width=True, key="open_ai_popup"):
-            st.session_state.show_ai_popup = True
+    st.markdown('<span id="btn-ai-popup-marker"></span>', unsafe_allow_html=True)
+    if st.button("💬", use_container_width=True, key="open_ai_popup"):
+        st.session_state.show_ai_popup = True
 
     if st.session_state.show_ai_popup:
         render_ai_popup()
@@ -479,7 +500,6 @@ def main() -> None:
     st.set_page_config(page_title=APP_TITLE, page_icon="🧠", layout="wide")
     initialize_state()
     inject_styles()
-    build_header()
 
     # Load dữ liệu
     if DATASET_PATH.exists():

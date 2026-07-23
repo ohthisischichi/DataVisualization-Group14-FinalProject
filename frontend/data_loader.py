@@ -58,6 +58,9 @@ def load_data(path: str | Path) -> pd.DataFrame:
     """
     df = pd.read_csv(path, dtype=COLUMN_DTYPES, encoding="utf-8")
 
+    # Recalculate Price_per_m2 to avoid 0.0 rounding errors in the CSV dataset
+    df["Price_per_m2"] = df["Price"] / df["Area"]
+
     # Chuyển các cột phân loại sang Categorical để tiết kiệm bộ nhớ và hỗ trợ sắp xếp
     df["Area_Group"] = pd.Categorical(
         df["Area_Group"], categories=AREA_GROUP_ORDER, ordered=True

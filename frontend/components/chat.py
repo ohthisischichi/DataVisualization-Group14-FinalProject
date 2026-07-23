@@ -10,8 +10,8 @@ def render_chat_panel(
 	default_prompt: str,
 	on_generate: Callable[[str], None],
 ) -> str:
-	st.subheader("AI Chat")
-	st.caption("Nhập yêu cầu, xem lịch sử hội thoại, và tạo code theo ngữ cảnh hiện tại.")
+	st.subheader("Trợ lý AI")
+	st.caption("Nhập yêu cầu, xem lịch sử hội thoại, và tạo mã nguồn theo ngữ cảnh hiện tại.")
 
 	for message in chat_history:
 		with st.chat_message(message.get("role", "assistant")):
@@ -27,13 +27,13 @@ def render_chat_panel(
 	action_col_1, action_col_2 = st.columns([1, 1])
 	with action_col_1:
 		st.markdown('<span id="btn-generate-marker"></span>', unsafe_allow_html=True)
-		if st.button("Generate Code", width="stretch"):
+		if st.button("Tạo mã nguồn", width="stretch"):
 			if prompt_value.strip():
 				on_generate(prompt_value.strip())
 			else:
 				st.warning("Vui lòng nhập yêu cầu trước khi sinh code.")
 	with action_col_2:
-		if st.button("Use Default Prompt", width="stretch"):
+		if st.button("Sử dụng yêu cầu mặc định", width="stretch"):
 			st.session_state.prompt_widget = default_prompt
 			st.rerun()
 
