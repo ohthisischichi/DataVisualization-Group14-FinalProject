@@ -29,7 +29,7 @@ from theme import (
 
 def _empty_state() -> None:
     st.warning(
-        "⚠️ Không có dữ liệu phù hợp với bộ lọc hiện tại. "
+        "Không có dữ liệu phù hợp với bộ lọc hiện tại. "
         "Hãy mở rộng điều kiện lọc trên sidebar.",
         icon="🔍",
     )
@@ -175,18 +175,6 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
             key="geo_province_map",
         )
 
-        if event_map and event_map.get("selection") and event_map["selection"].get("points"):
-            points = event_map["selection"]["points"]
-            if points:
-                pt = points[0]
-                loc = pt.get("location")
-                if loc:
-                    clicked_province = loc
-                else:
-                    point_idx = pt.get("pointIndex")
-                    if point_idx is not None and point_idx < len(prov_stats):
-                        clicked_province = prov_stats.iloc[point_idx]["Province"]
-
     # ── 2. Top 15 Province Bar Chart theo Số tin đăng (Bên phải) ──────────────
     with col_bar:
         top15_prov = prov_stats.nlargest(15, "count").sort_values("count")
@@ -234,22 +222,54 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
             key="geo_province_bar",
         )
 
-        if not clicked_province and event_bar and event_bar.get("selection") and event_bar["selection"].get("points"):
-            points = event_bar["selection"]["points"]
-            if points:
-                pt = points[0]
-                loc = pt.get("y")
-                if loc:
-                    clicked_province = loc
-                else:
-                    point_idx = pt.get("pointIndex")
-                    if point_idx is not None and point_idx < len(top15_prov):
-                        clicked_province = top15_prov.iloc[point_idx]["Province"]
+    # ── Phân tích và phối hợp lựa chọn từ Bản đồ và Biểu đồ cột ──
+    map_selected = None
+    if event_map and event_map.get("selection") and event_map["selection"].get("points"):
+        points = event_map["selection"]["points"]
+        if points:
+            pt = points[0]
+            loc = pt.get("location")
+            if loc:
+                map_selected = loc
+            else:
+                point_idx = pt.get("pointIndex")
+                if point_idx is not None and point_idx < len(prov_stats):
+                    map_selected = prov_stats.iloc[point_idx]["Province"]
+
+    bar_selected = None
+    if event_bar and event_bar.get("selection") and event_bar["selection"].get("points"):
+        points = event_bar["selection"]["points"]
+        if points:
+            pt = points[0]
+            loc = pt.get("y")
+            if loc:
+                bar_selected = loc
+            else:
+                point_idx = pt.get("pointIndex")
+                if point_idx is not None and point_idx < len(top15_prov):
+                    bar_selected = top15_prov.iloc[point_idx]["Province"]
+
+    current_selected = st.session_state.get("geo_selected_province")
+    clicked_province = None
+
+    if map_selected is None and bar_selected is None:
+        clicked_province = None
+    else:
+        if map_selected is not None and map_selected != current_selected:
+            clicked_province = map_selected
+            st.session_state.pop("geo_province_bar", None)
+        elif bar_selected is not None and bar_selected != current_selected:
+            clicked_province = bar_selected
+            st.session_state.pop("geo_province_map", None)
+        else:
+            clicked_province = map_selected or bar_selected
 
     st.caption(
-        "🗺️ Bản đồ chỉ thể hiện dữ liệu BĐS đất liền, chưa thể hiện dữ liệu trên các đảo, quần đảo thuộc chủ quyền Việt Nam."
+        "Chọn từng tỉnh/thành phố để xem thêm thông tin về thị trường BĐS ở các quận/huyện của tỉnh/thành đó.\n"
+        "Bản đồ chỉ thể hiện dữ liệu BĐS đất liền, chưa thể hiện dữ liệu trên các đảo, quần đảo thuộc chủ quyền Việt Nam."
     )
 
+    
     # Insight tự động
     if not prov_stats.empty:
         top_prov = prov_stats.nlargest(1, "avg_price_m2").iloc[0]
@@ -308,10 +328,10 @@ def _render_district_drilldown(df: pd.DataFrame, province: str) -> None:
         )
         .reset_index()
     )
-    top10_dist = district_stats.nlargest(10, "avg_price_m2").sort_values("avg_price_m2")
+    top5_dist = district_stats.nlargest(5, "avg_price_m2").sort_values("avg_price_m2")
 
     fig = px.bar(
-        top10_dist,
+        top5_dist,
         x="avg_price_m2",
         y="District",
         orientation="h",
@@ -333,12 +353,12 @@ def _render_district_drilldown(df: pd.DataFrame, province: str) -> None:
         marker_line_width=0,
     )
     fig.update_coloraxes(showscale=False)
-    apply_theme(fig, f"Top 10 Quận/Huyện tại {province}")
+    apply_theme(fig, f"Top 5 Quận/Huyện tại {province}")
     fig.update_layout(height=380, yaxis_title="")
     st.plotly_chart(fig, width='stretch', key="geo_district_bar")
 
-    if not top10_dist.empty:
-        top_dist = top10_dist.iloc[-1]
+    if not top5_dist.empty:
+        top_dist = top5_dist.iloc[-1]
         prov_avg = df_prov["Price_per_m2"].mean()
         pct = (top_dist["avg_price_m2"] / prov_avg - 1) * 100
         st.markdown(
@@ -495,18 +515,17 @@ def render(df_filtered: pd.DataFrame) -> None:
         return
 
     st.markdown("### Phân tích thị trường theo địa lý")
-    st.markdown(
-        "Chọn từng tỉnh/thành phố để xem thêm thông tin về thị trường BĐS ở các quận/huyện của tỉnh/thành đó."
-       
-    )
+    
     st.markdown("")
 
     # ── Phần 1: Choropleth Map Việt Nam theo Tỉnh/Thành ─────────────────────
     clicked_province = render_province_price_overview(df_filtered)
 
-    # Cập nhật session_state nếu có click mới
+    # Cập nhật session_state nếu có click mới hoặc xóa nếu gỡ chọn
     if clicked_province:
         st.session_state["geo_selected_province"] = clicked_province
+    else:
+        st.session_state.pop("geo_selected_province", None)
 
     st.markdown("---")
 
