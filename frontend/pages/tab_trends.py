@@ -40,75 +40,116 @@ def _empty_state() -> None:
 # 1. RADAR CHART SO SÁNH ĐA CHIỀU THEO PHÂN KHÚC GIÁ
 # ─────────────────────────────────────────────
 from plotly.subplots import make_subplots
+
 def _render_radar_chart(df: pd.DataFrame) -> None:
+    DIMENSION_LABELS = {
+        "Area": "Diện tích",
+        "Frontage": "Mặt tiền",
+        "Access Road": "Đường vào",
+        "Floors": "Số tầng",
+        "Bedrooms": "Phòng ngủ",
+        "Bathrooms": "Phòng tắm",
+    }
+
     dimensions = ["Area", "Frontage", "Access Road", "Floors", "Bedrooms", "Bathrooms"]
     valid_dims = [d for d in dimensions if d in df.columns]
+
     if not valid_dims or "Price_Segment" not in df.columns:
         st.info("Không đủ dữ liệu để vẽ Radar Chart.")
         return
 
-    grouped = df.groupby("Price_Segment", observed=True)[valid_dims].mean().reset_index()
+    grouped = (
+        df.groupby("Price_Segment", observed=True)[valid_dims]
+        .mean()
+        .reset_index()
+    )
+
     if grouped.empty:
         st.info("Không có dữ liệu phân khúc giá phù hợp.")
         return
 
-    # Trung bình toàn thị trường — dùng làm đường tham chiếu trong mỗi ô
+    # Trung bình toàn thị trường
     overall_mean = grouped[valid_dims].mean()
 
-    # Chuẩn hóa min-max TOÀN CỤC theo từng cột (để cả segment lẫn đường tham chiếu
-    # dùng chung 1 thang đo trong mỗi ô — vẫn giữ được so sánh magnitude)
+    # Chuẩn hóa Min-Max
     normalized_df = grouped.copy()
     overall_mean_norm = {}
+
     for col in valid_dims:
-        min_val, max_val = grouped[col].min(), grouped[col].max()
+        min_val = grouped[col].min()
+        max_val = grouped[col].max()
         span = max_val - min_val
-        normalized_df[col] = (grouped[col] - min_val) / span if span > 0 else 1.0
-        overall_mean_norm[col] = (overall_mean[col] - min_val) / span if span > 0 else 1.0
+
+        if span > 0:
+            normalized_df[col] = (grouped[col] - min_val) / span
+            overall_mean_norm[col] = (overall_mean[col] - min_val) / span
+        else:
+            normalized_df[col] = 1.0
+            overall_mean_norm[col] = 1.0
 
     segments = grouped["Price_Segment"].tolist()
+
     n = len(segments)
     cols = min(n, 3)
-    rows = -(-n // cols)  # ceil
+    rows = (n + cols - 1) // cols
 
     fig = make_subplots(
-        rows=rows, cols=cols,
+        rows=rows,
+        cols=cols,
         specs=[[{"type": "polar"}] * cols for _ in range(rows)],
         subplot_titles=[str(s) for s in segments],
-        vertical_spacing=0.18,   # tăng khoảng cách giữa các hàng ô
-        horizontal_spacing=0.08, # tăng khoảng cách giữa các cột
+        horizontal_spacing=0.08,
+        vertical_spacing=0.28,      # Tăng khoảng cách dọc
     )
 
-    # Đẩy vị trí title của từng ô lên cao hơn để không đè lên nhãn "Frontage"
-    for annotation in fig.layout.annotations:
-        annotation.update(y=annotation.y + 0.04, font=dict(size=14))
+    # Đẩy title của từng subplot lên cao
+    for ann in fig.layout.annotations:
+        ann.update(
+            y=ann.y + 0.05,
+            font=dict(size=14)
+        )
 
     colors = px.colors.qualitative.Set2
 
-    ref_r = [overall_mean_norm[c] for c in valid_dims] + [overall_mean_norm[valid_dims[0]]]
-    theta_labels = valid_dims + [valid_dims[0]]
+    theta_labels = [DIMENSION_LABELS[d] for d in valid_dims]
+    theta_labels.append(theta_labels[0])
+
+    ref_r = [overall_mean_norm[c] for c in valid_dims]
+    ref_r.append(ref_r[0])
 
     for i, seg in enumerate(segments):
-        row_n, col_n = i // cols + 1, i % cols + 1
-        row = normalized_df.iloc[i]
-        r_values = [row[c] for c in valid_dims] + [row[valid_dims[0]]]
-        original_vals = [grouped.iloc[i][c] for c in valid_dims] + [grouped.iloc[i][valid_dims[0]]]
+        row_n = i // cols + 1
+        col_n = i % cols + 1
 
-        # Lớp 1: đường tham chiếu trung bình toàn thị trường (mờ, nét đứt)
+        row = normalized_df.iloc[i]
+
+        r_values = [row[c] for c in valid_dims]
+        r_values.append(r_values[0])
+
+        original_vals = [grouped.iloc[i][c] for c in valid_dims]
+        original_vals.append(original_vals[0])
+
+        # Đường tham chiếu
         fig.add_trace(
             go.Scatterpolar(
                 r=ref_r,
                 theta=theta_labels,
                 mode="lines",
-                line=dict(width=1.5, color="rgba(120,120,120,0.6)", dash="dot"),
+                line=dict(
+                    width=1.5,
+                    color="rgba(120,120,120,0.6)",
+                    dash="dot",
+                ),
                 fill="none",
-                showlegend=(i == 0),
                 name="Trung bình thị trường",
+                showlegend=(i == 0),
                 hoverinfo="skip",
             ),
-            row=row_n, col=col_n,
+            row=row_n,
+            col=col_n,
         )
 
-        # Lớp 2: phân khúc hiện tại (giữ nguyên style gốc của bạn)
+        # Radar của từng phân khúc
         fig.add_trace(
             go.Scatterpolar(
                 r=r_values,
@@ -116,28 +157,69 @@ def _render_radar_chart(df: pd.DataFrame) -> None:
                 fill="toself",
                 fillcolor=colors[i % len(colors)],
                 opacity=0.6,
-                line=dict(width=2, color=colors[i % len(colors)]),
+                line=dict(
+                    width=2,
+                    color=colors[i % len(colors)],
+                ),
                 name=str(seg),
                 showlegend=False,
                 hovertemplate=(
                     f"<b>{seg}</b><br>"
-                    + "".join([f"{valid_dims[j]}: {original_vals[j]:.1f}<br>" for j in range(len(valid_dims))])
+                    + "".join(
+                        [
+                            f"{DIMENSION_LABELS[valid_dims[j]]}: {original_vals[j]:.1f}<br>"
+                            for j in range(len(valid_dims))
+                        ]
+                    )
                     + "<extra></extra>"
                 ),
             ),
-            row=row_n, col=col_n,
+            row=row_n,
+            col=col_n,
         )
 
-    apply_theme(fig, "So sánh đa chiều đặc trưng BĐS theo Phân khúc giá (Chuẩn hóa tỷ lệ)")
-    fig.update_layout(
-        polar=dict(radialaxis=dict(visible=True, range=[0, 1], showticklabels=False)),
-        height=560,
-        margin=dict(l=40, r=40, t=100, b=50),
-        legend=dict(orientation="h", yanchor="bottom", y=1.09, xanchor="center", x=0.5),  # giảm từ 1.16 -> 1.09
+    apply_theme(
+        fig,
+        "So sánh đa chiều đặc trưng BĐS theo Phân khúc giá (Chuẩn hóa tỷ lệ)"
     )
-    fig.update_polars(radialaxis=dict(visible=True, range=[0, 1], showticklabels=False))
 
-    st.plotly_chart(fig, width="stretch", key="pd_radar_chart")
+    fig.update_layout(
+        height=720,                  # Tăng chiều cao
+        margin=dict(
+            l=40,
+            r=40,
+            t=110,
+            b=70,
+        ),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=0,
+            xanchor="right",
+            x=1,
+        ),
+        polar=dict(
+            radialaxis=dict(
+                visible=True,
+                range=[0, 1],
+                showticklabels=False,
+            )
+        ),
+    )
+
+    fig.update_polars(
+        radialaxis=dict(
+            visible=True,
+            range=[0, 1],
+            showticklabels=False,
+        )
+    )
+
+    st.plotly_chart(
+        fig,
+        width="stretch",
+        key="pd_radar_chart",
+    )
 
     st.markdown(
         render_insight(
@@ -158,8 +240,8 @@ def _render_correlation_heatmap(df: pd.DataFrame) -> None:
     (Đã loại bỏ biến Day để ma trận tập trung chuyên sâu vào các yếu tố giá trị BĐS).
     """
     num_cols = get_numeric_columns(df)
-    
-    # Loại bỏ cột 'Day' ra khỏi ma trận tương quan nếu tồn tại
+
+    # Loại bỏ cột Day nếu có
     if "Day" in num_cols:
         num_cols.remove("Day")
 
@@ -171,64 +253,71 @@ def _render_correlation_heatmap(df: pd.DataFrame) -> None:
 
     corr_matrix = df_num.corr(method="pearson")
 
-    # Tạo mask tam giác trên để chỉ hiện nửa dưới (tránh trùng lặp)
+    # Chỉ hiển thị tam giác dưới
     mask = np.triu(np.ones_like(corr_matrix, dtype=bool), k=1)
     z_masked = corr_matrix.where(~mask).values
 
-    # Tạo hover text
+    # Map tên tiếng Việt
+    LABEL_MAP = {
+        "Area": "Diện tích",
+        "Frontage": "Mặt tiền",
+        "Access Road": "Đường",
+        "Floors": "Số tầng",
+        "Bedrooms": "Phòng ngủ",
+        "Bathrooms": "Phòng tắm",
+        "Price": "Giá",
+        "Price_per_m2": "Giá/m²",
+    }
+
+    # Tooltip tiếng Việt
     hover_text = []
     for i, row_name in enumerate(corr_matrix.index):
         row_texts = []
         for j, col_name in enumerate(corr_matrix.columns):
-            val = corr_matrix.iloc[i, j]
             if mask[i, j]:
                 row_texts.append("")
             else:
+                val = corr_matrix.iloc[i, j]
                 row_texts.append(
-                    f"<b>{row_name}</b> vs <b>{col_name}</b><br>r = {val:.3f}"
+                    f"<b>{LABEL_MAP.get(row_name, row_name)}</b> và "
+                    f"<b>{LABEL_MAP.get(col_name, col_name)}</b>"
+                    f"<br>Hệ số tương quan Pearson: <b>{val:.3f}</b>"
                 )
         hover_text.append(row_texts)
 
-    # Đổi tên nhãn cột tiếng Việt thân thiện
-    col_labels = [
-        c.replace("Access Road", "Đường")
-         .replace("Price_per_m2", "Giá/m²")
-         .replace("Frontage", "Mặt tiền")
-         .replace("Area", "Diện tích")
-         .replace("Floors", "Số tầng")
-         .replace("Bedrooms", "Phòng ngủ")
-         .replace("Bathrooms", "Phòng tắm")
-         .replace("Price", "Giá")
-        for c in corr_matrix.columns
-    ]
+    # Nhãn tiếng Việt
+    col_labels = [LABEL_MAP.get(c, c) for c in corr_matrix.columns]
 
     fig = go.Figure(
         data=go.Heatmap(
             z=z_masked,
             x=col_labels,
             y=col_labels,
-            colorscale=DIVERGING_SCALE,
+            colorscale=DIVERGING_SCALE,   # Giữ nguyên màu cũ
             zmid=0,
             zmin=-1,
             zmax=1,
-            hoverinfo="text",
             text=hover_text,
             hovertemplate="%{text}<extra></extra>",
             colorbar=dict(
-                title=dict(text="Pearson r"),
+                title=dict(text="Hệ số pearson r"),
                 tickformat=".2f",
-                outlinewidth=0,
+                outlinewidth=0,      # Xóa viền
+                borderwidth=0,
+                bgcolor="rgba(0,0,0,0)",
             ),
             showscale=True,
         )
     )
 
-    # Thêm annotation số liệu vào từng ô (chỉ nửa dưới)
+    # Hiển thị giá trị trên từng ô
     annotations = []
+
     for i in range(len(corr_matrix.index)):
         for j in range(len(corr_matrix.columns)):
             if not mask[i, j]:
                 val = corr_matrix.iloc[i, j]
+
                 annotations.append(
                     dict(
                         x=col_labels[j],
@@ -243,24 +332,35 @@ def _render_correlation_heatmap(df: pd.DataFrame) -> None:
                 )
 
     apply_theme(fig, "Ma trận tương quan giữa các biến số bất động sản")
-    fig.update_layout(height=480, annotations=annotations)
-    st.plotly_chart(fig, width='stretch', key="pd_corr_heatmap")
 
-    # Insight: cặp tương quan mạnh nhất (ngoài đường chéo)
+    fig.update_layout(
+        height=480,
+        annotations=annotations,
+    )
+
+    st.plotly_chart(
+        fig,
+        width="stretch",
+        key="pd_corr_heatmap",
+    )
+
+    # Insight
     corr_upper = corr_matrix.where(~np.eye(len(corr_matrix), dtype=bool))
+
     max_corr_val = corr_upper.abs().stack().max()
     max_corr_pair = corr_upper.abs().stack().idxmax()
-    
-    # Việt hóa tên cặp tương quan cho insight mượt mà
+
     pair_names = [
-        str(p).replace("Access Road", "Đường").replace("Price_per_m2", "Giá/m²").replace("Frontage", "Mặt tiền").replace("Area", "Diện tích").replace("Floors", "Số tầng").replace("Bedrooms", "Phòng ngủ").replace("Bathrooms", "Phòng tắm").replace("Price", "Giá")
-        for p in max_corr_pair
+        LABEL_MAP.get(col, col)
+        for col in max_corr_pair
     ]
 
     st.markdown(
         render_insight(
-            f"Cặp tương quan mạnh nhất: <b>{pair_names[0]}</b> và "
-            f"<b>{pair_names[1]}</b> (r = {max_corr_val:.3f})."
+            f"Cặp tương quan mạnh nhất: "
+            f"<b>{pair_names[0]}</b> và "
+            f"<b>{pair_names[1]}</b> "
+            f"(r = {max_corr_val:.3f})."
         ),
         unsafe_allow_html=True,
     )
