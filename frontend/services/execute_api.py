@@ -20,6 +20,17 @@ def execute_approved_code(request_id: str, code_text: str, approved: bool = True
 	# chạy code. /run chỉ trả meta (success/result_type/logs/error),
 	# kết quả được backend lưu trên đĩa theo request_id.
 	response = requests.post(EXECUTE_RUN_URL, json=payload, timeout=60)
+
+	# 422 = code vi phạm quy tắc bảo mật (import/hàm cấm) -> backend từ chối.
+	# Không ném exception (tránh in traceback đỏ lên UI); trả về cờ `rejected`
+	# kèm lý do để frontend hiển thị nhẹ nhàng và cho user hỏi tiếp.
+	if response.status_code == 422:
+		try:
+			detail = response.json().get("detail", "Code vi phạm quy tắc an toàn.")
+		except ValueError:
+			detail = "Code vi phạm quy tắc an toàn."
+		return {"success": False, "rejected": True, "error": detail}
+
 	response.raise_for_status()
 	result = response.json()
 

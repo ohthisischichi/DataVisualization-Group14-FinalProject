@@ -220,6 +220,12 @@ def approve_and_execute(code_text: str) -> None:
     st.session_state.execution_error = error_msg
     st.session_state.answer_text = None
 
+    # Code bị backend từ chối vì vi phạm bảo mật (422): KHÔNG auto-fix,
+    # chỉ hiển thị lý do từ chối và cho user nhập yêu cầu mới.
+    if execution.get("rejected"):
+        reject_current_code(reason=error_msg)
+        return
+
     if not execution.get("success") or error_msg:
         # --- Execution lỗi: gọi AI sửa tự động ---
         st.session_state.approval_status = "Lỗi - Đang sửa"
@@ -247,17 +253,27 @@ def approve_and_execute(code_text: str) -> None:
             break
 
 
-def reject_current_code() -> None:
+def reject_current_code(reason: str | None = None) -> None:
     st.session_state.approval_status = "Bị từ chối"
     st.session_state.execution_result = None
     st.session_state.execution_error = None
     st.session_state.answer_text = None
-    
+
     # Lưu lại code bị từ chối vào tin nhắn AI cuối cùng trong lịch sử
     for i in range(len(st.session_state.chat_history)-1, -1, -1):
         if st.session_state.chat_history[i].get("role") == "assistant":
             st.session_state.chat_history[i]["rejected_code"] = st.session_state.code_editor_text
             break
+
+    # Nếu bị backend từ chối kèm lý do (vd vi phạm bảo mật), báo cho user trong chat.
+    if reason:
+        st.session_state.chat_history.append({
+            "role": "assistant",
+            "content": (
+                f"Code đã bị từ chối vì lý do an toàn:\n```\n{reason}\n```\n"
+                f"Bạn vui lòng nhập yêu cầu khác để tiếp tục nhé."
+            ),
+        })
 
 
 def render_dashboard_tabs(df_filtered: pd.DataFrame) -> None:
