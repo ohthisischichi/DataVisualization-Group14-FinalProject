@@ -437,7 +437,7 @@ def render_ai_popup() -> None:
                             st.session_state.code_editor_text = code_text
 
                             def handle_approve(code):
-                                st.session_state.pending_code_text = code
+                                st.session_state.pending_code_text = st.session_state.code_editor_text or code
                                 st.session_state.popup_pending_action = "approve"
 
                             def handle_reject():

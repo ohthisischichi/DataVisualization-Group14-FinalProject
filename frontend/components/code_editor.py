@@ -32,6 +32,7 @@ def render_code_editor_panel(
 		lang="python",
 		theme="light",
 		key=widget_key,
+		response_mode=["debounce", "blur"],
 		options={"showLineNumbers": True, "showGutter": True}
 	)
 	
