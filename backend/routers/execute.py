@@ -250,6 +250,33 @@ def _fmt_cell(v) -> str:
         return str(round(v, 3))
     return str(v)
 
+def _col_stats(values: list) -> tuple[str, set[int]]:
+    """Trả về (mô tả thống kê, tập index cần giữ lại: vị trí max & min).
+    Chỉ tính trên phần tử số; nếu không có số trả ("", set())."""
+    nums = [(i, v) for i, v in enumerate(values) if isinstance(v, (int, float))]
+    if not nums:
+        return "", set()
+    imax, vmax = max(nums, key=lambda t: t[1])
+    imin, vmin = min(nums, key=lambda t: t[1])
+    mean = sum(v for _, v in nums) / len(nums)
+    desc = (f"min={_fmt_cell(vmin)}, max={_fmt_cell(vmax)}, "
+            f"mean={_fmt_cell(mean)}, n={len(nums)}")
+    return desc, {imax, imin}
+    
+def _sample_indices(total: int, keep: set[int], max_rows: int) -> list[int]:
+    """Chọn tối đa max_rows index đại diện để feed vào LLM"""
+    if total <= max_rows:
+        return list(range(total))
+    idx = set(keep)
+    idx.add(0)
+    idx.add(total - 1)
+    # rải đều phần còn lại
+    remaining = max_rows - len(idx)
+    if remaining > 0:
+        step = total / remaining
+        idx.update(int(i * step) for i in range(remaining))
+    return sorted(i for i in idx if 0 <= i < total)[:max_rows]
+
 
 def _summarize_plotly_trace(tr: dict, x_title: str, y_title: str, max_rows: int) -> str:
     """Tóm tắt MỘT trace bất kỳ thành text: tự dò các mảng dữ liệu đang có,
@@ -285,14 +312,35 @@ def _summarize_plotly_trace(tr: dict, x_title: str, y_title: str, max_rows: int)
 
     # Trường hợp 1D: zip các cột theo hàng.
     keys = list(cols.keys())
+    stat_lines = []
+    keep: set[int] = set()
+    for k in keys:
+        desc, kidx = _col_stats(cols[k])
+        if desc:
+            stat_lines.append(f"  Thống kê {label_map.get(k, k)}: {desc}")
+        keep |= kidx
     header_cols = " | ".join(label_map.get(k, k) for k in keys)
-    n = min(max(len(cols[k]) for k in keys), max_rows)
+    total = max(len(cols[k]) for k in keys)
+    sel = _sample_indices(total, keep, max_rows)
     rows = []
-    for i in range(n):
+    prev = None
+    for i in sel:
         cells = [_fmt_cell(cols[k][i]) if i < len(cols[k]) else "" for k in keys]
+        # đánh dấu chỗ nhảy cách (không liên tục) cho LLM biết đã bỏ đoạn giữa
+        if prev is not None and i > prev + 1:
+            rows.append("  ...")
         rows.append("  - " + " | ".join(cells))
-    truncated = "\n  ... (đã cắt bớt)" if any(len(cols[k]) > max_rows for k in keys) else ""
-    return f"Chuỗi '{name}' (loại {ttype}) [{header_cols}]:\n" + "\n".join(rows) + truncated
+        prev = i
+
+    header = f"Chuỗi '{name}' (loại {ttype}) [{header_cols}]:"
+    parts = [header]
+    if stat_lines:
+        parts.extend(stat_lines)
+    parts.extend(rows)
+    if total > len(sel):
+        parts.append(f"  (đã sample {len(sel)}/{total} điểm)")
+    return "\n".join(parts)
+
 
 
 def _summarize_one(result_type: str | None, data, max_rows: int) -> tuple[str, str | None]:
