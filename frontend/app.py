@@ -476,11 +476,11 @@ def render_ai_popup() -> None:
                         if exec_code:
                             st.markdown("**Code đã chạy (Chấp nhận):**")
                             with st.container(height=400):
-                                st.code(exec_code, language="python")
+                                st.code(exec_code, language="python", line_numbers=True)
                         elif rej_code:
                             st.markdown("**Code đã bỏ qua (Từ chối):**")
                             with st.container(height=400):
-                                st.code(rej_code, language="python")
+                                st.code(rej_code, language="python", line_numbers=True)
                         
                         if ans_text:
                             st.markdown(f"**📊 Kết quả phân tích:**\n\n{ans_text}")
