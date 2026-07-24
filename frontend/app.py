@@ -301,7 +301,7 @@ def render_dashboard_tabs(df_filtered: pd.DataFrame) -> None:
         render_market_tab(df_filtered)
 
 
-@st.experimental_dialog("Trợ lý AI", width="large")
+@st.dialog("Trợ lý AI", width="large")
 def render_ai_popup() -> None:
     # --- KHỞI TẠO BỐ CỤC ---
     chat_container = st.container()
