@@ -368,7 +368,7 @@ div[data-testid="stElementContainer"]:has(span#btn-ai-popup-marker) { display: n
 
 div[data-testid="stElementContainer"]:has(span#btn-ai-popup-marker) + div[data-testid="stElementContainer"] {
     position: fixed !important;
-    bottom: 24px !important;
+    bottom: 50px !important;
     right: 24px !important;
     z-index: 999999 !important;
     width: auto !important;
@@ -376,7 +376,7 @@ div[data-testid="stElementContainer"]:has(span#btn-ai-popup-marker) + div[data-t
 
 div[data-testid="stElementContainer"]:has(span#btn-ai-popup-marker) + div[data-testid="stElementContainer"] button {
     position: fixed !important;
-    bottom: 24px !important;
+    bottom: 50px !important;
     right: 24px !important;
     z-index: 999999 !important;
     width: 64px !important;
