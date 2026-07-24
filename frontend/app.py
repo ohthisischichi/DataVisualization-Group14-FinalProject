@@ -222,6 +222,12 @@ def approve_and_execute(code_text: str) -> None:
 
     if not execution.get("success") or error_msg:
         # --- Execution lỗi: gọi AI sửa tự động ---
+        # Lưu lại code bị lỗi vào tin nhắn AI trước đó để hiển thị trong lịch sử
+        for i in range(len(st.session_state.chat_history)-1, -1, -1):
+            if st.session_state.chat_history[i].get("role") == "assistant":
+                st.session_state.chat_history[i]["executed_code"] = code_text
+                break
+                
         st.session_state.approval_status = "Lỗi - Đang sửa"
         request_ai_fix(
             error_msg=error_msg or "Không có kết quả hợp lệ",
@@ -309,6 +315,17 @@ def render_ai_popup() -> None:
         /* Căn chỉnh icon quay quay bên trong cho cân đối */
         div[data-testid="stSpinner"] > div {
             margin-bottom: 0 !important;
+        }
+
+        /* Giới hạn chiều cao cho các khối code (tối đa ~20 dòng) và cho phép cuộn */
+        div[data-testid="stCodeBlock"] pre {
+            max-height: 450px !important;
+            overflow-y: auto !important;
+        }
+        
+        div[data-testid="stCodeBlock"] {
+            max-height: 460px !important;
+            overflow-y: hidden !important;
         }
         </style>
         """,
@@ -441,11 +458,13 @@ def render_ai_popup() -> None:
                 
                     if ans_text or exec_res or exec_code or rej_code:
                         if exec_code:
-                            st.markdown("**Code đã chạy  (Chấp nhận):**")
-                            st.code(exec_code, language="python")
+                            st.markdown("**Code đã chạy (Chấp nhận):**")
+                            with st.container(height=400):
+                                st.code(exec_code, language="python")
                         elif rej_code:
                             st.markdown("**Code đã bỏ qua (Từ chối):**")
-                            st.code(rej_code, language="python")
+                            with st.container(height=400):
+                                st.code(rej_code, language="python")
                         
                         if ans_text:
                             st.markdown(f"**📊 Kết quả phân tích:**\n\n{ans_text}")
