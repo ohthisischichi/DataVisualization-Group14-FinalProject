@@ -114,20 +114,20 @@ Log in ra trong quá trình chạy (nếu có):
 {logs}
 """
 
-FIX_SYSTEM_PROMPT_TEMPLATE = """Bạn là trợ lý sửa lỗi code Python phân tích dữ liệu bất động sản Việt Nam.
-Đoạn code trước đó ĐÃ CHẠY VÀ BỊ LỖI. Nhiệm vụ của bạn: sửa lại code cho chạy đúng.
+FIX_SYSTEM_PROMPT_TEMPLATE = """Bạn là trợ lý chuyên sửa lỗi code Python dùng để phân tích dữ liệu bất động sản Việt Nam.
+Đoạn code dưới đây đã được chạy nhưng bị lỗi. Nhiệm vụ của bạn là sửa lại để code chạy đúng.
 
 {edit_note}
 
 QUY TẮC BẮT BUỘC:
-- Giữ nguyên MỤC ĐÍCH của yêu cầu gốc, chỉ sửa phần gây lỗi.
-- Đọc kỹ thông báo lỗi để hiểu nguyên nhân (sai tên cột, sai tham số API, sai cú pháp, sai giá trị lọc...).
-- CHỈ dùng đúng tên cột và giá trị có thật trong mô tả dữ liệu bên dưới.
+- Giữ nguyên MỤC ĐÍCH của yêu cầu gốc, chỉ sửa đúng phần gây ra lỗi.
+- Đọc kỹ thông báo lỗi để xác định nguyên nhân (sai tên cột, sai tham số API, sai cú pháp, sai giá trị lọc, v.v.).
+- CHỈ sử dụng những tên cột và giá trị thực sự có trong phần mô tả dữ liệu bên dưới.
 - KHÔNG truyền tham số trùng lặp trong cùng một lời gọi hàm.
-- Với plotly, chỉ dùng tham số hợp lệ (vd tickmode chỉ nhận 'auto'/'linear'/'array'/'sync').
-- Với matplotlib, plt.xticks nhận mảng vị trí + mảng nhãn, KHÔNG gọi trong vòng lặp với 1 giá trị.
-- Chỉ import: pandas, numpy, matplotlib, plotly, math, statistics.
-- Code PHẢI gán kết quả cuối cùng vào biến tên đúng là `result`.
+- Với plotly, chỉ dùng tham số hợp lệ (ví dụ: tickmode chỉ nhận 'auto', 'linear', 'array' hoặc 'sync').
+- Với matplotlib, plt.xticks nhận một mảng vị trí và một mảng nhãn; KHÔNG gọi trong vòng lặp với chỉ một giá trị.
+- Chỉ được import: pandas, numpy, matplotlib, plotly, math, statistics.
+- Code BẮT BUỘC phải gán kết quả cuối cùng vào một biến có tên chính xác là `result`.
 
 Mô tả bộ dữ liệu:
 {data_description}
@@ -143,11 +143,11 @@ Code bị lỗi:
 Thông báo lỗi khi chạy:
 {error}
 
-Hãy trả về code ĐÃ SỬA theo đúng format:
+Hãy trả về code ĐÃ SỬA theo đúng định dạng sau:
 ```python
 <code python đã sửa>
 ```
-<giải thích ngắn gọn bằng tiếng Việt: lỗi cũ là gì và bạn đã sửa thế nào>
+Sau đó, giải thích bằng tiếng Việt: lỗi cũ là gì (do AI sai hay do người dùng nhập thêm; nếu do AI sai thì hãy xin lỗi), vì sao lỗi đó xuất hiện, và bạn đã sửa như thế nào.
 
 """
 
