@@ -154,6 +154,8 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
             ),
             marker_line_width=0.8,
             marker_line_color="#CBD5E1",
+            unselected=dict(marker=dict(opacity=0)), # Làm các tỉnh không chọn trở nên trắng tươi không màu
+
         )
 
         fig_map.update_coloraxes(
@@ -196,6 +198,7 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
             },
             text_auto=",",
         )
+        max_count = top15_prov["count"].max() if not top15_prov.empty else 100
         fig_bar.update_traces(
             hovertemplate=(
                 "<b>%{y}</b><br>"
@@ -204,6 +207,7 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
                 "Giá TB: %{customdata[1]:.2f} tỷ<extra></extra>"
             ),
             textposition="outside",
+            cliponaxis=False,
             marker_line_width=0,
         )
         fig_bar.update_coloraxes(showscale=False)
@@ -214,6 +218,7 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
             yaxis_title="",
             xaxis_title="Số lượng tin đăng",
         )
+        fig_bar.update_xaxes(range=[0, max_count * 1.15])
 
         event_bar = st.plotly_chart(
             fig_bar,
@@ -266,7 +271,7 @@ def render_province_price_overview(df: pd.DataFrame) -> str | None:
 
     st.caption(
         "Chọn từng tỉnh/thành phố để xem thêm thông tin về thị trường BĐS ở các quận/huyện của tỉnh/thành đó.\n"
-        "Bản đồ chỉ thể hiện dữ liệu BĐS đất liền, chưa thể hiện dữ liệu trên các đảo, quần đảo thuộc chủ quyền Việt Nam."
+        "Ghi chú: Bản đồ chưa thể hiện dữ liệu trên quần đảo Hoàng Sa, Trường Sa (Việt Nam)."
     )
 
     
