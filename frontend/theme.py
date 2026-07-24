@@ -264,7 +264,9 @@ span[data-baseweb="tag"] * {
 div[data-testid="stAppViewBlockContainer"] {
     padding-top: 0px !important;
 }
-div[data-baseweb="tab-list"] {
+div[data-baseweb="tab-list"],
+div[data-testid="stTabs"] > div[role="tablist"],
+div[data-testid="stTabs"] > div:first-child {
     position: sticky !important;
     top: 0px !important;
     z-index: 99999 !important;
@@ -280,12 +282,14 @@ div[data-baseweb="tab-list"] {
 }
 
 /* Shift tabs to the right when sidebar is collapsed to prevent overlapping the expand button */
-div[data-testid="stAppViewContainer"]:has(button[data-testid="collapsedSidebar"]) div[data-baseweb="tab-list"] {
+div[data-testid="stAppViewContainer"]:has(button[data-testid="collapsedSidebar"]) div[data-baseweb="tab-list"],
+div[data-testid="stAppViewContainer"]:has(button[data-testid="collapsedSidebar"]) div[data-testid="stTabs"] > div[role="tablist"] {
     padding-left: 80px !important;
 }
 
 /* Add Dashboard Title to the far right of the navigation bar */
-div[data-baseweb="tab-list"]::after {
+div[data-baseweb="tab-list"]::after,
+div[data-testid="stTabs"] > div[role="tablist"]::after {
     content: "PHÂN TÍCH THỊ TRƯỜNG BẤT ĐỘNG SẢN VIỆT NAM" !important;
     color: #FFFFFF !important;
     font-weight: 800 !important;
@@ -298,11 +302,13 @@ div[data-baseweb="tab-list"]::after {
 }
 
 @media (max-width: 1200px) {
-    div[data-baseweb="tab-list"]::after {
+    div[data-baseweb="tab-list"]::after,
+    div[data-testid="stTabs"] > div[role="tablist"]::after {
         display: none !important;
     }
 }
-button[data-baseweb="tab"] {
+button[data-baseweb="tab"],
+button[data-testid="stTab"] {
     background-color: transparent !important;
     border: none !important;
     color: #E2E8F0 !important;
@@ -314,7 +320,8 @@ button[data-baseweb="tab"] {
     display: flex !important;
     align-items: center !important;
 }
-button[data-baseweb="tab"]:hover {
+button[data-baseweb="tab"]:hover,
+button[data-testid="stTab"]:hover {
     color: #FFFFFF !important;
     background-color: rgba(255, 255, 255, 0.08) !important;
 }
@@ -327,7 +334,8 @@ button[aria-selected="true"] {
 }
 
 /* Inject Tab SVG Masks using currentColor to inherit text colors dynamically */
-button[data-baseweb="tab"]::before {
+button[data-baseweb="tab"]::before,
+button[data-testid="stTab"]::before {
     content: "" !important;
     display: inline-block !important;
     width: 18px !important;
@@ -342,22 +350,26 @@ button[data-baseweb="tab"]::before {
     mask-repeat: no-repeat !important;
 }
 
-button[data-baseweb="tab"]:nth-of-type(1)::before {
+button[data-baseweb="tab"]:nth-of-type(1)::before,
+button[data-testid="stTab"]:nth-of-type(1)::before {
     -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'></path><polyline points='9 22 9 12 15 12 15 22'></polyline></svg>") !important;
     mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'></path><polyline points='9 22 9 12 15 12 15 22'></polyline></svg>") !important;
 }
 
-button[data-baseweb="tab"]:nth-of-type(2)::before {
+button[data-baseweb="tab"]:nth-of-type(2)::before,
+button[data-testid="stTab"]:nth-of-type(2)::before {
     -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'></path><circle cx='12' cy='10' r='3'></circle></svg>") !important;
     mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'></path><circle cx='12' cy='10' r='3'></circle></svg>") !important;
 }
 
-button[data-baseweb="tab"]:nth-of-type(3)::before {
+button[data-baseweb="tab"]:nth-of-type(3)::before,
+button[data-testid="stTab"]:nth-of-type(3)::before {
     -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='23 6 13.5 15.5 8.5 10.5 1 18'></polyline><polyline points='17 6 23 6 23 12'></polyline></svg>") !important;
     mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='23 6 13.5 15.5 8.5 10.5 1 18'></polyline><polyline points='17 6 23 6 23 12'></polyline></svg>") !important;
 }
 
-button[data-baseweb="tab"]:nth-of-type(4)::before {
+button[data-baseweb="tab"]:nth-of-type(4)::before,
+button[data-testid="stTab"]:nth-of-type(4)::before {
     -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21.21 15.89A10 10 0 1 1 8 2.83'></path><path d='M22 12A10 10 0 0 0 12 2v10z'></path></svg>") !important;
     mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21.21 15.89A10 10 0 1 1 8 2.83'></path><path d='M22 12A10 10 0 0 0 12 2v10z'></path></svg>") !important;
 }
