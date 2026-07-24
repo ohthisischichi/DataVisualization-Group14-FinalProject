@@ -33,16 +33,20 @@ _RUNTIME_REQUIRED_BUILTINS = {"__import__"}
 class CodeValidationError(Exception):
     pass
 
+class CodeSyntaxError(CodeValidationError):
+    """Lỗi cú pháp code (ast.parse thất bại). Khác lỗi bảo mật (import/hàm cấm):
+    đây là lỗi AI có thể tự sửa, nên được đối xử như lỗi runtime chứ không reject."""
+    pass
 
 def validate_code(code: str) -> None:
     """Duyệt AST để chặn import ngoài whitelist và các hàm nguy hiểm (open, exec, eval...).
 
-    Raise CodeValidationError nếu vi phạm.
+    Raise CodeSyntaxError nếu code sai cú pháp, CodeValidationError nếu vi phạm bảo mật.
     """
     try:
         tree = ast.parse(code)
     except SyntaxError as exc:
-        raise CodeValidationError(f"Code có lỗi cú pháp: {exc}")
+        raise CodeSyntaxError(f"Code có lỗi cú pháp: {exc}")
 
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
@@ -473,6 +477,12 @@ async def execute_code(request: ExecuteRequest):
     # validate code trước khi chạy
     try:
         validate_code(request.code)
+    except CodeSyntaxError as exc:
+        error_msg = str(exc)
+        _update_log_status(request.request_id, status="error",
+                           result_summary=error_msg, executed_code=request.code)
+        return ExecuteResult(request_id=request.request_id, success=False, error=error_msg)
+
     except CodeValidationError as exc:
         error_msg = str(exc)
         _update_log_status(request.request_id, status="rejected", result_summary=error_msg)
